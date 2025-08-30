@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--
+
+Hello!   The HTML, CSS, and JS were written by me.  Dustin Kirk
+
+-->	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title 60-65 characters -->
+	<title>Making a micro-effeciency a moment of delight - Dustin Kirk's Portfolio</title>
+	<meta property="og:title" content="Making a micro-effeciency a moment of delight" />
+
+	<!-- Description 150-155 characters (2-4 sentences) -->
+	<meta name="description" content="How I applied a micro-effeciency into a moment of delight by utilizing name data already existing in 70% of corporate emails."/>
+	<meta property="og:description" content="How I applied a micro-effeciency into a moment of delight by utilizing name data already existing in 70% of corporate emails."/>
+
+	<!-- Page Type -->
+	<meta property="og:type" content="article" />
+
+	<!-- Thumbnail Image -->
+	<meta property="og:image" content="https://www.dustinkirk.com/images/banner-email-thumb.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="1400"/>
+	<meta property="og:image:height" content="700"/>
+
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script src="https://kit.fontawesome.com/a320271d59.js" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179534252-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179534252-1');
+</script>
+</head>
+<body class="sticky">
+<a href="#main-content" class="skip-navigation">Skip to main content</a>
+<div class="pageWrap">
+
+
+<header class="site-header">
+	<div class="header-container">
+		<a href="https://www.dustinkirk.com" class="brand">
+			Dustin Kirk
+		</a>
+		<nav class="navigation" aria-label="Main navigation">
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</button>
+			<ul class="nav-menu" id="nav-menu">
+				<li>
+					<a href="https://www.dustinkirk.com" class="nav-link">Portfolio</a>
+				</li>
+				<li>
+					<a href="about.html" class="nav-link">About</a>
+				</li>
+				<li>
+					<a href="Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				</li>
+				<li>
+					<a href="https://dribbble.com/Dustin_Kirk" target="_blank" rel="noopener noreferrer" class="nav-link">Dribbble</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="lightbox">
+	<div id="lightbox_content"></div>
+</div>
+
+<main id="main-content" class="pageWrapRow pageContent">
+
+	<section class="banner bannerBG-email" aria-label="Sending Email Invites banner">
+		<div class="content"></div>
+	</section>
+
+	<header class="portfolio-header">
+		<h1 class="pageTitle">Sending Email Invites</h1>
+		<p class="pageSubtitle">Making a micro-effeciency a moment of delight.</p>
+	</header>
+
+	<div class="textBlock">
+		<p>One of my favorite things as a product designer is identifying ways to make a user's experience delightful. And when an opportunity presents itself to add a little delight, particularly when the effort required is minimal, I get very excited. Such is the case when working on a feature which included the ability to send invites to users.</p>
+
+		<p>In this particular case, administrators would send invites to future users by entering their email address. A valid email address was the only required piece of information necessary before sending the invite. Once an invite was received by the user, they would click a link and register their account by entering their First Name, Last Name, Company, and Title.</p>
+
+	</div>
+		<div class="imgBlock">
+			<img src="invite_form.svg" alt="Email invite form interface for administrators to send user invitations" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+		<p>One of the <a href="story-pillars.html">4 Pillars of Enterprise Application Design</a> is efficiency and there are many ways to improve product effeciency. Specificallly applicable to this scenario is not requiring a user to enter the same information twice and provide meaningful default values. With this feature being a part of an enterprise product, the users who would be sent invites are almost always corporate email addresses and follow a relatively standard practice of including both the first name and last name in the email address.</p>
+
+		<p>To verify this theory, I ran a query of our customers and found the following:</p>
+
+	</div>
+		<div class="imgBlock">
+			<img src="stats.svg" alt="Statistics showing 70% of corporate email addresses contain parseable first and last names" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+		<p>Over 70% of customers utilize email addresses that contain the first and last names and can be easily parsed programmatically. This would allow the first and last names to be derived for the vast majority of users using this specific feature.  Support for email addresses can be parsed for the following:</p>
+
+		<ul>
+			<li>{first} . {last} @</li>
+			<li>{first} - {last} @</li>
+			<li>{first} _ {last} @</li>
+			<li>{first} . * . {last} @</li>
+			<li>{first} - * - {last} @</li>
+			<li>{first} _ * _ {last} @</li>
+		</ul>
+
+		<p>Additionally, when copy and pasting email addresses from emails or address books, the copied format often contains the name which can be parsed as well. In this case, the provided name is used regardless of the email address format.</p>
+
+		<ul>
+			<li>Joe Smith &lt;smith@acme.com&gt;</li>
+			<li>Jane Doe &lt;jdoe@acme.com&gt;</li>
+		</ul>
+
+		<p>The derivation of names helps in two significant ways. The first benefit comes to the administrator who is entering email addresses. Once an email is entered a record is created which they will see in their system. While the user has not yet registered, the only information in the record would be the email address. This makes it difficult to parse who is who simply based on email address. By having a first and last name for each user, it is much clearer who a record belongs to. Secondly, once the invited user goes to register, for over 70% of users, the first name and last name would be defaulted in and the only new information necessary to enter would be their job title. Users would still have the option to edit or remove the name fields, but for the most part would be ready to move on without a second thought.</p>
+
+	</div>
+		<div class="imgBlock">
+			<img src="users.png" alt="User registration form with pre-filled names derived from email addresses for improved efficiency" class="imgFrame frameStyleSlide">
+		</div>
+	<div class="textBlock">
+
+		<p>There is one aspect worth considering when taking this approach and that is how much the administrator will feel compelled to either fill out the first and last name if it is missing or appears incorrect.  If the first and last name are presented as input fields, then the administrator may feel obligated to enter the values which in this scenario is unnecessary and completely optional.  Is it then a matter of displaying messaging to make sure the administrator understands it is optional?  And if the names are shown, but not editable, then that may be a point of frustration to the administrator.</p>
+
+		<p>The approach taken was to not present the derived names as text or inputs at the point of email entry.  For the administrator in this step, the importance was on entering the email addresses of users and moving on.  The complexity and possible confusion outweighed any benefit of the admin seeing the names at this stage.  Once submitted, then the derived names would appear in the system and should the admin want to edit a user record at that point, they could... but any sense of obligation should be diminished greatly.</p>
+
+		<p>The resulting solution was to derive names from email after the emails were submitted, and only derive the names from email addresses which followed a very common and structured format such as to not create more work for anyone. Doing so benefited both the administrator by not having empty records and over 70% of invited users who would not have to enter information that already existed in the system.</p>
+
+		<h2>Interactive Demo</h2>
+
+		<div id="emailDemo" class="playground">
+			<div class="form">
+				<label>Email:</label> <input type="text" placeholder="user@company.com" value="" />
+			</div>
+			<div id="output" style="display:none;">
+				<div class="firstName">
+					<span class="label">First Name: </span>
+					<span class="value" id="firstName"></span>
+				</div>
+				<div class="lastName">
+					<span class="label">Last Name: </span>
+					<span class="value" id="lastName"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</main><!-- end pageContent -->
+
+<div class="pageWrapRow pageFooter">
+	footer
+</div>
+</div><!-- end pagewrap -->
+
+<script>
+	$( "#emailDemo input" ).keyup(function() {
+		checkNames(this);
+	});	
+
+ 	function checkNames(domElem){
+ 				var inputValue = domElem.value;
+		if(inputValue.indexOf("@") >= 0){
+			clearNames();
+
+			if(inputValue.indexOf("<") >= 0 && inputValue.indexOf(">") >= 0){
+				// var nameContent = inputValue.substring(inputValue.lastIndexOf("<") + 1, inputValue.lastIndexOf(">"));
+				var nameContent = inputValue.split('<')[0];
+				nameContent = nameContent.replace(/\s*$/,"");
+				var names = nameContent.split(' ');
+				var nameLength = names.length;
+
+				setNames(names[0],names[nameLength-1]);
+			} else {
+
+				var firstPart = inputValue.split('@')[0];
+				if(inputValue.indexOf("<") >= 0){
+					firstPart = firstPart.split('<')[1];
+				}
+				//start parsing
+				//count periods
+				var periods = firstPart.split('.');
+				var dashes = firstPart.split('-');
+				var underscores = firstPart.split('_');
+
+				var firstName = "";
+				var lastName = "";
+
+				switch(periods.length-1){
+					case 1:
+						firstName = periods[0];
+						lastName = periods[1];
+						if(firstName.length > 1 && lastName.length > 1){
+							setNames(firstName,lastName);
+						}
+						return;
+					break;
+					case 2:
+						firstName = periods[0];
+						lastName = periods[2];
+						if(firstName.length > 1 && lastName.length > 1){
+							setNames(firstName,lastName);
+						}
+						return;
+					break;
+				}
+
+				switch(underscores.length-1){
+					case 1:
+						firstName = underscores[0];
+						lastName = underscores[1];
+						if(firstName.length > 1 && lastName.length > 1){
+							setNames(firstName,lastName);
+						}
+						return;
+					break;
+					case 2:
+							firstName = underscores[0];
+						lastName = underscores[2];
+						if(firstName.length > 1 && lastName.length > 1){
+							setNames(firstName,lastName);
+						}
+						return;
+					break;
+				}
+
+				switch(dashes.length-1){
+					case 1:
+						firstName = dashes[0];
+						lastName = dashes[1];
+						if(firstName.length > 1 && lastName.length > 1){
+							setNames(firstName,lastName);
+						}
+						return;
+					break;
+					case 2:
+							firstName = dashes[0];
+						lastName = dashes[2];
+						if(firstName.length > 1 && lastName.length > 1){
+							setNames(firstName,lastName);
+						}
+						return;
+					break;
+				}
+
+			}
+
+
+
+		} else {
+			clearNames();
+		}
+ 	}
+	function setNames(firstName,lastName){
+		$("#firstName").html(firstName);
+		$("#lastName").html(lastName);
+		$("#output").show();
+
+	}
+	function clearNames(){
+		$("#output").hide();
+		$("#firstName").html("");
+		$("#lastName").html("");
+	}
+</script>
+
+<script>
+	$( ".imgFrame" ).click(function() {
+	  var src = $(this).attr('src');
+        $("#lightbox_content").css("background-image", "url(" + src + ")");
+    	$("#lightbox").show();
+	});
+
+
+
+	$("#lightbox").click(function() {
+		$(this).hide();
+	});
+</script>
+
+<script>
+// Modern mobile navigation functionality
+(function() {
+	'use strict';
+	
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	
+	if (!navToggle || !navMenu) return;
+	
+	// Toggle mobile menu
+	function toggleMenu() {
+		const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+		navToggle.setAttribute('aria-expanded', !isExpanded);
+		navMenu.classList.toggle('open');
+		
+		// Manage focus for accessibility
+		if (!isExpanded) {
+			// Focus first nav link when menu opens
+			const firstLink = navMenu.querySelector('.nav-link');
+			if (firstLink) firstLink.focus();
+		}
+	}
+	
+	// Close menu when clicking outside
+	function closeMenu(event) {
+		if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Close menu when pressing escape
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+			navToggle.focus();
+		}
+	}
+	
+	// Close menu when clicking a nav link (mobile)
+	function closeOnNavClick() {
+		if (window.innerWidth <= 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Event listeners
+	navToggle.addEventListener('click', toggleMenu);
+	document.addEventListener('click', closeMenu);
+	document.addEventListener('keydown', handleKeydown);
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', closeOnNavClick);
+	});
+	
+	// Handle window resize - ensure menu is visible on desktop
+	window.addEventListener('resize', function() {
+		if (window.innerWidth > 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	});
+})();
+</script>
+</body>
+</html>

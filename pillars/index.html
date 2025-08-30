@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--
+
+Hello!   The HTML, CSS, and JS were written by me.  Dustin Kirk
+
+-->	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title 60-65 characters -->
+	<title>Enterprise SaaS Design Principles - Dustin Kirk's Portfolio</title>
+	<meta property="og:title" content="Enterprise SaaS Design Principles" />
+
+	<!-- Description 150-155 characters (2-4 sentences) -->
+	<meta name="description" content="The guiding principles for I have developed for enterprise SaaS product design teams"/>
+	<meta property="og:description" content="The guiding principles for I have developed for enterprise SaaS product design teams"/>
+
+	<!-- Page Type -->
+	<meta property="og:type" content="article" />
+
+	<!-- Thumbnail Image -->
+	<meta property="og:image" content="https://www.dustinkirk.com/images/banner-pillars-thumb.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="1400"/>
+	<meta property="og:image:height" content="700"/>
+
+
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+<script src="https://kit.fontawesome.com/a320271d59.js" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179534252-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179534252-1');
+</script>
+</head>
+<body class="sticky">
+<a href="#main-content" class="skip-navigation">Skip to main content</a>
+<div class="pageWrap">
+
+
+<header class="site-header">
+	<div class="header-container">
+		<a href="https://www.dustinkirk.com" class="brand">
+			Dustin Kirk
+		</a>
+		<nav class="navigation" aria-label="Main navigation">
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</button>
+			<ul class="nav-menu" id="nav-menu">
+				<li>
+					<a href="https://www.dustinkirk.com" class="nav-link">Portfolio</a>
+				</li>
+				<li>
+					<a href="about.html" class="nav-link">About</a>
+				</li>
+				<li>
+					<a href="Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				</li>
+				<li>
+					<a href="https://dribbble.com/Dustin_Kirk" target="_blank" rel="noopener noreferrer" class="nav-link">Dribbble</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="lightbox">
+	<div id="lightbox_content"></div>
+</div>
+
+<main id="main-content" class="pageWrapRow pageContent">
+
+	<section class="banner bannerBG-pillars" aria-label="Design Principles banner">
+		<div class="content"></div>
+	</section>
+
+	<header class="portfolio-header">
+		<h1 class="pageTitle">Design Principles</h1>
+		<p class="pageSubtitle">Guiding principles for enterprise SaaS product design teams.</p>
+	</header>
+
+	<div class="textBlock">
+
+		<p>As a product designer, there are a tremendous number of factors that can be taken into account when forming a new user experience.  To streamline the decision making and crystalize the experience around guiding principles, I put together the following four pillars to guide design decisions throughout Tealium’s products.</p>
+
+		<p>While developed particularly for Tealium’s benefit, they apply well to all enterprise SaaS products. These products have a user base in which the user is not the purchaser, they typically deal with complex and technical domains, as well as encapsulate the management of huge amounts of data. Whether managing IoT devices, sales pipelines, logistics, people, or events, the following principles will guide product designers in the direction of great experiences for the end users.</p>
+	</div>
+	<div class="textBlock">
+		<h3>Pillar 1: Clarity</h3>
+
+		<p>Ensure the user is able to understand what they are looking at, know what is going on, and how things are related.</p>
+
+		<ol>
+			<li>Provide orientation information so the user knows where they are and what they are looking at.</li>
+			<li>Show relationships, and dependencies between items.</li>
+			<li>Build confidence through success messaging or provide detailed error messages that inform users on what went wrong.</li>
+			<li>Provide contextual help and resource links when a user may not be familiar with a concept.</li>
+			<li>Display insightful information by distilling multiple pieces of data into easy to consume visuals.</li>
+		</ol>
+	</div>
+	<div class="textBlock">
+		<h3>Pillar 1: Usability</h3>
+
+		<p>Ensure users are able to complete their objectives without getting lost and confused about what to do next.</p>
+
+		<ol>
+			<li>Make information actionable from any context. (states, configurations, errors, warnings, etc...)</li>
+			<li>Maintain goal oriented workflows.</li>
+			<li>Streamline workflows by: a. Design for the new user first in mind. b. Design optimizations for experienced users. c. Design the workflow based on the data from the user research.</li>
+			<li>Maintain consistency but not compromise the clarity in the current context. The current context beats consistency.</li>
+		</ol>
+	</div>
+	<div class="textBlock">
+		<h3>Pillar 1: Efficiency</h3>
+
+		<p>Ensure the user can complete objectives quickly and succinctly.</p>
+
+		<ol>
+			<li>Streamline common tasks by using wizards by allowing repeated actions to be done in bulk, utilize wizards and templates, and provide contextual navigation shortcuts.</li>
+			<li>Provide meaningful default values.</li>
+			<li>Don't ask users to enter information twice.</li>
+			<li>Pre-focus cursor in input fields.</li>
+			<li>Enable keyboard shortcuts.</li>
+			<li>Ensure extreme conditions are considered (1000s of items in list).</li>
+		</ol>
+	</div>
+	<div class="textBlock">
+		<h3>Pillar 1: Accessibility</h3>
+
+		<p>Ensure the user can complete objectives quickly and succinctly.</p>
+
+		<ol>
+			<li>Don't rely on color alone to indicate state or status.</li>
+			<li>Minimize use of low-contrast colors and very small font sizes.</li>
+			<li>Provide tooltips on any text that may get cut off.</li>
+			<li>Enable keyboard usage and ensure the optimal tab order.</li>
+			<li>Ensure translated text fits the provided area (German +50%).</li>
+			<li>Check contrast on projectors and TVs.</li>
+		</ol>
+	</div>
+
+
+
+
+
+</main><!-- end pageContent -->
+
+<div class="pageWrapRow pageFooter">
+	footer
+</div>
+</div><!-- end pagewrap -->
+
+<script>
+	$( ".imgFrame" ).click(function() {
+	  var src = $(this).attr('src');
+        $("#lightbox_content").css("background-image", "url(" + src + ")");
+    	$("#lightbox").show();
+	});
+
+
+
+	$("#lightbox").click(function() {
+		$(this).hide();
+	});
+</script>
+
+<script>
+// Modern mobile navigation functionality
+(function() {
+	'use strict';
+	
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	
+	if (!navToggle || !navMenu) return;
+	
+	// Toggle mobile menu
+	function toggleMenu() {
+		const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+		navToggle.setAttribute('aria-expanded', !isExpanded);
+		navMenu.classList.toggle('open');
+		
+		// Manage focus for accessibility
+		if (!isExpanded) {
+			// Focus first nav link when menu opens
+			const firstLink = navMenu.querySelector('.nav-link');
+			if (firstLink) firstLink.focus();
+		}
+	}
+	
+	// Close menu when clicking outside
+	function closeMenu(event) {
+		if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Close menu when pressing escape
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+			navToggle.focus();
+		}
+	}
+	
+	// Close menu when clicking a nav link (mobile)
+	function closeOnNavClick() {
+		if (window.innerWidth <= 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Event listeners
+	navToggle.addEventListener('click', toggleMenu);
+	document.addEventListener('click', closeMenu);
+	document.addEventListener('keydown', handleKeydown);
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', closeOnNavClick);
+	});
+	
+	// Handle window resize - ensure menu is visible on desktop
+	window.addEventListener('resize', function() {
+		if (window.innerWidth > 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--
+
+Hello!   The HTML, CSS, and JS were written by me.  Dustin Kirk
+
+-->	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title 60-65 characters -->
+	<title>Chart System Pro - Dustin Kirk's Portfolio</title>
+	<meta property="og:title" content="Chart System Pro, A highly crafted enterprise-ready charts and graphs design system." />
+
+	<!-- Description 150-155 characters (2-4 sentences) -->
+	<meta name="description" content="A look into the process and nuances of creating a design system, specifically the aspects that are necessary for a comprehensive system covering charts and graphs."/>
+	<meta property="og:description" content="A look into the process and nuances of creating a design system, specifically the aspects that are necessary for a comprehensive system covering charts and graphs."/>
+
+	<!-- Page Type -->
+	<meta property="og:type" content="article" />
+
+	<!-- Thumbnail Image -->
+	<meta property="og:image" content="https://www.dustinkirk.com/images/banner-charts-thumb.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="1400"/>
+	<meta property="og:image:height" content="700"/>
+
+
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script src="https://kit.fontawesome.com/a320271d59.js" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179534252-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179534252-1');
+</script>
+</head>
+<body class="sticky">
+<a href="#main-content" class="skip-navigation">Skip to main content</a>
+<div class="pageWrap">
+
+
+<header class="site-header">
+	<div class="header-container">
+		<a href="https://www.dustinkirk.com" class="brand">
+			Dustin Kirk
+		</a>
+		<nav class="navigation" aria-label="Main navigation">
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</button>
+			<ul class="nav-menu" id="nav-menu">
+				<li>
+					<a href="https://www.dustinkirk.com" class="nav-link">Portfolio</a>
+				</li>
+				<li>
+					<a href="about.html" class="nav-link">About</a>
+				</li>
+				<li>
+					<a href="Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				</li>
+				<li>
+					<a href="https://dribbble.com/Dustin_Kirk" target="_blank" rel="noopener noreferrer" class="nav-link">Dribbble</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="lightbox">
+	<div id="lightbox_content"></div>
+</div>
+
+<main id="main-content" class="pageWrapRow pageContent">
+
+	<section class="banner bannerBG-charts" aria-label="Chart System Pro banner">
+		<div class="content"></div>
+	</section>
+
+	<header class="portfolio-header">
+		<h1 class="pageTitle">Chart System Pro</h1>
+		<p class="pageSubtitle">A look into the process and nuances of creating a charts and graphs design system.</p>
+	</header>
+
+	
+	<div class="imgBlock" style="height:400px;">
+		<img src="chart2.png" alt="Sample line chart showing data visualization with clean styling" class="imgFrame frameStyleSlide" style="position:absolute;border: none;background-color: transparent;box-shadow: none;width: 70%;top: -24%;right: -9%;">
+		<img src="chart3.png" alt="Sample bar chart demonstrating the chart system's design consistency" class="imgFrame frameStyleSlide" style="position:absolute;border: none;background-color: transparent;box-shadow: none;width: 70%;bottom: 24%;left: -31%;">
+		<img src="chart4.png" alt="Sample area chart showcasing the enterprise-ready design system components" class="imgFrame frameStyleSlide" style="position:absolute;border: none;background-color: transparent;box-shadow: none;width: 70%;bottom: -19%;right: -31%;"><img src="chart1.png" alt="Sample candlestick chart illustrating the comprehensive chart system coverage" class="imgFrame frameStyleSlide" style="position:absolute;border: none;background-color: transparent;box-shadow: none;width: 70%;top: 20%;left: -11%;">
+	</div>
+
+	<div class="textBlock">
+		<p>The design system at Tealium has grown over the years, however one area (among many) that was not flushed out were the components needed for charts and graphs. As with all aspects of design systems, the hardest part is creating and documenting all of the low level components necessary to realize the vast array of desired outcomes. While many UI boiler-plate components are encapsulated in systems like Ant and Material design systems, I took it on as a personal project to build out a chart and graph system that could be utilized by others.</p>
+
+		<p>I have now published the first version of Chart System Pro which is available on <a href="https://gumroad.com/l/sXIAq">Gumroad</a> for anyone to download. The system encompasses all grid-based charts and graphs including line charts, bar graphs, area charts, candlesticks, and others. Included are color sequences for all chart types which may be customized, a sample library of charts and graphs which may be quickly duplicated and edited as well as chart components including annotations, trendiness, plot pins, and reference bands. It truly became an invaluable tool as it is incredibly easy to generate the desired chart while maintaining the consistency inherent in a good design system.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="chart_system_pro.png" alt="Chart System Pro overview showing the comprehensive design system structure and components" class="imgFrame frameStyleSlide">
+		</div>
+
+	<div class="textBlock">
+		<h2>System Strategy And Planning</h2>
+
+		<p>Among the first activities in creating any design system is to plan out the design system structure and take inventory of the components that will be necessary to include. In this case, I applied the Atomic Design approach popularized by Brad Frost. Using this approach I mapped out atomic level components which are as basic as a line or rectangle. These atomic level components, while not necessarily useful on their own, are grouped into molecules which form the common component utilized in a chart or graph. For this project, the common use cases involved utilizing the molecules with slight variations. These variations were cataloged as templates which could be easily copied and pasted onto the charts. </p>
+	</div>
+
+		<div class="imgBlock" style="height:400px;">
+			<img src="atoms.png" alt="Atomic design components including basic lines and rectangles used as building blocks" class="imgFrame frameStyleSlide" style="position:absolute;width: 43%;height: 108%;top: -4%;left:-15%;">
+			<img src="plot_points.png" alt="Plot point molecules showing common chart components with slight variations" class="imgFrame frameStyleSlide" style="position:absolute;width: 70%;top: 4%;right:-15%;">
+		</div>
+
+	<div class="textBlock">
+		<p>To identify the components that would be necessary, I researched all types of charts and graphs and collected a vast library of charts and graphs published in news articles, research papers, financial reports, etc. I then parsed the catalogue and identified unique variations of elements such as legends, annotations, tic marks, etc. Then knowing the variations, I constructed the atomic and molecular components needed to recreate them. This allowed me to then create templates of each variation which could be easily copy and pasted into a chart, or easily swapped using the component switcher in Figma.</p>
+
+	</div>
+
+	<div class="textBlock">
+		<h2>Building The System</h2>
+
+		<p>The overall system was fairly straight-forward to construct once the research and planning was complete. I first constructed the grid components to get a base-line for the size of the charts. I chose a 600 x 300 pixel grid as the base and built all other components around that size. The size was chosen as it closely reflected a wide variety of charts and graphs found while taking inventory. All other chart elements were sized off of that grid.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="grids.png" alt="Grid templates based on 600x300 pixel baseline for chart construction" class="imgFrame frameStyleSlide" style="height: 280px;">
+		</div>
+	<div class="textBlock">
+
+		<p>With grid templates in place, I built out the various plots points. In thinking through the use cases that are common for charts and graphs, I provided templates that covered basic simple use cases, scientific cases which are often multiples of 5, and date based use cases which include 7 days in a week, 30/31 days in a month, and 12 months in a year.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="bars.png" alt="Bar chart templates covering simple, scientific, and date-based use cases" class="imgFrame frameStyleSlide" style="height: 200px;">
+		</div>
+	<div class="textBlock">
+
+		<p>Lastly, I built out all basic chart components which will not only apply to grid-based charts, but also to a wide variety of chart types to be supported in the future such as pie charts, donut charts, spider charts, etc.  I had particular fun detailing out the annotations as component structure is incredibly flexible and can be customized in some pretty wild ways.</p>
+
+	</div>
+		<div class="imgBlock">
+			<img src="plot_groups.png" alt="Chart components including flexible annotations for various chart types" class="imgFrame frameStyleSlide" style="height: 220px;">
+		</div>
+
+	<div class="textBlock">
+		<h2>Defining Color Sequences</h2>
+
+		<p>Deserving of its own write-up, one often overlooked aspect of color systems is their ability to support charts and graphs. There are 12 color sequences that should be defined for a chart system and they require a full pallet of colors including hot, warm, neutral, cool, cold, and status colors. In order to generate the necessary color sequences, I created a unique color system specific for Chart System Pro. While these colors may be customized, they provide users with the necessary components from the start and can act as a reference for future customizations.</p>
+
+	</div>
+		<div class="imgBlock">
+			<img src="color_sequences.png" alt="12 color sequences including categorical, sequential, and divergent variations" class="imgFrame frameStyleSlide">
+		</div>
+	<div class="textBlock">
+
+		<p>In generating the color sequences, I researched and utilized best practices advocated by IBM and others. Perhaps the most evident best practice utilized is ensuring high contrast levels for adjacent plot sequences.</p>
+
+	</div>
+		<div class="imgBlock" style="height: 275px;">
+			<img src="sequential_multicolor.png" alt="Sequential multicolor palette with high contrast for adjacent plot sequences" class="imgFrame frameStyleSlide" style="position: absolute;left: -20%;width: 140%;height: 275px;">
+		</div>
+
+	<div class="textBlock">
+		<p>At a high level, the types of sequences are as follows. Categorical sequences are utilized for graphs where there is no direct relationship between plot points such as car brands. Sequential color sequences convey a relative order to each plot point such as dates, and divergent color sequences convey a relative order, but between two opposing directions such as temperature. Overall, the 12 sequences include 16, 8, and 4 color variations and they are all defined and organized within Figma’s style selector making for over 336 defined color sequence styles.</p>
+
+	</div>
+
+	<div class="textBlock">
+		<h2>Figma Limitations</h2>
+
+		<p>While Figma is incredibly powerful, a lot of wish-list items came out of this project. One major limitation of Figma (at the time) is the inability to swap components or resize elements inside a component. For instance, when displaying a plot group, it would be great to be able to add or remove however many plot values are necessary for the graph. To work-around this restriction, I created a large number of values which would be made hidden when they are not needed.</p>
+
+		<p>Another big limitation is the ability to manipulate stacked bar charts and stacked area charts. The manipulation of these are extremely tedious as there is no object awareness between each plot sequence. So, for now, I chose not to include these chart types.</p>
+
+		<p>Other wish-list items include better tools for managing defined styles, the ability to set a custom anchor point, the ability to tab through vector points, display toggle off borders on specific sides of a shape, and set frames to fill available space.</p>
+
+	</div>
+
+	<div class="textBlock">
+		<h2>Next Steps</h2>
+
+		<p>With the grid-based charts and graphs well defined, I eventually plan to add additional chart types such as pie-charts, funnels, heat-maps, and spider charts, etc. I am incredibly proud of the quality and level of detail in Chart System Pro and hope other designers find it useful and time-saving. In the immediate future, I have a variety of marketing initiatives underway to broaden the awareness of Chart System Pro and promote its use.</p>
+
+	</div>
+
+		<div class="imgBlock">
+			<img src="ECG_gif.gif" alt="Animated ECG chart demonstration showing real-time data visualization capabilities" class="imgFrame frameStyleSlide" style="height: 451px;">
+		</div>
+
+
+
+
+</main><!-- end pageContent -->
+
+<div class="pageWrapRow pageFooter">
+	footer
+</div>
+</div><!-- end pagewrap -->
+
+<script>
+	$( ".imgFrame" ).click(function() {
+	  var src = $(this).attr('src');
+        $("#lightbox_content").css("background-image", "url(" + src + ")");
+    	$("#lightbox").show();
+	});
+
+
+
+	$("#lightbox").click(function() {
+		$(this).hide();
+	});
+</script>
+
+<script>
+// Modern mobile navigation functionality
+(function() {
+	'use strict';
+	
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	
+	if (!navToggle || !navMenu) return;
+	
+	// Toggle mobile menu
+	function toggleMenu() {
+		const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+		navToggle.setAttribute('aria-expanded', !isExpanded);
+		navMenu.classList.toggle('open');
+		
+		// Manage focus for accessibility
+		if (!isExpanded) {
+			// Focus first nav link when menu opens
+			const firstLink = navMenu.querySelector('.nav-link');
+			if (firstLink) firstLink.focus();
+		}
+	}
+	
+	// Close menu when clicking outside
+	function closeMenu(event) {
+		if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Close menu when pressing escape
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+			navToggle.focus();
+		}
+	}
+	
+	// Close menu when clicking a nav link (mobile)
+	function closeOnNavClick() {
+		if (window.innerWidth <= 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Event listeners
+	navToggle.addEventListener('click', toggleMenu);
+	document.addEventListener('click', closeMenu);
+	document.addEventListener('keydown', handleKeydown);
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', closeOnNavClick);
+	});
+	
+	// Handle window resize - ensure menu is visible on desktop
+	window.addEventListener('resize', function() {
+		if (window.innerWidth > 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	});
+})();
+</script>
+</body>
+</html>
