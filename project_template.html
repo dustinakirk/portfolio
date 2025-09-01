@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ▼ EDIT: project-specific SEO -->
+  <title>Project Title Goes Here · Dustin Kirk</title>
+  <meta name="description" content="One or two sentences describing the project and why it exists." />
+  <link rel="canonical" href="https://www.dustinkirk.com/projects/project-slug.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Project Title Goes Here" />
+  <meta property="og:description" content="One or two sentences describing the project and why it exists." />
+  <meta property="og:image" content="https://www.dustinkirk.com/images/og/project-slug.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- ▲ EDIT: project-specific SEO -->
+
+  <link rel="icon" href="/images/favicon.ico" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;          /* slate-900 */
+      --muted:#475569;         /* slate-600 */
+      --subtle:#64748b;        /* slate-500 */
+      --accent:#2563eb;        /* blue-600 */
+      --accent-ink:#ffffff;
+      --border:#e5e7eb;        /* gray-200 */
+      --card:#f8fafc;          /* slate-50 */
+      --code-bg:#f1f5f9;       /* slate-100 */
+      --shadow:0 1px 2px rgba(2,6,23,.06), 0 8px 24px rgba(2,6,23,.08);
+      --radius:16px;
+      --container:72rem;
+    }
+
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg)}
+
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:#111;color:#fff;z-index:1000;border-radius:8px}
+
+    .site-header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);z-index:40}
+    .header-inner{max-width:var(--container);margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:.2px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:.75rem}
+    .avatar{width:40px;height:40px;border-radius:12px;border:1px solid var(--border);object-fit:cover;object-position:center;transform:scale(1.42)}
+    .nav{display:flex;gap:1rem;align-items:center}
+    .nav a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:999px}
+    .nav a:hover{background:var(--card);color:var(--text)}
+    .nav .back-link{display:flex;align-items:center;gap:.5rem;font-weight:500;color:var(--accent);background:rgba(37,99,235,.08)}
+    @media (max-width:700px){.nav .secondary{display:none}}
+
+    .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),#60a5fa);z-index:50}
+
+    main{max-width:var(--container);margin:0 auto;padding:2rem 1rem 5rem}
+    article{display:grid;grid-template-columns:minmax(0,1fr) 18rem;gap:3rem}
+    @media (max-width:1000px){article{grid-template-columns:1fr}}
+
+    .article-header{grid-column:1 / -1;margin-top:.5rem}
+    .kicker{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--subtle)}
+    h1{font-size:clamp(2rem,2.8vw + 1rem,3rem);line-height:1.1;margin:.25rem 0 1rem}
+    .meta{color:var(--subtle);font-size:.95rem;display:flex;flex-wrap:wrap;gap:.5rem 1rem}
+
+    .hero{border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:var(--shadow);margin:1.25rem 0 2rem}
+    .hero img{width:100%;display:block}
+
+    .tldr{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin:1.5rem 0}
+    .tldr strong{color:var(--text)}
+
+    article .content{min-width:0}
+    .content p{margin:1rem 0}
+    .content h2,.content h3{margin-top:2rem;line-height:1.25}
+    .content h2{font-size:1.5rem}
+    .content h3{font-size:1.25rem}
+
+    blockquote{border-left:4px solid var(--border);padding-left:1rem;margin:1.5rem 0;color:var(--muted);font-style:italic}
+
+    .figure{margin:1.25rem 0}
+    .figure img{width:100%;border-radius:12px;box-shadow:var(--shadow);cursor:zoom-in}
+    .figcaption{text-align:center;font-size:.9rem;color:var(--subtle);margin-top:.5rem}
+
+    .media-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .media-grid .item{grid-column:span 6}
+    .media-grid .item.wide{grid-column:span 12}
+    @media (max-width:720px){.media-grid .item{grid-column:span 12}}
+
+    .aside{position:sticky;top:5rem;align-self:start}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;box-shadow:var(--shadow)}
+    .stack{display:grid;gap:.5rem}
+    .badges{display:flex;flex-wrap:wrap;gap:.5rem}
+    .badge{border:1px solid var(--border);background:#fff;color:var(--muted);padding:.25rem .6rem;border-radius:999px;font-size:.85rem}
+
+    .note{border-left:4px solid var(--accent);background:linear-gradient(#fff,#fff),linear-gradient(90deg,transparent,rgba(37,99,235,.08));background-origin:border-box;background-clip:padding-box,border-box}
+
+    hr{border:none;height:1px;background:var(--border);margin:2.5rem 0}
+
+    .footer-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+    .footer-nav a{text-decoration:none;color:var(--accent);font-weight:500}
+
+    a{color:var(--accent);text-decoration-color:rgba(37,99,235,.3);text-underline-offset:3px}
+    a:hover{text-decoration-thickness:2px}
+
+    code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;background:var(--code-bg);border:1px solid var(--border);border-radius:10px}
+    pre{padding:1rem;overflow:auto}
+
+    @media print{.site-header,.progress,.footer-nav,.share{display:none !important}body{color:#000}.card{box-shadow:none}}
+
+    dialog#lightbox{padding:0;border:none;border-radius:16px;max-width:90vw;max-height:85vh}
+    dialog::backdrop{background:rgba(2,6,23,.5)}
+    .lightbox-img{display:block;width:100%;height:auto}
+    .lightbox-close{position:absolute;top:.5rem;right:.5rem;border:none;background:rgba(255,255,255,.85);border-radius:999px;padding:.35rem .6rem;cursor:pointer}
+
+    .anchor-link{opacity:0;margin-left:.25rem;text-decoration:none}
+    .content h2:hover .anchor-link,.content h3:hover .anchor-link{opacity:1}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="progress" id="progress"></div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="/" rel="home" aria-label="Back to home">
+        <img class="avatar" src="/images/dustin_kirk_avatar.png" alt="Dustin Kirk" />
+        <span>Dustin Kirk</span>
+      </a>
+      <nav class="nav" aria-label="Page navigation">
+        <a class="back-link" href="/#work" rel="up" id="backLink">← All Projects</a>
+        <div class="secondary">
+          <a href="/#about">About</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#contact">Contact</a>
+          <a href="/Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <article itemscope itemtype="https://schema.org/Article">
+      <header class="article-header">
+        <p class="kicker" itemprop="articleSection">Project</p>
+        <h1 itemprop="headline">Project Title Goes Here</h1>
+        <div class="meta">
+          <time datetime="2025-08-31" itemprop="datePublished">Aug 31, 2025</time>
+          <span role="separator" aria-hidden="true">•</span>
+          <span id="readingTime" aria-label="Estimated reading time">3 min read</span>
+          <span role="separator" aria-hidden="true">•</span>
+          <span>Role: <strong>Product Designer</strong></span>
+          <span role="separator" aria-hidden="true">•</span>
+          <span>Company: <strong>New Relic</strong></span>
+        </div>
+
+        <figure class="hero">
+          <img src="hero-placeholder.jpg" alt="Hero image representing the project" />
+        </figure>
+
+        <aside class="tldr card">
+          <strong>TL;DR:</strong> One or two sentences describing what this project is and why it exists. Keep it short for readers who skim.
+        </aside>
+      </header>
+
+      <div class="content" itemprop="articleBody">
+        <p>Use paragraphs like a blog post: set the scene, describe your contribution, and include brief reflections. Keep it lightweight — not every project requires a full case study.</p>
+
+        <h2 id="section-1">Context <a class="anchor-link" href="#section-1" aria-label="Direct link to Context">#</a></h2>
+        <p>What was the problem? Who was the audience? What constraints or timelines mattered?</p>
+
+        <div class="note card">
+          <strong>Note:</strong> Use these callouts for small insights or learnings worth highlighting.
+        </div>
+
+        <h2 id="section-2">Selected Screens <a class="anchor-link" href="#section-2">#</a></h2>
+        <div class="media-grid">
+          <figure class="item"><img class="js-zoom" src="screen-1.png" alt="Screen 1" /><figcaption class="figcaption">A key flow.</figcaption></figure>
+          <figure class="item"><img class="js-zoom" src="screen-2.png" alt="Screen 2" /><figcaption class="figcaption">Another moment.</figcaption></figure>
+          <figure class="item wide"><img class="js-zoom" src="screen-wide.png" alt="Wide mock or chart" /><figcaption class="figcaption">A wider spread or chart.</figcaption></figure>
+        </div>
+
+        <h2 id="section-3">Approach <a class="anchor-link" href="#section-3">#</a></h2>
+        <p>Summarize your approach at a high level. Bullet points are welcome for clarity.</p>
+        <ul>
+          <li>Quick discovery → define scope.</li>
+          <li>Sketch flows → clickable prototype.</li>
+          <li>Partner with eng/PM → ship incrementally.</li>
+        </ul>
+
+        <blockquote>Short quote or principle that guided the work.</blockquote>
+
+        <h2 id="section-4">What Shipped <a class="anchor-link" href="#section-4">#</a></h2>
+        <p>List the outcomes without forcing metrics if they don’t exist.</p>
+        <ul>
+          <li>New onboarding flow launched behind a flag.</li>
+          <li>Design tokens and components extended.</li>
+          <li>Internal docs for handoff.</li>
+        </ul>
+
+        <h3 id="section-5">If I had more time… <a class="anchor-link" href="#section-5">#</a></h3>
+        <p>Optional reflection space that humanizes the work.</p>
+
+        <hr />
+        <div class="share">
+          <button id="copyLink" class="badge" aria-label="Copy link to this page">Copy link</button>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <div class="card stack" role="complementary" aria-label="Project details">
+          <div>
+            <strong>Role</strong><br /> Product Designer
+          </div>
+          <div>
+            <strong>Responsibilities</strong>
+            <ul>
+              <li>Design system</li>
+              <li>High-fidelity mocks</li>
+              <li>Prototype & handoff</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Tools</strong>
+            <div class="badges">
+              <span class="badge">Figma</span>
+              <span class="badge">Sketch</span>
+              <span class="badge">Jira</span>
+            </div>
+          </div>
+          <div>
+            <strong>Links</strong><br />
+            <a href="#" target="_blank" rel="noopener">Live site</a>
+          </div>
+        </div>
+      </aside>
+
+      <footer class="footer-nav">
+        <a href="/#work" rel="up">← Back to all projects</a>
+        <a href="/projects/next.html" rel="next">Next project →</a>
+      </footer>
+
+      <meta itemprop="author" content="Dustin Kirk" />
+      <meta itemprop="image" content="https://www.dustinkirk.com/images/og/project-slug.jpg" />
+      <meta itemprop="publisher" content="Dustin Kirk" />
+    </article>
+  </main>
+
+  <dialog id="lightbox" aria-label="Image lightbox">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightboxImg" class="lightbox-img" alt="" />
+  </dialog>
+
+  <script>
+  /* Handle navigation to homepage sections */
+  (function() {
+    // Handle all links with hash fragments pointing to homepage
+    document.querySelectorAll('a[href^="/#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const hash = this.getAttribute('href').substring(1); // Remove leading '/'
+        // Navigate to homepage with hash
+        window.location.href = '/' + hash;
+      });
+    });
+
+    // Back link: prefer browser back if same-origin and not from homepage
+    const back = document.getElementById('backLink');
+    if (document.referrer && back) {
+      try {
+        const prev = new URL(document.referrer);
+        if (location.hostname === prev.hostname && prev.pathname !== '/') {
+          back.addEventListener('click', function(e){
+            e.preventDefault();
+            history.back();
+          });
+        }
+      } catch(e) {/* ignore */}
+    }
+  })();
+
+  /* Reading progress bar */
+  (function() {
+    const bar = document.getElementById('progress');
+    const main = document.querySelector('main');
+    function onScroll() {
+      const h = main.scrollHeight - window.innerHeight;
+      const y = window.scrollY;
+      const pct = Math.max(0, Math.min(1, y / h));
+      bar.style.width = (pct * 100).toFixed(2) + '%';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+
+  /* Estimate reading time (~220 wpm) */
+  (function() {
+    const el = document.getElementById('readingTime');
+    const body = document.querySelector('[itemprop="articleBody"]');
+    if (!el || !body) return;
+    const text = body.innerText || body.textContent || '';
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.max(1, Math.round(words / 220));
+    el.textContent = minutes + ' min read';
+  })();
+
+  /* Image lightbox using <dialog> */
+  (function(){
+    const dlg = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const closeBtn = dlg.querySelector('.lightbox-close');
+    function open(src, alt){
+      img.src = src;
+      img.alt = alt || '';
+      if (typeof dlg.showModal === 'function') dlg.showModal();
+      else dlg.setAttribute('open','');
+    }
+    function close(){ dlg.close ? dlg.close() : dlg.removeAttribute('open'); }
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target && target.classList.contains('js-zoom')) {
+        e.preventDefault();
+        const src = target.getAttribute('src');
+        const alt = target.getAttribute('alt') || '';
+        open(src, alt);
+      }
+    });
+    closeBtn.addEventListener('click', close);
+    dlg.addEventListener('click', (e) => {
+      const rect = img.getBoundingClientRect();
+      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+        close();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && (dlg.open || dlg.hasAttribute('open'))) close();
+    });
+  })();
+
+  /* Heading anchor links: ensure ids and add # anchor to h2/h3 if absent */
+  (function(){
+    document.querySelectorAll('.content h2, .content h3').forEach((h,i)=>{
+      if(!h.id){
+        h.id = (h.textContent || 'section') .toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') + '-' + (i+1);
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.className = 'anchor-link';
+        a.setAttribute('aria-label', 'Direct link to ' + h.textContent);
+        a.textContent = '#';
+        h.appendChild(a);
+      }
+    });
+  })();
+
+  /* Copy page link */
+  (function(){
+    const btn = document.getElementById('copyLink');
+    if (!btn) return;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        btn.textContent = 'Link copied ✔';
+        setTimeout(()=> btn.textContent = 'Copy link', 1500);
+      } catch(e) {
+        btn.textContent = 'Press ⌘/Ctrl+C to copy';
+        setTimeout(()=> btn.textContent = 'Copy link', 2000);
+      }
+    });
+  })();
+  </script>
+
+  <!-- Structured data (fill placeholders) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Project Title Goes Here",
+    "author": {"@type":"Person","name":"Dustin Kirk"},
+    "datePublished": "2025-08-31",
+    "dateModified": "2025-08-31",
+    "image": ["https://www.dustinkirk.com/images/og/project-slug.jpg"],
+    "publisher": {"@type":"Person","name":"Dustin Kirk"},
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.dustinkirk.com/projects/project-slug.html"}
+  }
+  </script>
+</body>
+</html>

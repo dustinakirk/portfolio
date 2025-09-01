@@ -1,0 +1,1 @@
+export const CONTACT_EMAIL = 'dustin.kirk@gmail.com';
