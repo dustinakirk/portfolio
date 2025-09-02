@@ -644,7 +644,7 @@ export default function PortfolioFresh() {
           <div id="hero-content" className="md:col-span-7">
             <motion.h1 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-extrabold tracking-tight">
               Principal Product Designer
-              <br className="hidden sm:block" /> AI Enthusiast
+              <br className="hidden sm:block" /> <span className="text-xl md:text-3xl">AI Enthusiast</span>
             </motion.h1>
             <p className="mt-4 text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl">
               Software is fundamentally changing with agentic systems, generative UI, and natrual language interfaces. 
@@ -732,6 +732,26 @@ export default function PortfolioFresh() {
                     <Rocket className="h-5 w-5" />
                   </span>
                   <div>
+                    <div className="font-medium mb-2">AI Technologist</div>
+                    <div className="text-sm opacity-70">Taking a hands-on approach to exploring the capabilities of AI today and envisioning where it will take us tomorrow.</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* AI Thought Leadership */}
+              <motion.div
+                id="highlight-ai-leadership"
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="shrink-0 p-2 rounded-xl bg-black/5 dark:bg-white/5">
+                    <Rocket className="h-5 w-5" />
+                  </span>
+                  <div>
                     <div className="font-medium mb-2">AI Thought Leadership</div>
                     <div className="text-sm opacity-70">Leading explorations, patterns, and mentorship to integrate AI capabilities across products and teams.</div>
                   </div>
@@ -800,16 +820,16 @@ export default function PortfolioFresh() {
 
               {/* Leadership & Mentorship - Full width on desktop for odd number */}
               <motion.div
-                id="highlight-leadership"
+                id="highlight-leadership2"
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5 md:col-span-2"
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5"
               >
                 <div className="flex items-start gap-3">
                   <span className="shrink-0 p-2 rounded-xl bg-black/5 dark:bg-white/5">
-                    <Users2 className="h-5 w-5" />
+                    <LayoutGrid className="h-5 w-5" />
                   </span>
                   <div>
                     <div className="font-medium mb-2">Leadership & Mentorship</div>
@@ -817,6 +837,7 @@ export default function PortfolioFresh() {
                   </div>
                 </div>
               </motion.div>
+
             </div>
           </div>
         </div>
