@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Lightbox from './Lightbox';
 
-function ProjectImage({ src, alt, className = "" }) {
+function ProjectImage({ src, alt, className = "", style = {} }) {
   const [showLightbox, setShowLightbox] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ function ProjectImage({ src, alt, className = "" }) {
           src={src} 
           alt={alt}
           className={`cursor-pointer hover:opacity-90 transition-opacity ${className}`}
-          style={{ maxHeight: '361px', width: '100%', objectFit: 'contain' }}
+          style={{ width: '100%', objectFit: 'contain', ...style }}
           onClick={() => setShowLightbox(true)}
         />
       </div>

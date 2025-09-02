@@ -13,13 +13,21 @@ function AiStoriesProject() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            I'm excited to share the project I've been working on for a while now called Nuvvel, 
-            which utilizes AI to generate detailed, rich stories for avid readers. You might think 
+            Nuvvel utilizes AI to generate detailed, rich stories for avid readers. You might think 
             of it as a mix between an endless Netflix series and a dedicated Wikipedia for each series. 
             The platform features interconnected characters, each with their own story arcs, and 
             immersive locations where events unfold, connecting everything together.
           </p>
         </div>
+
+
+        {/* Nuvvel Platform Screenshot */}
+        <ProjectImage 
+          src="/projects/aistories/nuvvel.png" 
+          alt="Nuvvel platform homepage showing AI-generated story collections and user interface"
+          className="rounded-lg shadow-lg"
+          style={{ height: '700px', width: 'auto' }}
+        />
 
         {/* Core Concept */}
         <div>
@@ -67,13 +75,6 @@ function AiStoriesProject() {
           </div>
         </div>
 
-        {/* Nuvvel Platform Screenshot */}
-        <ProjectImage 
-          src="/projects/aistories/nuvvel.png" 
-          alt="Nuvvel platform homepage showing AI-generated story collections and user interface"
-          className="rounded-lg shadow-lg"
-          style={{ height: '700px', width: 'auto' }}
-        />
 
         {/* Challenges Overcome */}
         <div>
