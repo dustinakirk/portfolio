@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+
+Hello!   The HTML, CSS, and JS were written by me.  Dustin Kirk
+
+-->	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title 60-65 characters -->
+	<title>How To Scaling A Design Team - Dustin Kirk's Portfolio</title>
+	<meta property="og:title" content="How To Scaling A Design Team" />
+
+	<!-- Description 150-155 characters (2-4 sentences) -->
+	<meta name="description" content="A summary of my research into enterprise SaaS product design teams, their structures and how I turned it into a roadmap for scaling a design team."/>
+	<meta property="og:description" content="A summary of my research into enterprise SaaS product design teams, their structures and how I turned it into a roadmap for scaling a design team."/>
+
+	<!-- Page Type -->
+	<meta property="og:type" content="article" />
+
+	<!-- Thumbnail Image -->
+	<meta property="og:image" content="https://www.dustinkirk.com/images/banner-scaling-thumb.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="1400"/>
+	<meta property="og:image:height" content="700"/>
+
+
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+<script src="https://kit.fontawesome.com/a320271d59.js" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179534252-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179534252-1');
+</script>
+</head>
+<body class="sticky">
+<a href="#main-content" class="skip-navigation">Skip to main content</a>
+<div class="pageWrap">
+
+
+<header class="site-header">
+	<div class="header-container">
+		<a href="https://www.dustinkirk.com" class="brand">
+			Dustin Kirk
+		</a>
+		<nav class="navigation" aria-label="Main navigation">
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</button>
+			<ul class="nav-menu" id="nav-menu">
+				<li>
+					<a href="https://www.dustinkirk.com" class="nav-link">Portfolio</a>
+				</li>
+				<li>
+					<a href="about.html" class="nav-link">About</a>
+				</li>
+				<li>
+					<a href="Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				</li>
+				<li>
+					<a href="https://dribbble.com/Dustin_Kirk" target="_blank" rel="noopener noreferrer" class="nav-link">Dribbble</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="lightbox">
+	<div id="lightbox_content"></div>
+</div>
+
+
+<main id="main-content" class="pageWrapRow pageContent">
+
+	<header class="portfolio-header">
+		<h1 class="pageTitle">Scaling A Design Team</h1>
+		<p class="pageSubtitle">A roadmap for growing a design team from 0 to 30.</p>
+	</header>
+
+	<div class="textBlock">
+		<p>Over the last few years I've spoken to many design team managers, watched countless videos, read up on design organizations, and gathered statistics around scaling design teams. And I've used this research to develop a roadmap for scaling Tealium's design team. While this approach is targeted toward Enterprise SaaS organization, the approach would be quite similar across different company types.</p>
+
+		<h2>How Many Designers</h2>
+
+		<p>At a basic level, it is important to understand just how many designers should be in a company. As Tealium is an Enterprise SaaS company with approximately 500 employees, I set out to gather some statistics on similar sized companies. Fortunately this was a fairly straight-forward task using LinkedIn. I was able to go to a company's page and search for people with relevant titles. I would then count up the people and add in any job postings they had for their design team. Through this ad-hoc approach, I dug into 17 companies which varied in size from 80 employees to over 1000.</p>
+
+		<p>A very apparent trend appeared which indicated that for Enterprise SaaS companies, design teams generally followed a 2% rule, with a slightly higher percentage for small companies. While not easily quantifiable, it is clear that by looking at the company's products, those with better looking UIs often had a designer ratio of 3%. Companies with an employee count greater than 1000 became difficult to gather accurate data on, so I stopped there.</p>
+
+		<p>I think the interesting part, at least in the case of Tealium, is that it was clear there was an imbalance in hiring. While it isn't exactly clear why Tealium was so imbalanced, the staffing most likely went to Sales or Support, both areas which should see improvements through better product design and usability.</p>
+
+
+	<div class="imgBlock" style="width:100%;">
+		<img src="team_size.svg" alt="Chart showing 2% rule for design team size in Enterprise SaaS companies with size comparisons" class="imgFrame framelessSlide" style="border: none; box-shadow: none;">
+	</div>
+
+		<h2>Design Roles</h2>
+
+		<p>There are a lot of ways to build out design teams, but I tried to distill some of the differences between how companies staffed their teams. Using this research I put together a roster that would be most appropriate for Tealium.</p>
+
+		<p>One notable trend was whether a company used "Product Designer" or "UX Designer" The use of these titles primarily determined by how large the company was and what coast the company was on. Larger organizations used the "UX Designer" title, possibly because it has been around longer. Smaller companies, especially those on the west coast used the title "Product Designer" for essentially the same purpose.</p>
+
+		<p>The Product Designer role is usually seen as encompassing both UX and UI design. UI Designer is not a common title any more, and instead has morphed into a Visual Designer title over time. And the Visual Designer title has come to encompass a larger set of design elements than just those related to UI. The role now plays a part in determining product branding, product creating product content, and owning the look and feel across all customer touch-points.</p>
+
+
+	<div class="imgBlock" style="width:100%;">
+		<img src="roles.svg" alt="Design team roles comparison showing Product Designer vs UX Designer titles and Visual Designer responsibilities" class="imgFrame framelessSlide" style="border: none; box-shadow: none; height:500px;">
+	</div>
+
+		<h2>Design Team Phases</h2>
+
+		<p>The composition of design teams and their needs obviously change as a company grows and I wanted to develop a strategy around when those changes would occur and how best to organize the team as it scales up. To research this, I again looked at companies of various sizes, assessed their job titles, and distilled the results into the following chart.</p>
+		
+		<div class="imgBlock" style="width:100%;">
+		<img src="org_phases.svg" alt="Design team organizational phases from startup (2 designers) to enterprise (30+ designers) with role evolution" class="imgFrame framelessSlide" style="border: none; box-shadow: none; height:400px;">
+	</div>
+		
+		<p>Small startups vary a lot in their approach, but often are quick to hire two designers. One Sr./Lead Product Designer as well as a Jr. Designer. These designers wear multiple hats completing everything from prototyping to conducting usability tests. As there is typically just one product, this setup can work until a second product is added, or the company grows to over 50 employees.</p>
+		
+		<p>When a company has around 200 employees, we can expect there to be about 5 designers. At this stage we might find about 4 developer teams working on different areas of the product. Companies vary in strategy, but often assign a designer to each developer team that is front-end facing. The 5th designer is utilized in a variety of ways, but today's trend is to begin dedicating an individual to the design system. This has many benefits, but primarily in increasing the efficiency of development through common components, and maintaining a unified look and feel as the products grow in size, all while keeping designers coordinated and working in unison.</p>
+		
+		<p>Doubling in size, at around 500 employees, we can expect to find 10 designers. At this point the design team is now composed of a mix of individuals dedicated to strategic positions (visual design, design system, research) and now a mix of both Sr. and Jr. level product designers. This mix allows Jr. product designers to build up familiarity with the product and be ready to fill Sr. level vacancies as they become available.</p>
+		
+		<p>Once at 20 designers (~1000 employees), we typically see the design organizations with a couple of managers. As most organizations try to stay as flat as possible, this may be just one additional manager. For the purposes of Tealium's roadmap, I've grouped the product designers under a Director of Product Design, while the strategic roles report to a VP position.</p>
+		
+		<p>And finally, scaling up the design team with 10 more designers gets us to an org chart with divisions for User Research, Design Strategy, and Product Design. Product Design is covering all feature related initiatives, Design strategy is looking across the platform as a whole as a resource for both designers and developers. And User Research serves cross-functional with the product team on discovery projects as well as supporting product designers through design validation.</p>
+
+		<h2>Supporting Dev Teams</h2>
+		
+		<p>We've looked at the correlation between company size and the design team size, but that is a pretty rough approximation for what goes on at a more detailed level. As a software company grows, it is growing its product feature set and typically offering additional products or services. All of this inherently means that the development teams are growing and the growth of the design team is a factor of the dev teams' velocity. That said, I've found that companies with less than 1000 employees typically have one Product Owner and one Sr. Product Designer for each front-end facing scrum team.</p>
+		
+		<p>Scrum teams cover much of the work, as a product suite grows, there are ancillary projects to account for as well. This ecosystem includes customer touch-points such as Support Portals, Documentation Portals, Community Forums, etc. Lastly, there is always overhead to account for. To keep overhead to a minimum, it is important to stave off filling positions in Design Strategy until their efficiency gains can be quickly realized.</p>
+		
+		<p>As an example of efficiency gains, a User Researcher would take on all tasks related to scheduling, designing tests, and analyzing test results. Shared across multiple product designers, freeing up their time from these tasks allows them to focus on feature design for a total efficiency gain of hiring another product designer. The payoff comes in that the specialized role includes having experience and expertise that bring additional knowledge, professionalism, and consistency to the craft.</p>
+		
+		<div class="imgBlock" style="width:100%;">
+		<img src="staffing.svg" alt="Staffing strategy for supporting development teams with one Product Designer per front-end scrum team" class="imgFrame framelessSlide" style="border: none; box-shadow: none;">
+	</div>
+
+	</div>
+
+
+</main><!-- end pageContent -->
+
+<div class="pageWrapRow pageFooter">
+	footer
+</div>
+</div><!-- end pagewrap -->
+<script>
+	$( ".imgFrame" ).click(function() {
+	  var src = $(this).attr('src');
+        $("#lightbox_content").css("background-image", "url(" + src + ")");
+    	$("#lightbox").show();
+	});
+
+
+
+	$("#lightbox").click(function() {
+		$(this).hide();
+	});
+</script>
+
+<script>
+// Modern mobile navigation functionality
+(function() {
+	'use strict';
+	
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	
+	if (!navToggle || !navMenu) return;
+	
+	// Toggle mobile menu
+	function toggleMenu() {
+		const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+		navToggle.setAttribute('aria-expanded', !isExpanded);
+		navMenu.classList.toggle('open');
+		
+		// Manage focus for accessibility
+		if (!isExpanded) {
+			// Focus first nav link when menu opens
+			const firstLink = navMenu.querySelector('.nav-link');
+			if (firstLink) firstLink.focus();
+		}
+	}
+	
+	// Close menu when clicking outside
+	function closeMenu(event) {
+		if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Close menu when pressing escape
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+			navToggle.focus();
+		}
+	}
+	
+	// Close menu when clicking a nav link (mobile)
+	function closeOnNavClick() {
+		if (window.innerWidth <= 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Event listeners
+	navToggle.addEventListener('click', toggleMenu);
+	document.addEventListener('click', closeMenu);
+	document.addEventListener('keydown', handleKeydown);
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', closeOnNavClick);
+	});
+	
+	// Handle window resize - ensure menu is visible on desktop
+	window.addEventListener('resize', function() {
+		if (window.innerWidth > 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	});
+})();
+</script>
+</body>
+</html>

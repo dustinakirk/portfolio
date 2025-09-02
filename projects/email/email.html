@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Project-specific SEO -->
+  <title>Generative Email & User Management · Dustin Kirk</title>
+  <meta name="description" content="AI-powered email interfaces with statistical dashboards showing how 70% of corporate emails contain parseable names for improved user experience." />
+  <link rel="canonical" href="https://www.dustinkirk.com/projects/email.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Generative Email & User Management" />
+  <meta property="og:description" content="AI-powered email interfaces with statistical dashboards showing how 70% of corporate emails contain parseable names for improved user experience." />
+  <meta property="og:image" content="https://www.dustinkirk.com/projects/email/invite_form.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/images/favicon.ico" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;          /* slate-900 */
+      --muted:#475569;         /* slate-600 */
+      --subtle:#64748b;        /* slate-500 */
+      --accent:#2563eb;        /* blue-600 */
+      --accent-ink:#ffffff;
+      --border:#e5e7eb;        /* gray-200 */
+      --card:#f8fafc;          /* slate-50 */
+      --code-bg:#f1f5f9;       /* slate-100 */
+      --shadow:0 1px 2px rgba(2,6,23,.06), 0 8px 24px rgba(2,6,23,.08);
+      --radius:16px;
+      --container:72rem;
+    }
+
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg)}
+
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:#111;color:#fff;z-index:1000;border-radius:8px}
+
+    .site-header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);z-index:40}
+    .header-inner{max-width:var(--container);margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:.2px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:.75rem}
+    .avatar{width:40px;height:40px;border-radius:12px;border:1px solid var(--border);object-fit:cover;object-position:center;transform:scale(1.42)}
+    .nav{display:flex;gap:1rem;align-items:center}
+    .nav a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:999px}
+    .nav a:hover{background:var(--card);color:var(--text)}
+    .nav .back-link{display:flex;align-items:center;gap:.5rem;font-weight:500;color:var(--accent);background:rgba(37,99,235,.08)}
+    @media (max-width:700px){.nav .secondary{display:none}}
+
+    .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),#60a5fa);z-index:50}
+
+    main{max-width:var(--container);margin:0 auto;padding:2rem 1rem 5rem}
+    article{display:grid;grid-template-columns:minmax(0,1fr) 18rem;gap:3rem}
+    @media (max-width:1000px){article{grid-template-columns:1fr}}
+
+    .article-header{grid-column:1 / -1;margin-top:.5rem}
+    .kicker{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--subtle)}
+    h1{font-size:clamp(2rem,2.8vw + 1rem,3rem);line-height:1.1;margin:.25rem 0 1rem}
+    .meta{color:var(--subtle);font-size:.95rem;display:flex;flex-wrap:wrap;gap:.5rem 1rem}
+
+    .hero{border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:var(--shadow);margin:1.25rem 0 2rem}
+    .hero img{width:100%;display:block}
+
+    .tldr{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin:1.5rem 0}
+    .tldr strong{color:var(--text)}
+
+    article .content{min-width:0}
+    .content p{margin:1rem 0}
+    .content h2,.content h3{margin-top:2rem;line-height:1.25}
+    .content h2{font-size:1.5rem}
+    .content h3{font-size:1.25rem}
+
+    blockquote{border-left:4px solid var(--border);padding-left:1rem;margin:1.5rem 0;color:var(--muted);font-style:italic}
+
+    .figure{margin:1.25rem 0}
+    .figure img{width:100%;border-radius:12px;box-shadow:var(--shadow);cursor:zoom-in}
+    .figcaption{text-align:center;font-size:.9rem;color:var(--subtle);margin-top:.5rem}
+
+    .media-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .media-grid .item{grid-column:span 6}
+    .media-grid .item.wide{grid-column:span 12}
+    @media (max-width:720px){.media-grid .item{grid-column:span 12}}
+
+    .aside{position:sticky;top:5rem;align-self:start}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;box-shadow:var(--shadow)}
+    .stack{display:grid;gap:.5rem}
+    .badges{display:flex;flex-wrap:wrap;gap:.5rem}
+    .badge{border:1px solid var(--border);background:#fff;color:var(--muted);padding:.25rem .6rem;border-radius:999px;font-size:.85rem}
+
+    .note{border-left:4px solid var(--accent);background:linear-gradient(#fff,#fff),linear-gradient(90deg,transparent,rgba(37,99,235,.08));background-origin:border-box;background-clip:padding-box,border-box}
+
+    hr{border:none;height:1px;background:var(--border);margin:2.5rem 0}
+
+    .footer-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+    .footer-nav a{text-decoration:none;color:var(--accent);font-weight:500}
+
+    a{color:var(--accent);text-decoration-color:rgba(37,99,235,.3);text-underline-offset:3px}
+    a:hover{text-decoration-thickness:2px}
+
+    code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;background:var(--code-bg);border:1px solid var(--border);border-radius:10px}
+    pre{padding:1rem;overflow:auto}
+    code{padding:.125rem .25rem;font-size:.875em}
+
+    ul,ol{margin:1rem 0;padding-left:1.5rem}
+    li{margin:.25rem 0}
+
+    @media print{.site-header,.progress,.footer-nav,.share{display:none !important}body{color:#000}.card{box-shadow:none}}
+
+    dialog#lightbox{padding:0;border:none;border-radius:16px;max-width:90vw;max-height:85vh}
+    dialog::backdrop{background:rgba(2,6,23,.5)}
+    .lightbox-img{display:block;width:100%;height:auto}
+    .lightbox-close{position:absolute;top:.5rem;right:.5rem;border:none;background:rgba(255,255,255,.85);border-radius:999px;padding:.35rem .6rem;cursor:pointer}
+
+    .anchor-link{opacity:0;margin-left:.25rem;text-decoration:none}
+    .content h2:hover .anchor-link,.content h3:hover .anchor-link{opacity:1}
+
+    /* Interactive demo styles */
+    .demo-container{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:2rem 0}
+    .demo-form{display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem}
+    .demo-label{font-weight:500;color:var(--text);font-size:.9rem}
+    .demo-input{padding:.75rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:1rem;transition:border-color .2s}
+    .demo-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+    .demo-output{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;min-height:80px;display:none}
+    .demo-output.active{display:block}
+    .demo-field{display:flex;gap:.5rem;margin:.5rem 0}
+    .demo-field-label{font-weight:500;color:var(--muted)}
+    .demo-field-value{color:var(--text)}
+    .demo-note{font-size:.85rem;color:var(--subtle);margin-top:.5rem}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="progress" id="progress"></div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="/" rel="home" aria-label="Back to home">
+        <img class="avatar" src="/images/dustin_kirk_avatar.png" alt="Dustin Kirk" />
+        <span>Dustin Kirk</span>
+      </a>
+      <nav class="nav" aria-label="Page navigation">
+        <a class="back-link" href="/#work" rel="up" id="backLink">← All Projects</a>
+        <div class="secondary">
+          <a href="/#about">About</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#contact">Contact</a>
+          <a href="/Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <article itemscope itemtype="https://schema.org/Article">
+      <header class="article-header">
+        <p class="kicker" itemprop="articleSection">AI & Innovation</p>
+        <h1 itemprop="headline">Generative Email & User Management</h1>
+        <div class="meta">
+          <time datetime="2020-10-07" itemprop="datePublished">Oct 7, 2020</time>
+          <span role="separator" aria-hidden="true">•</span>
+          <span id="readingTime" aria-label="Estimated reading time">5 min read</span>
+          <span role="separator" aria-hidden="true">•</span>
+          <span>Role: <strong>Product Designer</strong></span>
+          <span role="separator" aria-hidden="true">•</span>
+          <span>Company: <strong>Tealium</strong></span>
+        </div>
+
+        <figure class="hero">
+          <img src="invite_form.png" alt="Email invite form interface showing intelligent name parsing from email addresses" />
+        </figure>
+
+        <aside class="tldr card">
+          <strong>TL;DR:</strong> Transformed a mundane email invite process into a delightful experience by automatically parsing first and last names from 70% of corporate email addresses, reducing data entry friction and improving user onboarding efficiency.
+        </aside>
+      </header>
+
+      <div class="content" itemprop="articleBody">
+        <p>One of my favorite things as a product designer is identifying ways to make a user's experience delightful. When an opportunity presents itself to add a little delight, particularly when the effort required is minimal, I get very excited. Such was the case when working on a feature for sending invites to users.</p>
+
+        <h2 id="the-challenge">The Challenge <a class="anchor-link" href="#the-challenge" aria-label="Direct link to The Challenge">#</a></h2>
+        <p>In enterprise applications, administrators send invites to future users by entering email addresses. Traditionally, this requires the invited user to fill out their complete profile information upon registration—first name, last name, company, and title. But what if we could make this process more intelligent?</p>
+
+        <p>The insight came from one of my <a href="/projects/pillars/index.html">4 Pillars of Enterprise Application Design</a>: efficiency. Specifically, the principle of not requiring users to enter the same information twice and providing meaningful default values whenever possible.</p>
+
+        <div class="note card">
+          <strong>Design Principle:</strong> In enterprise software, reducing friction in user onboarding directly impacts adoption rates and user satisfaction.
+        </div>
+
+        <h2 id="data-driven-discovery">Data-Driven Discovery <a class="anchor-link" href="#data-driven-discovery">#</a></h2>
+        <p>To validate my hypothesis that corporate email addresses often contain parseable name information, I analyzed our customer database. The results were compelling:</p>
+
+        <figure class="figure">
+          <img class="js-zoom" src="stats.png" alt="Statistical analysis showing 70% of corporate emails contain parseable names" />
+          <figcaption class="figcaption">Over 70% of corporate email addresses follow patterns that allow automatic name extraction.</figcaption>
+        </figure>
+
+        <p>The analysis revealed that corporate email addresses commonly follow these patterns:</p>
+        <ul>
+          <li><code>{first}.{last}@company.com</code></li>
+          <li><code>{first}-{last}@company.com</code></li>
+          <li><code>{first}_{last}@company.com</code></li>
+          <li><code>{first}.{middle}.{last}@company.com</code></li>
+          <li><code>{first}-{middle}-{last}@company.com</code></li>
+          <li><code>{first}_{middle}_{last}@company.com</code></li>
+        </ul>
+
+        <p>Additionally, when users copy and paste email addresses from their address books, the format often includes the full name:</p>
+        <ul>
+          <li><code>Joe Smith &lt;smith@acme.com&gt;</code></li>
+          <li><code>Jane Doe &lt;jdoe@acme.com&gt;</code></li>
+        </ul>
+
+        <h2 id="implementation-approach">Implementation Approach <a class="anchor-link" href="#implementation-approach">#</a></h2>
+        <p>The solution provides benefits at two critical touchpoints:</p>
+
+        <h3 id="administrator-experience">For Administrators <a class="anchor-link" href="#administrator-experience">#</a></h3>
+        <p>Once an email is entered, a user record is created in the system. Without name parsing, administrators would only see email addresses in their user list, making it difficult to identify specific users. With automatic name extraction, the system displays meaningful names rather than cryptic email addresses.</p>
+
+        <h3 id="user-experience">For Invited Users <a class="anchor-link" href="#user-experience">#</a></h3>
+        <p>When users click their invitation link, over 70% find their first and last names pre-populated in the registration form. They only need to add their job title, significantly reducing onboarding friction.</p>
+
+        <figure class="figure">
+          <img class="js-zoom" src="users.png" alt="User registration form with pre-filled names derived from email addresses" />
+          <figcaption class="figcaption">Registration forms with intelligently pre-filled data create a smoother onboarding experience.</figcaption>
+        </figure>
+
+        <h2 id="design-considerations">Design Considerations <a class="anchor-link" href="#design-considerations">#</a></h2>
+        <p>One critical design decision was whether to show the derived names to administrators during email entry. Displaying them as input fields might create a sense of obligation to fill or correct them, adding unnecessary work. Showing them as non-editable text could cause frustration.</p>
+
+        <blockquote>The best interface is often the one that doesn't require any interaction at all.</blockquote>
+
+        <p>The solution: Don't show the derived names during email entry. Let administrators focus on entering emails quickly. The names appear automatically in the system after submission, and administrators can edit them later if needed—but without any sense of obligation during the initial workflow.</p>
+
+        <h2 id="interactive-demo">Interactive Demo <a class="anchor-link" href="#interactive-demo">#</a></h2>
+        <p>Try it yourself! Enter an email address below to see how the name parsing works:</p>
+
+        <div class="demo-container">
+          <div class="demo-form">
+            <label class="demo-label" for="emailInput">Email Address:</label>
+            <input type="text" id="emailInput" class="demo-input" placeholder="john.smith@company.com" />
+            <p class="demo-note">Try formats like: first.last@, first-last@, or "Name &lt;email@&gt;"</p>
+          </div>
+          <div id="demoOutput" class="demo-output">
+            <div class="demo-field">
+              <span class="demo-field-label">First Name:</span>
+              <span class="demo-field-value" id="firstName">—</span>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field-label">Last Name:</span>
+              <span class="demo-field-value" id="lastName">—</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="impact-and-results">Impact & Results <a class="anchor-link" href="#impact-and-results">#</a></h2>
+        <p>This seemingly small enhancement had significant impact:</p>
+        <ul>
+          <li><strong>70% reduction</strong> in form fields for the majority of users during registration</li>
+          <li><strong>Improved administrator experience</strong> with meaningful user records instead of email-only entries</li>
+          <li><strong>Zero additional effort</strong> required from administrators during the invite process</li>
+          <li><strong>Increased delight</strong> when users see their names already filled in</li>
+        </ul>
+
+        <h3 id="lessons-learned">Lessons Learned <a class="anchor-link" href="#lessons-learned">#</a></h3>
+        <p>This project reinforced several key design principles:</p>
+        <ul>
+          <li>Small, intelligent features can have outsized impact on user experience</li>
+          <li>Data analysis should drive design decisions</li>
+          <li>Sometimes the best UI is no UI—automation beats interaction</li>
+          <li>Consider the entire ecosystem when designing features (both admin and end-user perspectives)</li>
+        </ul>
+
+        <hr />
+        <div class="share">
+          <button id="copyLink" class="badge" aria-label="Copy link to this page">Copy link</button>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <div class="card stack" role="complementary" aria-label="Project details">
+          <div>
+            <strong>Role</strong><br /> Product Designer
+          </div>
+          <div>
+            <strong>Responsibilities</strong>
+            <ul>
+              <li>User research</li>
+              <li>Data analysis</li>
+              <li>Interaction design</li>
+              <li>Prototype development</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Tools</strong>
+            <div class="badges">
+              <span class="badge">Sketch</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">SQL</span>
+              <span class="badge">Analytics</span>
+            </div>
+          </div>
+          <div>
+            <strong>Impact</strong>
+            <ul>
+              <li>70% automation rate</li>
+              <li>Reduced onboarding friction</li>
+              <li>Improved data quality</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <footer class="footer-nav">
+        <a href="/#work" rel="up">← Back to all projects</a>
+        <a href="/projects/scaling/index.html" rel="next">Next project →</a>
+      </footer>
+
+      <meta itemprop="author" content="Dustin Kirk" />
+      <meta itemprop="image" content="https://www.dustinkirk.com/projects/email/invite_form.png" />
+      <meta itemprop="publisher" content="Dustin Kirk" />
+    </article>
+  </main>
+
+  <dialog id="lightbox" aria-label="Image lightbox">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightboxImg" class="lightbox-img" alt="" />
+  </dialog>
+
+  <script>
+  /* Handle navigation to homepage sections */
+  (function() {
+    // Handle all links with hash fragments pointing to homepage
+    document.querySelectorAll('a[href^="/#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const hash = this.getAttribute('href').substring(1); // Remove leading '/'
+        // Navigate to homepage with hash
+        window.location.href = '/' + hash;
+      });
+    });
+
+    // Back link: prefer browser back if same-origin and not from homepage
+    const back = document.getElementById('backLink');
+    if (document.referrer && back) {
+      try {
+        const prev = new URL(document.referrer);
+        if (location.hostname === prev.hostname && prev.pathname !== '/') {
+          back.addEventListener('click', function(e){
+            e.preventDefault();
+            history.back();
+          });
+        }
+      } catch(e) {/* ignore */}
+    }
+  })();
+
+  /* Reading progress bar */
+  (function() {
+    const bar = document.getElementById('progress');
+    const main = document.querySelector('main');
+    function onScroll() {
+      const h = main.scrollHeight - window.innerHeight;
+      const y = window.scrollY;
+      const pct = Math.max(0, Math.min(1, y / h));
+      bar.style.width = (pct * 100).toFixed(2) + '%';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+
+  /* Estimate reading time (~220 wpm) */
+  (function() {
+    const el = document.getElementById('readingTime');
+    const body = document.querySelector('[itemprop="articleBody"]');
+    if (!el || !body) return;
+    const text = body.innerText || body.textContent || '';
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.max(1, Math.round(words / 220));
+    el.textContent = minutes + ' min read';
+  })();
+
+  /* Image lightbox using <dialog> */
+  (function(){
+    const dlg = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const closeBtn = dlg.querySelector('.lightbox-close');
+    function open(src, alt){
+      img.src = src;
+      img.alt = alt || '';
+      if (typeof dlg.showModal === 'function') dlg.showModal();
+      else dlg.setAttribute('open','');
+    }
+    function close(){ dlg.close ? dlg.close() : dlg.removeAttribute('open'); }
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target && target.classList.contains('js-zoom')) {
+        e.preventDefault();
+        const src = target.getAttribute('src');
+        const alt = target.getAttribute('alt') || '';
+        open(src, alt);
+      }
+    });
+    closeBtn.addEventListener('click', close);
+    dlg.addEventListener('click', (e) => {
+      const rect = img.getBoundingClientRect();
+      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+        close();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && (dlg.open || dlg.hasAttribute('open'))) close();
+    });
+  })();
+
+  /* Heading anchor links: ensure ids and add # anchor to h2/h3 if absent */
+  (function(){
+    document.querySelectorAll('.content h2, .content h3').forEach((h,i)=>{
+      if(!h.id){
+        h.id = (h.textContent || 'section') .toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') + '-' + (i+1);
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.className = 'anchor-link';
+        a.setAttribute('aria-label', 'Direct link to ' + h.textContent);
+        a.textContent = '#';
+        h.appendChild(a);
+      }
+    });
+  })();
+
+  /* Copy page link */
+  (function(){
+    const btn = document.getElementById('copyLink');
+    if (!btn) return;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        btn.textContent = 'Link copied ✔';
+        setTimeout(()=> btn.textContent = 'Copy link', 1500);
+      } catch(e) {
+        btn.textContent = 'Press ⌘/Ctrl+C to copy';
+        setTimeout(()=> btn.textContent = 'Copy link', 2000);
+      }
+    });
+  })();
+
+  /* Email parsing demo */
+  (function() {
+    const input = document.getElementById('emailInput');
+    const output = document.getElementById('demoOutput');
+    const firstNameEl = document.getElementById('firstName');
+    const lastNameEl = document.getElementById('lastName');
+
+    function parseEmail(email) {
+      if (!email || email.indexOf('@') < 0) {
+        return { firstName: '', lastName: '' };
+      }
+
+      // Check for "Name <email>" format
+      if (email.indexOf('<') >= 0 && email.indexOf('>') >= 0) {
+        const nameContent = email.split('<')[0].trim();
+        const names = nameContent.split(' ');
+        const nameLength = names.length;
+        if (nameLength >= 2) {
+          return {
+            firstName: names[0],
+            lastName: names[nameLength - 1]
+          };
+        }
+      }
+
+      // Parse email address patterns
+      const firstPart = email.split('@')[0];
+      
+      // Try different separators
+      const separators = ['.', '-', '_'];
+      for (const sep of separators) {
+        const parts = firstPart.split(sep);
+        if (parts.length === 2) {
+          if (parts[0].length > 1 && parts[1].length > 1) {
+            return {
+              firstName: parts[0].charAt(0).toUpperCase() + parts[0].slice(1),
+              lastName: parts[1].charAt(0).toUpperCase() + parts[1].slice(1)
+            };
+          }
+        } else if (parts.length === 3) {
+          // Handle middle initial/name
+          if (parts[0].length > 1 && parts[2].length > 1) {
+            return {
+              firstName: parts[0].charAt(0).toUpperCase() + parts[0].slice(1),
+              lastName: parts[2].charAt(0).toUpperCase() + parts[2].slice(1)
+            };
+          }
+        }
+      }
+
+      return { firstName: '', lastName: '' };
+    }
+
+    function updateDisplay() {
+      const email = input.value;
+      const { firstName, lastName } = parseEmail(email);
+      
+      if (firstName || lastName) {
+        output.classList.add('active');
+        firstNameEl.textContent = firstName || '—';
+        lastNameEl.textContent = lastName || '—';
+      } else {
+        output.classList.remove('active');
+        firstNameEl.textContent = '—';
+        lastNameEl.textContent = '—';
+      }
+    }
+
+    if (input) {
+      input.addEventListener('input', updateDisplay);
+      input.addEventListener('keyup', updateDisplay);
+    }
+  })();
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Generative Email & User Management",
+    "author": {"@type":"Person","name":"Dustin Kirk"},
+    "datePublished": "2020-10-07",
+    "dateModified": "2020-10-07",
+    "image": ["https://www.dustinkirk.com/projects/email/invite_form.png"],
+    "publisher": {"@type":"Person","name":"Dustin Kirk"},
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.dustinkirk.com/projects/email.html"}
+  }
+  </script>
+</body>
+</html>

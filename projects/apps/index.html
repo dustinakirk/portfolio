@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+
+Hello!   The HTML, CSS, and JS were written by me.  Dustin Kirk
+
+-->	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title 60-65 characters -->
+	<title>iOS Apps - Dustin Kirk's Portfolio</title>
+	<meta property="og:title" content="A look at iOS Apps designed and designed and developed by Dustin Kirk" />
+
+	<!-- Description 150-155 characters (2-4 sentences) -->
+	<meta name="description" content="A brief story for each of the 7 iOS apps I developed as a hobby over the years including games, flashcards, travel bingo, scorecards, and more."/>
+	<meta property="og:description" content="A brief story for each of the 7 iOS apps I developed as a hobby over the years including games, flashcards, travel bingo, scorecards, and more."/>
+
+	<!-- Page Type -->
+	<meta property="og:type" content="article" />
+
+	<!-- Thumbnail Image -->
+	<meta property="og:image" content="https://www.dustinkirk.com/images/banner-apps-thumb.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="1400"/>
+	<meta property="og:image:height" content="700"/>
+
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script src="https://kit.fontawesome.com/a320271d59.js" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179534252-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179534252-1');
+</script>
+</head>
+<body class="sticky">
+<a href="#main-content" class="skip-navigation">Skip to main content</a>
+<div class="pageWrap">
+
+
+<header class="site-header">
+	<div class="header-container">
+		<a href="https://www.dustinkirk.com" class="brand">
+			Dustin Kirk
+		</a>
+		<nav class="navigation" aria-label="Main navigation">
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</button>
+			<ul class="nav-menu" id="nav-menu">
+				<li>
+					<a href="https://www.dustinkirk.com" class="nav-link">Portfolio</a>
+				</li>
+				<li>
+					<a href="about.html" class="nav-link">About</a>
+				</li>
+				<li>
+					<a href="Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				</li>
+				<li>
+					<a href="https://dribbble.com/Dustin_Kirk" target="_blank" rel="noopener noreferrer" class="nav-link">Dribbble</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="lightbox">
+	<div id="lightbox_content"></div>
+</div>
+
+<main id="main-content" class="pageWrapRow pageContent">
+
+	<header class="portfolio-header">
+		<h1 class="pageTitle">iOS Apps</h1>
+		<p class="pageSubtitle">A library of apps designed and developed by me.</p>
+	</header>
+
+	<figure class="imgBlock" style="height:300px;">
+		<img src="panorama.png" alt="Panoramic view of various iOS app screenshots" class="imgFrame frameStylePano" style="border: none; box-shadow: none;">
+	</figure>
+
+	<div class="textBlock">
+		<p>Growing in the Black Hills of South Dakota, I designed and developed websites for local businesses in the tourism industry. With a strong interest in computers I continued that interest by getting a dual major in Computer Science and Psychology at Rensselaer in upstate New York as well as a master's degree in Human Computer Interaction. I have since worked professionally as UX / Product Designer but have maintained my interest in development through various hobbies over the years.</p>
+
+		<p>In 2009 I began designing and developing mobile apps, primarily for fun, but as a potential income source. While the income never amounted to much and I don't have time these days to continue work on them, the apps were great fun to work on and a few continue to be available for download today.</p>
+
+		<h2>Stacks</h2>
+
+		<p>Stacks, a flashcard application was my first application. The design was very much of the time with a skeuomorphic shelf and lights. The application featured packs of flashcards that were available for purchase and covered topics ranging from jokes and trivia to SAT vocabulary. To create the content, I hired people using <a href="http://www.elance.com">elance.com</a> for the most part, but also experimented with sites like Amazon Mechanical Turk, but with very poor results. At the time of launching this app, In-App-Purchase was a completely new API and wasn't public yet. It was a formidable challenge to navigate the iOS documentation and piece together the code needed to make the appropriate calls to Apple's servers. In the end it worked and launched alongside iOS 3.</p>
+	</div>
+		<figure class="imgBlock">
+			<img src="stacks.png" alt="Screenshot of Stacks flashcard app showing categories and interface" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</figure>
+	<div class="textBlock">
+
+		<h2>Mini Golf Scorecards</h2>
+
+		<p>Along the lines of simple app ideas that would be easy to make, I created Mini Golf Scorecards. While at the time there were few scorecard apps, there soon was a flood of competition. A few highlights of the app included some clever shortcuts such as double-tapping on an empty score entry to set it to par. The Plus and Minus buttons allowed a very straightforward score entry without opening a keypad. Additionally, if you played the same course twice, it would carry over all relevant data for your next game such as the title, hole count, and par for each hole.</p>
+
+	</div>
+		<div class="imgBlock">
+			<img src="golfscorecards.png" alt="Screenshot of Mini Golf Scorecards app showing scorecard interface with plus/minus buttons and par shortcuts" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+		<h2>Ducky Disc Golf Scorecards</h2>
+
+		<p>One of the apps I put the most effort into was an app for keeping track of scores when playing disc golf. With many lessons learned from Mini Golf Scorecards, I built out a proper database back-end along with an architecture to capture a tremendous amount of detail about disc golf play. With many releases over the years, feedback was incorporated from players and the app was even utilized among the professional disc golf circuit. The app could track GPS locations of Tee and Pin locations, as well as each throw which allowed detailed distance stats to be captured. Users could specify the disc they used, the flight pattern and more. Lastly, the app would generate nice visual scorecards that could be shared after the game.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="duckydiscgolf.png" alt="Screenshot of Ducky Disc Golf Scorecards app showing GPS tracking, disc selection and detailed scoring features" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+
+		<h2>Travel Bingo For Kids</h2>
+
+		<p>In a throwback to playing travel bingo on car trips growing up, I desired to create an app. This app was very simple in concept to build. I created over 150 tiles and grouped them into collections that could be purchased with in-app-purchase. The collections included city, neighborhood, highway, country, and more. While there wasn't anything particularly challenging about this app, it was the first app I created to work on both iPhone and iPad. Interestingly, Travel Bingo For Kids has provided the most income of all the apps I've made.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="travelbingo.png" alt="Screenshot of Travel Bingo For Kids app showing bingo grid with various travel-related items for iPhone and iPad" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+
+		<h2>Ducky Letters</h2>
+
+		<p>Coming back from a family holiday trip in which a lot of the game Bananagrams was played, I really wanted to continue to play on my phone. Unfortunately banana grams wasn't available as an app so I decided to make my own. Inspired by Bananagrams, I created a one-player version called Ducky Letters.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="duckyletters.png" alt="Screenshot of Ducky Letters word game app inspired by Bananagrams with drag-and-drop tile gameplay" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+
+		<p>The development of this app was one of the most challenging to date as I utilized many of the modern iOS capabilities including Sprite Kit, and needed to be able to drag and drop tiles around the game board. While a challenge, it worked tremendously well. Beyond the new APIs, I recall the most challenging aspect was to validate that all connected tiles were words or not, and if not, mark the specific tiles that were invalid. To validate the words, I build a recursive algorithm that would check each string of letters, including sub-strings, against the tournament scrabble word list. Through some optimizations I ended up with an extremely efficient design that was fast and could be run every time a tile dropped on the board.</p>
+
+		<h2>Ducky Doubles</h2>
+
+		<p>Capitalizing on the joy received from playing the game 2048, I decided to create my own variation. This app was built and submitted to the app store within 4 weeks. My particular twist on the 2048 game was the inclusion of a wildcard tile with a duck on it. Whatever tile the duck was swiped into, it would double in value. As the overall score increased, fewer ducks appeared making it ever more challenging. With this app, I'm particularly proud of the micro-interactions and effects that I added. The tiles have a lively feel as you swipe around, the score animates, and with each increase in level, confetti appears making it a joy to play.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="duckydoubles.png" alt="Screenshot of Ducky Doubles number puzzle game, a 2048 variation with wildcard duck tiles and animated effects" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+
+		<h2>Peak Active</h2>
+
+		<p>My most ambitious app to date is Peak Active and while I got really close to launching the app, my first child was born and I couldn't spend the time necessary to complete it. Frustrated by the requirement of hitting start at the beginning of an activity and stop at the end, I wanted to be able to simply derive activity from the data available.</p>
+	</div>
+		<div class="imgBlock">
+			<img src="peakactive.png" alt="Screenshot of Peak Active fitness tracking app showing automatic activity detection and motivational statistics" class="imgFrame frameStyleSlide" style="border: none; box-shadow: none;">
+		</div>
+	<div class="textBlock">
+
+
+		<p>Peak Active does just that, in real-time it looks at the activity captured whether from the iPhone or Apple Watch and determines if you are active and what kind of activity it is. It reports on the activity and you can choose to annotate it or not, but you never have to remember to interact with the app. Additionally, it provides a myriad of motivational aspects which make the app freakishly addictive through tracking statistics and displaying relevant celebrations when appropriate.</p>
+
+		<p>While there were many challenges with the app such as bringing together data from multiple sources, building out the calendar view, etc. The biggest challenge was in assigning activity to the appropriate data. This aspect becomes problematic whenever the time changes such as Daylight Savings Time, or the user flies to a new time-zone. Unfortunately I was unable to resolve this issue, but the challenge still remains.</p>
+
+	</div>
+
+
+
+
+
+</main><!-- end pageContent -->
+
+<div class="pageWrapRow pageFooter">
+	footer
+</div>
+</div><!-- end pagewrap -->
+
+<script>
+	$( ".imgFrame" ).click(function() {
+	  var src = $(this).attr('src');
+        $("#lightbox_content").css("background-image", "url(" + src + ")");
+    	$("#lightbox").show();
+	});
+
+
+
+	$("#lightbox").click(function() {
+		$(this).hide();
+	});
+</script>
+
+<script>
+// Modern mobile navigation functionality
+(function() {
+	'use strict';
+	
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	
+	if (!navToggle || !navMenu) return;
+	
+	// Toggle mobile menu
+	function toggleMenu() {
+		const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+		navToggle.setAttribute('aria-expanded', !isExpanded);
+		navMenu.classList.toggle('open');
+		
+		// Manage focus for accessibility
+		if (!isExpanded) {
+			// Focus first nav link when menu opens
+			const firstLink = navMenu.querySelector('.nav-link');
+			if (firstLink) firstLink.focus();
+		}
+	}
+	
+	// Close menu when clicking outside
+	function closeMenu(event) {
+		if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Close menu when pressing escape
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+			navToggle.focus();
+		}
+	}
+	
+	// Close menu when clicking a nav link (mobile)
+	function closeOnNavClick() {
+		if (window.innerWidth <= 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Event listeners
+	navToggle.addEventListener('click', toggleMenu);
+	document.addEventListener('click', closeMenu);
+	document.addEventListener('keydown', handleKeydown);
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', closeOnNavClick);
+	});
+	
+	// Handle window resize - ensure menu is visible on desktop
+	window.addEventListener('resize', function() {
+		if (window.innerWidth > 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	});
+})();
+</script>
+</body>
+</html>
