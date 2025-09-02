@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { CONTACT_EMAIL } from '../constants';
+import { Link } from "react-router-dom";
+import { CONTACT_EMAIL, WORK } from '../constants';
 import TestimonialsSection from './TestimonialsSection';
 // NOTE: Fix for build error — use the correct Lucide icon name "Image" and alias it locally
 // instead of importing a non-existent "ImageIcon" file from the CDN build.
@@ -123,137 +124,55 @@ function AvatarBlock() {
 
 // ===== Work Card =====
 function WorkCard({ item }) {
+  const isInternalLink = item.href?.startsWith("./projects/");
+  const linkPath = isInternalLink 
+    ? `/projects/${item.id}`
+    : item.href;
+
+  const CardWrapper = isInternalLink ? Link : 'a';
+  const cardProps = isInternalLink 
+    ? { to: linkPath }
+    : { href: linkPath, target: "_blank", rel: "noreferrer" };
+
   return (
-    <motion.a
-      href={item.href}
-      target={item.href?.startsWith("#") ? "_self" : "_blank"}
-      rel="noreferrer"
-      className="group block rounded-3xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur overflow-hidden hover:-translate-y-0.5 hover:shadow-xl transition-all"
+    <motion.div
+      className="group rounded-3xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur overflow-hidden hover:-translate-y-0.5 hover:shadow-xl transition-all"
       whileHover={{ y: -2 }}
     >
-      {/* Cover image / placeholder */}
-      <div className="aspect-[16/10]">
-        <SafeImg
-          src={item.image}
-          alt={item.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-          fallbackClassName="h-full w-full"
-        />
-      </div>
+      <CardWrapper {...cardProps} className="block">
+        {/* Cover image / placeholder */}
+        <div className="aspect-[16/10]">
+          <SafeImg
+            src={item.image}
+            alt={item.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            fallbackClassName="h-full w-full"
+          />
+        </div>
 
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-lg font-semibold leading-tight">{item.title}</h3>
-            <p className="mt-2 text-sm text-black/70 dark:text-white/70">{item.subtitle}</p>
+        <div className="p-5">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-semibold leading-tight">{item.title}</h3>
+              <p className="mt-2 text-sm text-black/70 dark:text-white/70">{item.subtitle}</p>
+            </div>
+            <div className="shrink-0">
+              <ArrowUpRight className="h-5 w-5 opacity-60 group-hover:opacity-100" />
+            </div>
           </div>
-          <div className="shrink-0">
-            <ArrowUpRight className="h-5 w-5 opacity-60 group-hover:opacity-100" />
+          <div className="mt-4 flex flex-wrap gap-2">
+            {item.tags.map((t) => (
+              <Badge key={t}>{t}</Badge>
+            ))}
           </div>
         </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {item.tags.map((t) => (
-            <Badge key={t}>{t}</Badge>
-          ))}
-        </div>
-      </div>
-    </motion.a>
+      </CardWrapper>
+    </motion.div>
   );
 }
 
 // ===== Data =====
-const WORK = [
-  {
-    id: "email",
-    title: "Generative Email & User Management",
-    subtitle:
-      "AI-powered email interfaces with statistical dashboards and user management systems.",
-    href: "./projects/email/email.html",
-    category: "AI & Innovation",
-    image: "./projects/email/invite_form.png",
-    tags: ["GenAI", "Dashboard", "Analytics"],
-  },
-  {
-    id: "scaling",
-    title: "Design Team Scaling Framework",
-    subtitle:
-      "Organizational design methodology for scaling design teams through different growth phases.",
-    href: "./projects/scaling/index.html",
-    category: "Strategy & Systems",
-    image: "./projects/scaling/org_phases.png",
-    tags: ["Team structure", "Operations", "Strategy"],
-  },
-  {
-    id: "patent",
-    title: "User Interaction Monitoring System",
-    subtitle:
-      "Patented CSS/JS-based monitoring system for tracking user interactions in data networks.",
-    href: "./projects/patent/index.html",
-    category: "AI & Innovation",
-    image: "./projects/patent/css_js.svg",
-    tags: ["Patent", "JavaScript", "Monitoring"],
-  },
-  {
-    id: "architecture",
-    title: "UX Architecture for Enterprise SaaS",
-    subtitle:
-      "Modern UI patterns and workflow optimization for scalable enterprise design systems.",
-    href: "./projects/architecture/index.html",
-    category: "Enterprise UX",
-    image: "./projects/architecture/goal-oriented-workflows.png",
-    tags: ["Enterprise", "Workflows", "Systems"],
-  },
-  {
-    id: "charts",
-    title: "Data Visualization System",
-    subtitle:
-      "Comprehensive charting components built with atomic design principles for complex data display.",
-    href: "./projects/charts/index.html",
-    category: "Strategy & Systems",
-    image: "./projects/charts/chart_system_pro.png",
-    tags: ["Data viz", "Components", "Atomic design"],
-  },
-  {
-    id: "color",
-    title: "Systematic Color Design Framework",
-    subtitle:
-      "Brand colors, accessibility standards, and systematic application rules for design consistency.",
-    href: "./projects/color/index.html",
-    category: "Strategy & Systems",
-    image: "./projects/color/cag_color_system.png",
-    tags: ["Color theory", "Accessibility", "Systems"],
-  },
-  {
-    id: "loadorder",
-    title: "Tag Load Order Management",
-    subtitle:
-      "Complex drag-and-drop interface for managing tag sequences with bulk actions and filtering.",
-    href: "./projects/loadorder/index.html",
-    category: "Enterprise UX",
-    image: "./projects/loadorder/drag_and_drop.gif",
-    tags: ["Drag & drop", "Bulk actions", "Complex UI"],
-  },
-  {
-    id: "pillars",
-    title: "Design Principles Framework",
-    subtitle:
-      "Foundational design principles and organizational framework for consistent design decisions.",
-    href: "./projects/pillars/index.html",
-    category: "Strategy & Systems",
-    image: "",
-    tags: ["Principles", "Strategy", "Framework"],
-  },
-  {
-    id: "apps",
-    title: "iOS Mobile Applications Portfolio",
-    subtitle:
-      "Seven iOS apps including disc golf scorecards, games, and utility applications.",
-    href: "./projects/apps/index.html",
-    category: "Mobile Apps",
-    image: "./projects/apps/golfscorecards.png",
-    tags: ["iOS", "Mobile", "Swift"],
-  },
-];
+// WORK array is now imported from constants.js
 
 // Skills, Experience, Education, Patents — summarized for the page
 const SKILLS = [
