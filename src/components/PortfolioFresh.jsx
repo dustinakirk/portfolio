@@ -644,7 +644,7 @@ export default function PortfolioFresh() {
           <div id="hero-content" className="md:col-span-7">
             <motion.h1 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-extrabold tracking-tight">
               Principal Product Designer
-              <br className="hidden sm:block" /> AI Specialist
+              <br className="hidden sm:block" /> AI Enthusiast
             </motion.h1>
             <p className="mt-4 text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl">
               Software is fundamentally changing with agentic systems, generative UI, and natrual language interfaces. 
