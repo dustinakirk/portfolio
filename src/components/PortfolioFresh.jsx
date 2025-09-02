@@ -344,9 +344,9 @@ function AvatarBlock() {
 
 // ===== Work Card =====
 function WorkCard({ item }) {
-  const isInternalLink = item.href?.startsWith("./projects/");
+  const isInternalLink = item.href?.startsWith("/projects/");
   const linkPath = isInternalLink 
-    ? `/projects/${item.id}`
+    ? item.href
     : item.href;
 
   const CardWrapper = isInternalLink ? Link : 'a';

@@ -17,7 +17,7 @@ export const WORK = [
     title: "AI Powered Expandable Stories",
     subtitle:
       "AI-powered platform generating never-ending fictional stories with interconnected characters and evolving narratives.",
-    href: "/projects/aistories/index.html",
+    href: "/projects/aistories",
     category: "AI & Innovation",
     image: "/projects/aistories/nuvvel.png",
     tags: ["GenAI", "Literature", "Platform"],
@@ -28,7 +28,7 @@ export const WORK = [
     title: "Generative Email & User Management",
     subtitle:
       "AI-powered email interfaces with statistical dashboards and user management systems.",
-    href: "/projects/email/email.html",
+    href: "/projects/email",
     category: "AI & Innovation",
     image: "/projects/email/invite_form.png",
     tags: ["GenAI", "Dashboard", "Analytics"],
@@ -39,7 +39,7 @@ export const WORK = [
     title: "Design Team Scaling Framework",
     subtitle:
       "Organizational design methodology for scaling design teams through different growth phases.",
-    href: "/projects/scaling/index.html",
+    href: "/projects/scaling",
     category: "Strategy & Systems",
     image: "/projects/scaling/org_phases.png",
     tags: ["Team structure", "Operations", "Strategy"],
@@ -50,7 +50,7 @@ export const WORK = [
     title: "User Interaction Monitoring System",
     subtitle:
       "Patented CSS/JS-based monitoring system for tracking user interactions in data networks.",
-    href: "/projects/patent/index.html",
+    href: "/projects/patent",
     category: "AI & Innovation",
     image: "/projects/patent/css_js.svg",
     tags: ["Patent", "JavaScript", "Monitoring"],
@@ -61,7 +61,7 @@ export const WORK = [
     title: "UX Architecture for Enterprise SaaS",
     subtitle:
       "Modern UI patterns and workflow optimization for scalable enterprise design systems.",
-    href: "/projects/architecture/index.html",
+    href: "/projects/architecture",
     category: "Enterprise UX",
     image: "/projects/architecture/goal-oriented-workflows.png",
     tags: ["Enterprise", "Workflows", "Systems"],
@@ -72,7 +72,7 @@ export const WORK = [
     title: "Data Visualization System",
     subtitle:
       "Comprehensive charting components built with atomic design principles for complex data display.",
-    href: "/projects/charts/index.html",
+    href: "/projects/charts",
     category: "Strategy & Systems",
     image: "/projects/charts/chart_system_pro.png",
     tags: ["Data viz", "Components", "Atomic design"],
@@ -83,7 +83,7 @@ export const WORK = [
     title: "Systematic Color Design Framework",
     subtitle:
       "Brand colors, accessibility standards, and systematic application rules for design consistency.",
-    href: "/projects/color/index.html",
+    href: "/projects/color",
     category: "Strategy & Systems",
     image: "/projects/color/cag_color_system.png",
     tags: ["Color theory", "Accessibility", "Systems"],
@@ -94,7 +94,7 @@ export const WORK = [
     title: "Tag Load Order Management",
     subtitle:
       "Complex drag-and-drop interface for managing tag sequences with bulk actions and filtering.",
-    href: "/projects/loadorder/index.html",
+    href: "/projects/loadorder",
     category: "Enterprise UX",
     image: "/projects/loadorder/drag_and_drop.gif",
     tags: ["Drag & drop", "Bulk actions", "Complex UI"],
@@ -105,7 +105,7 @@ export const WORK = [
     title: "Design Principles Framework",
     subtitle:
       "Foundational design principles and organizational framework for consistent design decisions.",
-    href: "/projects/pillars/index.html",
+    href: "/projects/pillars",
     category: "Strategy & Systems",
     image: "",
     tags: ["Principles", "Strategy", "Framework"],
@@ -116,7 +116,7 @@ export const WORK = [
     title: "iOS Mobile Applications Portfolio",
     subtitle:
       "Seven iOS apps including disc golf scorecards, games, and utility applications.",
-    href: "/projects/apps/index.html",
+    href: "/projects/apps",
     category: "Mobile Apps",
     image: "/projects/apps/golfscorecards.png",
     tags: ["iOS", "Mobile", "Swift"],
