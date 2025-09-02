@@ -717,6 +717,7 @@ export default function PortfolioFresh() {
           <div id="highlights-section" className="mt-16">
             <h3 className="text-xl font-semibold mb-6">Highlights</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
               {/* AI Thought Leadership */}
               <motion.div
                 id="highlight-ai-leadership"

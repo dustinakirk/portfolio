@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--
+
+Hello!   The HTML, CSS, and JS were written by me.  Dustin Kirk
+
+-->	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title 60-65 characters -->
+	<title>Building A Color System From Scratch - Dustin Kirk's Portfolio</title>
+	<meta property="og:title" content="Building A Color System From Scratch" />
+
+	<!-- Description 150-155 characters (2-4 sentences) -->
+	<meta name="description" content="A detailed look into how I formulate color systems that satisfy the needs of modern web applications while maintaining an aesthetically pleasing look and feel taylored to corporate brand identities."/>
+	<meta property="og:description" content="A detailed look into how I formulate color systems that satisfy the needs of modern web applications while maintaining an aesthetically pleasing look and feel taylored to corporate brand identities."/>
+
+	<!-- Page Type -->
+	<meta property="og:type" content="article" />
+
+	<!-- Thumbnail Image -->
+	<meta property="og:image" content="https://www.dustinkirk.com/images/banner-color-thumb.png"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:width" content="1400"/>
+	<meta property="og:image:height" content="700"/>
+
+
+<link rel="stylesheet" type="text/css" href="../../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script src="https://kit.fontawesome.com/a320271d59.js" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179534252-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179534252-1');
+</script>
+</head>
+<body class="sticky">
+<a href="#main-content" class="skip-navigation">Skip to main content</a>
+<div class="pageWrap">
+
+
+<header class="site-header">
+	<div class="header-container">
+		<a href="https://www.dustinkirk.com" class="brand">
+			Dustin Kirk
+		</a>
+		<nav class="navigation" aria-label="Main navigation">
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</button>
+			<ul class="nav-menu" id="nav-menu">
+				<li>
+					<a href="https://www.dustinkirk.com" class="nav-link">Portfolio</a>
+				</li>
+				<li>
+					<a href="about.html" class="nav-link">About</a>
+				</li>
+				<li>
+					<a href="Dustin_Kirk_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/dustinkirk/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				</li>
+				<li>
+					<a href="https://dribbble.com/Dustin_Kirk" target="_blank" rel="noopener noreferrer" class="nav-link">Dribbble</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="lightbox">
+	<div id="lightbox_content"></div>
+</div>
+
+<main id="main-content" class="pageWrapRow pageContent">
+
+	<header class="portfolio-header">
+		<h1 class="pageTitle">Color Systems</h1>
+		<p class="pageSubtitle">My methodical approach toward establishing a color system.</p>
+	</header>
+
+	<div class="imgBlock" style="height:400px;">
+		<img src="cag_color_system.png" alt="CAG color system showing comprehensive brand palette with multiple hues and shades" class="imgFrame frameStyleSlide" style="position:absolute; width: 70%; top: 10%; left:-15%;">
+		<img src="tealium_color_system.png" alt="Tealium color system inspired by San Diego with vibrant blues, aquas, and yellows" class="imgFrame frameStyleSlide" style="position:absolute; width: 70%; top:-10%; right:-15%;">
+	</div>
+
+	<div class="textBlock">
+		<p>In building out the foundational elements of a design system, one of the key aspects is the color pallet that will be utilized.  This color pallet influences everything from the button and link colors, to the graphical elements, banners, and all visual aspects.  The color system encapsulates a variety of constraints and restrictions that must be balanced and accounted for.   There are accessibility concerns, branding concerns, industry best practices, and possibly light and dark themes.  With all of the facets accounted for, it can certainly be a daunting task.  Below I'll lay out a strait forward approach that will result in a cohesive and flexible color system able to address the most demanding requirements.</p>
+
+		<h2>Define All The Colors</h2>
+
+		<p>First things first, you will quickly find that only defining a few pallets based on the brand colors is going to be inadequate and limiting.  For a flushed out color system, you should include:</p>
+		<ol>
+			<li>Gray Scale Pallet</li>
+			<li>Status Colors (Red, Orange, Yellow, Green)</li>
+			<li>Category Colors that do not include the status colors.</li>
+		</ol>
+
+		<p>The gray scale pallet will typically cover your most neutral use cases including body text, input labels, descriptions, etc.  Status colors are selected to indicate error, warning, and success messaging. The category colors typically include brand colors and include hot, warm, neutral, and cold colors.  It is important that the category colors do not tread too closely to the status colors.  Lastly, for each of the 12-14 colors, I recommend defining 9 to 11 shades ranging from very light to very dark.</p>
+
+
+		<h2>Where To Start</h2>
+
+		<p>Often the easiest place to start is the brand colors as these are often already defined.  The brand colors will typically reflect the image of the company through vibrant or muted tones. Using the template shown, place the brand colors in their approximate locations.  From this point all selected colors will be selected relative to the brand colors allowing them all to work nicely with each other.  If the brand colors include Red, Orange, Yellow, or Green... it often works better to include them in the 9 Category colors and choose 'off-tones' for the status colors.  This will ensure the status colors remain distinctive and you retain freedom to utilize the brand colors outside of the context of status messages.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="brand_colors.png" alt="Brand color template showing placement of corporate brand colors as foundation for color system" class="imgFrame frameStyleSlide">
+		</div>
+
+	<div class="textBlock">
+		<p>Once the brand colors are selected and in the template, you'll want to select one color for each row that is adjacent to the brand color.  In your design tool, it is a good idea to mark these items so you know not to tweak them later on.  </p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="color_stripe.png" alt="Color stripe showing adjacent colors selected to transition between brand colors" class="imgFrame frameStyleSlide">
+		</div>
+
+	<div class="textBlock">
+		<p>If one of your brand colors is vibrant red, that would be your 'hot' color and you might select a 'warm' color to be adjacent... perhaps a vibrant pink. Like a game of connect the dots, fill in the gaps choosing the colors that will transition between each of the brand colors. As you select colors, include at least one row of off-green (eg: mint), one row of off-orange (eg: mango), and one row of off-red (eg: raspberry). That way if you need a red, you don't need to use the status color. At the end of this step, there should be at least one color defined for each of the category colors.  It is up to you as to how many of those rows fall into the warm vs cool colors, but a slight lean toward the cooler colors (teals, blues and purples) will ensure there is enough diversity when it comes to graph and chart sequences.  </p>
+
+		<p>The next step is to complete the 4 status colors.  To select these colors, choose the most saturated or vibrant brand color and begin tweaking the hue to choose a red, orange, yellow, and green. In this case, if the brand color is a red, adjust the hue enough to be distinctive, but maintain the saturation and brightness.   The saturation and brightness are primarily tweaked in filling out the remainder of the pallet later on.</p>
+
+		<h2>Defining The Gray Scale</h2>
+
+		<p>Now is a good point to define the full range of grays from almost white to almost black.  Note that white and black are not included in the gray scale and are represented in the color system external of the grays.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="grey_scale.png" alt="Gray scale palette with 9-11 shades ranging from almost white to almost black" class="imgFrame frameStyleSlide" style="height: 130px;">
+		</div>
+
+	<div class="textBlock">
+		<p>There are a few considerations when it comes to selecting the gray scale.  The first of which is to determine the number of shades.  I would recommend a minimum of 9 shades, but no more than 11.  Having created several color systems, I would select 11 shades for any future projects.  The second consideration is how to fade the shades at the ends.  There are likely to be more use cases for lighter shades of gray than medium grays. Thus the lighter and darker ends of the spectrum will have less of a difference than the shades in the middle.  This applies to all of the other colors as well, but defining this for the grays first will make the later steps easier.   The next consideration is how light is the lightest gray.  It is important to consider the context of your application here as various screens vary in their ability to recreate a color.  A very subtle gray may be noticeable on a phone, but blend in with a white background on a TV.  Projectors tend to have terrible contrast and lighter shades are completely lost.</p>
+
+		<h3>Add A Tint</h3>
+		<p>One often overlooked aspect in choosing a gray pallet is that you can choose to add some saturation.  In nature it is rare to find pure gray and it tends to lead toward a harsh and unfinished look. Choosing a hue with slight saturation will create a more refined look and feel more polished.  As the gray gets darker, boost the saturation.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="tint.png" alt="Gray scale with subtle tint showing how saturation creates a more refined and polished look" class="imgFrame frameStyleSlide" style="height: 130px;">
+		</div>
+
+	<div class="textBlock">
+
+		<h2>Define The Color Tokens</h2>
+
+		<p>You now know how many shades of each color will be supported and it is time to assign them tokens.  This will help you reference specific colors among your team and with developers.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="tokens.png" alt="Color token system with numerical naming convention (50, 100, 150, etc.) for easy reference" class="imgFrame frameStyleSlide">
+		</div>
+
+	<div class="textBlock">
+		<p>To begin, assign the center shade 500 and work toward the ends.  As shades may be closer together at the ends, feel free to assign them tokens of 150, 100, 50, 25, and likewise for the dark end of the spectrum (800, 850, 900, 950).</p>
+
+		<p>Also for this step, you will want to name each of the category colors.  A good reference is to utilize names that might appear in a box of crayons.  Getting creative or obscure with color names can make it difficult for people from other countries.</p>
+
+		<h2>Define The Remaining Colors</h2>
+
+		<p>With the gray scale defined and tokens assigned, the next step will be to fully define the status colors.  Starting from the previously defined color in each row, begin to select colors that fade from light to dark. To minimize the amount of tweaking define every other color in the row first, then go back and fill in the blanks.  As an example start at red 500, then select the color for red 300, then red 100.  When selecting these colors, reference the hue of the original color in the row, and the brightness of the gray scale color.  So the color in position red 300, choose the color using the hue of red 500 and the brightness of gray 300.  When defining colors at the light end of the scale, lessen the saturation and when at the dark end of the scale increase the saturation.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="color_pass1.png" alt="First pass of color definition showing every other shade filled in using hue and brightness relationships" class="imgFrame frameStyleSlide">
+		</div>
+
+	<div class="textBlock">
+		<p>There are many nuances to selecting these colors, but to start, go through each of the colors doing every other one.  In the second pass, it is easier to select a color when it already has a color to the left and right.</p>
+
+		<h3>Utilizing Saturation</h3>
+		<p>While each color row is primarily defined by its hue and brightness... the saturation is the magic that blends colors across rows.   Particularly when matching colors surrounding a brand color, utilize the saturation to ensure an even transition to adjacent colors.</p>
+
+		<h3>Choosing Yellows...</h3>
+		<p>Yellows, especially dark yellows often end up looking really ugly.  Rather than simply darkening a vibrant yellow, you can adjust the hue a bit to more appealing color.  This often works well in shifting the yellows more toward mustard tones and even into the orange range for the darkest tones.  There is a lot of freedom here, but just ensure you don't have a yellow that could be confused for an orange.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="yellows.png" alt="Yellow color progression showing hue adjustments toward mustard and orange tones for darker shades" class="imgFrame frameStyleSlide" style="height: 130px;">
+		</div>
+
+	<div class="textBlock">
+		<h2>Accessibility Review</h2>
+
+		<p>As we wrap up the color system this is a good time to do a checkin and see how the system matches up to accessibility guidelines.  While I recommend defining a fairly deep color system with up to 11 shades for each color, it is important for you to understand your color system's limits. You'll want to know what areas of your color pallet have poor contrast and how well light and dark texts contrasts with each of the colors.  There are many tools you can use and once analyzed, you'll have a good sense on how to apply your color system, or if further adjustment is required to meet your use cases.</p>
+
+		<h2>Define The Rules</h2>
+
+		<p>One of the starting premises was that the status colors should remain distinctive from the other category colors.  A few usage guidelines can go along way in ensuring a cohesive look and feel when applied to a UI.  There is a lot of flexibility in how you define these, but I've included several examples below.</p>
+	</div>
+
+		<div class="imgBlock">
+			<img src="rules.png" alt="Color system usage rules for text colors, gradients, and dark colors to ensure cohesive application" class="imgFrame frameStyleSlide">
+		</div>
+
+	<div class="textBlock">
+		<h3>Text Colors:</h3>
+		<p>When text is on white or black, the text color should be chosen from the gray pallet.  When text is on a color, the text color should be a light or dark tone of the same color.</p>
+
+		<h3>Gradients:</h3>
+		<p>Gradient colors should only be selected from the category colors and within the 200-800 bands. Alternatively, gradient colors must be within 5 color blocks from each other.</p>
+
+		<h3>Dark Colors:</h3>
+		<p>To prevent muddy and indistinguishable colors, when tones within the 750-900 range are used, no other tones from adjacent colors may be used.</p>
+
+		<h2>Wrap-up</h2>
+		<p>You should now have a color system that works well with your brand colors and because it has all of the colors, it can satisfy all of the needs of your UI and be utilized across both product and marketing.  The next step will be to apply the colors to your UI components and possibly define your chart and graph sequence colors. </p>
+	</div>
+
+
+
+
+</main><!-- end pageContent -->
+
+<div class="pageWrapRow pageFooter">
+	footer
+</div>
+</div><!-- end pagewrap -->
+
+<script>
+	$( ".imgFrame" ).click(function() {
+	  var src = $(this).attr('src');
+        $("#lightbox_content").css("background-image", "url(" + src + ")");
+    	$("#lightbox").show();
+	});
+
+
+
+	$("#lightbox").click(function() {
+		$(this).hide();
+	});
+</script>
+
+<script>
+// Modern mobile navigation functionality
+(function() {
+	'use strict';
+	
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	
+	if (!navToggle || !navMenu) return;
+	
+	// Toggle mobile menu
+	function toggleMenu() {
+		const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+		navToggle.setAttribute('aria-expanded', !isExpanded);
+		navMenu.classList.toggle('open');
+		
+		// Manage focus for accessibility
+		if (!isExpanded) {
+			// Focus first nav link when menu opens
+			const firstLink = navMenu.querySelector('.nav-link');
+			if (firstLink) firstLink.focus();
+		}
+	}
+	
+	// Close menu when clicking outside
+	function closeMenu(event) {
+		if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Close menu when pressing escape
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+			navToggle.focus();
+		}
+	}
+	
+	// Close menu when clicking a nav link (mobile)
+	function closeOnNavClick() {
+		if (window.innerWidth <= 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	}
+	
+	// Event listeners
+	navToggle.addEventListener('click', toggleMenu);
+	document.addEventListener('click', closeMenu);
+	document.addEventListener('keydown', handleKeydown);
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', closeOnNavClick);
+	});
+	
+	// Handle window resize - ensure menu is visible on desktop
+	window.addEventListener('resize', function() {
+		if (window.innerWidth > 768) {
+			navToggle.setAttribute('aria-expanded', 'false');
+			navMenu.classList.remove('open');
+		}
+	});
+})();
+</script>
+</body>
+</html>
