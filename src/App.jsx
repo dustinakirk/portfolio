@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import PortfolioFresh from './components/PortfolioFresh'
+import AiStoriesProject from './components/projects/AiStoriesProject'
 import EmailProject from './components/projects/EmailProject'
 import ScalingProject from './components/projects/ScalingProject'
 import PatentProject from './components/projects/PatentProject'
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<PortfolioFresh />} />
+        <Route path="/projects/aistories" element={<AiStoriesProject />} />
         <Route path="/projects/email" element={<EmailProject />} />
         <Route path="/projects/scaling" element={<ScalingProject />} />
         <Route path="/projects/patent" element={<PatentProject />} />

@@ -1,7 +1,28 @@
 export const CONTACT_EMAIL = 'dustin.kirk@gmail.com';
 
+// Featured projects configuration
+// Set 'featured' to true for projects you want to show in the featured section
+// You can also control the order by rearranging items in the WORK array
+export const FEATURED_PROJECTS_CONFIG = {
+  showAll: false, // Set to true to show all projects as featured
+  maxFeatured: 9, // Maximum number of featured projects to show
+  // Alternatively, you can specify project IDs to feature
+  featuredIds: ['aistories', 'email', 'scaling', 'patent', 'architecture', 'charts'] // Leave empty to use 'featured' flag
+};
+
 // Portfolio projects data
 export const WORK = [
+  {
+    id: "aistories",
+    title: "AI Powered Expandable Stories",
+    subtitle:
+      "AI-powered platform generating never-ending fictional stories with interconnected characters and evolving narratives.",
+    href: "./projects/aistories/index.html",
+    category: "AI & Innovation",
+    image: "./projects/aistories/nuvvel.png",
+    tags: ["GenAI", "Literature", "Platform"],
+    featured: true,
+  },
   {
     id: "email",
     title: "Generative Email & User Management",
@@ -11,6 +32,7 @@ export const WORK = [
     category: "AI & Innovation",
     image: "./projects/email/invite_form.png",
     tags: ["GenAI", "Dashboard", "Analytics"],
+    featured: true, // Control whether this appears in featured section
   },
   {
     id: "scaling",
@@ -21,6 +43,7 @@ export const WORK = [
     category: "Strategy & Systems",
     image: "./projects/scaling/org_phases.png",
     tags: ["Team structure", "Operations", "Strategy"],
+    featured: true,
   },
   {
     id: "patent",
@@ -31,6 +54,7 @@ export const WORK = [
     category: "AI & Innovation",
     image: "./projects/patent/css_js.svg",
     tags: ["Patent", "JavaScript", "Monitoring"],
+    featured: true,
   },
   {
     id: "architecture",
@@ -41,6 +65,7 @@ export const WORK = [
     category: "Enterprise UX",
     image: "./projects/architecture/goal-oriented-workflows.png",
     tags: ["Enterprise", "Workflows", "Systems"],
+    featured: true,
   },
   {
     id: "charts",
@@ -51,6 +76,7 @@ export const WORK = [
     category: "Strategy & Systems",
     image: "./projects/charts/chart_system_pro.png",
     tags: ["Data viz", "Components", "Atomic design"],
+    featured: true,
   },
   {
     id: "color",
@@ -61,6 +87,7 @@ export const WORK = [
     category: "Strategy & Systems",
     image: "./projects/color/cag_color_system.png",
     tags: ["Color theory", "Accessibility", "Systems"],
+    featured: true,
   },
   {
     id: "loadorder",
@@ -71,6 +98,7 @@ export const WORK = [
     category: "Enterprise UX",
     image: "./projects/loadorder/drag_and_drop.gif",
     tags: ["Drag & drop", "Bulk actions", "Complex UI"],
+    featured: false,
   },
   {
     id: "pillars",
@@ -81,6 +109,7 @@ export const WORK = [
     category: "Strategy & Systems",
     image: "",
     tags: ["Principles", "Strategy", "Framework"],
+    featured: false,
   },
   {
     id: "apps",
@@ -91,5 +120,6 @@ export const WORK = [
     category: "Mobile Apps",
     image: "./projects/apps/golfscorecards.png",
     tags: ["iOS", "Mobile", "Swift"],
+    featured: false,
   },
 ];

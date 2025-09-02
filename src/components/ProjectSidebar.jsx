@@ -41,18 +41,10 @@ function ProjectSidebar({ currentProjectId }) {
       <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur overflow-hidden">
         {/* Header */}
         <div className="p-4 border-b border-black/10 dark:border-white/10">
-          <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-sm flex items-center gap-2">
-              <Grid3x3 className="h-4 w-4" />
-              All Projects
-            </h3>
-            <Link 
-              to="/"
-              className="text-xs opacity-60 hover:opacity-100 transition-opacity"
-            >
-              View Grid
-            </Link>
-          </div>
+          <h3 className="font-semibold text-sm flex items-center gap-2">
+            <Grid3x3 className="h-4 w-4" />
+            All Projects
+          </h3>
         </div>
 
         {/* Projects List */}

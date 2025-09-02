@@ -138,7 +138,7 @@ export default function ProjectLayout({ children, title, subtitle, projectId }) 
           <Link to="/" className="font-semibold tracking-tight flex items-center gap-3">
             <AvatarBlock />
           </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          <nav className="hidden md:flex items-center gap-6 text-lg">
             <Link to="/" className="opacity-80 hover:opacity-100 flex items-center gap-1">
               <Home className="h-3 w-3" />
               Portfolio
