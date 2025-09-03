@@ -7,7 +7,7 @@ export const FEATURED_PROJECTS_CONFIG = {
   showAll: false, // Set to true to show all projects as featured
   maxFeatured: 9, // Maximum number of featured projects to show
   // Alternatively, you can specify project IDs to feature
-  featuredIds: ['generativeuicanvas', 'aistories', 'email', 'scaling', 'patent', 'architecture', 'charts'] // Leave empty to use 'featured' flag
+  featuredIds: ['generativeuicanvas', 'aistories', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
 };
 
 // Portfolio projects data
@@ -38,11 +38,11 @@ export const WORK = [
     id: "email",
     title: "Micro Efficiencies",
     subtitle:
-      "AI-powered email interfaces with statistical dashboards and user management systems.",
+      "Transforming repetitive micro-tasks into delightful moments by parsing name data from 70% of corporate email addresses.",
     href: "/projects/email",
-    category: "AI & Innovation",
-    image: "/projects/email/invite_form.png",
-    tags: ["GenAI", "Dashboard", "Analytics"],
+    category: "UX Optimization",
+    image: "/projects/email/hero_email.png",
+    tags: ["Efficiency", "UX", "Data Analysis"],
     featured: true, // Control whether this appears in featured section
   },
   {

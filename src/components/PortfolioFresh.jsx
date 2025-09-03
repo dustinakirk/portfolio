@@ -2,11 +2,11 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CONTACT_EMAIL, WORK, FEATURED_PROJECTS_CONFIG } from '../constants';
+import ScrollToHashElement from './ScrollToHashElement';
 // NOTE: Fix for build error — use the correct Lucide icon name "Image" and alias it locally
 // instead of importing a non-existent "ImageIcon" file from the CDN build.
 import {
   ArrowUpRight,
-  Filter,
   Mail,
   Download,
   ExternalLink,
@@ -381,11 +381,6 @@ function WorkCard({ item }) {
               <ArrowUpRight className="h-5 w-5 opacity-60 group-hover:opacity-100" />
             </div>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {item.tags.map((t) => (
-              <Badge key={t}>{t}</Badge>
-            ))}
-          </div>
         </div>
       </CardWrapper>
     </motion.div>
@@ -517,10 +512,7 @@ const PATENTS = [
   { title: "Salesforce — AI sourcing attribution in RAG (pending)", note: "" },
 ];
 
-const FILTERS = ["All", "AI & Innovation", "Strategy & Systems", "Enterprise UX", "Mobile Apps"];
-
 export default function PortfolioFresh() {
-  const [filter, setFilter] = useState("All");
   
   // Determine which projects to show as featured based on configuration
   const featuredProjects = useMemo(() => {
@@ -543,11 +535,6 @@ export default function PortfolioFresh() {
     return projects.slice(0, FEATURED_PROJECTS_CONFIG.maxFeatured);
   }, []);
   
-  // Filter the featured projects based on selected category
-  const filtered = useMemo(() => {
-    if (filter === "All") return featuredProjects;
-    return featuredProjects.filter((w) => w.category === filter);
-  }, [filter, featuredProjects]);
 
   // Diagonal stripe configuration
   const diagonalConfig = {
@@ -590,6 +577,7 @@ export default function PortfolioFresh() {
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f7f7f9_0%,#eef0f4_100%)] dark:bg-[linear-gradient(180deg,#0a0a0a_0%,#0f1115_100%)] text-black dark:text-white">
+      <ScrollToHashElement />
       {/* Nav */}
       <header id="navigation-header" className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/30 border-b border-black/5 dark:border-white/10 relative overflow-hidden">
         {/* Diagonal blue lines - positioned behind content */}
@@ -846,45 +834,10 @@ export default function PortfolioFresh() {
 
       {/* Work section */}
       <section id="work-section" className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Work</h2>
-          <div id="work-filters-desktop" className="hidden md:flex items-center gap-2 text-sm">
-            <Filter className="h-4 w-4 opacity-60" />
-            {FILTERS.map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`rounded-full px-3 py-1 border text-xs md:text-sm transition ${
-                  filter === f
-                    ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "bg-white/60 dark:bg-white/5 border-black/10 dark:border-white/10 hover:bg-white"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">Featured Work</h2>
 
-        {/* Mobile filters */}
-        <div id="work-filters-mobile" className="mt-3 md:hidden flex flex-wrap gap-2">
-          {FILTERS.map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`rounded-full px-3 py-1 border text-xs transition ${
-                filter === f
-                  ? "bg-black text-white dark:bg-white dark:text-black"
-                  : "bg-white/60 dark:bg-white/5 border-black/10 dark:border-white/10"
-              }`}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        <div id="work-grid" className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {filtered.map((item) => (
+        <div id="work-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {featuredProjects.map((item) => (
             <WorkCard key={item.id} item={item} />
           ))}
         </div>

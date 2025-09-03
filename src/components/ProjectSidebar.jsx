@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { WORK } from "../constants";
+import { WORK, FEATURED_PROJECTS_CONFIG } from "../constants";
 import {
   ChevronLeft,
   ChevronRight,
@@ -17,23 +17,83 @@ function ProjectSidebar({ currentProjectId }) {
   const prevProject = currentIndex > 0 ? WORK[currentIndex - 1] : null;
   const nextProject = currentIndex < WORK.length - 1 ? WORK[currentIndex + 1] : null;
 
-  // Group projects by category
-  const projectsByCategory = WORK.reduce((acc, project) => {
-    if (!acc[project.category]) {
-      acc[project.category] = [];
+  // Determine featured projects (same logic as PortfolioFresh)
+  const featuredProjects = useMemo(() => {
+    let projects = WORK;
+    
+    // If showAll is true, return all projects
+    if (FEATURED_PROJECTS_CONFIG.showAll) {
+      return projects.slice(0, FEATURED_PROJECTS_CONFIG.maxFeatured);
     }
-    acc[project.category].push(project);
-    return acc;
-  }, {});
+    
+    // If featuredIds are specified, use those
+    if (FEATURED_PROJECTS_CONFIG.featuredIds && FEATURED_PROJECTS_CONFIG.featuredIds.length > 0) {
+      // Maintain the order of featuredIds
+      const featuredMap = new Map();
+      projects.forEach(p => {
+        if (FEATURED_PROJECTS_CONFIG.featuredIds.includes(p.id)) {
+          featuredMap.set(p.id, p);
+        }
+      });
+      projects = FEATURED_PROJECTS_CONFIG.featuredIds
+        .filter(id => featuredMap.has(id))
+        .map(id => featuredMap.get(id));
+    } else {
+      // Otherwise, use the featured flag on each project
+      projects = projects.filter(p => p.featured === true);
+    }
+    
+    // Apply max limit
+    return projects.slice(0, FEATURED_PROJECTS_CONFIG.maxFeatured);
+  }, []);
 
-  const getCategoryColor = (category) => {
-    const colors = {
-      "AI & Innovation": "bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300",
-      "Strategy & Systems": "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300",
-      "Enterprise UX": "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300",
-      "Mobile Apps": "bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300",
-    };
-    return colors[category] || "bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-300";
+  // Get older work (projects not in featured)
+  const olderWork = useMemo(() => {
+    const featuredIds = new Set(featuredProjects.map(p => p.id));
+    return WORK.filter(p => !featuredIds.has(p.id));
+  }, [featuredProjects]);
+
+  const renderProjectItem = (project) => {
+    const isActive = project.id === currentProjectId;
+    return (
+      <Link
+        key={project.id}
+        to={`/projects/${project.id}`}
+        className={`
+          block px-3 py-2 rounded-lg text-sm transition-all
+          ${isActive 
+            ? "bg-black/10 dark:bg-white/10 font-medium" 
+            : "hover:bg-black/5 dark:hover:bg-white/5"
+          }
+        `}
+      >
+        <div className="flex items-start gap-2">
+          <div className="mt-0.5">
+            {isActive ? (
+              <motion.div
+                layoutId="activeIndicator"
+                className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"
+              />
+            ) : (
+              <div className="w-1.5 h-1.5 rounded-full bg-black/20 dark:bg-white/20" />
+            )}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className={`truncate ${isActive ? "text-black dark:text-white" : "text-black/70 dark:text-white/70"}`}>
+              {project.title}
+            </div>
+            {isActive && (
+              <div className="text-xs text-black/50 dark:text-white/50 mt-0.5">
+                Currently viewing
+              </div>
+            )}
+          </div>
+          {isActive && (
+            <ArrowRight className="h-3 w-3 mt-1 opacity-50 shrink-0" />
+          )}
+        </div>
+      </Link>
+    );
   };
 
   return (
@@ -49,59 +109,33 @@ function ProjectSidebar({ currentProjectId }) {
 
         {/* Projects List */}
         <div className="p-2 max-h-[60vh] overflow-y-auto">
-          {Object.entries(projectsByCategory).map(([category, projects]) => (
-            <div key={category} className="mb-4">
+          {/* Featured Work */}
+          {featuredProjects.length > 0 && (
+            <div className="mb-4">
               <div className="px-2 py-1">
-                <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${getCategoryColor(category)}`}>
-                  {category}
+                <span className="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-black/10 dark:bg-white/10 text-black dark:text-white">
+                  Featured Work
                 </span>
               </div>
               <div className="mt-1">
-                {projects.map((project) => {
-                  const isActive = project.id === currentProjectId;
-                  return (
-                    <Link
-                      key={project.id}
-                      to={`/projects/${project.id}`}
-                      className={`
-                        block px-3 py-2 rounded-lg text-sm transition-all
-                        ${isActive 
-                          ? "bg-black/10 dark:bg-white/10 font-medium" 
-                          : "hover:bg-black/5 dark:hover:bg-white/5"
-                        }
-                      `}
-                    >
-                      <div className="flex items-start gap-2">
-                        <div className="mt-0.5">
-                          {isActive ? (
-                            <motion.div
-                              layoutId="activeIndicator"
-                              className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"
-                            />
-                          ) : (
-                            <div className="w-1.5 h-1.5 rounded-full bg-black/20 dark:bg-white/20" />
-                          )}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className={`truncate ${isActive ? "text-black dark:text-white" : "text-black/70 dark:text-white/70"}`}>
-                            {project.title}
-                          </div>
-                          {isActive && (
-                            <div className="text-xs text-black/50 dark:text-white/50 mt-0.5">
-                              Currently viewing
-                            </div>
-                          )}
-                        </div>
-                        {isActive && (
-                          <ArrowRight className="h-3 w-3 mt-1 opacity-50 shrink-0" />
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })}
+                {featuredProjects.map(renderProjectItem)}
               </div>
             </div>
-          ))}
+          )}
+
+          {/* Older Work */}
+          {olderWork.length > 0 && (
+            <div className="mb-4">
+              <div className="px-2 py-1">
+                <span className="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-300">
+                  Older Work
+                </span>
+              </div>
+              <div className="mt-1">
+                {olderWork.map(renderProjectItem)}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Navigation Buttons */}

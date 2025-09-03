@@ -139,15 +139,15 @@ export default function ProjectLayout({ children, title, subtitle, projectId }) 
             <AvatarBlock />
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-lg">
-            <Link to="/" className="opacity-80 hover:opacity-100 flex items-center gap-1">
-              <Home className="h-3 w-3" />
-              Portfolio
-            </Link>
             <Link to="/#about" className="opacity-80 hover:opacity-100">About</Link>
+            <Link to="/#work" className="opacity-80 hover:opacity-100">Work</Link>
             <Link to="/#experience" className="opacity-80 hover:opacity-100">Experience</Link>
             <Link to="/#contact" className="opacity-80 hover:opacity-100">Contact</Link>
           </nav>
           <div className="flex items-center gap-2">
+            <LinkButton href="https://www.linkedin.com/in/dustinkirk/">
+              <Linkedin className="h-4 w-4" /> LinkedIn
+            </LinkButton>
             <LinkButton href="/Dustin_Kirk_Resume.pdf">
               <Download className="h-4 w-4" /> Resume
             </LinkButton>
