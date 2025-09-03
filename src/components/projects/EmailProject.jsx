@@ -116,7 +116,7 @@ function EmailProject() {
 
   return (
     <ProjectLayout
-      title="Generative Email & User Management"
+      title="Micro Efficiencies"
       subtitle="Making a micro-efficiency a moment of delight by utilizing name data already existing in 70% of corporate emails."
       projectId="email"
     >

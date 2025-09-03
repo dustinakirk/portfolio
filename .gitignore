@@ -32,3 +32,6 @@ __pycache__/
 env/
 venv/
 .env
+
+# Media files
+*.mp4

@@ -10,6 +10,7 @@ import ColorProject from './components/projects/ColorProject'
 import LoadOrderProject from './components/projects/LoadOrderProject'
 import PillarsProject from './components/projects/PillarsProject'
 import AppsProject from './components/projects/AppsProject'
+import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasProject'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/projects/loadorder" element={<LoadOrderProject />} />
         <Route path="/projects/pillars" element={<PillarsProject />} />
         <Route path="/projects/apps" element={<AppsProject />} />
+        <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
       </Routes>
     </Router>
   )

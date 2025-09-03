@@ -7,11 +7,22 @@ export const FEATURED_PROJECTS_CONFIG = {
   showAll: false, // Set to true to show all projects as featured
   maxFeatured: 9, // Maximum number of featured projects to show
   // Alternatively, you can specify project IDs to feature
-  featuredIds: ['aistories', 'email', 'scaling', 'patent', 'architecture', 'charts'] // Leave empty to use 'featured' flag
+  featuredIds: ['generativeuicanvas', 'aistories', 'email', 'scaling', 'patent', 'architecture', 'charts'] // Leave empty to use 'featured' flag
 };
 
 // Portfolio projects data
 export const WORK = [
+  {
+    id: "generativeuicanvas",
+    title: "Generative UI Canvas",
+    subtitle:
+      "Natural Language UI + Agentic Backend + Generative UI - Reimagining B2B software with AI-powered interfaces.",
+    href: "/projects/generativeuicanvas",
+    category: "AI & Innovation",
+    image: "/projects/generativeuicanvas/robot_with_ui.png",
+    tags: ["GenAI", "UI/UX", "B2B SaaS"],
+    featured: true,
+  },
   {
     id: "aistories",
     title: "AI Powered Expandable Stories",
@@ -19,13 +30,13 @@ export const WORK = [
       "AI-powered platform generating never-ending fictional stories with interconnected characters and evolving narratives.",
     href: "/projects/aistories",
     category: "AI & Innovation",
-    image: "/projects/aistories/nuvvel.png",
+    image: "/projects/aistories/bot_writing_stories.png",
     tags: ["GenAI", "Literature", "Platform"],
     featured: true,
   },
   {
     id: "email",
-    title: "Generative Email & User Management",
+    title: "Micro Efficiencies",
     subtitle:
       "AI-powered email interfaces with statistical dashboards and user management systems.",
     href: "/projects/email",
