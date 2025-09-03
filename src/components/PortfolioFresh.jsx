@@ -611,7 +611,7 @@ export default function PortfolioFresh() {
           </a>
           <nav className="hidden md:flex items-center gap-6 text-lg">
             <a href="#about" onClick={(e) => scrollToSection(e, 'about-section')} className="opacity-80 hover:opacity-100 cursor-pointer">About</a>
-            <a href="#work" onClick={(e) => scrollToSection(e, 'work-section')} className="opacity-80 hover:opacity-100 cursor-pointer">Work</a>
+            <a href="#work" onClick={(e) => scrollToSection(e, 'work-section')} className="opacity-80 hover:opacity-100 cursor-pointer">Projects</a>
             <a href="#experience" onClick={(e) => scrollToSection(e, 'experience-section')} className="opacity-80 hover:opacity-100 cursor-pointer">Experience</a>
             <a href="#contact" onClick={(e) => scrollToSection(e, 'contact-section')} className="opacity-80 hover:opacity-100 cursor-pointer">Contact</a>
           </nav>
@@ -646,7 +646,7 @@ export default function PortfolioFresh() {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#work" onClick={(e) => scrollToSection(e, 'work-section')} className="inline-flex items-center gap-2 rounded-2xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium cursor-pointer">
-                <Sparkles className="h-4 w-4" /> See featured work
+                <Sparkles className="h-4 w-4" /> See featured projects
               </a>
               <LinkButton href={`mailto:${CONTACT_EMAIL}`}>
                 <Mail className="h-4 w-4" /> Get in touch
@@ -834,7 +834,7 @@ export default function PortfolioFresh() {
 
       {/* Work section */}
       <section id="work-section" className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">Featured Work</h2>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">Featured Projects</h2>
 
         <div id="work-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {featuredProjects.map((item) => (

@@ -114,7 +114,7 @@ function ProjectSidebar({ currentProjectId }) {
             <div className="mb-4">
               <div className="px-2 py-1">
                 <span className="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-black/10 dark:bg-white/10 text-black dark:text-white">
-                  Featured Work
+                  Featured Projects
                 </span>
               </div>
               <div className="mt-1">
