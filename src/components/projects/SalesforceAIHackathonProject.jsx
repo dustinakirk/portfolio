@@ -28,7 +28,7 @@ function SalesforceAIHackathonProject() {
             Breaking Free from Constraints: Why AI Was the Answer to Enterprise UX
           </p>
           <p className="text-black/80 dark:text-white/80">
-            Spring 2023. ChatGPT had just taken the world by storm, and companies everywhere were scrambling to understand how to incorporate AI into their products. As a Lead Product Designer in Sales Cloud, I had been experiencing firsthand the limitations of our constrained user interface patterns. The rigid frameworks that once provided consistency had become a straitjacket, preventing us from delivering the fluid, context-aware experiences our users desperately needed.
+          <b>Spring 2023</b>. ChatGPT had just taken the world by storm a few months prior, and companies were scrambling to understand how to bring AI into their products. As a Lead Product Designer in Sales Cloud, I was seeing firsthand the limits of our constrained UI patterns. The frameworks that once ensured consistency had become a straitjacket, blocking the fluid, context-aware experiences our users needed.
           </p>
         </div>
 
@@ -38,11 +38,11 @@ function SalesforceAIHackathonProject() {
           
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              Enterprise software had hit a wall. Our users—sales professionals managing hundreds of accounts, thousands of contacts, and countless opportunities—were drowning in data and drowning in clicks. They needed to navigate between dozens of screens, remember complex workflows, and somehow maintain context while jumping between tasks. The traditional UI paradigms we'd been using for decades simply weren't cutting it anymore.
+            Enterprise software had hit a wall. Sales professionals managing hundreds of accounts and thousands of contacts were drowning in data and clicks. They bounced between screens, memorized complex workflows, and struggled to maintain context. Decades-old UI paradigms weren’t keeping up.
             </p>
             
             <p className="text-black/80 dark:text-white/80">
-              When the internal AI hackathon was announced, I saw an opportunity. Not just to experiment with the latest technology, but to fundamentally reimagine how enterprise software could work. What if instead of forcing users to adapt to our rigid structures, we could create interfaces that adapted to them?
+              When an internal AI hackathon was announced, I saw an opening—not just to utilize LLMs, but to reimagine how enterprise software could work. What if, instead of forcing users to adapt to rigid structures, we built interfaces that adapted to them?
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ function SalesforceAIHackathonProject() {
           
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              My hackathon submission wasn't just about adding AI features to existing interfaces—it was about reimagining the entire experience from the ground up. I envisioned a Sales Cloud where:
+              My submission wasn’t about bolting AI onto existing screens. It was about rethinking the experience from the ground up:
             </p>
             
             <ul className="list-disc pl-6 space-y-2 text-black/80 dark:text-white/80">
@@ -98,7 +98,7 @@ function SalesforceAIHackathonProject() {
           
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              This wasn't just about winning a hackathon (though winning "Most Innovative" among 90 teams was certainly validating). It was about proving that enterprise software didn't have to be painful. By combining modern UX design principles with the intelligence capabilities of GPT and other AI models, we could create experiences that actually empowered users rather than constraining them.
+            Winning <b>“Most Innovative”</b> among 90 teams was validating, but the goal was bigger: to show that enterprise software doesn’t have to be a templatized, complex, and painful experience. By pairing modern UX principles with GPT-class intelligence, we can empower users instead of constraining them.
             </p>
             
             <p className="text-black/80 dark:text-white/80">
@@ -106,7 +106,7 @@ function SalesforceAIHackathonProject() {
             </p>
             
             <p className="text-black/80 dark:text-white/80">
-              As product designers, we stand at an inflection point. The tools and technologies that will define the next generation of enterprise software are here. The question isn't whether AI will transform our industry—it's whether we'll lead that transformation or be left behind by it.
+            As product designers, we’re at an inflection point. The tools that will define the next generation of enterprise software are here. The question isn’t whether AI will transform our industry—it’s whether we’ll lead that transformation or be led by it.
             </p>
           </div>
         </div>
@@ -117,11 +117,11 @@ function SalesforceAIHackathonProject() {
           
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              While this hackathon project was conceptual, many of its ideas have influenced the direction of Sales Cloud and enterprise software more broadly. We're seeing the emergence of AI-powered features across the industry, from intelligent email composition to predictive analytics. But we're still just scratching the surface.
+              While this hackathon project was conceptual, it opened the eyes of many as to the potential impact AI will have on software. Many of the tropes such as usability, personalization, and efficiency are now possible and achievable with AI. We're seeing the emergence of AI-powered features across the industry, through AI Agentic backends, proactive actions, and predictive analytics. But we're still just scratching the surface.
             </p>
             
             <p className="text-black/80 dark:text-white/80">
-              The future of enterprise software won't be about adding AI features to existing interfaces. It will be about reimagining those interfaces entirely—creating systems that understand context, anticipate needs, and adapt to individual users. It will be about moving from software that users have to learn to software that learns its users.
+            The future won’t be about sprinkling AI onto old interfaces. It will be about reimagining those interfaces entirely: systems that understand context, anticipate needs, and adapt to each individual. We’ll move from software users have to learn to software that learns its users.
             </p>
           </div>
         </div>
