@@ -11,6 +11,7 @@ import LoadOrderProject from './components/projects/LoadOrderProject'
 import PillarsProject from './components/projects/PillarsProject'
 import AppsProject from './components/projects/AppsProject'
 import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasProject'
+import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/projects/pillars" element={<PillarsProject />} />
         <Route path="/projects/apps" element={<AppsProject />} />
         <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
+        <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
       </Routes>
     </Router>
   )

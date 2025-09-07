@@ -7,7 +7,7 @@ export const FEATURED_PROJECTS_CONFIG = {
   showAll: false, // Set to true to show all projects as featured
   maxFeatured: 9, // Maximum number of featured projects to show
   // Alternatively, you can specify project IDs to feature
-  featuredIds: ['generativeuicanvas', 'aistories', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
+  featuredIds: ['generativeuicanvas', 'aistories', 'salesforceaihackathon', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
 };
 
 // Portfolio projects data
@@ -32,6 +32,17 @@ export const WORK = [
     category: "AI & Innovation",
     image: "/projects/aistories/bot_writing_stories.png",
     tags: ["GenAI", "Literature", "Platform"],
+    featured: true,
+  },
+  {
+    id: "salesforceaihackathon",
+    title: "Salesforce AI Hackathon",
+    subtitle:
+      "Won 'Most Innovative' award among 90 teams with generative AI solutions for Sales Cloud.",
+    href: "/projects/salesforceaihackathon",
+    category: "AI & Innovation",
+    image: "/projects/salesforceaihackathon/hero_salesforce.png",
+    tags: ["GenAI", "Sales Cloud", "Award"],
     featured: true,
   },
   {

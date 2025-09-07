@@ -1054,7 +1054,7 @@ export default function PortfolioFresh() {
         <div className="rounded-3xl border border-black/10 dark:border-white/10 bg-gradient-to-br from-white/80 to-white/40 dark:from-white/10 dark:to-white/5 p-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Let’s build the future</h2>
           <p className="mt-2 text-sm md:text-base opacity-80 max-w-2xl mx-auto">
-            If you ae shipping AI-first solutions that rethink how software is built from the ground up, then I'm your guy.  Let's work together to shape the future of software and user experiences.
+            If you are shipping AI-first solutions that rethink how software is built from the ground up, then I'm your guy.  Let's work together to shape the future of software and user experiences.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 rounded-2xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium">
