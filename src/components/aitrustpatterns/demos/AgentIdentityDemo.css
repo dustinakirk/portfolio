@@ -1,0 +1,325 @@
+/* ===========================================
+   Agent Identity Demo Styles
+   Scoped with `aid-` prefix to avoid conflicts
+   =========================================== */
+
+.aid-chat {
+  max-width: 960px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.aid-chat__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f9fafb;
+}
+
+.aid-agent-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.aid-agent-header__avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-color: #0f172a;
+  color: #f9fafb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.aid-agent-header__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.aid-agent-header__name {
+  font-weight: 600;
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.aid-agent-header__role {
+  margin-top: 2px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.aid-agent-header__meta {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.aid-agent-header__mode-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.aid-agent-header__mode-tag--draft {
+  border-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.08);
+  color: #0369a1;
+}
+
+.aid-agent-header__summary {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.aid-agent-header__role-button {
+  margin-left: auto;
+  align-self: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  background-color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1d4ed8;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.aid-agent-header__role-button:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.aid-chat__body {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 16px;
+  padding: 12px 16px 16px;
+}
+
+.aid-chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aid-chat-thread__message {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.aid-chat-thread__message--agent .aid-chat-thread__bubble {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+}
+
+.aid-chat-thread__message--user .aid-chat-thread__bubble {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.aid-chat-thread__avatar {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background-color: #e5e7eb;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.aid-chat-thread__avatar--user {
+  background-color: #1d4ed8;
+  color: #eff6ff;
+}
+
+.aid-chat-thread__bubble {
+  border-radius: 12px;
+  padding: 8px 10px;
+  max-width: 100%;
+}
+
+.aid-chat-thread__sender {
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.aid-chat-thread__text {
+  font-size: 13px;
+  color: #111827;
+}
+
+.aid-chat-thread__hint {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.aid-role-contract {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  padding: 12px 12px 10px;
+  font-size: 12px;
+  color: #111827;
+}
+
+.aid-role-contract__header {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.aid-role-contract__header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aid-role-contract__close {
+  margin-left: 8px;
+  border: none;
+  background: transparent;
+  padding: 0 4px;
+  font-size: 14px;
+  line-height: 1;
+  color: #6b7280;
+  cursor: default;
+}
+
+.aid-role-contract__close:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.aid-role-contract__title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.aid-role-contract__subtitle {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.aid-role-contract__section {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.aid-role-contract__section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.aid-role-contract__label {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+
+.aid-role-contract__body {
+  margin: 0;
+  font-size: 12px;
+  color: #111827;
+}
+
+.aid-role-contract__list {
+  margin: 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.aid-role-contract__item {
+  margin: 2px 0;
+}
+
+.aid-role-contract__definition-list {
+  margin: 0;
+  padding: 0;
+}
+
+.aid-role-contract__definition-item {
+  margin: 4px 0;
+}
+
+.aid-role-contract__definition-term {
+  font-weight: 600;
+  font-size: 12px;
+  color: #111827;
+}
+
+.aid-role-contract__definition-description {
+  margin: 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.aid-role-contract__footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.aid-role-contract__mode-indicator {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.aid-role-contract__mode-indicator--draft {
+  background-color: rgba(56, 189, 248, 0.08);
+  color: #0369a1;
+}
+
+.aid-chat-thread__link-role-contract {
+  color: #1d4ed8;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .aid-chat__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

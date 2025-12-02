@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CONTACT_EMAIL } from "../constants";
-import ProjectSidebar from "./ProjectSidebar";
+import ProjectNav from "./ProjectNav";
 import {
-  ArrowLeft,
   Mail,
   Download,
   Linkedin,
-  Home,
-  ChevronRight,
-  Menu,
-  X,
 } from "lucide-react";
 
 // Avatar component reused from main portfolio
@@ -75,35 +70,10 @@ const diagonalConfig = {
 };
 
 export default function ProjectLayout({ children, title, subtitle, projectId }) {
-  const navigate = useNavigate();
-  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
-
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [projectId]);
-
-  // Close mobile sidebar on project change
-  useEffect(() => {
-    setShowMobileSidebar(false);
-  }, [projectId]);
-
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId.replace('#', ''));
-    if (element) {
-      const headerElement = document.querySelector('header');
-      const offset = headerElement ? headerElement.offsetHeight + 20 : 80;
-      
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f7f7f9_0%,#eef0f4_100%)] dark:bg-[linear-gradient(180deg,#0a0a0a_0%,#0f1115_100%)] text-black dark:text-white">
@@ -155,95 +125,39 @@ export default function ProjectLayout({ children, title, subtitle, projectId }) 
         </div>
       </header>
 
-      {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-4 py-4">
-        <nav className="flex items-center gap-2 text-sm">
-          <Link to="/" className="opacity-60 hover:opacity-100 transition-opacity">
-            Portfolio
-          </Link>
-          <ChevronRight className="h-4 w-4 opacity-40" />
-          <span className="font-medium">{title}</span>
-        </nav>
-      </div>
+      {/* Project Navigation */}
+      <ProjectNav currentProjectId={projectId} />
 
       {/* Project Hero */}
-      <section className="mx-auto max-w-7xl px-4 pb-8">
+      <section className="mx-auto max-w-7xl px-4 py-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <button 
-            onClick={() => navigate('/')}
-            className="inline-flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity mb-4"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to portfolio
-          </button>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">
             {title}
           </h1>
           {subtitle && (
-            <p className="mt-4 text-lg text-black/70 dark:text-white/70 max-w-3xl">
+            <p className="mt-4 text-lg text-black/70 dark:text-white/70">
               {subtitle}
             </p>
           )}
         </motion.div>
       </section>
 
-      {/* Project Content with Sidebar */}
+      {/* Project Content */}
       <div className="mx-auto max-w-7xl px-4 py-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-          {/* Main Content */}
-          <main className="lg:col-span-8 xl:col-span-9">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            >
-              {children}
-            </motion.div>
-          </main>
-
-          {/* Desktop Sidebar */}
-          <aside className="hidden lg:block lg:col-span-4 xl:col-span-3">
-            <ProjectSidebar currentProjectId={projectId} />
-          </aside>
-        </div>
+        <main>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            {children}
+          </motion.div>
+        </main>
       </div>
-
-      {/* Mobile Sidebar Toggle */}
-      <button
-        onClick={() => setShowMobileSidebar(!showMobileSidebar)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 p-3 rounded-full bg-black dark:bg-white text-white dark:text-black shadow-lg"
-        aria-label="Toggle project navigation"
-      >
-        {showMobileSidebar ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-      </button>
-
-      {/* Mobile Sidebar Overlay */}
-      {showMobileSidebar && (
-        <div className="lg:hidden fixed inset-0 z-40">
-          <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setShowMobileSidebar(false)}
-          />
-          <div className="absolute right-0 top-0 bottom-0 w-80 max-w-[80vw] bg-white dark:bg-gray-900 shadow-xl overflow-y-auto">
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold">Projects</h3>
-                <button
-                  onClick={() => setShowMobileSidebar(false)}
-                  className="p-1 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <ProjectSidebar currentProjectId={projectId} />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-4 py-12 md:py-16">

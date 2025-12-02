@@ -579,7 +579,7 @@ export default function PortfolioFresh() {
     <div className="min-h-screen bg-[linear-gradient(180deg,#f7f7f9_0%,#eef0f4_100%)] dark:bg-[linear-gradient(180deg,#0a0a0a_0%,#0f1115_100%)] text-black dark:text-white">
       <ScrollToHashElement />
       {/* Nav */}
-      <header id="navigation-header" className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/30 border-b border-black/5 dark:border-white/10 relative overflow-hidden">
+      <header id="navigation-header" className="sticky top-0 z-[100] backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/30 border-b border-black/5 dark:border-white/10 relative overflow-hidden">
         {/* Diagonal blue lines - positioned behind content */}
         <div id="diagonal-decoration" className="absolute top-0 right-0 w-full h-full pointer-events-none">
           <div 

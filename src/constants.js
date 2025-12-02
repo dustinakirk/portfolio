@@ -7,11 +7,22 @@ export const FEATURED_PROJECTS_CONFIG = {
   showAll: false, // Set to true to show all projects as featured
   maxFeatured: 9, // Maximum number of featured projects to show
   // Alternatively, you can specify project IDs to feature
-  featuredIds: ['generativeuicanvas', 'aistories', 'salesforceaihackathon', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
+  featuredIds: ['aitrustpatterns', 'generativeuicanvas', 'aistories', 'salesforceaihackathon', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
 };
 
 // Portfolio projects data
 export const WORK = [
+  {
+    id: "aitrustpatterns",
+    title: "AI Trust Patterns",
+    subtitle:
+      "25 UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+    href: "/agentic_ai_patterns",
+    category: "AI & Innovation",
+    image: "/projects/aitrustpatterns/hero_aitrustpatterns.png",
+    tags: ["AI/ML", "UX Patterns", "Trust Design"],
+    featured: true,
+  },
   {
     id: "generativeuicanvas",
     title: "Generative UI Canvas",

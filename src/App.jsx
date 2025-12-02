@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import PortfolioFresh from './components/PortfolioFresh'
 import AiStoriesProject from './components/projects/AiStoriesProject'
 import EmailProject from './components/projects/EmailProject'
@@ -12,6 +12,8 @@ import PillarsProject from './components/projects/PillarsProject'
 import AppsProject from './components/projects/AppsProject'
 import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasProject'
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
+import AgenticOverviewPage from './components/agentic/AgenticOverviewPage'
+import PatternDetailPage from './components/agentic/PatternDetailPage'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
         <Route path="/projects/apps" element={<AppsProject />} />
         <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
         <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
+        <Route path="/agentic_ai_patterns" element={<AgenticOverviewPage />} />
+        <Route path="/agentic_ai_patterns/patterns" element={<Navigate to="/agentic_ai_patterns" replace />} />
+        <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternDetailPage />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
       </Routes>
     </Router>
