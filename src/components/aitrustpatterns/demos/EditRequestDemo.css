@@ -1,0 +1,481 @@
+/* ===========================================
+   Edit Request Demo Styles
+   Scoped with `erd-` prefix to avoid conflicts
+   =========================================== */
+
+/* Main Container Card */
+.erd-demo {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* ========================================
+   HEADER BLOCK
+   ======================================== */
+.erd-demo__header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fff;
+}
+
+.erd-demo__header-content {
+    flex: 1;
+    padding-right: 24px;
+}
+
+.erd-demo__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.erd-demo__subtitle {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.erd-demo__reset-btn {
+    white-space: nowrap;
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    background-color: #fff;
+    border-radius: 6px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.erd-demo__reset-btn:hover {
+    border-color: #cbd5e1;
+    color: #334155;
+    background-color: #f8fafc;
+}
+
+/* ========================================
+   THREAD/BODY BLOCK
+   ======================================== */
+.erd-thread {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ========================================
+   INPUT AREA (Mock)
+   ======================================== */
+.erd-input {
+    padding: 16px 24px;
+    border-top: 1px solid #e2e8f0;
+    background-color: #fff;
+}
+
+.erd-input__box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #94a3b8;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   MESSAGE BLOCK
+   ======================================== */
+.erd-message {
+    display: flex;
+    gap: 16px;
+    max-width: 90%;
+    animation: erd-fadeIn 0.3s ease-out;
+    align-self: flex-start;
+}
+
+.erd-message--user {
+    flex-direction: row;
+}
+
+.erd-message--agent {
+    flex-direction: row;
+}
+
+.erd-message__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.erd-message__avatar--agent {
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+.erd-message__avatar--user {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+/* ========================================
+   MESSAGE BODY ELEMENT
+   ======================================== */
+.erd-message__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    min-width: 280px;
+}
+
+.erd-message__bubble {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.erd-message__bubble--user {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border-top-left-radius: 2px;
+}
+
+.erd-message__bubble--agent {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    border-top-left-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* ========================================
+   EDIT CONTROLS (The Core Pattern)
+   ======================================== */
+.erd-message__actions {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    left: 100%;
+    margin-left: 8px;
+}
+
+.erd-message__action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.erd-message__action-btn:hover {
+    color: #2563eb;
+    background-color: #eff6ff;
+}
+
+/* ========================================
+   META INFO (Timestamp, Edited label)
+   ======================================== */
+.erd-message__meta {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.erd-message__edited-label {
+    color: #64748b;
+    font-style: italic;
+}
+
+/* ========================================
+   EDIT MODE STATE
+   ======================================== */
+.erd-edit-area {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: erd-expandIn 0.2s ease-out;
+    width: 100%;
+}
+
+.erd-edit-area__input {
+    border: none;
+    resize: none;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    width: 100%;
+    color: #1e293b;
+    min-height: 60px;
+}
+
+.erd-edit-area__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* ========================================
+   BUTTONS (BEM)
+   ======================================== */
+.erd-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.erd-btn--primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.erd-btn--primary:hover {
+    background-color: #1d4ed8;
+}
+
+.erd-btn--secondary {
+    background-color: white;
+    border-color: #e2e8f0;
+    color: #64748b;
+}
+
+.erd-btn--secondary:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* ========================================
+   REPORT TABLE (Mock Content)
+   ======================================== */
+.erd-report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.erd-report-table th,
+.erd-report-table td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.erd-report-table th {
+    font-weight: 600;
+    color: #64748b;
+    background: #f8fafc;
+}
+
+.erd-report-table td {
+    color: #334155;
+}
+
+.erd-report-table__wrapper {
+    margin-top: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.erd-report-table__header {
+    background-color: #f8fafc;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.erd-report-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.erd-report-badge--open {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.erd-report-badge--won {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* ========================================
+   PROCESSING ANIMATION
+   ======================================== */
+.erd-processing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.erd-processing__text {
+    color: #64748b;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.erd-dot-flashing {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: #3b82f6;
+    color: #3b82f6;
+    animation: erd-dot-flashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+}
+
+.erd-dot-flashing::before,
+.erd-dot-flashing::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.erd-dot-flashing::before {
+    left: -10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: #3b82f6;
+    color: #3b82f6;
+    animation: erd-dot-flashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+
+.erd-dot-flashing::after {
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: #3b82f6;
+    color: #3b82f6;
+    animation: erd-dot-flashing 1s infinite alternate;
+    animation-delay: 1s;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes erd-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes erd-expandIn {
+    from {
+        transform: scale(0.98);
+        opacity: 0.8;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes erd-dot-flashing {
+    0% {
+        background-color: #3b82f6;
+    }
+    50%,
+    100% {
+        background-color: #dbeafe;
+    }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 640px) {
+    .erd-demo {
+        height: auto;
+        min-height: 500px;
+    }
+
+    .erd-demo__header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .erd-demo__header-content {
+        padding-right: 0;
+    }
+
+    .erd-message {
+        max-width: 100%;
+    }
+
+    .erd-message__body {
+        min-width: 200px;
+    }
+
+    .erd-message__actions {
+        position: static;
+        transform: none;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+}

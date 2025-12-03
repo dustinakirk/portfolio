@@ -72,7 +72,10 @@ export default function PatternSidebar({
                           isActive ? 'agentic-sidebar__pattern-indicator--active' : ''
                         }`}
                       />
-                      <span className="agentic-sidebar__pattern-title">{pattern.title}</span>
+                      <span className="agentic-sidebar__pattern-title">
+                        {pattern.index && <span className="agentic-sidebar__pattern-index">{pattern.index}</span>}
+                        {pattern.title}
+                      </span>
                     </div>
                   );
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
+import FeedbackLink from '../FeedbackLink';
 
 // Inline styles for the delegation modes demo
 const demoStyles = {
@@ -284,6 +285,7 @@ export default function DelegationModesPattern() {
           </div>
           <div className="pattern-header__meta">
             <span className="pattern-header__timestamp">Last updated December 2025</span>
+            <FeedbackLink patternIndex="1.2" patternTitle="Delegation Modes" />
           </div>
         </div>
       </header>

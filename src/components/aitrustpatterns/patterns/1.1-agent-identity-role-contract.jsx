@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import AgentIdentityDemo from '../demos/AgentIdentityDemo';
+import FeedbackLink from '../FeedbackLink';
 
 // SEO metadata for this pattern page
 export const AGENT_IDENTITY_SEO = {
@@ -33,6 +34,7 @@ export default function AgentIdentityRoleContractPattern() {
           </div>
           <div className="pattern-header__meta">
             <span className="pattern-header__timestamp">Last updated December 2025</span>
+            <FeedbackLink patternIndex="1.1" patternTitle="Agent Identity & Role Contract" />
           </div>
         </div>
       </header>

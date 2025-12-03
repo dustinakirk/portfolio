@@ -99,46 +99,50 @@ In an enterprise assistant, when a user connects Jira, the wayfinder adds chips 
 
 ---
 
-### 2.3 Progressive Disclosure Modes
-
-🎯 **Purpose**
+### 2.3 Progressive Disclosure
 Support both novices and experts by gradually revealing complexity.
 
-🛠 **Implementation**
+**Implementation**
 
-* Mode switch: **“Simple” vs “Advanced / Developer / Supervisor”**.
-* In simple mode:
+* Attach a small, low-contrast “View steps / details” affordance to relevant assistant messages; keep it collapsed by default.
+* On tap/click, expand inline secondary content (e.g., tool chain / reasoning steps) without pushing the main conversation off-screen.
+* Allow a third level of depth via a side panel or modal to inspect a single step (inputs, outputs, logs) in a structured, developer-style layout.
+* Persist expansion state per message and ensure full keyboard/screen-reader support for toggles, focus order, and ARIA expanded/collapsed states.
 
-  * Show high-level actions and explanations only.
-* In advanced mode:
+**Use Case**
 
-  * Show raw prompts, variables, logs, tokens, and tool payloads.
-* Persist mode preference at **user + workspace** level.
+* When you want to keep the core chat answer simple for non-experts, but still provide transparency and traceability for advanced users.
+* For AI actions that read/write user data (refunds, account changes, system overrides) where users may want to verify *how* a decision was made.
+* For debugging and trust-building scenarios (support agents, admins, developers) where inspecting underlying tools, prompts, or policies is valuable but not required for every user.
 
-💼 **Use case**
-On a multi-agent orchestration canvas, PMs see a simple flow (“Research → Draft → Review”), while engineers toggle to “Supervisor Mode” to see tool calls and LLM prompts.
+
 
 ---
 
 ### 2.4 “Teach Me” Interfaces
 
 🎯 **Purpose**
-Harness the “IKEA effect”: users trust systems they’ve shaped and trained.
+Harness the “IKEA effect”: users trust systems they’ve shaped and trained. Allow users to provide feedback to the ai through examples upfront and feedback afterwards.
 
-🛠 **Implementation**
+**Implementation**
+Design an explicit “Teach Me” mode that lets users shape the model before and after interaction:
 
-* After failures or friction, show **micro-teaching prompts**:
+* **Upfront teaching:** Offer a short, guided setup where users provide examples (e.g., “Show me your ideal answer,” “Paste your writing style,” “Describe your process/preferences”).
+* **Inline feedback controls:** Add quick actions on each response: “More like this,” “Less like this,” “Change tone,” “Incorrect → Fix,” plus a free-text correction field.
+* **Visible memory/knowledge panel:** Show what the AI has “learned” as editable chips or a profile (“Prefers concise answers,” “Uses friendly tone,” “Assumes role: Sales Ops”). Let users toggle or delete items.
+* **Session vs. persistent preferences:** Let users choose whether feedback applies only to this conversation or becomes part of a persistent profile.
+* **Contextual prompts:** When the system detects repeated corrections, proactively ask, “Want me to remember this for next time?” and convert it into a reusable rule.
 
-  * “How should I have handled this next time?”
-* Provide **structured inputs**:
+---
 
-  * Conditions (“When invoice type = subscription…”) and actions (“…always CC finance”).
-* Confirm & surface new rules:
+**Use Case**
+Use “Teach Me” interfaces when:
 
-  * “✅ Saved as a rule: ‘Subscription invoices → always CC finance.’ View / edit all rules.”
+* **Personalization matters:** Writing assistants, strategy/planning tools, or research copilots that must match a user’s voice, goals, and structure.
+* **Domain rules are nuanced:** Legal, finance, healthcare, or enterprise tools where teams have specific policies, templates, or terminology.
+* **Team / org consistency is important:** Customer support, sales, or marketing copilots that need to follow brand voice, macros, and playbooks.
+* **Long-running workflows:** Agents that support recurring tasks (e.g., weekly reports, executive summaries) where incremental corrections build a high-trust, “trained” partner over time.
 
-💼 **Use case**
-A support triage agent misroutes a ticket. The agent asks, “Was this billing or product?” and turns the correction into a persistent routing rule.
 
 ---
 
@@ -160,7 +164,53 @@ Help users articulate complex requests by giving them pre-baked workflows they c
   * Pre-populate a Plan with editable parameters (dates, teams, thresholds).
 
 💼 **Use case**
-A PM chooses “Release Readiness Review” recipe, which orchestrates agents to gather stats, scan Jira, summarize risks, and draft a release note.
+A PM chooses “Release Readiness Review” recipe, which orchestrates agents to gather stats, scan Jira, summarize risks, and draft a release note.  The user proceeds to enter the minimal inputs necessary to complete the recipe.
+
+---
+
+### 2.6 Feedback on Results & Rating Controls
+
+🎯 **Purpose**
+Create a simple, repeatable loop for users to express how well the agent’s responses match their expectations—so the system can adapt over time, not just per session.
+
+🛠 **Implementation**
+
+* **Lightweight, always-visible controls** on agent messages or task outputs:
+
+  * Minimum: **Thumbs up / thumbs down** icons.
+  * Optionally: **0–5 star / score scale** for richer signal when it’s warranted (e.g., long tasks, reports).
+* **On-click, invite richer feedback (but don’t force it):**
+
+  * After a thumbs up/down or rating, open a small sheet:
+
+    * Quick tags: “Too long,” “Missed instructions,” “Wrong tool,” “Out of date,” “Great example,” etc.
+    * Optional text box: “Tell us what worked / what didn’t.”
+  * Respect user effort: keep the form tiny and dismissible; never block progress.
+* **Tie feedback to scope and persistence:**
+
+  * Make clear what feedback affects:
+
+    * “This will help improve my future answers in this workspace.”
+    * Optionally let the user choose: “Apply this only to this conversation” vs “Use this to tune my preferences.”
+* **Close the loop where possible:**
+
+  * For negative feedback, offer **inline repair options**:
+
+    * “Got it. Want me to try again with: [More concise] [Different tone] [Narrower scope]?”
+  * Integrate with **Teach Me Interfaces (2.4)**:
+
+    * Repeated patterns in feedback can become persistent rules (“Prefer bullet-point summaries,” “Always show sources”).
+* **Placement & accessibility:**
+
+  * Controls should be:
+
+    * Close to the evaluated content (end of message card or result block).
+    * Keyboard- and screen-reader accessible.
+    * Available on key outputs (final answers, generated artifacts, completed runs), not necessarily every tiny message.
+
+💼 **Use case**
+A strategy co-pilot generates a quarterly narrative. The user gives a thumbs down, selects “Missed my constraints” and adds: “You ignored the profitability targets.” The agent acknowledges, regenerates with those constraints highlighted, and suggests: “Want me to remember that profitability is a hard constraint for future planning tasks?”
+
 
 ---
 
@@ -169,7 +219,7 @@ A PM chooses “Release Readiness Review” recipe, which orchestrates agents to
 ### 3.1 Kill Switch, Pause & Resume
 
 🎯 **Purpose**
-Give users a psychological and practical safety net against "runaway" agents, with graduated control options.
+Give users a psychological and practical safety net against "runaway" agents which take a long time to complete and may need to be interupted, with graduated control options.
 
 🛠 **Implementation**
 
@@ -183,12 +233,13 @@ Give users a psychological and practical safety net against "runaway" agents, wi
   * "Pause this task" – Agent stops executing but retains context.
   * "Resume paused task" – Continue from the last checkpoint.
   * "Cancel task" – Terminate and show summary of completed vs planned work.
-* On pause:
 
+* On pause:
   * Gracefully complete the current atomic operation, then halt.
   * Display "Paused by user" status with clear resume affordance.
-* On cancel/stop:
+  * Allow user to modify the plan, add context, and influence the agent.
 
+* On cancel/stop:
   * Immediately terminate active tool calls, annotate logs with "Stopped by user," and show a concise summary of what was done vs what was *planned*.
 * Offer **one-click rollback** where possible:
 
@@ -221,29 +272,126 @@ A marketing agent drafts a 5-email sequence. Nothing is sent until the user appr
 
 ---
 
-### 3.3 Plan‑then‑Execute Workflow
+### 3.3 Plan-then-Execute Workflow
 
-🎯 **Purpose**
-Let users supervise and adjust the architecture before heavy or expensive work begins.
+🎯 **Purpose**  
+Let users and agents co-design *what* will happen before any heavy or risky work runs, then execute that plan with clear oversight, autonomy controls, and environment choice (sandbox vs live).
+
+---
 
 🛠 **Implementation**
 
-1. **Plan phase**:
+#### 1) Planning Workspace (Plan-First Mode)
 
-   * Agent proposes a numbered plan: “1) Gather data… 2) Analyze patterns… 3) Draft report…”
-   * For complex tasks, attach estimated time, cost tokens, risk level.
-   * Run **Structured Clarification Prompts** upfront (see §4.1).
-2. **Edit & approve**:
+A dedicated, side-effect-free space where the agent can *gather information* and *propose a plan* without touching production.
 
-   * User can reorder, delete, or add steps.
-   * Allow per-step delegation mode (Advisor/Co‑Pilot/Autopilot).
-3. **Execute phase**:
+* **Entry modes**:
+  * From scratch: “Start with a plan” vs “Run immediately.”
+  * From conversation: “This is getting big → Turn into a plan.”
+* **Read-only information gathering** inside the workspace:
+  * Agent can call tools in **read mode only** to pull context:
+    * “Fetch recent incidents…”
+    * “Summarize last 30 days of churn metrics…”
+    * “List open Jira tickets related to X…”
+  * Use existing patterns:
+    * **Tool Usage Indicators (5.3)** – “Reading Jira…”, “Querying data warehouse…”
+    * **Source Anchoring (6.1)** – click-through to evidence.
+* **Plan structure as a first-class object**:
+  * Numbered steps with:
+    * Step name, description, and goal.
+    * Inputs/outputs and required tools.
+    * Estimated **time / cost / risk** for complex tasks.
+  * Attach **assumptions** (4.3) and **clarifications** (4.1) as part of the plan:
+    * “Assuming environment = staging.”
+    * “Max budget = $500 in compute.”
+* **Delegation & gates per step**:
+  * For each step, allow:
+    * Delegation mode (1.2): **Advisor / Co-Pilot / Autopilot**.
+    * Environment: **Sandbox vs Live** (see below).
+    * HITL gates (3.2): “Requires approval before executing this step.”
 
-   * Execution UI with live status per step.
-   * Option to pause or modify later steps.
+---
 
-💼 **Use case**
-A data agent proposes a pipeline to analyze churn drivers. The user removes a risky “write back” step and sets sensitive steps to Co‑Pilot mode.
+#### 2) Edit, Approve & Save
+
+Support collaborative shaping of the plan before anything runs.
+
+* **Direct editing of the plan**:
+  * Reorder, add, remove, or split steps.
+  * Adjust per-step autonomy, environment, and HITL gates.
+* **Recap & commit view (4.2)**:
+  * “Here’s the plan I’ll follow” card with:
+    * Goal, scope, constraints.
+    * Steps with modes (Advisor/Co-Pilot/Autopilot).
+    * Environments (Sandbox vs Live) per step.
+    * Agents and tools involved + key risks.
+  * Clear controls:
+    * “Looks right → Save & continue”
+    * “Edit plan” or “Keep in draft (don’t run yet)”
+* **Templates & reuse (2.5)**:
+  * Any approved plan can be:
+    * Saved as a **reusable recipe** (“Use this plan next quarter”).
+    * Cloned and tweaked for new runs.
+
+---
+
+#### 3) Choose Execution Environment (Sandbox vs Live)
+
+Explicitly separate *where* the plan will run from *what* the plan is.
+
+* **Per-run environment choice**:
+  * Global toggle for the run:
+    * **Run in Sandbox** – simulate on demo/shadow data, no side-effects.
+    * **Run in Production** – real systems, with guardrails.
+  * Optionally override per step:
+    * E.g., “Analysis steps in sandbox, write-back steps in staging only.”
+* **Sandbox execution (2.1)**:
+  * Show **diffs** instead of real changes:
+    * “If this were live, I would have: updated 27 records, closed 3 tasks…”
+  * Great for new/risky plans or first-time users of an agent.
+* **Live execution**:
+  * Honor scoped permissions (3.5) and HITL gates (3.2).
+  * Make environment visible in the UI:
+    * Badges like “Sandbox run” / “Production run – write access enabled.”
+
+---
+
+#### 4) Execute with Oversight & Control
+
+Once the plan and environment are approved, execution becomes traceable and interruptible.
+
+* **Execution progress view (5.5)**:
+  * Per-step statuses: Planned → In progress → Blocked → Completed.
+  * Label each step with the responsible agent (7.1 Orchestration Graph).
+* **Real-time control (3.1 Kill Switch, Pause & Resume)**:
+  * Persistent controls:
+    * **Pause** – finish the current atomic action, then stop.
+    * **Resume** – continue from last completed step.
+    * **Cancel** – stop the run and show summary + diffs.
+  * Where possible, provide **rollback** (3.6):
+    * “Undo changes from Step 4 (23 records).”
+* **Transparency & auditability (5.4 Activity Timeline & Audit Log)**:
+  * Timeline of the run:
+    * “12:03 – Data agent fetched metrics…”
+    * “12:05 – Writer agent drafted report…”
+    * “12:07 – User approved Step 3 (email send)…”
+  * Exportable for incident review and governance.
+
+---
+
+💼 **Use case**  
+A data ops lead wants to understand churn drivers and then update customer health scores:
+
+1. They start in **Plan-First mode**, where the agent:
+   * Reads product usage data, CRM, and support tickets (read-only) and proposes a 6-step plan.
+2. The lead edits the plan:
+   * Sets early analysis steps to **Sandbox + Autopilot**.
+   * Sets the “Update health scores in CRM” step to **Live + Co-Pilot with HITL approval**.
+3. They approve the recap and run:
+   * In sandbox, they review diffs for the proposed score changes.
+   * Once satisfied, they rerun the same saved plan in **Live** mode, approving the final write-back step via a HITL gate.
+4. If something looks off post-run, they use rollback to revert the last batch of CRM updates and adjust the plan template for next time.
+
 
 ---
 
@@ -314,6 +462,57 @@ Make experimentation safe by ensuring actions are reversible.
 
 💼 **Use case**
 A documentation agent refactors a knowledge base. The admin sees a list of update batches and can revert an entire batch or specific articles.
+
+
+
+---
+
+### 3.7 User-Directed Tool Use & Output Mode Selection
+
+🎯 **Purpose**
+Let users explicitly guide *how* the agent should respond (text, image, code, canvas, etc.) and *which tools* it should use, reducing ambiguity and surprising side effects.
+
+🛠 **Implementation**
+
+* **Tool / mode selector in the composer:**
+
+  * Add a compact control to the message input area:
+
+    * Dropdown, segmented control, or chips like:
+
+      * “Text only,” “Image,” “Code,” “Diagram,” “Canvas,” “SQL query,” “API call,” etc.
+  * Treat selection as a strong hint to the orchestration layer:
+
+    * “User explicitly requested ‘Image’ → prefer image tools and image-first responses.”
+* **Single vs multi-tool options:**
+
+  * Support:
+
+    * **Single mode** (“Generate image only”).
+    * **Combined modes** for richer flows (“Explain + show chart,” “Chat + run SQL”).
+  * Visually indicate combinations (e.g., stacked chip labels).
+* **Connect to permissions & safety:**
+
+  * Respect **Scoped Permissions & Tool Consent (3.5)**:
+
+    * Only show tools the agent is allowed to use for this user/org.
+    * Grey out tools that require extra consent; clicking them opens a lightweight permission flow.
+* **Make tool usage visible per response:**
+
+  * Align with **Tool Usage Indicators (5.3)**:
+
+    * On the agent message, show a subtle “Used: Web search + Image generator” label.
+    * Let advanced users expand to see more detail (tools, environment, write vs read).
+* **Reasonable defaults with easy override:**
+
+  * Infer likely modes from context (e.g., user pasted a dataset → default to “Table / Chart”).
+  * But keep the explicit selector **always available** so users can override defaults at any time.
+* **Persist preferences where appropriate:**
+
+  * Optionally allow “Remember this as my default mode for this agent” for power users who mostly use one output type (e.g., always diagrams).
+
+💼 **Use case**
+In a design system assistant, the composer includes mode chips: “Chat,” “Figma-ready spec,” “Wireframe,” “Code snippet.” The user picks “Wireframe” and types, “Homepage hero for B2B SaaS.” The agent prioritizes canvas or image tools, outputs a structured frame, and labels the message “Mode: Wireframe + Canvas” for clarity.
 
 ---
 
@@ -930,7 +1129,64 @@ Address foundational fears about how data is used and where it goes.
 In a healthcare SaaS, admins disable training on PHI; UI surfaces that setting prominently in the agent sidebar.
 
 ---
+### 8.4 Context Repository & Profile Store
 
+🎯 **Purpose**
+Provide a dedicated, inspectable “source of truth” for user/org context—personal details, goals, preferences, constraints—that agents can reliably use across conversations and agents, separate from ephemeral chat history.
+
+🛠 **Implementation**
+
+* **Dedicated “Context” or “Profile” space:**
+
+  * Accessible from global nav or the agent sidebar:
+
+    * Sections like “About me,” “Roles & org info,” “Goals & OKRs,” “Preferences,” “Constraints & policies,” “Sample artifacts.”
+  * Clearly distinguish from transient conversation memory:
+
+    * “This is long-term context I’ll rely on across sessions.”
+* **Structured, editable fields:**
+
+  * Move beyond free text:
+
+    * Text fields, toggles, dropdowns (with **Escape Hatch for Custom Input – 4.5**).
+    * Examples:
+
+      * Preferred tone, output length, target audience, default region/timezone.
+      * Long-term goals (“Retire by 50,” “Grow pipeline by 30%”) and recurring tasks.
+  * Support **attachments / examples**:
+
+    * “Ideal email sample,” “Preferred report template,” “Brand guidelines.”
+* **Integration with Memory Inspector & Preferences (8.1, 8.2):**
+
+  * Show how **implicit memories** relate to the explicit repository:
+
+    * “Derived from your profile: prefers concise answers.”
+  * Let users promote “ad hoc” memories from chat to the repository:
+
+    * Inline action on a message: “Add this to my context.”
+  * Conversely, allow them to demote or delete outdated items.
+* **Transparency on usage & scope:**
+
+  * For each context item, show:
+
+    * Where it’s used: “Used by: Writing agents, Planning agents.”
+    * Scope: “Personal only / this workspace / entire org.”
+  * Surface indicators in-chat when context is applied:
+
+    * “Using your ‘Exec summary’ template from Context → Preferences.”
+* **Onboarding & ongoing maintenance:**
+
+  * Use a short **setup flow** to seed the repository:
+
+    * “Tell me about your role,” “Share your goals for this quarter,” “Paste something in your preferred voice.”
+  * Periodically prompt for review:
+
+    * “These goals look out of date—update now?” with a safe, quick edit experience.
+
+💼 **Use case**
+A planning copilot references the Context Repository, which stores the user’s role (“Principal Product Designer”), long-term goal (“Retire by 50”), and current quarter OKRs. When asked, “Help me plan my next 6 months,” it automatically frames suggestions around career progression, financial milestones, and relevant design leadership projects, and it surfaces a small note: “Using your saved OKRs and long-term goals from Context.”
+
+---
 ## 9. Error Handling, Empathy & Repair
 
 ### 9.1 Safe Failure States

@@ -9,12 +9,56 @@ export default function AgenticOverviewPage() {
   useEffect(() => {
     document.title = 'Agentic AI UX Patterns - Building Trust in AI Applications | Dustin Kirk';
 
+    const description = '45+ UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.';
+    const ogImage = 'https://dustinkirk.com/projects/aitrustpatterns/ai-trust-patterns.png';
+    const pageUrl = 'https://dustinkirk.com/agentic_ai_patterns';
+
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content',
-        '25 UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.'
-      );
+      metaDesc.setAttribute('content', description);
     }
+
+    // OpenGraph meta tags
+    const ogTags = [
+      { property: 'og:title', content: 'Agentic AI UX Patterns - Building Trust in AI Applications | Dustin Kirk' },
+      { property: 'og:description', content: description },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: pageUrl },
+      { property: 'og:image', content: ogImage },
+      { property: 'og:site_name', content: 'Dustin Kirk - Principal Product Designer' }
+    ];
+
+    // Twitter Card meta tags
+    const twitterTags = [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Agentic AI UX Patterns' },
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:image', content: ogImage }
+    ];
+
+    // Create or update OG meta tags
+    const createdOgTags = ogTags.map(tag => {
+      let meta = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', tag.property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', tag.content);
+      return meta;
+    });
+
+    // Create or update Twitter meta tags
+    const createdTwitterTags = twitterTags.map(tag => {
+      let meta = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', tag.name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', tag.content);
+      return meta;
+    });
 
     // Add structured data
     const structuredData = {
@@ -28,8 +72,9 @@ export default function AgenticOverviewPage() {
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://dustinkirk.com/agentic_ai_patterns"
+        "@id": pageUrl
       },
+      "image": ogImage,
       "keywords": "AI trust, UX patterns, AI design, agentic applications, AI transparency, user trust, AI UX"
     };
 
@@ -45,13 +90,16 @@ export default function AgenticOverviewPage() {
     return () => {
       const scriptToRemove = document.querySelector('#ai-patterns-structured-data');
       if (scriptToRemove) scriptToRemove.remove();
+      // Clean up OG and Twitter tags
+      createdOgTags.forEach(tag => tag?.remove());
+      createdTwitterTags.forEach(tag => tag?.remove());
     };
   }, []);
 
   return (
     <AgenticPatternsLayout
       title="Agentic AI UX Patterns"
-      subtitle="25 Trust building UX design patterns for agentic applications. A comprehensive guide for designers and developers creating trustworthy AI experiences."
+      subtitle="45+ Trust building UX design patterns for agentic applications. A comprehensive guide for designers and developers creating trustworthy AI experiences."
     >
       {/* Category Navigation Card - at the top for easy access */}
       <div className="agentic-overview__category-section">

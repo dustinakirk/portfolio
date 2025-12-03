@@ -803,6 +803,14 @@
   overflow: hidden;
 }
 
+.agentic-sidebar__pattern-index {
+  font-weight: 600;
+  color: var(--agentic-accent);
+  margin-right: 6px;
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
 /* ===========================================
    Pattern Sidebar - Mobile
    =========================================== */

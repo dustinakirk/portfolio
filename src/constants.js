@@ -14,12 +14,12 @@ export const FEATURED_PROJECTS_CONFIG = {
 export const WORK = [
   {
     id: "aitrustpatterns",
-    title: "AI Trust Patterns",
+    title: "Agentic AI UX Patterns",
     subtitle:
-      "25 UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+      "45+ UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
     href: "/agentic_ai_patterns",
     category: "AI & Innovation",
-    image: "/projects/aitrustpatterns/hero_aitrustpatterns.png",
+    image: "/projects/aitrustpatterns/ai-trust-patterns.png",
     tags: ["AI/ML", "UX Patterns", "Trust Design"],
     featured: true,
   },

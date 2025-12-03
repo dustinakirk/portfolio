@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
+import FeedbackLink from '../FeedbackLink';
 
 // SEO metadata for this pattern page
 export const CONFIRMED_ASSUMPTIONS_SEO = {
@@ -32,6 +33,7 @@ export default function ConfirmedAssumptionsPattern() {
           </div>
           <div className="pattern-header__meta">
             <span className="pattern-header__timestamp">Last updated November 2025</span>
+            <FeedbackLink patternIndex="4.3" patternTitle="Confirmed Assumptions Panel" />
           </div>
         </div>
       </header>

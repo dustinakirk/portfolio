@@ -2,9 +2,29 @@ import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import AgenticPatternsLayout from '../AgenticPatternsLayout';
 import PatternDisplay from '../aitrustpatterns/PatternDisplay';
+import StructuredClarificationPromptsPattern from '../aitrustpatterns/patterns/4.1-structured-clarification-prompts';
+import EditRequestPattern from '../aitrustpatterns/patterns/4.2-edit-request';
 import ConfirmedAssumptionsPattern from '../aitrustpatterns/patterns/4.3-confirmed-assumptions';
 import AgentIdentityRoleContractPattern from '../aitrustpatterns/patterns/1.1-agent-identity-role-contract';
 import DelegationModesPattern from '../aitrustpatterns/patterns/1.2-delegation-modes';
+import SandboxedPlaygroundsPattern from '../aitrustpatterns/patterns/2.1-sandboxed-playgrounds';
+import WayfindersPattern from '../aitrustpatterns/patterns/2.2-wayfinders';
+import ProgressiveDisclosureModesPattern from '../aitrustpatterns/patterns/2.3-progressive-disclosure-modes';
+import TeachMeInterfacesPattern from '../aitrustpatterns/patterns/2.4-teach-me-interfaces';
+import ScenarioTemplatesAndRecipesPattern from '../aitrustpatterns/patterns/2.5-scenario-templates-and-recipes';
+import FeedbackOnResultsPattern from '../aitrustpatterns/patterns/2.6-feedback-on-results-and-rating-controls';
+import KillSwitchPauseResumePattern from '../aitrustpatterns/patterns/3.1-kill-switch-pause-resume';
+import HITLGatesPattern from '../aitrustpatterns/patterns/3.2-human-in-the-loop-HITL-gates';
+import PlanThenExecuteWorkflowPattern from '../aitrustpatterns/patterns/3.3-plan-then-execute-workflow';
+import SteerabilityPoliteInterruptionPattern from '../aitrustpatterns/patterns/3.4-steerability-and-polite-interruption';
+import ScopedPermissionsToolConsentPattern from '../aitrustpatterns/patterns/3.5-scoped-permissions-and-tool-consent';
+import RollbackVersionHistoryPattern from '../aitrustpatterns/patterns/3.6-rollback-and-version-history';
+import UserDirectedToolUsePattern from '../aitrustpatterns/patterns/3.7-user-directed-tool-use-and-output-mode-selection';
+import ReasoningGlimpsePattern from '../aitrustpatterns/patterns/5.1-reasoning-glimpse';
+import StreamingResultsVisualizationsPattern from '../aitrustpatterns/patterns/5.2-streaming-results-visualizations';
+import ToolUsageIndicatorsPattern from '../aitrustpatterns/patterns/5.3-tool-usage-indicators';
+import ActivityTimelineAuditLogPattern from '../aitrustpatterns/patterns/5.4-activity-timeline-audit-log';
+import ExecutionProgressViewPattern from '../aitrustpatterns/patterns/5.5-execution-progress-view';
 import {
   getPatternById,
   getCategoryById
@@ -12,9 +32,29 @@ import {
 
 // Map of pattern IDs to custom components (for rich magazine-style patterns)
 const CUSTOM_PATTERN_COMPONENTS = {
+  'structured-clarification-prompts': StructuredClarificationPromptsPattern,
+  'edit-request': EditRequestPattern,
   'confirmed-assumptions': ConfirmedAssumptionsPattern,
   'agent-identity-role-contract': AgentIdentityRoleContractPattern,
   'delegation-modes': DelegationModesPattern,
+  'sandboxed-playgrounds': SandboxedPlaygroundsPattern,
+  'wayfinders': WayfindersPattern,
+  'progressive-disclosure-modes': ProgressiveDisclosureModesPattern,
+  'teach-me-interfaces': TeachMeInterfacesPattern,
+  'scenario-templates-and-recipes': ScenarioTemplatesAndRecipesPattern,
+  'feedback-on-results': FeedbackOnResultsPattern,
+  'kill-switch-pause-resume': KillSwitchPauseResumePattern,
+  'human-in-the-loop-hitl-gates': HITLGatesPattern,
+  'plan-then-execute-workflow': PlanThenExecuteWorkflowPattern,
+  'steerability-polite-interruption': SteerabilityPoliteInterruptionPattern,
+  'scoped-permissions-tool-consent': ScopedPermissionsToolConsentPattern,
+  'rollback-version-history': RollbackVersionHistoryPattern,
+  'user-directed-tool-use': UserDirectedToolUsePattern,
+  'reasoning-glimpse': ReasoningGlimpsePattern,
+  'streaming-results-visualizations': StreamingResultsVisualizationsPattern,
+  'tool-usage-indicators': ToolUsageIndicatorsPattern,
+  'activity-timeline-audit-log': ActivityTimelineAuditLogPattern,
+  'execution-progress-view': ExecutionProgressViewPattern,
 };
 
 export default function PatternDetailPage() {
@@ -41,12 +81,13 @@ export default function PatternDetailPage() {
       canonical.href = `https://dustinkirk.com/agentic_ai_patterns/${pattern.id}`;
 
       // Add Open Graph meta tags for social sharing
+      const ogImage = 'https://dustinkirk.com/projects/aitrustpatterns/ai-trust-patterns.png';
       const ogTags = [
         { property: 'og:title', content: `${pattern.title} - Agentic AI UX Patterns` },
         { property: 'og:description', content: pattern.shortDescription },
         { property: 'og:type', content: 'article' },
         { property: 'og:url', content: `https://dustinkirk.com/agentic_ai_patterns/${pattern.id}` },
-        { property: 'og:image', content: `https://dustinkirk.com/projects/aitrustpatterns/og_${pattern.id}.png` },
+        { property: 'og:image', content: ogImage },
         { property: 'og:site_name', content: 'Dustin Kirk - Principal Product Designer' }
       ];
 
@@ -65,7 +106,7 @@ export default function PatternDetailPage() {
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: `${pattern.title} - AI UX Pattern` },
         { name: 'twitter:description', content: pattern.shortDescription },
-        { name: 'twitter:image', content: `https://dustinkirk.com/projects/aitrustpatterns/og_${pattern.id}.png` }
+        { name: 'twitter:image', content: ogImage }
       ];
 
       twitterTags.forEach(({ name, content }) => {
