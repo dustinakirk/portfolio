@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import ReasoningGlimpseDemo from '../demos/ReasoningGlimpseDemo';
 
 // SEO metadata for this pattern page
 export const REASONING_GLIMPSE_SEO = {
@@ -11,67 +12,6 @@ export const REASONING_GLIMPSE_SEO = {
   keywords: ["AI reasoning", "chain of thought", "AI transparency", "AI trust", "progress visualization", "agentic UX", "AI audit trail", "reasoning trace"],
   canonicalPath: "/agentic_ai_patterns/reasoning-glimpse"
 };
-
-// Placeholder demo component
-function ReasoningGlimpseDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-      padding: '48px 24px',
-      textAlign: 'center',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      margin: '0 auto 16px',
-      background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-      borderRadius: '12px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'white',
-      fontSize: '24px',
-    },
-    placeholderTitle: {
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      color: '#111827',
-      margin: '0 0 8px 0',
-    },
-    placeholderDescription: {
-      fontSize: '0.875rem',
-      color: '#6b7280',
-      margin: 0,
-      maxWidth: '400px',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      lineHeight: 1.5,
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Reasoning Glimpse demo placeholder">
-      <div style={styles.placeholderIcon}>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12,6 12,12 16,14"></polyline>
-        </svg>
-      </div>
-      <h3 style={styles.placeholderTitle}>Interactive Demo Coming Soon</h3>
-      <p style={styles.placeholderDescription}>
-        This demo will show an AI assistant with a visible reasoning trace, animated progress indicators, and step-by-step plan visualization.
-      </p>
-    </div>
-  );
-}
 
 export default function ReasoningGlimpsePattern() {
   return (

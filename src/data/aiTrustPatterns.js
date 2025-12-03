@@ -599,6 +599,81 @@ export const AI_TRUST_PATTERNS = [
     },
     relatedPatterns: ['plan-then-execute-workflow', 'reasoning-glimpse', 'activity-timeline-audit-log', 'kill-switch-pause-resume'],
   },
+  {
+    id: 'source-anchoring-grounding',
+    index: '6.1',
+    title: 'Source Anchoring & Grounding',
+    category: 'grounding',
+    shortDescription: 'Connects AI-generated outputs to verifiable underlying sources so that every critical statement can be traced, inspected, and trusted.',
+    content: {
+      problem: 'Without explicit grounding, AI answers often feel like authoritative guesses. Users cannot see what the system looked at, verification is costly, and ungrounded responses are hard to defend in audits or reviews.',
+      solution: 'Link AI responses to underlying evidence—documents, code, databases, logs, dashboards, or APIs. Make verification trivial through inline citations, hover previews, and source panels.',
+      implementation: 'Create source citation objects with labels, descriptions, controls, and metadata. Support inline markers, side panels, split-screen views, and tool activity timelines for comprehensive evidence inspection.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Source Anchoring & Grounding pattern showing AI response with inline citations and source panel',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI citations', 'source grounding', 'AI transparency', 'verifiable AI', 'AI trust', 'evidence-based AI', 'AI provenance', 'agentic UX', 'AI references', 'grounded AI'],
+    },
+    relatedPatterns: ['reasoning-glimpse', 'tool-usage-indicators', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'semantic-highlighting-uncertainty',
+    index: '6.3',
+    title: 'Semantic Highlighting of Uncertainty',
+    category: 'grounding',
+    shortDescription: 'Visually and interactively expose uncertain portions of AI-generated content so human reviewers can quickly identify, inspect, and act on areas that require judgment.',
+    content: {
+      problem: 'Without semantic uncertainty cues, AI output is often perceived as uniformly confident. This leads to automation bias, cognitive overload in long outputs, invisible model limitations, and inefficient human review workflows.',
+      solution: 'Overlay visual cues on specific words, phrases, sentences, or steps where the system has low or ambiguous confidence. Use fine-grained, contextual signals to direct expert attention to the most questionable parts of AI results.',
+      implementation: 'Create uncertainty markers with labels, descriptions, controls, and metadata. Support inline highlights with hover tooltips, side panels for deep inspection, and resolution workflows with audit trails.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Semantic Highlighting of Uncertainty pattern showing AI-generated text with highlighted uncertain segments',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI uncertainty', 'confidence visualization', 'AI trust', 'uncertainty highlighting', 'AI review', 'human-in-the-loop', 'agentic UX', 'AI transparency', 'calibrated confidence', 'semantic highlighting'],
+    },
+    relatedPatterns: ['source-anchoring-grounding', 'reasoning-glimpse', 'human-in-the-loop-hitl-gates'],
+  },
+  {
+    id: 'multiple-presented-options',
+    index: '6.4',
+    title: 'Multiple Presented Options',
+    category: 'grounding',
+    shortDescription: 'Expose a small set of distinct AI-generated options so that people can compare, adapt, or combine them, reducing over-reliance on a single suggestion and strengthening agency and trust.',
+    content: {
+      problem: 'Without Plurality, AI systems often present a single output as if it were definitive. This creates automation bias, invisible uncertainty, mismatch with mental models, lost opportunity for exploration, and single-point failures in high-impact decisions.',
+      solution: 'Surface multiple AI-generated options at once instead of a single "final answer." Each option is framed as a distinct, labeled path reflecting different assumptions, trade-offs, or styles.',
+      implementation: 'Create 2-4 option cards with clear labels, concise summaries, and controls for selection, comparison, merging, and editing. Support inspect, compare, and merge workflows with comprehensive telemetry for learning.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Multiple Presented Options pattern showing AI-generated option cards with labels like Conservative, Balanced, Aggressive',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI options', 'plurality pattern', 'AI alternatives', 'AI trust', 'multiple suggestions', 'AI decision support', 'agentic UX', 'option comparison', 'AI trade-offs'],
+    },
+    relatedPatterns: ['source-anchoring-grounding', 'semantic-highlighting-uncertainty', 'confirmed-assumptions'],
+  },
 ];
 
 // Helper functions

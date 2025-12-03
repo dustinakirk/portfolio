@@ -25,6 +25,9 @@ import StreamingResultsVisualizationsPattern from '../aitrustpatterns/patterns/5
 import ToolUsageIndicatorsPattern from '../aitrustpatterns/patterns/5.3-tool-usage-indicators';
 import ActivityTimelineAuditLogPattern from '../aitrustpatterns/patterns/5.4-activity-timeline-audit-log';
 import ExecutionProgressViewPattern from '../aitrustpatterns/patterns/5.5-execution-progress-view';
+import SourceAnchoringGroundingPattern from '../aitrustpatterns/patterns/6.1-source-anchoring-and-grounding';
+import SemanticHighlightingUncertaintyPattern from '../aitrustpatterns/patterns/6.3-semantic-highlighting-of-uncertainty';
+import MultiplePresentedOptionsPattern from '../aitrustpatterns/patterns/6.4-multiple-presented-options';
 import {
   getPatternById,
   getCategoryById
@@ -55,6 +58,9 @@ const CUSTOM_PATTERN_COMPONENTS = {
   'tool-usage-indicators': ToolUsageIndicatorsPattern,
   'activity-timeline-audit-log': ActivityTimelineAuditLogPattern,
   'execution-progress-view': ExecutionProgressViewPattern,
+  'source-anchoring-grounding': SourceAnchoringGroundingPattern,
+  'semantic-highlighting-uncertainty': SemanticHighlightingUncertaintyPattern,
+  'multiple-presented-options': MultiplePresentedOptionsPattern,
 };
 
 export default function PatternDetailPage() {
