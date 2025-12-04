@@ -25,6 +25,7 @@ import StreamingResultsVisualizationsPattern from '../aitrustpatterns/patterns/5
 import ToolUsageIndicatorsPattern from '../aitrustpatterns/patterns/5.3-tool-usage-indicators';
 import ActivityTimelineAuditLogPattern from '../aitrustpatterns/patterns/5.4-activity-timeline-audit-log';
 import ExecutionProgressViewPattern from '../aitrustpatterns/patterns/5.5-execution-progress-view';
+import ConfessionsViewPattern from '../aitrustpatterns/patterns/5.6-confessions-view';
 import SourceAnchoringGroundingPattern from '../aitrustpatterns/patterns/6.1-source-anchoring-and-grounding';
 import ConfidenceThermometerPattern from '../aitrustpatterns/patterns/6.2-confidence-thermometer';
 import SemanticHighlightingUncertaintyPattern from '../aitrustpatterns/patterns/6.3-semantic-highlighting-of-uncertainty';
@@ -80,6 +81,7 @@ const CUSTOM_PATTERN_COMPONENTS = {
   'tool-usage-indicators': ToolUsageIndicatorsPattern,
   'activity-timeline-audit-log': ActivityTimelineAuditLogPattern,
   'execution-progress-view': ExecutionProgressViewPattern,
+  'confessions-view': ConfessionsViewPattern,
   'source-anchoring-grounding': SourceAnchoringGroundingPattern,
   'confidence-thermometer': ConfidenceThermometerPattern,
   'semantic-highlighting-uncertainty': SemanticHighlightingUncertaintyPattern,

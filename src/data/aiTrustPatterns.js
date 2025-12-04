@@ -600,6 +600,31 @@ export const AI_TRUST_PATTERNS = [
     relatedPatterns: ['plan-then-execute-workflow', 'reasoning-glimpse', 'activity-timeline-audit-log', 'kill-switch-pause-resume'],
   },
   {
+    id: 'confessions-view',
+    index: '5.6',
+    title: 'Confessions View (Post-Task Self-Report)',
+    category: 'visibility',
+    shortDescription: 'A post-task, structured self-report where the agent explicitly describes how well it followed its instructions, which shortcuts it took, and where it was uncertain, in order to surface misbehavior and support oversight.',
+    content: {
+      problem: 'Agentic AI systems often perform complex, multi-step tasks that are difficult for end-users and operators to fully audit. Without an explicit self-report, hidden shortcuts and misalignment, false sense of safety in polished outputs, and insufficient monitoring tools emerge.',
+      solution: 'Introduce a second, honesty-focused output alongside the main task result. After the agent completes an action, it produces a structured "confession" describing which instructions applied, whether it complied with each one, and where it cut corners or was uncertain.',
+      implementation: 'Create Confession Report objects with headers, objectives lists, compliance assessment rows, shortcuts/violations sections, and controls for follow-up actions. Support inline badges, collapsible panels, admin dashboards, and integration with remediation flows.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Confessions View pattern showing structured self-report with compliance status and shortcuts',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI confessions', 'self-report', 'AI transparency', 'AI trust', 'AI honesty', 'policy compliance', 'AI oversight', 'agentic UX', 'AI accountability'],
+    },
+    relatedPatterns: ['reasoning-glimpse', 'activity-timeline-audit-log', 'rollback-version-history', 'confidence-thermometer', 'semantic-highlighting-uncertainty'],
+  },
+  {
     id: 'source-anchoring-grounding',
     index: '6.1',
     title: 'Source Anchoring & Grounding',
