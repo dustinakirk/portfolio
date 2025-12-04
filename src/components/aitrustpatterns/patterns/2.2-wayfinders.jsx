@@ -134,41 +134,43 @@ function WayfindersDemo() {
       margin: '0 auto',
     },
     patternDemoHeader: {
-      background: '#ffffff',
-      borderBottom: '1px solid #e2e8f0',
-      padding: '1rem 1.5rem',
+      padding: '24px',
+      borderBottom: '1px solid #e5e7eb',
+      backgroundColor: '#ffffff',
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center',
+      alignItems: 'flex-start',
+      gap: '20px',
     },
-    patternDemoTitle: {
-      fontSize: '0.875rem',
-      fontWeight: 600,
-      textTransform: 'uppercase',
-      letterSpacing: '0.05em',
-      color: '#64748b',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
+    headerContent: {
+      flex: 1,
+    },
+    headerTitle: {
+      fontSize: '18px',
+      fontWeight: 700,
+      color: '#111827',
+      margin: '0 0 8px 0',
+      lineHeight: 1.2,
+    },
+    headerDescription: {
+      fontSize: '14px',
+      color: '#6b7280',
+      lineHeight: 1.5,
       margin: 0,
     },
-    patternDemoBadge: {
-      background: '#dbeafe',
-      color: '#1e40af',
-      fontSize: '0.7rem',
-      padding: '0.125rem 0.5rem',
-      borderRadius: '9999px',
-      fontWeight: 700,
-    },
     resetBtn: {
-      background: 'transparent',
-      border: '1px solid #e2e8f0',
-      color: '#64748b',
-      padding: '0.375rem 0.75rem',
-      borderRadius: '0.375rem',
-      fontSize: '0.875rem',
+      background: '#ffffff',
+      border: '1px solid #e5e7eb',
+      color: '#374151',
+      padding: '8px 16px',
+      borderRadius: '6px',
+      fontSize: '13px',
+      fontWeight: 500,
       cursor: 'pointer',
       transition: 'all 0.2s',
+      boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+      whiteSpace: 'nowrap',
+      height: 'fit-content',
     },
     aiIcon: {
       width: '20px',
@@ -386,27 +388,30 @@ function WayfindersDemo() {
       `}</style>
 
       {/* Demo Header */}
-      <div style={styles.patternDemoHeader}>
-        <div style={styles.patternDemoTitle}>
-          <div style={styles.aiIcon}></div>
-          UX Pattern: Wayfinders
-          <span style={styles.patternDemoBadge}>Interactive Demo</span>
+      <header style={styles.patternDemoHeader}>
+        <div style={styles.headerContent}>
+          <h2 style={styles.headerTitle}>Wayfinders</h2>
+          <p style={styles.headerDescription}>
+            This demo shows how wayfinders adapt to context. Click a row to select an account and watch the AI suggestions update dynamically. Click any suggestion to see a sample response.
+          </p>
         </div>
         <button
           style={styles.resetBtn}
           onClick={handleReset}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#f8fafc';
-            e.currentTarget.style.color = '#1e293b';
+            e.currentTarget.style.background = '#f9fafb';
+            e.currentTarget.style.borderColor = '#d1d5db';
+            e.currentTarget.style.color = '#111827';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.color = '#64748b';
+            e.currentTarget.style.background = '#ffffff';
+            e.currentTarget.style.borderColor = '#e5e7eb';
+            e.currentTarget.style.color = '#374151';
           }}
         >
           Reset Demo
         </button>
-      </div>
+      </header>
 
       {/* Mock App */}
       <div style={styles.mockApp}>

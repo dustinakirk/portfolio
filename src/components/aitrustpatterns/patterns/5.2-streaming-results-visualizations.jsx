@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle, XCircle, AlertCircle, Bot, User, Layers, RotateCcw, BarChart3, Loader2, Check, MinusCircle, Send } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
 
@@ -12,92 +12,673 @@ export const STREAMING_RESULTS_VISUALIZATIONS_SEO = {
   canonicalPath: "/agentic_ai_patterns/streaming-results-visualizations"
 };
 
-// Placeholder demo component
+// Mock data for the streaming response
+const MOCK_DATA = [
+  { region: "North America", revenue: "$1.2M", growth: "+12%", status: "Healthy" },
+  { region: "Europe (EMEA)", revenue: "$850K", growth: "+5%", status: "Stable" },
+  { region: "Asia Pacific", revenue: "$920K", growth: "+22%", status: "Trending" },
+  { region: "Latin America", revenue: "$340K", growth: "-2%", status: "At Risk" },
+  { region: "Middle East", revenue: "$120K", growth: "+8%", status: "Stable" }
+];
+
+const DEFAULT_INPUT = "Show me the Q3 sales performance by region.";
+
+// Utility function for delays
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// Interactive demo component
 function StreamingResultsDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderContent: {
-      padding: '80px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#f9fafb',
-      textAlign: 'center',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#e0e7ff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      color: '#374151',
-    },
-    placeholderText: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      maxWidth: '400px',
-    },
+  const [phase, setPhase] = useState('initial'); // 'initial', 'user-sent', 'ai-skeleton', 'ai-streaming', 'complete'
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [visibleRowCount, setVisibleRowCount] = useState(0);
+  const [inputValue, setInputValue] = useState(DEFAULT_INPUT);
+  const [userMessage, setUserMessage] = useState('');
+  const [showMetrics, setShowMetrics] = useState(false);
+  const chatViewportRef = useRef(null);
+
+  // Scroll to bottom of chat viewport
+  const scrollToBottom = useCallback(() => {
+    if (chatViewportRef.current) {
+      chatViewportRef.current.scrollTop = chatViewportRef.current.scrollHeight;
+    }
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [phase, visibleRowCount, scrollToBottom]);
+
+  // Reset demo to initial state
+  const resetDemo = useCallback(() => {
+    setPhase('initial');
+    setIsProcessing(false);
+    setVisibleRowCount(0);
+    setInputValue(DEFAULT_INPUT);
+    setUserMessage('');
+    setShowMetrics(false);
+  }, []);
+
+  // Handle user submit
+  const handleUserSubmit = useCallback(async () => {
+    const text = inputValue.trim();
+    if (!text || isProcessing) return;
+
+    setIsProcessing(true);
+    setUserMessage(text);
+    setInputValue('');
+    setPhase('user-sent');
+
+    await delay(800);
+
+    // Show AI skeleton state
+    setPhase('ai-skeleton');
+    await delay(1500);
+
+    // Show metrics and start streaming rows
+    setShowMetrics(true);
+    setPhase('ai-streaming');
+
+    // Stream rows one by one
+    for (let i = 0; i < MOCK_DATA.length; i++) {
+      setVisibleRowCount(i + 1);
+      await delay(Math.floor(Math.random() * 800) + 400);
+    }
+
+    // Complete
+    setPhase('complete');
+    setIsProcessing(false);
+  }, [inputValue, isProcessing]);
+
+  // Handle Enter key
+  const handleKeyPress = useCallback((e) => {
+    if (e.key === 'Enter') {
+      handleUserSubmit();
+    }
+  }, [handleUserSubmit]);
+
+  // Get status text and class based on phase
+  const getStatusInfo = () => {
+    if (phase === 'ai-skeleton') {
+      return { text: 'Initializing...', isComplete: false };
+    }
+    if (phase === 'ai-streaming') {
+      return { text: `Processing region ${visibleRowCount} of ${MOCK_DATA.length}...`, isComplete: false };
+    }
+    if (phase === 'complete') {
+      return { text: 'Complete · Generated in 3.2s', isComplete: true };
+    }
+    return { text: '', isComplete: false };
+  };
+
+  const statusInfo = getStatusInfo();
+
+  // Render status icon based on row status
+  const renderStatusIcon = (status) => {
+    if (status === 'Healthy') {
+      return <CheckCircle size={14} style={{ color: 'var(--srd-color-success)' }} />;
+    }
+    if (status === 'At Risk') {
+      return <AlertCircle size={14} style={{ color: '#ef4444' }} />;
+    }
+    return <MinusCircle size={14} style={{ color: 'var(--srd-color-primary)' }} />;
   };
 
   return (
-    <div style={styles.demoWrapper} role="region" aria-label="Streaming Results demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Streaming Results Visualization</h2>
-        <p style={styles.demoDescription}>
-          This example would demonstrate an AI assistant progressively streaming structured results
-          such as tables, cards, and charts as they become available.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-          </svg>
+    <>
+      <style>{`
+        .srd-demo {
+          --srd-color-bg: #f4f5f7;
+          --srd-color-surface: #ffffff;
+          --srd-color-primary: #3b82f6;
+          --srd-color-primary-hover: #2563eb;
+          --srd-color-text-main: #111827;
+          --srd-color-text-muted: #6b7280;
+          --srd-color-border: #e5e7eb;
+          --srd-color-success: #10b981;
+          --srd-color-row-hover: #f9fafb;
+          --srd-radius-md: 8px;
+          --srd-radius-lg: 12px;
+          --srd-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          --srd-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          background: var(--srd-color-surface);
+          border-radius: var(--srd-radius-lg);
+          box-shadow: var(--srd-shadow-md);
+          width: 100%;
+          max-width: 800px;
+          height: 600px;
+          overflow: hidden;
+          border: 1px solid var(--srd-color-border);
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+        }
+
+        .srd-demo__header {
+          padding: 1.5rem;
+          border-bottom: 1px solid var(--srd-color-border);
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          background-color: #f8fafc;
+          flex-shrink: 0;
+        }
+
+        .srd-demo__title-group {
+          flex: 1;
+        }
+
+        .srd-demo__title {
+          margin: 0;
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: var(--srd-color-text-main);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .srd-demo__description {
+          margin: 0.5rem 0 0;
+          font-size: 0.875rem;
+          color: var(--srd-color-text-muted);
+          line-height: 1.5;
+        }
+
+        .srd-demo__reset-btn {
+          background-color: white;
+          border: 1px solid var(--srd-color-border);
+          color: var(--srd-color-text-main);
+          padding: 0.5rem 1rem;
+          border-radius: var(--srd-radius-md);
+          cursor: pointer;
+          font-size: 0.875rem;
+          font-weight: 500;
+          transition: all 0.2s;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .srd-demo__reset-btn:hover {
+          background-color: var(--srd-color-bg);
+          border-color: #d1d5db;
+        }
+
+        .srd-chat-viewport {
+          background-color: #ffffff;
+          padding: 2rem;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          overflow-y: auto;
+          scroll-behavior: smooth;
+        }
+
+        .srd-message {
+          display: flex;
+          gap: 1rem;
+          max-width: 90%;
+          opacity: 0;
+          animation: srd-fadeIn 0.3s forwards;
+        }
+
+        .srd-message--user {
+          align-self: flex-end;
+          flex-direction: row-reverse;
+        }
+
+        .srd-message--ai {
+          align-self: flex-start;
+          width: 100%;
+        }
+
+        .srd-message__avatar {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: var(--srd-color-primary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 0.875rem;
+          flex-shrink: 0;
+        }
+
+        .srd-message--user .srd-message__avatar {
+          background-color: var(--srd-color-text-main);
+        }
+
+        .srd-message__bubble {
+          background-color: var(--srd-color-bg);
+          padding: 1rem;
+          border-radius: var(--srd-radius-md);
+          border-top-left-radius: 0;
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        .srd-message--user .srd-message__bubble {
+          background-color: var(--srd-color-primary);
+          color: white;
+          border-radius: var(--srd-radius-md);
+          border-top-right-radius: 0;
+        }
+
+        .srd-result-block {
+          border: 1px solid var(--srd-color-border);
+          border-radius: var(--srd-radius-md);
+          background: white;
+          width: 100%;
+          overflow: hidden;
+          margin-top: 0.5rem;
+          box-shadow: var(--srd-shadow-sm);
+          display: flex;
+          flex-direction: column;
+        }
+
+        .srd-result-block__header {
+          padding: 0.75rem 1rem;
+          background-color: #f9fafb;
+          border-bottom: 1px solid var(--srd-color-border);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .srd-result-block__title {
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: var(--srd-color-text-main);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .srd-result-block__status {
+          font-size: 0.75rem;
+          color: var(--srd-color-text-muted);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .srd-result-block__status--processing {
+          color: var(--srd-color-primary);
+        }
+
+        .srd-result-block__status--complete {
+          color: var(--srd-color-success);
+        }
+
+        .srd-result-block__content {
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .srd-viz {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+        }
+
+        .srd-metric-card {
+          border: 1px solid var(--srd-color-border);
+          border-radius: var(--srd-radius-md);
+          padding: 0.75rem;
+          background: white;
+        }
+
+        .srd-metric-card__label {
+          font-size: 0.75rem;
+          color: var(--srd-color-text-muted);
+          margin-bottom: 0.25rem;
+          display: block;
+        }
+
+        .srd-metric-card__value {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: var(--srd-color-text-main);
+          display: block;
+        }
+
+        .srd-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 0.875rem;
+        }
+
+        .srd-table th {
+          text-align: left;
+          padding: 0.75rem 0.5rem;
+          border-bottom: 2px solid var(--srd-color-border);
+          color: var(--srd-color-text-muted);
+          font-weight: 500;
+        }
+
+        .srd-table td {
+          padding: 0.75rem 0.5rem;
+          border-bottom: 1px solid var(--srd-color-border);
+          color: var(--srd-color-text-main);
+        }
+
+        .srd-table__row {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .srd-table__row--visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .srd-table__row--new {
+          background-color: #eff6ff;
+          animation: srd-highlightFade 2s forwards;
+        }
+
+        .srd-table__status {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .srd-skeleton {
+          background: #e5e7eb;
+          border-radius: 4px;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .srd-skeleton::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          transform: translateX(-100%);
+          background-image: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0,
+            rgba(255, 255, 255, 0.2) 20%,
+            rgba(255, 255, 255, 0.5) 60%,
+            rgba(255, 255, 255, 0)
+          );
+          animation: srd-shimmer 2s infinite;
+        }
+
+        .srd-skeleton--text {
+          height: 1em;
+          width: 80%;
+          margin-bottom: 0.5rem;
+        }
+
+        .srd-skeleton--text-short {
+          height: 1em;
+          width: 50%;
+        }
+
+        .srd-skeleton--rect {
+          height: 150px;
+          width: 100%;
+        }
+
+        .srd-input-area {
+          padding: 1rem 1.5rem;
+          border-top: 1px solid var(--srd-color-border);
+          background-color: #ffffff;
+          display: flex;
+          gap: 0.75rem;
+          align-items: center;
+          flex-shrink: 0;
+        }
+
+        .srd-input {
+          flex: 1;
+          padding: 0.75rem 1rem;
+          border: 1px solid var(--srd-color-border);
+          border-radius: var(--srd-radius-md);
+          font-size: 0.95rem;
+          outline: none;
+          transition: border-color 0.2s;
+          background-color: #f9fafb;
+          font-family: inherit;
+        }
+
+        .srd-input:focus {
+          border-color: var(--srd-color-primary);
+          background-color: #fff;
+          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .srd-input:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+
+        .srd-send-btn {
+          background-color: var(--srd-color-primary);
+          color: white;
+          border: none;
+          border-radius: var(--srd-radius-md);
+          padding: 0 1.5rem;
+          height: 42px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          font-size: 0.95rem;
+          font-weight: 600;
+          font-family: inherit;
+        }
+
+        .srd-send-btn:hover:not(:disabled) {
+          background-color: var(--srd-color-primary-hover);
+        }
+
+        .srd-send-btn:disabled {
+          background-color: var(--srd-color-border);
+          cursor: not-allowed;
+        }
+
+        .srd-spinner {
+          animation: srd-spin 1s linear infinite;
+        }
+
+        @keyframes srd-fadeIn {
+          to { opacity: 1; }
+        }
+
+        @keyframes srd-shimmer {
+          100% { transform: translateX(100%); }
+        }
+
+        @keyframes srd-highlightFade {
+          0% { background-color: #eff6ff; }
+          100% { background-color: transparent; }
+        }
+
+        @keyframes srd-spin {
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
+
+      <div className="srd-demo" role="region" aria-label="Streaming Results demo">
+        <div className="srd-demo__header">
+          <div className="srd-demo__title-group">
+            <h2 className="srd-demo__title">
+              <Layers size={18} />
+              Streaming Results (Visualizations)
+            </h2>
+            <p className="srd-demo__description">
+              Demonstrating how an AI agent progressively renders structured data. <strong>Click &quot;Submit&quot; below to start the simulation.</strong>
+            </p>
+          </div>
+          <button className="srd-demo__reset-btn" onClick={resetDemo}>
+            <RotateCcw size={14} />
+            Reset Demo
+          </button>
         </div>
-        <h3 style={styles.placeholderTitle}>Interactive Demo Coming Soon</h3>
-        <p style={styles.placeholderText}>
-          An interactive demonstration of streaming results with progressive loading,
-          partial interactivity, and status indicators will be added here.
-        </p>
+
+        <div className="srd-chat-viewport" ref={chatViewportRef}>
+          {/* Initial welcome message */}
+          <div className="srd-message srd-message--ai">
+            <div className="srd-message__avatar">
+              <Bot size={18} />
+            </div>
+            <div className="srd-message__bubble">
+              Hello! I&apos;m your Data Analyst Agent. Ask me to query customer churn, sales revenue, or regional performance.
+            </div>
+          </div>
+
+          {/* User message */}
+          {phase !== 'initial' && userMessage && (
+            <div className="srd-message srd-message--user">
+              <div className="srd-message__avatar">
+                <User size={18} />
+              </div>
+              <div className="srd-message__bubble">
+                {userMessage}
+              </div>
+            </div>
+          )}
+
+          {/* AI Response with streaming result block */}
+          {(phase === 'ai-skeleton' || phase === 'ai-streaming' || phase === 'complete') && (
+            <div className="srd-message srd-message--ai">
+              <div className="srd-message__avatar">
+                <Bot size={18} />
+              </div>
+              <div className="srd-message__bubble">
+                I&apos;m pulling the Q3 sales data for you now.
+
+                <div className="srd-result-block">
+                  <div className="srd-result-block__header">
+                    <span className="srd-result-block__title">
+                      <BarChart3 size={16} />
+                      Q3 Regional Performance
+                    </span>
+                    <span
+                      className={`srd-result-block__status ${statusInfo.isComplete ? 'srd-result-block__status--complete' : 'srd-result-block__status--processing'}`}
+                      aria-live="polite"
+                    >
+                      {statusInfo.isComplete ? (
+                        <Check size={12} />
+                      ) : (
+                        <Loader2 size={12} className="srd-spinner" />
+                      )}
+                      {statusInfo.text}
+                    </span>
+                  </div>
+
+                  <div className="srd-result-block__content">
+                    {/* Skeleton state */}
+                    {phase === 'ai-skeleton' && (
+                      <>
+                        <div className="srd-viz">
+                          <div className="srd-metric-card">
+                            <div className="srd-skeleton srd-skeleton--text" />
+                            <div className="srd-skeleton srd-skeleton--text-short" />
+                          </div>
+                          <div className="srd-metric-card">
+                            <div className="srd-skeleton srd-skeleton--text" />
+                            <div className="srd-skeleton srd-skeleton--text-short" />
+                          </div>
+                          <div className="srd-metric-card">
+                            <div className="srd-skeleton srd-skeleton--text" />
+                            <div className="srd-skeleton srd-skeleton--text-short" />
+                          </div>
+                        </div>
+                        <div className="srd-skeleton srd-skeleton--rect" />
+                      </>
+                    )}
+
+                    {/* Metrics and table */}
+                    {(phase === 'ai-streaming' || phase === 'complete') && showMetrics && (
+                      <>
+                        <div className="srd-viz">
+                          <div className="srd-metric-card">
+                            <span className="srd-metric-card__label">Total Revenue</span>
+                            <span className="srd-metric-card__value">$3.43M</span>
+                          </div>
+                          <div className="srd-metric-card">
+                            <span className="srd-metric-card__label">Avg. Growth</span>
+                            <span className="srd-metric-card__value" style={{ color: 'var(--srd-color-success)' }}>+9.2%</span>
+                          </div>
+                          <div className="srd-metric-card">
+                            <span className="srd-metric-card__label">Active Regions</span>
+                            <span className="srd-metric-card__value">5</span>
+                          </div>
+                        </div>
+
+                        <table className="srd-table">
+                          <thead>
+                            <tr>
+                              <th>Region</th>
+                              <th>Revenue</th>
+                              <th>Growth</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {MOCK_DATA.slice(0, visibleRowCount).map((row, index) => (
+                              <tr
+                                key={row.region}
+                                className={`srd-table__row srd-table__row--visible ${index === visibleRowCount - 1 && phase === 'ai-streaming' ? 'srd-table__row--new' : ''}`}
+                              >
+                                <td>{row.region}</td>
+                                <td>{row.revenue}</td>
+                                <td style={{ color: row.growth.startsWith('+') ? 'var(--srd-color-success)' : '#ef4444' }}>
+                                  {row.growth}
+                                </td>
+                                <td>
+                                  <span className="srd-table__status">
+                                    {renderStatusIcon(row.status)}
+                                    {row.status}
+                                  </span>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="srd-input-area">
+          <input
+            type="text"
+            className="srd-input"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder="Ask a question..."
+            disabled={isProcessing || phase === 'complete'}
+          />
+          <button
+            className="srd-send-btn"
+            onClick={handleUserSubmit}
+            disabled={isProcessing || phase === 'complete' || !inputValue.trim()}
+          >
+            Submit
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

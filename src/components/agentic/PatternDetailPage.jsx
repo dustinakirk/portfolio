@@ -26,8 +26,30 @@ import ToolUsageIndicatorsPattern from '../aitrustpatterns/patterns/5.3-tool-usa
 import ActivityTimelineAuditLogPattern from '../aitrustpatterns/patterns/5.4-activity-timeline-audit-log';
 import ExecutionProgressViewPattern from '../aitrustpatterns/patterns/5.5-execution-progress-view';
 import SourceAnchoringGroundingPattern from '../aitrustpatterns/patterns/6.1-source-anchoring-and-grounding';
+import ConfidenceThermometerPattern from '../aitrustpatterns/patterns/6.2-confidence-thermometer';
 import SemanticHighlightingUncertaintyPattern from '../aitrustpatterns/patterns/6.3-semantic-highlighting-of-uncertainty';
 import MultiplePresentedOptionsPattern from '../aitrustpatterns/patterns/6.4-multiple-presented-options';
+import ExplanationOnDemandPattern from '../aitrustpatterns/patterns/6.5-explanation-on-demand';
+import CounterEvidencePattern from '../aitrustpatterns/patterns/6.6-counter-evidence';
+import OrchestrationGraphPattern from '../aitrustpatterns/patterns/7.1-orchestration-graph';
+import AgentRegistryProfilesPattern from '../aitrustpatterns/patterns/7.2-agent-registry-and-profiles';
+import SupervisorAgentPattern from '../aitrustpatterns/patterns/7.3-supervisor-agent';
+import AgentHandoverBriefsPattern from '../aitrustpatterns/patterns/7.4-agent-handover-briefs';
+import AssignmentBoardWorkQueuesPattern from '../aitrustpatterns/patterns/7.5-assignment-board-and-work-queues';
+import EscalationFallbackRoutingPattern from '../aitrustpatterns/patterns/7.6-escalation-and-fallback-routing';
+import MemoryInspectorEditorPattern from '../aitrustpatterns/patterns/8.1-memory-inspector-and-editor';
+import PreferencePersonaSettingsPattern from '../aitrustpatterns/patterns/8.2-preference-persona-settings';
+import PrivacyDataUsageControlsPattern from '../aitrustpatterns/patterns/8.3-privacy-and-data-usage-controls';
+import ContextRepositoryProfileStorePattern from '../aitrustpatterns/patterns/8.4-context-repository-and-profile-store';
+import UserPreferenceContextProfilesPattern from '../aitrustpatterns/patterns/8.5-user-preference-context-profiles';
+import SafeFailureStatesPattern from '../aitrustpatterns/patterns/9.1-safe-failure-states';
+import GuidedRepairFlowsPattern from '../aitrustpatterns/patterns/9.2-guided-repair-flows';
+import SentimentAwareResponseStylesPattern from '../aitrustpatterns/patterns/9.3-sentiment-aware-response-styles';
+import ApologyRemedyBundlePattern from '../aitrustpatterns/patterns/9.4-apology-and-remedy-bundle';
+import FleetHealthDashboardPattern from '../aitrustpatterns/patterns/10.1-fleet-health-dashboard';
+import RiskAndPolicyHeatmapsPattern from '../aitrustpatterns/patterns/10.2-risk-and-policy-heatmaps';
+import AccessPermissionTiersPattern from '../aitrustpatterns/patterns/10.3-access-and-permission-tiers-for-agents';
+import WorkflowPolicyTemplateLibraryPattern from '../aitrustpatterns/patterns/10.4-workflow-and-policy-template-library';
 import {
   getPatternById,
   getCategoryById
@@ -59,8 +81,30 @@ const CUSTOM_PATTERN_COMPONENTS = {
   'activity-timeline-audit-log': ActivityTimelineAuditLogPattern,
   'execution-progress-view': ExecutionProgressViewPattern,
   'source-anchoring-grounding': SourceAnchoringGroundingPattern,
+  'confidence-thermometer': ConfidenceThermometerPattern,
   'semantic-highlighting-uncertainty': SemanticHighlightingUncertaintyPattern,
   'multiple-presented-options': MultiplePresentedOptionsPattern,
+  'explanation-on-demand': ExplanationOnDemandPattern,
+  'counter-evidence': CounterEvidencePattern,
+  'orchestration-graph': OrchestrationGraphPattern,
+  'agent-registry-profiles': AgentRegistryProfilesPattern,
+  'supervisor-agent': SupervisorAgentPattern,
+  'agent-handover-briefs': AgentHandoverBriefsPattern,
+  'assignment-board-work-queues': AssignmentBoardWorkQueuesPattern,
+  'escalation-fallback-routing': EscalationFallbackRoutingPattern,
+  'memory-inspector-editor': MemoryInspectorEditorPattern,
+  'preference-persona-settings': PreferencePersonaSettingsPattern,
+  'privacy-data-usage-controls': PrivacyDataUsageControlsPattern,
+  'context-repository-profile-store': ContextRepositoryProfileStorePattern,
+  'user-preference-context-profiles': UserPreferenceContextProfilesPattern,
+  'safe-failure-states': SafeFailureStatesPattern,
+  'guided-repair-flows': GuidedRepairFlowsPattern,
+  'sentiment-aware-response-styles': SentimentAwareResponseStylesPattern,
+  'apology-remedy-bundle': ApologyRemedyBundlePattern,
+  'fleet-health-dashboard': FleetHealthDashboardPattern,
+  'risk-and-policy-heatmaps': RiskAndPolicyHeatmapsPattern,
+  'access-permission-tiers': AccessPermissionTiersPattern,
+  'workflow-policy-template-library': WorkflowPolicyTemplateLibraryPattern,
 };
 
 export default function PatternDetailPage() {

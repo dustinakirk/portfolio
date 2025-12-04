@@ -43,7 +43,7 @@ export const AI_TRUST_PATTERNS = [
   {
     id: 'delegation-modes',
     index: '1.2',
-    title: 'Delegation Modes',
+    title: 'Delegation Modes (Advisor → Co‑Pilot → Autopilot)',
     category: 'relationship',
     shortDescription: 'Make AI autonomy explicit with three delegation levels (Advisor, Co-Pilot, Autopilot), giving users controllable delegation and preventing surprise automation.',
     content: {
@@ -352,7 +352,7 @@ export const AI_TRUST_PATTERNS = [
   {
     id: 'plan-then-execute-workflow',
     index: '3.3',
-    title: 'Plan-then-Execute Workflow',
+    title: 'Plan-then-Execute Workflow (Unified Stream Variant)',
     category: 'control',
     shortDescription: 'A conversational workflow where an AI agent first proposes an explicit, editable plan for multi-step or risky tasks, then executes that plan with clear checkpoints, controls, and auditability.',
     content: {
@@ -625,6 +625,31 @@ export const AI_TRUST_PATTERNS = [
     relatedPatterns: ['reasoning-glimpse', 'tool-usage-indicators', 'activity-timeline-audit-log'],
   },
   {
+    id: 'confidence-thermometer',
+    index: '6.2',
+    title: 'Confidence Thermometer',
+    category: 'grounding',
+    shortDescription: 'A compact visual and textual indicator that communicates an AI system\'s self-assessed confidence in its outputs, guiding appropriate scrutiny and next steps.',
+    content: {
+      problem: 'Without an explicit confidence signal, AI-generated output tends to appear more authoritative than it truly is, leading to overtrust, undertrust, or unclear next steps when uncertainty is high.',
+      solution: 'A Confidence Thermometer is an inline UI element that exposes how certain an AI system is about a specific output or action, combining an icon or gauge, a textual label, and optional detail explaining why the system is more or less certain.',
+      implementation: 'Create confidence indicators with coarse bands (Low/Medium/High), visual encoding using color plus shape, explanatory overlays with key factors and limitations, and adaptive next-step suggestions tied to confidence levels.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Confidence Thermometer pattern showing inline confidence indicators with expandable explanations',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI confidence', 'uncertainty indicator', 'trust calibration', 'AI transparency', 'confidence score', 'AI reliability', 'agentic UX', 'confidence bands'],
+    },
+    relatedPatterns: ['source-anchoring-grounding', 'semantic-highlighting-uncertainty', 'multiple-presented-options'],
+  },
+  {
     id: 'semantic-highlighting-uncertainty',
     index: '6.3',
     title: 'Semantic Highlighting of Uncertainty',
@@ -673,6 +698,531 @@ export const AI_TRUST_PATTERNS = [
       keywords: ['AI options', 'plurality pattern', 'AI alternatives', 'AI trust', 'multiple suggestions', 'AI decision support', 'agentic UX', 'option comparison', 'AI trade-offs'],
     },
     relatedPatterns: ['source-anchoring-grounding', 'semantic-highlighting-uncertainty', 'confirmed-assumptions'],
+  },
+  {
+    id: 'explanation-on-demand',
+    index: '6.5',
+    title: 'Explanation-on-Demand',
+    category: 'grounding',
+    shortDescription: 'Provides an on-demand "Why?" control that reveals layered explanations for AI outputs, allowing users to inspect reasoning without cluttering the primary workflow.',
+    content: {
+      problem: 'Without explanation-on-demand, AI outputs and actions appear as opaque judgments. Users cannot tell what drove the result, whether it is trustworthy, or how to correct or improve outcomes.',
+      solution: 'Introduce a small, consistent "Why?" affordance near AI decisions. When activated, it reveals a concise, human-readable explanation with optional deeper layers: key factors, evidence, confidence, and alternatives considered.',
+      implementation: 'Create explanation units with labels, primary explanations, tiered supporting details, and inline controls for expanding, adjusting preferences, providing feedback, and exporting for audit.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Explanation-on-Demand pattern showing a Why? affordance that reveals layered explanations for AI outputs',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI explanation', 'why control', 'AI transparency', 'explainable AI', 'XAI', 'AI reasoning', 'trust patterns', 'agentic UX', 'AI accountability'],
+    },
+    relatedPatterns: ['source-anchoring-grounding', 'semantic-highlighting-uncertainty', 'multiple-presented-options'],
+  },
+  {
+    id: 'counter-evidence',
+    index: '6.6',
+    title: 'Counter-Evidence',
+    category: 'grounding',
+    shortDescription: 'A structured UI pattern that presents both supporting and contradicting evidence for AI outputs, helping users form nuanced judgments and calibrate trust in agentic systems.',
+    content: {
+      problem: 'Without a counter-evidence pattern, agentic AI systems tend to present singular, confident answers, creating automation bias, hidden uncertainty, trust whiplash, and regulatory friction.',
+      solution: 'Pair AI-generated answers with a balanced evidence view that surfaces both supporting evidence and counter-evidence in a clear, navigable structure.',
+      implementation: 'Create evidence panels with summary headers, dual columns for supporting/counter evidence, evidence items with labels and directional tags, and controls for filtering, sorting, and feedback.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Counter-Evidence pattern showing dual-column evidence display',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['counter-evidence', 'AI evidence', 'supporting evidence', 'AI transparency', 'trust calibration', 'AI decision support', 'evidence display', 'agentic UX'],
+    },
+    relatedPatterns: ['confidence-thermometer', 'source-anchoring-grounding', 'semantic-highlighting-uncertainty', 'multiple-presented-options'],
+  },
+  {
+    id: 'orchestration-graph',
+    index: '7.1',
+    title: 'Orchestration Graph',
+    category: 'orchestration',
+    shortDescription: 'Visual, interactive graphs that show how AI agents collaborate, hand off tasks, and progress through a workflow, enabling transparent monitoring, debugging, and human oversight.',
+    content: {
+      problem: 'Multi-agent systems often behave like black boxes from a user\'s perspective. When an AI system is composed of multiple agents, tools, and APIs, the lack of visibility into how work is actually being done creates friction and mistrust.',
+      solution: 'Orchestration graphs make AI processes observable and controllable by visualizing relationships, dependencies, and execution state in real time, reducing the gap between system behavior and stakeholder expectations.',
+      implementation: 'Create a graph canvas showing agents and their relationships, a detail panel for selected nodes, a control bar for filtering and actions, and optional Timeline, Logs, and Metrics views.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Orchestration Graph pattern showing multi-agent workflow with nodes representing agents and edges showing data flow',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['orchestration graph', 'multi-agent AI', 'workflow visualization', 'AI oversight', 'agent collaboration', 'agentic UX', 'AI transparency', 'workflow monitoring'],
+    },
+    relatedPatterns: ['activity-timeline-audit-log', 'execution-progress-view', 'human-in-the-loop-hitl-gates'],
+  },
+  {
+    id: 'agent-registry-profiles',
+    index: '7.2',
+    title: 'Agent Registry & Profiles',
+    category: 'orchestration',
+    shortDescription: 'Centralized, searchable catalog of AI agents that exposes each agent\'s role, permissions, performance, and history so humans can confidently select, configure, and govern agentic behavior.',
+    content: {
+      problem: 'In multi-agent AI systems, powerful automation often runs behind seemingly simple interfaces. Without an explicit registry and profile pattern, agents tend to be scattered, undocumented, and difficult to govern.',
+      solution: 'Create a centralized directory of all AI agents with clear metadata: purpose, capabilities, tools and permissions, risk classification, environment, ownership, performance, and historical activity.',
+      implementation: 'Create registry surfaces with search/filtering, agent profile views with capabilities/tools/metrics/history tabs, governance controls, and integration points from workflows and logs.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Agent Registry & Profiles pattern showing a catalog of AI agents with filtering and detailed profile views',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['agent registry', 'agent profiles', 'AI governance', 'agent catalog', 'multi-agent oversight', 'agentic UX', 'AI trust patterns', 'agent management'],
+    },
+    relatedPatterns: ['orchestration-graph', 'activity-timeline-audit-log', 'scoped-permissions-tool-consent'],
+  },
+  {
+    id: 'supervisor-agent',
+    index: '7.3',
+    title: 'Supervisor Agent',
+    category: 'orchestration',
+    shortDescription: 'A centralized oversight agent that monitors, evaluates, and governs the actions and outputs of other agents, enforcing policies while making interventions visible, explainable, and controllable.',
+    content: {
+      problem: 'Without a Supervisor Agent, multi-agent AI systems behave in unpredictable ways: unclear responsibility, opaque policy enforcement, limited user control, poor audit support, and fragile policy evolution.',
+      solution: 'Introduce a dedicated, configurable oversight agent that sits between task agents and the environment, reviewing proposed actions, applying policies, and determining whether to approve, modify, block, or escalate.',
+      implementation: 'Create a runtime oversight layer with supervision rules and events, supervision UI with inline annotations and decision logs, and policy configuration surfaces for administrators.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Supervisor Agent pattern showing policy enforcement with inline interventions and decision explanations',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['supervisor agent', 'AI oversight', 'policy enforcement', 'AI governance', 'multi-agent AI', 'AI trust', 'AI compliance', 'agentic UX', 'AI safety'],
+    },
+    relatedPatterns: ['orchestration-graph', 'agent-registry-profiles', 'human-in-the-loop-hitl-gates', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'agent-handover-briefs',
+    index: '7.4',
+    title: 'Agent Handover Briefs',
+    category: 'orchestration',
+    shortDescription: 'Structured, reviewable summaries passed between AI agents and humans to preserve context, minimize errors, and increase trust during handoffs in multi-agent workflows.',
+    content: {
+      problem: 'Without a structured handover, multi-agent systems exhibit context loss between agents and humans, hidden assumptions, redundant work, and eroded trust in autonomy.',
+      solution: 'Generate structured summaries at transition points capturing the current goal, work done, key decisions, open questions, and relevant artifacts—making transitions explicit, auditable, and editable.',
+      implementation: 'Create handover briefs with template-driven generation, versioning, inline editing, approval workflows, and integration with workflow timelines and notifications.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Agent Handover Briefs pattern showing structured summary with goal, decisions, and open questions',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['agent handover', 'handover briefs', 'multi-agent AI', 'AI trust', 'context preservation', 'workflow handoff', 'AI orchestration', 'agentic UX'],
+    },
+    relatedPatterns: ['orchestration-graph', 'agent-registry-profiles', 'supervisor-agent', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'assignment-board-work-queues',
+    index: '7.5',
+    title: 'Assignment Board & Work Queues',
+    category: 'orchestration',
+    shortDescription: 'Visual task board for monitoring and directing work across human and AI agents, providing transparent status, accountability, and safe intervention in multi-agent workflows.',
+    content: {
+      problem: 'Agentic systems frequently run background workflows that are difficult to see, understand, or control: implicit task creation, late failure discovery, unclear responsibility, and fragmented coordination across teams.',
+      solution: 'Present work items as cards flowing through stages (Planned → In Progress → Blocked → Done) with explicit ownership, status, risk, and timing. Provide a central control room for multi-agent operations where supervisors can intervene, reassign, prioritize, and audit.',
+      implementation: 'Create a Kanban-style board with task cards containing outcome-oriented titles, ownership metadata, status/stage indicators, risk/priority tags, timing/progress info, and inline controls for reassignment, approval, and cancellation.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Assignment Board & Work Queues pattern showing Kanban-style task board with AI and human agent tasks',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI task board', 'work queues', 'multi-agent AI', 'AI oversight', 'task management', 'agent coordination', 'AI trust', 'agentic UX', 'Kanban AI', 'workflow orchestration'],
+    },
+    relatedPatterns: ['agent-registry-profiles', 'orchestration-graph', 'supervisor-agent', 'activity-timeline-audit-log', 'human-in-the-loop-hitl-gates'],
+  },
+  {
+    id: 'escalation-fallback-routing',
+    index: '7.6',
+    title: 'Escalation & Fallback Routing',
+    category: 'orchestration',
+    shortDescription: 'A structured way for agentic systems to hand off work when limits are reached—routing to alternative agents or humans while keeping the process transparent, auditable, and controllable.',
+    content: {
+      problem: 'Without structured escalation and fallback, agentic AI systems exhibit silent failures and loops, unclear responsibility and next steps, inconsistent and opaque risk handling, and poor handoffs with context loss.',
+      solution: 'Define predictable triggers, visible pathways, and well-designed handoffs between agents and humans. Route tasks to more appropriate handlers (another agent, a simpler deterministic workflow, or a human) when an agent lacks capability, confidence, permissions, or context.',
+      implementation: 'Create configurable rules engines with no-code/low-code editors, Escalation Case objects with full context, user-facing feedback for escalation status, operations consoles for monitoring queues and cases, and simulation tools to test rule changes.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Escalation & Fallback Routing pattern showing task handoff from AI agent to human specialist with status indicators',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI escalation', 'fallback routing', 'human handoff', 'AI trust', 'agent routing', 'agentic UX', 'multi-agent AI', 'AI oversight', 'human-in-the-loop', 'AI governance'],
+    },
+    relatedPatterns: ['supervisor-agent', 'agent-handover-briefs', 'human-in-the-loop-hitl-gates', 'assignment-board-work-queues', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'memory-inspector-editor',
+    index: '8.1',
+    title: 'Memory Inspector & Editor',
+    category: 'memory',
+    shortDescription: 'A dedicated surface that exposes an AI agent\'s stored memories as structured, editable items, enabling transparent personalization and explicit control over what the agent remembers and uses.',
+    content: {
+      problem: 'Without a clear memory surface, AI agents build and act on persistent beliefs that remain invisible and uncontrollable, creating opaque personalization, accumulated inaccuracies, lack of control and consent, troubleshooting difficulty, and organizational risk.',
+      solution: 'Provide a dedicated, structured surface where an AI agent\'s persistent memories about a person, organization, or workspace are visible, understandable, and controllable. Treat memories as data objects rather than opaque model state.',
+      implementation: 'Create a Memory Inspector with entry points (global nav, AI settings, inline chat, notifications), memory records with labels, descriptions, controls (edit, scope, pin, delete), and metadata (category, scope, source, timestamps, status). Define clear lifecycle stages from detection to deletion.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Memory Inspector & Editor pattern showing a memory panel with editable records and usage attribution',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI memory', 'memory inspector', 'AI personalization', 'agent memory', 'AI trust', 'memory editor', 'AI data control', 'agentic UX', 'AI preferences', 'memory management'],
+    },
+    relatedPatterns: ['teach-me-interfaces', 'activity-timeline-audit-log', 'scoped-permissions-tool-consent', 'agent-registry-profiles'],
+  },
+  {
+    id: 'preference-persona-settings',
+    index: '8.2',
+    title: 'Agent Persona Profiles & Settings',
+    category: 'memory',
+    shortDescription: 'Configurable behavior profiles that capture tone, style, defaults, and risk posture for AI agents, applied consistently across interactions to improve predictability and align outputs with user expectations.',
+    content: {
+      problem: 'Without explicit preference and persona settings, AI-driven products create friction: repeated configuration, inconsistent behavior across contexts, and opaque personalization that users cannot understand or control.',
+      solution: 'Centralize key preferences—tone of voice, level of detail, audience, risk tolerance, tools, and language—into reusable, transparent configurations that make personalization explicit, controllable, and transparent.',
+      implementation: 'Create persona profiles with configurable dimensions (tone, detail, audience, risk), scoping models (org/team/individual/conversation), in-chat indicators, contextual overrides, and governance controls for enterprise settings.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Preference & Persona Settings pattern showing a persona builder with tone, detail, and audience controls',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI preferences', 'persona settings', 'AI personalization', 'behavior profiles', 'AI trust', 'tone settings', 'AI configuration', 'agentic UX', 'AI customization', 'persona builder'],
+    },
+    relatedPatterns: ['memory-inspector-editor', 'teach-me-interfaces', 'structured-clarification-prompts', 'agent-identity-role-contract'],
+  },
+  {
+    id: 'privacy-data-usage-controls',
+    index: '8.3',
+    title: 'Privacy & Data Usage Controls',
+    category: 'memory',
+    shortDescription: 'Controls that make AI data collection, storage, and usage visible and adjustable, so that individuals and organizations can decide how an agentic system handles their information.',
+    content: {
+      problem: 'Without explicit privacy and data usage controls, agentic AI features often feel risky, confusing, or ungovernable—invisible data flows, misalignment with compliance obligations, no way to correct or revoke data use, and one-size-fits-all behavior in mixed-risk workflows.',
+      solution: 'Provide a dedicated privacy dashboard, granular toggles for specific behaviors (training, integrations, logging, memory), and contextual indicators in the AI workflow showing the current state.',
+      implementation: 'Create a comprehensive privacy dashboard with data usage rules, contextual entry points from AI surfaces, just-in-time prompts and banners, and granular controls with audit and compliance features.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Privacy & Data Usage Controls pattern showing a privacy dashboard with toggles for training, memory, and incognito mode',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI privacy', 'data usage controls', 'AI trust', 'data collection', 'AI personalization', 'incognito mode', 'AI compliance', 'agentic UX', 'data retention', 'AI governance'],
+    },
+    relatedPatterns: ['memory-inspector-editor', 'preference-persona-settings', 'scoped-permissions-tool-consent', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'context-repository-profile-store',
+    index: '8.4',
+    title: 'Context Repository & Profile Store',
+    category: 'memory',
+    shortDescription: 'A centralized, user-managed store for long-lived context—such as roles, goals, preferences, constraints, and examples—that AI agents can safely and consistently reuse across sessions, agents, and tools.',
+    content: {
+      problem: 'Without a dedicated context repository, AI systems rely on transient chat history or opaque internal memory, leading to repeated re-briefing, fragmented personalization, staleness and drift, and team misalignment on shared context.',
+      solution: 'Create a dedicated, structured space where long-term context is defined, maintained, and governed. Organize into sections like Profile, Goals, Preferences, Constraints, and Artifacts. Surface context usage transparently in AI interactions.',
+      implementation: 'Build a profile-like repository interface with structured context items, scoping controls (personal/project/workspace/org), in-chat capture and promotion flows, usage metadata, versioning, and governance controls for enterprise deployments.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Context Repository & Profile Store pattern showing a centralized context management interface with profile, goals, and preferences sections',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI context', 'profile store', 'AI memory', 'AI personalization', 'AI trust', 'context management', 'agentic UX', 'AI preferences', 'long-term context', 'AI goals'],
+    },
+    relatedPatterns: ['memory-inspector-editor', 'preference-persona-settings', 'privacy-data-usage-controls', 'teach-me-interfaces'],
+  },
+  {
+    id: 'user-preference-context-profiles',
+    index: '8.5',
+    title: 'User Preference & Context Profiles',
+    category: 'memory',
+    shortDescription: 'A persistent, user-controlled "about me" profile that captures goals, background, working style, and constraints, applied across agents and sessions so every interaction feels tailored, consistent, and respectful of the user\'s intent and boundaries.',
+    content: {
+      problem: 'Without an explicit, user-controlled preference & context profile, users repeat themselves across every chat, personalization feels opaque or creepy, multi-agent experiences become fragmented, and user goals are lost between sessions.',
+      solution: 'Create a first-class, inspectable profile that agents consult and that users can control, override, or delete. Define who the user is, what they\'re trying to achieve, and how they like to work—separate from how any specific AI agent behaves.',
+      implementation: 'Create a centralized "My AI Profile" surface with identity/role, goals, knowledge/skill assumptions, working style preferences, constraints, and tools. Provide entry points in settings, in-chat indicators, and contextual triggers. Support profile application, overrides, cross-agent propagation, and lifecycle management.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'User Preference & Context Profiles pattern showing a profile panel with role, goals, and preferences',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI personalization', 'user profiles', 'AI preferences', 'context profiles', 'AI trust', 'multi-agent personalization', 'user goals', 'agentic UX', 'AI customization', 'working style preferences'],
+    },
+    relatedPatterns: ['memory-inspector-editor', 'preference-persona-settings', 'privacy-data-usage-controls', 'context-repository-profile-store'],
+  },
+  {
+    id: 'safe-failure-states',
+    index: '9.1',
+    title: 'Safe Failure States',
+    category: 'error',
+    shortDescription: 'Agentic AI systems avoid harmful or confusing behavior by failing in clear, contained, and recoverable ways that protect data, preserve context, and maintain trust.',
+    content: {
+      problem: 'Without a Safe Failure States pattern, AI agents frequently fail in ways that are confusing, risky, or trust-eroding: opaque or silent failure, unsafe behavior on low confidence, dead ends and lost work, and blame and frustration.',
+      solution: 'The system deliberately abstains, degrades, or rolls back in controlled ways and clearly communicates what happened. When the AI cannot safely proceed, it stops or limits its own behavior, explains why, and offers a set of clearly bounded next steps.',
+      implementation: 'Create Safe Failure Blocks with clear labels, descriptions, recovery controls, and optional metadata. Define failure taxonomies, confidence thresholds, guardrails, and rollback mechanisms. Surface failures in chat threads, dashboards, and contextual UI with consistent visual treatment.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Safe Failure States pattern showing a structured failure block with status, explanation, and recovery options',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI failure states', 'safe failure', 'AI error handling', 'graceful degradation', 'AI trust', 'agentic UX', 'AI recovery', 'AI abstention', 'error recovery', 'AI rollback'],
+    },
+    relatedPatterns: ['confidence-thermometer', 'human-in-the-loop-hitl-gates', 'activity-timeline-audit-log', 'escalation-fallback-routing'],
+  },
+  {
+    id: 'guided-repair-flows',
+    index: '9.2',
+    title: 'Guided Repair Flows',
+    category: 'error',
+    shortDescription: 'Structured, interactive flows that turn AI failures into guided co-repair moments, resolving issues while building understanding, predictability, and long-term trust.',
+    content: {
+      problem: 'Without guided repair flows, AI-powered products fail in opaque, repetitive, and disempowering ways: errors feel like dead ends, the same failure repeats, responsibility is unclear, support is overloaded, and learning opportunities are lost.',
+      solution: 'Provide structured recovery experiences that explain what went wrong, break resolution into small steps, share control between AI and human, and optionally learn from the fix so similar issues do not recur.',
+      implementation: 'Create repair sessions with clear entry points, stepwise flows (typically 3–5 steps), controls for pacing and choice, optional learning and persistence, and clear exit/escalation paths. Surface repair flows inline in AI messages, within UI components, from notifications, and from logs or history views.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Guided Repair Flows pattern showing a stepwise repair experience with suggestions and confirmation',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI repair', 'guided repair', 'AI error recovery', 'AI failure handling', 'co-repair', 'AI trust', 'agentic UX', 'AI debugging', 'error resolution', 'AI recovery flow'],
+    },
+    relatedPatterns: ['safe-failure-states', 'escalation-fallback-routing', 'human-in-the-loop-hitl-gates', 'teach-me-interfaces', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'sentiment-aware-response-styles',
+    index: '9.3',
+    title: 'Sentiment-Aware Response Styles',
+    category: 'error',
+    shortDescription: 'Adaptive response style that adjusts tone, length, and structure based on inferred user sentiment to reduce frustration, increase clarity, and strengthen trust in agentic AI interactions.',
+    content: {
+      problem: 'Without sentiment-aware response styles, AI agents treat every message as emotionally flat, leading to escalating frustration loops, mismatched cognitive load, perceived lack of empathy, and higher support costs.',
+      solution: 'Enable the AI agent to sense emotionally charged cues and adapt tone (empathetic, neutral, direct), format (short vs. expanded), action bias (do it for me vs. teach me), and escalation behavior in real time.',
+      implementation: 'Create a sentiment detection layer, response style policy, adaptive output controls, and feedback loop. Map sentiment states (frustrated, confused, urgent, satisfied) to appropriate tone, length, and structure adjustments.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Sentiment-Aware Response Styles pattern showing adaptive AI responses based on detected user sentiment',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI sentiment', 'adaptive responses', 'AI tone', 'AI trust', 'empathetic AI', 'frustration detection', 'AI UX', 'agentic UX', 'sentiment analysis', 'response adaptation'],
+    },
+    relatedPatterns: ['safe-failure-states', 'guided-repair-flows', 'escalation-fallback-routing', 'preference-persona-settings'],
+  },
+  {
+    id: 'apology-remedy-bundle',
+    index: '9.4',
+    title: 'Apology + Remedy Bundle',
+    category: 'error',
+    shortDescription: 'A pattern for turning AI mistakes into trust-building moments by combining a clear apology, explanation, and concrete repair options in a single, structured interaction.',
+    content: {
+      problem: 'When AI mistakes are not handled well, trust and adoption erode rapidly: errors feel opaque, apologies are generic and repetitive, and recovery is manual and costly.',
+      solution: 'Frame errors as accountable, repairable events by openly acknowledging what went wrong, explaining the cause, and proposing concrete remedies that the user can review and control.',
+      implementation: 'Create Correction Bundles with structured labels, explanations, impact statements, and remedy controls. Surface bundles inline in chat, on impacted objects, or via notifications with clear user decision paths.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Apology + Remedy Bundle pattern showing a correction card with explanation, impact, and remedy actions',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI apology', 'AI error recovery', 'trust repair', 'AI remedy', 'AI corrections', 'agentic UX', 'AI accountability', 'error handling', 'AI trust patterns'],
+    },
+    relatedPatterns: ['safe-failure-states', 'guided-repair-flows', 'escalation-fallback-routing', 'rollback-version-history', 'activity-timeline-audit-log'],
+  },
+  {
+    id: 'fleet-health-dashboard',
+    index: '10.1',
+    title: 'Fleet Health Dashboard',
+    category: 'fleet',
+    shortDescription: 'A centralized, real-time operations view that surfaces the health, performance, and governance status of an AI agent fleet, enabling proactive oversight, faster recovery, and transparent communication to end-users.',
+    content: {
+      problem: 'Without a fleet-level health dashboard, AI agents often behave as a "black box" with limited visibility into failures, slow manual incident triage, weak governance posture, and end-user anxiety about autonomy.',
+      solution: 'Provide a centralized operations surface that consolidates signals from many agents into an interpretable, actionable view: which agents are healthy, which are failing, where latency and costs are spiking, and where safety or compliance issues may be emerging.',
+      implementation: 'Create a multi-level overview with fleet summary, agent entity cards with status badges and key metrics, time-series panels, drilldown views to logs and runs, and operational controls for pause, rollout, and rollback.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Fleet Health Dashboard pattern showing centralized agent monitoring with status tiles and performance metrics',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI fleet', 'agent dashboard', 'AI monitoring', 'AI governance', 'AI operations', 'fleet health', 'AI trust', 'agentic UX', 'AI observability', 'agent management'],
+    },
+    relatedPatterns: ['activity-timeline-audit-log', 'orchestration-graph', 'agent-registry-profiles', 'supervisor-agent'],
+  },
+  {
+    id: 'risk-and-policy-heatmaps',
+    index: '10.2',
+    title: 'Risk & Policy Heatmaps',
+    category: 'fleet',
+    shortDescription: 'Visualize AI agent risk across workflows to guide governance decisions, make policies actionable, and reinforce organizational and end-user trust.',
+    content: {
+      problem: 'Without a structured way to visualize AI risk and connect it to policies, organizations encounter fragmented understanding of risk, invisible policy decisions, slow incident response, and limited end-user trust.',
+      solution: 'Present a consolidated, visual overview of AI-related risk across agents, workflows, and environments as an interactive heatmap that aggregates risk signals, visualizes them in an interpretable grid, and connects directly to governance controls.',
+      implementation: 'Create heatmap cells representing risk levels across dimensions (Data Sensitivity, Autonomy, Financial Impact, Regulatory Exposure). Provide drill-down to contributing factors, inline policy adjustment controls, simulation mode for impact preview, and comprehensive versioning for audit.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Risk & Policy Heatmaps pattern showing a grid visualization of AI risk across workflows and dimensions',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI risk', 'policy heatmaps', 'AI governance', 'risk visualization', 'AI trust', 'compliance', 'fleet governance', 'agentic UX', 'risk scoring', 'AI oversight'],
+    },
+    relatedPatterns: ['fleet-health-dashboard', 'activity-timeline-audit-log', 'agent-registry-profiles', 'supervisor-agent'],
+  },
+  {
+    id: 'access-permission-tiers',
+    index: '10.3',
+    title: 'Access & Permission Tiers for Agents',
+    category: 'fleet',
+    shortDescription: 'A structured way to define, assign, and expose granular permission tiers for AI agents so that agent behavior remains aligned with organizational roles, environments, and risk thresholds.',
+    content: {
+      problem: 'Without a structured permission tiering model, AI agents accumulate ad-hoc, inconsistent access. This creates both risk and confusion: opaque capabilities, over-privileged agents, under-privileged or misaligned behavior, no fleet-level control, and inconsistent enforcement across environments.',
+      solution: 'Provide a standardized, fleet-wide approach to limiting what AI agents can see and do. Group capabilities into clearly defined tiers (Viewer, Editor, Executor, Admin, Supervised Executor) and apply those tiers consistently across agents, environments, and tenants.',
+      implementation: 'Create tier definitions as bundles of granular capabilities, agent-to-tier assignments per environment, runtime enforcement with user-facing disclosure, supervision and escalation workflows, comprehensive auditing, and simulation tools for tier changes.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Access & Permission Tiers pattern showing agent governance interface with tier assignments and permission matrices',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI permissions', 'agent tiers', 'AI governance', 'permission levels', 'AI trust', 'agent access control', 'AI security', 'agentic UX', 'enterprise AI', 'role-based AI'],
+    },
+    relatedPatterns: ['fleet-health-dashboard', 'risk-and-policy-heatmaps', 'agent-registry-profiles', 'scoped-permissions-tool-consent', 'human-in-the-loop-hitl-gates'],
+  },
+  {
+    id: 'workflow-policy-template-library',
+    index: '10.4',
+    title: 'Workflow & Policy Template Library',
+    category: 'fleet',
+    shortDescription: 'Centralized library of vetted AI workflows and policies that enables safe reuse, consistent guardrails, and faster rollout of agentic AI across an organization.',
+    content: {
+      problem: 'Without a shared template library, AI workflows and policies often emerge in fragmented and opaque ways: inconsistent guardrails, hidden automation, governance that does not scale, and difficult troubleshooting and auditing.',
+      solution: 'Provide a centralized catalog of reusable, pre-approved patterns for how AI agents operate, separating what an agent should do (the workflow) from which rules it should operate under (the policy).',
+      implementation: 'Create a Template Library with structured templates containing workflow definitions, policy bindings, risk classifications, and controls. Support discovery, cloning, customization, simulation, approval workflows, versioning, and runtime disclosure.',
+    },
+    mainImage: {
+      src: '',
+      alt: 'Workflow & Policy Template Library pattern showing a gallery of template cards with risk badges and policy indicators',
+    },
+    slideshow: {
+      enabled: false,
+      slides: [],
+    },
+    additionalImages: [],
+    seo: {
+      keywords: ['AI workflows', 'policy templates', 'AI governance', 'workflow library', 'AI guardrails', 'agentic AI', 'AI trust', 'enterprise AI', 'workflow templates', 'AI policy management'],
+    },
+    relatedPatterns: ['fleet-health-dashboard', 'risk-and-policy-heatmaps', 'agent-registry-profiles', 'human-in-the-loop-hitl-gates', 'sandboxed-playgrounds'],
   },
 ];
 

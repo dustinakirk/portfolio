@@ -74,13 +74,11 @@ function ScenarioTemplatesDemo() {
     <div className="std-container">
       {/* Header */}
       <header className="std-header">
-        <div className="std-header__title">
-          <svg className="std-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
-          AI Agent Workspace
-          <span className="std-header__badge">Recipes Demo</span>
+        <div className="std-header__content">
+          <h2 className="std-header__title">Scenario Templates & Recipes</h2>
+          <p className="std-header__description">
+            Browse pre-built workflow templates. Click any recipe card to preview its steps, inputs, and data sources, then click &apos;Use this Recipe&apos; to see the instantiation flow.
+          </p>
         </div>
         <button className="std-header__reset" onClick={resetDemo}>Reset Demo</button>
       </header>

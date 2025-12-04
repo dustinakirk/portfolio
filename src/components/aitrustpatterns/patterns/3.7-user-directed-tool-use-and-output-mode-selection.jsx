@@ -23,42 +23,29 @@ const demoStyles = {
     overflow: 'hidden',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
   },
-  header: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '16px 20px',
+  showcaseHeader: {
+    padding: '24px',
     borderBottom: '1px solid var(--color-border, #e5e7eb)',
-    background: 'var(--color-surface-alt, #f9fafb)',
-  },
-  headerLeft: {
+    backgroundColor: 'var(--color-surface, #ffffff)',
     display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    gap: '20px',
   },
-  avatar: {
-    width: '36px',
-    height: '36px',
-    borderRadius: '50%',
-    background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
+  showcaseHeaderContent: {
+    flex: 1,
   },
-  headerInfo: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  headerTitle: {
-    fontWeight: 600,
-    fontSize: '14px',
+  showcaseTitle: {
+    fontSize: '18px',
+    fontWeight: 700,
     color: 'var(--color-text, #111827)',
-    margin: 0,
+    margin: '0 0 8px 0',
+    lineHeight: 1.2,
   },
-  headerSubtitle: {
-    fontSize: '12px',
+  showcaseDescription: {
+    fontSize: '14px',
     color: 'var(--color-text-muted, #6b7280)',
+    lineHeight: 1.5,
     margin: 0,
   },
   resetBtn: {
@@ -293,9 +280,9 @@ const demoStyles = {
 
 // Mode configurations
 const MODES = {
-  chat: { label: 'Chat', icon: MessageSquare, iconStyle: demoStyles.dropdownIconChat },
-  sql: { label: 'SQL Only', icon: Database, iconStyle: demoStyles.dropdownIconSql },
-  chart: { label: 'Chart', icon: BarChart3, iconStyle: demoStyles.dropdownIconChart },
+  chat: { label: 'Chat', icon: MessageSquare, iconStyle: demoStyles.dropdownIconChat, exampleQuery: 'What are the top performing regions this quarter?' },
+  sql: { label: 'SQL Only', icon: Database, iconStyle: demoStyles.dropdownIconSql, exampleQuery: 'Show me regional sales breakdown by revenue' },
+  chart: { label: 'Chart', icon: BarChart3, iconStyle: demoStyles.dropdownIconChart, exampleQuery: 'Visualize monthly sales trends across regions' },
 };
 
 // Demo component
@@ -304,7 +291,7 @@ function UserDirectedToolUseDemo() {
   const [messages, setMessages] = useState([
     { type: 'agent', content: "Hello! I'm your Data Analyst Agent. Ask me about your sales data and select how you'd like me to respond." }
   ]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(MODES.chat.exampleQuery);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const chatAreaRef = useRef(null);
 
@@ -316,6 +303,7 @@ function UserDirectedToolUseDemo() {
 
   const handleModeSelect = (newMode) => {
     setMode(newMode);
+    setInputValue(MODES[newMode].exampleQuery);
     setDropdownOpen(false);
   };
 
@@ -365,7 +353,7 @@ ORDER BY total_revenue DESC;`,
       { type: 'agent', content: "Hello! I'm your Data Analyst Agent. Ask me about your sales data and select how you'd like me to respond." }
     ]);
     setMode('chat');
-    setInputValue('');
+    setInputValue(MODES.chat.exampleQuery);
   };
 
   const handleKeyDown = (e) => {
@@ -380,15 +368,14 @@ ORDER BY total_revenue DESC;`,
   return (
     <div style={demoStyles.container} className="udtd">
       {/* Header */}
-      <div style={demoStyles.header} className="udtd__header">
-        <div style={demoStyles.headerLeft} className="udtd__header-left">
-          <div style={demoStyles.avatar} className="udtd__avatar">
-            <Bot size={18} />
-          </div>
-          <div style={demoStyles.headerInfo} className="udtd__header-info">
-            <p style={demoStyles.headerTitle} className="udtd__header-title">Data Analyst Agent</p>
-            <p style={demoStyles.headerSubtitle} className="udtd__header-subtitle">Sales Analytics</p>
-          </div>
+      <header style={demoStyles.showcaseHeader} className="udtd__showcase-header">
+        <div style={demoStyles.showcaseHeaderContent} className="udtd__showcase-header-content">
+          <h2 style={demoStyles.showcaseTitle} className="udtd__showcase-title">
+            User-Directed Tool Use & Output Mode Selection
+          </h2>
+          <p style={demoStyles.showcaseDescription} className="udtd__showcase-description">
+            Select an output mode (Chat, SQL Only, or Chart) from the dropdown, then ask a question about sales data. The agent will respond according to your selected mode.
+          </p>
         </div>
         <button
           style={demoStyles.resetBtn}
@@ -397,7 +384,7 @@ ORDER BY total_revenue DESC;`,
         >
           Reset Demo
         </button>
-      </div>
+      </header>
 
       {/* Chat Area */}
       <div style={demoStyles.chatArea} className="udtd__chat-area" ref={chatAreaRef}>

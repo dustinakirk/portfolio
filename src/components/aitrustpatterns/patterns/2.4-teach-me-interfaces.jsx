@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle, XCircle, AlertCircle, ChevronDown } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
 
@@ -10,7 +10,8 @@ function TeachMeDemo() {
   const [resetBtnHovered, setResetBtnHovered] = useState(false);
   const [primaryBtnHovered, setPrimaryBtnHovered] = useState(false);
   const [secondaryBtnHovered, setSecondaryBtnHovered] = useState(false);
-  const [editBtnHovered, setEditBtnHovered] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [hoveredOption, setHoveredOption] = useState(null);
 
   // Handle category change click
   const handleChangeCategory = () => {
@@ -34,6 +35,7 @@ function TeachMeDemo() {
   // Reset demo
   const handleReset = () => {
     setStep('initial');
+    setDropdownOpen(false);
   };
 
   // Determine current category display
@@ -48,46 +50,53 @@ function TeachMeDemo() {
       background: '#ffffff',
       borderRadius: '12px',
       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-      maxWidth: '480px',
+      maxWidth: '640px',
       width: '100%',
       overflow: 'hidden',
-      border: '1px solid #e2e8f0',
+      border: '1px solid #e5e7eb',
       margin: '0 auto',
+      display: 'flex',
+      flexDirection: 'column',
     },
     patternDemoHeader: {
-      padding: '1rem 1.5rem',
-      borderBottom: '1px solid #e2e8f0',
+      padding: '24px',
+      borderBottom: '1px solid #e5e7eb',
+      backgroundColor: '#ffffff',
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center',
-      background: '#fafafa',
+      alignItems: 'flex-start',
+      gap: '20px',
+    },
+    patternDemoHeaderContent: {
+      flex: 1,
     },
     patternDemoTitle: {
-      fontSize: '0.875rem',
-      fontWeight: 600,
-      color: '#64748b',
-      textTransform: 'uppercase',
-      letterSpacing: '0.05em',
+      fontSize: '18px',
+      fontWeight: 700,
+      color: '#111827',
+      margin: '0 0 8px 0',
+      lineHeight: 1.2,
+    },
+    patternDemoDescription: {
+      fontSize: '14px',
+      color: '#6b7280',
+      lineHeight: 1.5,
       margin: 0,
     },
     resetBtn: {
-      background: resetBtnHovered ? '#f1f5f9' : 'transparent',
-      border: '1px solid #e2e8f0',
-      color: resetBtnHovered ? '#1e293b' : '#64748b',
-      padding: '0.25rem 0.75rem',
-      borderRadius: '4px',
-      fontSize: '0.75rem',
+      background: resetBtnHovered ? '#f9fafb' : '#ffffff',
+      border: '1px solid #e5e7eb',
+      borderColor: resetBtnHovered ? '#d1d5db' : '#e5e7eb',
+      color: resetBtnHovered ? '#111827' : '#374151',
+      padding: '8px 16px',
+      borderRadius: '6px',
+      fontSize: '13px',
+      fontWeight: 500,
       cursor: 'pointer',
       transition: 'all 0.2s',
-    },
-    subhead: {
-      padding: '0.75rem 1.5rem',
-      background: '#fafafa',
-      borderBottom: '1px solid #e2e8f0',
-      color: '#64748b',
-      fontSize: '0.8125rem',
-      lineHeight: 1.4,
-      margin: 0,
+      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      whiteSpace: 'nowrap',
+      height: 'fit-content',
     },
 
     // Chat UI
@@ -171,15 +180,63 @@ function TeachMeDemo() {
       background: categoryIsMarketing ? '#dbeafe' : '#e2e8f0',
       color: categoryIsMarketing ? '#1e40af' : '#64748b',
     },
-    editBtn: {
-      background: 'none',
-      border: 'none',
-      color: step === 'initial' ? '#2563eb' : '#64748b',
+    // Category dropdown
+    categoryDropdownWrapper: {
+      position: 'relative',
+      flex: 1,
+    },
+    categoryDropdownTrigger: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      width: '100%',
+      padding: '0.375rem 0.5rem',
+      background: step === 'initial' ? '#fff' : '#f8fafc',
+      border: '1px solid #e2e8f0',
+      borderRadius: '6px',
+      cursor: step === 'initial' ? 'pointer' : 'default',
       fontSize: '0.75rem',
       fontWeight: 600,
-      cursor: step === 'initial' ? 'pointer' : 'default',
-      textDecoration: step === 'initial' ? (editBtnHovered ? 'underline' : 'none') : 'none',
-      padding: 0,
+      color: categoryIsMarketing ? '#1e40af' : '#64748b',
+      transition: 'all 0.2s',
+    },
+    categoryDropdownTriggerHover: {
+      borderColor: '#cbd5e1',
+      background: '#f8fafc',
+    },
+    categoryDropdown: {
+      position: 'absolute',
+      top: '100%',
+      left: 0,
+      right: 0,
+      marginTop: '4px',
+      background: '#fff',
+      border: '1px solid #e2e8f0',
+      borderRadius: '6px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+      zIndex: 10,
+      overflow: 'hidden',
+    },
+    categoryOption: {
+      padding: '0.5rem 0.75rem',
+      fontSize: '0.75rem',
+      fontWeight: 500,
+      color: '#1e293b',
+      cursor: 'pointer',
+      transition: 'background 0.15s',
+      background: '#fff',
+    },
+    categoryOptionHover: {
+      background: '#f1f5f9',
+    },
+    categoryOptionSelected: {
+      background: '#dbeafe',
+      color: '#1e40af',
+    },
+    chevronIcon: {
+      marginLeft: '0.25rem',
+      transition: 'transform 0.2s',
+      color: '#64748b',
     },
 
     // Teach Me Interface
@@ -291,22 +348,22 @@ function TeachMeDemo() {
       `}</style>
 
       {/* Demo Header */}
-      <div style={styles.patternDemoHeader}>
-        <h2 style={styles.patternDemoTitle}>Demo: Teach Me Interface</h2>
+      <header style={styles.patternDemoHeader}>
+        <div style={styles.patternDemoHeaderContent}>
+          <h2 style={styles.patternDemoTitle}>Teach Me Interface</h2>
+          <p style={styles.patternDemoDescription}>
+            Experience how the AI Agent learns from your corrections. Use the category dropdown to change from &quot;General Expenses&quot; to &quot;Marketing&quot; to trigger the pattern.
+          </p>
+        </div>
         <button
           style={styles.resetBtn}
           onClick={handleReset}
           onMouseEnter={() => setResetBtnHovered(true)}
           onMouseLeave={() => setResetBtnHovered(false)}
         >
-          Restart Demo
+          Reset Demo
         </button>
-      </div>
-
-      {/* Subheader */}
-      <p style={styles.subhead}>
-        Experience how the AI Agent learns from your corrections. Click "Change Category" on the invoice to trigger the pattern.
-      </p>
+      </header>
 
       {/* Chat UI */}
       <div style={styles.chatUi}>
@@ -333,16 +390,52 @@ function TeachMeDemo() {
                 <span style={styles.invoiceValue}>$1,200.00</span>
               </div>
               <div style={styles.categoryBox}>
-                <span style={styles.categoryTag}>{currentCategory}</span>
-                <button
-                  style={styles.editBtn}
-                  onClick={step === 'initial' ? handleChangeCategory : undefined}
-                  onMouseEnter={() => step === 'initial' && setEditBtnHovered(true)}
-                  onMouseLeave={() => setEditBtnHovered(false)}
-                  disabled={step !== 'initial'}
-                >
-                  {step === 'initial' ? 'Change Category' : 'Updated manually'}
-                </button>
+                <span style={styles.invoiceLabel}>Category</span>
+                <div style={styles.categoryDropdownWrapper}>
+                  <button
+                    style={{
+                      ...styles.categoryDropdownTrigger,
+                      ...(dropdownOpen && step === 'initial' ? styles.categoryDropdownTriggerHover : {}),
+                    }}
+                    onClick={() => step === 'initial' && setDropdownOpen(!dropdownOpen)}
+                    disabled={step !== 'initial'}
+                  >
+                    <span>{currentCategory}</span>
+                    {step === 'initial' && (
+                      <ChevronDown
+                        size={14}
+                        style={{
+                          ...styles.chevronIcon,
+                          transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        }}
+                      />
+                    )}
+                  </button>
+                  {dropdownOpen && step === 'initial' && (
+                    <div style={styles.categoryDropdown}>
+                      {['General Expenses', 'Marketing'].map((category) => (
+                        <div
+                          key={category}
+                          style={{
+                            ...styles.categoryOption,
+                            ...(hoveredOption === category ? styles.categoryOptionHover : {}),
+                            ...(currentCategory === category ? styles.categoryOptionSelected : {}),
+                          }}
+                          onMouseEnter={() => setHoveredOption(category)}
+                          onMouseLeave={() => setHoveredOption(null)}
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            if (category === 'Marketing') {
+                              handleChangeCategory();
+                            }
+                          }}
+                        >
+                          {category}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Check } from 'lucide-react';
 import './StructuredClarificationDemo.css';
 
 export default function StructuredClarificationDemo() {
@@ -102,102 +103,93 @@ export default function StructuredClarificationDemo() {
                   </div>
 
                   <div className="scd-panel__body">
-                    {/* Question 1: Target Environment */}
+                    {/* Question 1: Target Environment - Segmented Control */}
                     <div className="scd-item">
-                      <label className="scd-item__label">Target Environment</label>
-                      <span className="scd-item__desc">Production writes directly to the live database.</span>
-                      <div className="scd-control-group">
-                        <label className="scd-option">
-                          <input
-                            type="radio"
-                            name="env"
-                            value="Staging"
-                            checked={formValues.env === 'Staging'}
-                            onChange={handleEnvChange}
-                          />
+                      <div className="scd-item__header">
+                        <label className="scd-item__label">Target Environment</label>
+                        <span className="scd-item__desc">Production writes to live database</span>
+                      </div>
+                      <div className="scd-segmented">
+                        <button
+                          type="button"
+                          className={`scd-segmented__option ${formValues.env === 'Staging' ? 'scd-segmented__option--selected' : ''}`}
+                          onClick={() => setFormValues(prev => ({ ...prev, env: 'Staging' }))}
+                        >
                           Staging (Safe)
-                        </label>
-                        <label className="scd-option">
-                          <input
-                            type="radio"
-                            name="env"
-                            value="Production"
-                            checked={formValues.env === 'Production'}
-                            onChange={handleEnvChange}
-                          />
+                        </button>
+                        <button
+                          type="button"
+                          className={`scd-segmented__option ${formValues.env === 'Production' ? 'scd-segmented__option--selected scd-segmented__option--danger' : ''}`}
+                          onClick={() => setFormValues(prev => ({ ...prev, env: 'Production' }))}
+                        >
                           Production (High Risk)
-                        </label>
+                        </button>
                       </div>
                     </div>
 
-                    {/* Question 2: Traffic Shift */}
+                    {/* Question 2: Traffic Shift - Chips */}
                     <div className="scd-item">
-                      <label className="scd-item__label">Traffic Shift</label>
-                      <span className="scd-item__desc">Percentage of traffic to route to new version immediately.</span>
-                      <div className="scd-control-group">
-                        <label className="scd-option">
-                          <input
-                            type="radio"
-                            name="traffic"
-                            value="10%"
-                            checked={formValues.traffic === '10%'}
-                            onChange={handleTrafficChange}
-                          />
+                      <div className="scd-item__header">
+                        <label className="scd-item__label">Traffic Shift</label>
+                        <span className="scd-item__desc">% routed to new version</span>
+                      </div>
+                      <div className="scd-chips">
+                        <button
+                          type="button"
+                          className={`scd-chip ${formValues.traffic === '10%' ? 'scd-chip--selected' : ''}`}
+                          onClick={() => setFormValues(prev => ({ ...prev, traffic: '10%' }))}
+                        >
                           10% (Canary)
-                        </label>
-                        <label className="scd-option">
+                        </button>
+                        <button
+                          type="button"
+                          className={`scd-chip ${formValues.traffic === '100%' ? 'scd-chip--selected' : ''}`}
+                          onClick={() => setFormValues(prev => ({ ...prev, traffic: '100%' }))}
+                        >
+                          100% (Full)
+                        </button>
+                        <button
+                          type="button"
+                          className={`scd-chip ${formValues.traffic === 'custom' ? 'scd-chip--selected' : ''}`}
+                          onClick={() => setFormValues(prev => ({ ...prev, traffic: 'custom' }))}
+                        >
+                          Custom
+                        </button>
+                        {formValues.traffic === 'custom' && (
                           <input
-                            type="radio"
-                            name="traffic"
-                            value="100%"
-                            checked={formValues.traffic === '100%'}
-                            onChange={handleTrafficChange}
+                            type="text"
+                            className="scd-chip__input"
+                            placeholder="e.g. 50%"
+                            value={formValues.customTraffic}
+                            onChange={handleCustomTrafficChange}
                           />
-                          100% (Full Rollout)
-                        </label>
-                        <label className="scd-option">
-                          <input
-                            type="radio"
-                            name="traffic"
-                            value="custom"
-                            checked={formValues.traffic === 'custom'}
-                            onChange={handleTrafficChange}
-                          />
-                          Other / Custom...
-                          {formValues.traffic === 'custom' && (
-                            <input
-                              type="text"
-                              className="scd-option__custom-input"
-                              placeholder="e.g. 50%"
-                              value={formValues.customTraffic}
-                              onChange={handleCustomTrafficChange}
-                            />
-                          )}
-                        </label>
+                        )}
                       </div>
                     </div>
 
-                    {/* Question 3: Notify */}
+                    {/* Question 3: Notify - Checkbox Chips */}
                     <div className="scd-item">
-                      <label className="scd-item__label">Notify</label>
-                      <span className="scd-item__desc">Where should I post the deployment logs?</span>
-                      <div className="scd-control-group">
-                        <label className="scd-option">
-                          <input
-                            type="checkbox"
-                            checked={formValues.notifySlack}
-                            onChange={() => handleNotifyChange('notifySlack')}
-                          />
+                      <div className="scd-item__header">
+                        <label className="scd-item__label">Notify</label>
+                        <span className="scd-item__desc">Where to post logs</span>
+                      </div>
+                      <div className="scd-chips">
+                        <button
+                          type="button"
+                          className={`scd-chip ${formValues.notifySlack ? 'scd-chip--selected' : ''}`}
+                          onClick={() => handleNotifyChange('notifySlack')}
+                        >
+                          {formValues.notifySlack && <Check className="scd-chip__check" />}
                           Slack #dev-ops
-                        </label>
-                        <label className="scd-option">
-                          <input
-                            type="checkbox"
-                            checked={formValues.notifyEmail}
-                            onChange={() => handleNotifyChange('notifyEmail')}
-                          />
+                        </button>
+                        <button
+                          type="button"
+                          className={`scd-chip ${formValues.notifyEmail ? 'scd-chip--selected' : ''}`}
+                          onClick={() => handleNotifyChange('notifyEmail')}
+                        >
+                          {formValues.notifyEmail && <Check className="scd-chip__check" />}
                           Email Leadership
-                        </label>
+                        </button>
                       </div>
                     </div>
                   </div>

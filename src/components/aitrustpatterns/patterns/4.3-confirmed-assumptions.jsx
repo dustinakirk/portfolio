@@ -58,19 +58,82 @@ export default function ConfirmedAssumptionsPattern() {
         </section>
 
         {/* Pattern example */}
-        <section className="pattern-example assumptions-layout" aria-label="Chat with confirmed assumptions panel">
+        <section className="pattern-section" aria-label="Confirmed assumptions demo">
           <style>{`
+            .cap-showcase {
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              border-radius: 12px;
+              width: 100%;
+              max-width: 920px;
+              box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin: 0 auto;
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            }
+
+            .cap-showcase__header {
+              padding: 24px;
+              border-bottom: 1px solid #e5e7eb;
+              background-color: #ffffff;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              gap: 20px;
+            }
+
+            .cap-showcase__header-content {
+              flex: 1;
+            }
+
+            .cap-showcase__title {
+              font-size: 18px;
+              font-weight: 700;
+              color: #111827;
+              margin: 0 0 8px 0;
+              line-height: 1.2;
+            }
+
+            .cap-showcase__description {
+              font-size: 14px;
+              color: #6b7280;
+              line-height: 1.5;
+              margin: 0;
+            }
+
+            .cap-showcase__reset-btn {
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              color: #374151;
+              padding: 8px 16px;
+              border-radius: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              cursor: pointer;
+              transition: all 0.2s;
+              box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+              white-space: nowrap;
+            }
+
+            .cap-showcase__reset-btn:hover {
+              background: #f9fafb;
+              border-color: #d1d5db;
+            }
+
+            .cap-showcase__reset-btn:focus-visible {
+              outline: 2px solid #4F46E5;
+              outline-offset: 2px;
+            }
+
             .assumptions-layout {
               font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
               font-size: 14px;
               line-height: 1.4;
               color: #111827;
               background: #F9FAFB;
-              border-radius: 16px;
-              border: 1px solid #E5E7EB;
-              box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
               display: flex;
-              max-width: 920px;
               overflow: hidden;
             }
 
@@ -409,7 +472,22 @@ export default function ConfirmedAssumptionsPattern() {
             }
           `}</style>
 
-          <div className="assumptions-layout__chat assumptions-chat">
+          <div className="cap-showcase">
+            <header className="cap-showcase__header">
+              <div className="cap-showcase__header-content">
+                <h2 className="cap-showcase__title">Confirmed Assumptions Panel</h2>
+                <p className="cap-showcase__description">
+                  This demo shows how an AI assistant surfaces its assumptions before executing a task.
+                  Users can review and edit assumptions in the side panel before continuing.
+                </p>
+              </div>
+              <button className="cap-showcase__reset-btn" type="button" onClick={() => window.location.reload()}>
+                Reset Demo
+              </button>
+            </header>
+
+            <div className="assumptions-layout">
+              <div className="assumptions-layout__chat assumptions-chat">
             <div className="assumptions-chat__thread">
               <div className="assumptions-chat__message assumptions-chat__message--user">
                 <div className="assumptions-chat__avatar assumptions-chat__avatar--user" aria-hidden="true">DS</div>
@@ -451,10 +529,10 @@ export default function ConfirmedAssumptionsPattern() {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
-          </div>
 
-          <aside className="assumptions-layout__panel assumptions-panel" aria-label="Confirmed assumptions panel">
+            <aside className="assumptions-layout__panel assumptions-panel" aria-label="Confirmed assumptions panel">
             <header className="assumptions-panel__header">
               <div>
                 <h2 className="assumptions-panel__title">Assumptions</h2>
@@ -508,7 +586,9 @@ export default function ConfirmedAssumptionsPattern() {
                 </div>
               </li>
             </ul>
-          </aside>
+            </aside>
+          </div>
+          </div>
         </section>
 
         {/* Problem & When to Use */}

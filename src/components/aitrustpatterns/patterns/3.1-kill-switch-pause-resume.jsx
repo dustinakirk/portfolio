@@ -115,15 +115,6 @@ function KillSwitchDemo() {
   };
 
   const getStepIcon = (index) => {
-    if (currentState === 'stopped' && index === currentStepIndex) {
-      return <i className="fa-solid fa-times" />;
-    }
-    if (index < currentStepIndex) {
-      return <i className="fa-solid fa-check" />;
-    }
-    if (index === currentStepIndex) {
-      return <i className="fa-solid fa-circle-notch fa-spin" />;
-    }
     return <span style={{ fontWeight: 600 }}>{index + 1}</span>;
   };
 
@@ -157,60 +148,64 @@ function KillSwitchDemo() {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           background: var(--ks-color-surface);
           border: 1px solid var(--ks-color-border);
-          border-radius: 8px;
+          border-radius: 12px;
           width: 100%;
-          max-width: 480px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+          max-width: 640px;
+          box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
           overflow: hidden;
           display: flex;
           flex-direction: column;
           margin: 0 auto;
         }
 
-        .ks-demo__example-header {
-          background-color: #FAFBFC;
-          padding: 16px;
+        .ks-demo__header-showcase {
+          padding: 24px;
           border-bottom: 1px solid var(--ks-color-border);
+          background-color: #ffffff;
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
+          gap: 20px;
         }
 
-        .ks-demo__example-content {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-          padding-right: 16px;
+        .ks-demo__header-content {
+          flex: 1;
         }
 
-        .ks-demo__example-title {
-          font-size: 12px;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
+        .ks-demo__header-title {
+          font-size: 18px;
           font-weight: 700;
-          color: var(--ks-color-text-secondary);
-          margin: 0;
+          color: #111827;
+          margin: 0 0 8px 0;
+          line-height: 1.2;
         }
 
-        .ks-demo__example-desc {
-          font-size: 13px;
-          color: var(--ks-color-text-primary);
+        .ks-demo__header-desc {
+          font-size: 14px;
+          color: #6b7280;
+          line-height: 1.5;
           margin: 0;
-          line-height: 1.4;
         }
 
         .ks-demo__reset-btn {
-          background: none;
-          border: none;
-          color: var(--ks-color-primary);
+          background: #ffffff;
+          border: 1px solid #e5e7eb;
+          color: #374151;
+          padding: 8px 16px;
+          border-radius: 6px;
           font-size: 13px;
-          cursor: pointer;
           font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s;
+          box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
           white-space: nowrap;
-          padding: 0;
-          margin-top: 2px;
+          height: fit-content;
         }
-        .ks-demo__reset-btn:hover { text-decoration: underline; }
+        .ks-demo__reset-btn:hover {
+          background: #f9fafb;
+          border-color: #d1d5db;
+          color: #111827;
+        }
 
         .ks-demo__agent {
           display: flex;
@@ -219,34 +214,37 @@ function KillSwitchDemo() {
         }
 
         .ks-demo__header {
-          padding: 16px;
+          padding: 12px 16px;
           border-bottom: 1px solid var(--ks-color-border);
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 10px;
         }
 
         .ks-demo__avatar {
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
           background: linear-gradient(135deg, #6678D9, #4C9AFF);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
-          font-size: 14px;
+          font-size: 12px;
+          flex-shrink: 0;
         }
 
         .ks-demo__meta {
           flex: 1;
+          display: flex;
+          align-items: center;
+          gap: 8px;
         }
 
         .ks-demo__name {
           font-weight: 600;
           font-size: 14px;
           margin: 0;
-          display: block;
         }
 
         .ks-demo__badge {
@@ -255,7 +253,6 @@ function KillSwitchDemo() {
           border-radius: 4px;
           font-weight: 600;
           display: inline-block;
-          margin-top: 2px;
         }
 
         .ks-demo__badge--running { background: #E3FCEF; color: #006644; }
@@ -423,15 +420,17 @@ function KillSwitchDemo() {
       `}</style>
 
       <div className="ks-demo">
-        <div className="ks-demo__example-header">
-          <div className="ks-demo__example-content">
-            <span className="ks-demo__example-title">Design Pattern Demo</span>
-            <p className="ks-demo__example-desc">
-              <strong>Kill Switch, Pause & Resume:</strong> Simulating a long-running AI agent. Try using <strong>Pause</strong> to intervene between steps, or <strong>Stop</strong> to halt immediately.
+        <header className="ks-demo__header-showcase">
+          <div className="ks-demo__header-content">
+            <h2 className="ks-demo__header-title">Kill Switch, Pause & Resume</h2>
+            <p className="ks-demo__header-desc">
+              Simulating a long-running AI agent. Try using Pause to intervene between steps, or Stop to halt immediately.
             </p>
           </div>
-          <button className="ks-demo__reset-btn" onClick={handleReset}>Reset Demo</button>
-        </div>
+          <button className="ks-demo__reset-btn" onClick={handleReset}>
+            Reset Demo
+          </button>
+        </header>
 
         <div className="ks-demo__agent">
           <div className="ks-demo__header">

@@ -20,43 +20,53 @@
 /* Header */
 .std-header {
   background: #FFFFFF;
-  padding: 16px 24px;
+  padding: 24px;
   border-bottom: 1px solid #E2E8F0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
   flex-shrink: 0;
 }
 
-.std-header__title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #0F172A;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.std-header__content {
+  flex: 1;
 }
 
-.std-header__badge {
-  background-color: #EFF6FF;
-  color: #3B82F6;
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 99px;
-  font-weight: 500;
+.std-header__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.std-header__description {
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .std-header__reset {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
   font-size: 13px;
-  color: #64748B;
-  background: none;
-  border: none;
+  font-weight: 500;
   cursor: pointer;
-  text-decoration: underline;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  white-space: nowrap;
+  height: fit-content;
 }
 
 .std-header__reset:hover {
-  color: #3B82F6;
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #0F172A;
 }
 
 /* Content wrapper - panel positions relative to this */

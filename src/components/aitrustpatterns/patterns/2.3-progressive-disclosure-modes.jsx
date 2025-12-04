@@ -115,28 +115,42 @@ function ProgressiveDisclosureDemo() {
       margin: '0 auto',
     },
     header: {
-      padding: '12px 20px',
+      padding: '24px',
       borderBottom: '1px solid #e2e8f0',
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center',
-      backgroundColor: '#f8fafc',
+      alignItems: 'flex-start',
+      backgroundColor: '#ffffff',
+      gap: '20px',
       flexShrink: 0,
     },
+    headerContent: {
+      flex: 1,
+    },
     headerTitle: {
+      margin: '0 0 8px 0',
+      fontSize: '18px',
+      fontWeight: 700,
+      color: '#111827',
+      lineHeight: 1.2,
+    },
+    headerDescription: {
+      fontSize: '14px',
+      color: '#6b7280',
+      lineHeight: 1.5,
       margin: 0,
-      fontSize: '15px',
-      fontWeight: 600,
-      color: '#0f172a',
     },
     resetBtn: {
-      background: 'transparent',
+      background: '#ffffff',
       border: '1px solid #e2e8f0',
-      color: '#64748b',
-      padding: '6px 12px',
-      borderRadius: '8px',
-      cursor: 'pointer',
+      color: '#374151',
+      padding: '8px 16px',
+      borderRadius: '6px',
       fontSize: '13px',
+      fontWeight: 500,
+      cursor: 'pointer',
+      whiteSpace: 'nowrap',
+      height: 'fit-content',
     },
     workspace: {
       display: 'flex',
@@ -376,12 +390,23 @@ function ProgressiveDisclosureDemo() {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h2 style={styles.headerTitle}>Contextual Progressive Disclosure</h2>
+        <div style={styles.headerContent}>
+          <h2 style={styles.headerTitle}>Contextual Progressive Disclosure</h2>
+          <p style={styles.headerDescription}>
+            Experience contextual progressive disclosure in action. Click &apos;View processing steps&apos; to reveal the tool chain, then click any step to inspect its input/output details in the side panel.
+          </p>
+        </div>
         <button
           style={styles.resetBtn}
           onClick={handleReset}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#e2e8f0'}
-          onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = '#f9fafb';
+            e.target.style.borderColor = '#d1d5db';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = '#ffffff';
+            e.target.style.borderColor = '#e2e8f0';
+          }}
         >
           Reset Demo
         </button>
