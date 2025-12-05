@@ -213,6 +213,24 @@
   background: var(--td-warning);
 }
 
+.td-trust-demo__nav-badge--error {
+  background: var(--td-error);
+}
+
+.td-trust-demo__nav-badge--active {
+  background: var(--td-accent);
+}
+
+.td-trust-demo__nav-badges {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.td-trust-demo__nav-badges .td-trust-demo__nav-badge {
+  margin-left: 0;
+}
+
 .td-trust-demo__nav-section {
   margin-bottom: 16px;
 }

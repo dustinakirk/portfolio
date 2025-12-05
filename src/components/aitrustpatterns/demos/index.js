@@ -12,3 +12,5 @@ export { default as CounterEvidenceDemo } from './CounterEvidenceDemo';
 export { default as AgentRegistryDemo } from './AgentRegistryDemo';
 export { default as SupervisorAgentDemo } from './SupervisorAgentDemo';
 export { default as AgentHandoverBriefsDemo } from './AgentHandoverBriefsDemo';
+export { default as EscalationDemo } from './EscalationDemo';
+export { default as MemoryInspectorDemo } from './MemoryInspectorDemo';

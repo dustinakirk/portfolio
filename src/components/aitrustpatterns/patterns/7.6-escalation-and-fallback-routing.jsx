@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, AlertCircle, ArrowRight, Users, Bot, Clock, Shield, Settings, List, AlertTriangle, Info } from 'lucide-react';
+import { CheckCircle, XCircle, AlertCircle, AlertTriangle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import EscalationDemo from '../demos/EscalationDemo';
 
 // SEO metadata for this pattern page
 export const ESCALATION_FALLBACK_ROUTING_SEO = {
@@ -12,114 +13,6 @@ export const ESCALATION_FALLBACK_ROUTING_SEO = {
   canonicalPath: "/agentic_ai_patterns/escalation-fallback-routing"
 };
 
-// Placeholder demo component
-function EscalationFallbackRoutingDemo() {
-  const [resetBtnHovered, setResetBtnHovered] = useState(false);
-
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    resetBtn: {
-      backgroundColor: resetBtnHovered ? '#f3f4f6' : 'white',
-      border: '1px solid',
-      borderColor: resetBtnHovered ? '#9ca3af' : '#d1d5db',
-      color: '#374151',
-      padding: '6px 12px',
-      borderRadius: '6px',
-      fontSize: '0.875rem',
-      cursor: 'pointer',
-      transition: 'all 0.2s',
-      flexShrink: 0,
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      textAlign: 'center',
-      color: '#6b7280',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      margin: '0 auto 16px',
-      backgroundColor: '#f3f4f6',
-      borderRadius: '12px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    placeholderTitle: {
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      color: '#374151',
-      margin: '0 0 8px 0',
-    },
-    placeholderText: {
-      fontSize: '0.875rem',
-      lineHeight: 1.6,
-      maxWidth: '400px',
-      margin: '0 auto',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Escalation & Fallback Routing demo">
-      <div style={styles.demoHeader}>
-        <div>
-          <h2 style={styles.demoTitle}>Example: Escalation & Fallback Routing</h2>
-          <p style={styles.demoDescription}>
-            This example would demonstrate an AI agent escalating a task to a human specialist when it encounters permission boundaries or low confidence scenarios.
-          </p>
-        </div>
-        <button
-          style={styles.resetBtn}
-          onMouseEnter={() => setResetBtnHovered(true)}
-          onMouseLeave={() => setResetBtnHovered(false)}
-        >
-          Reset Demo
-        </button>
-      </div>
-
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <Users size={32} color="#6b7280" />
-        </div>
-        <h3 style={styles.placeholderTitle}>Interactive Demo Coming Soon</h3>
-        <p style={styles.placeholderText}>
-          An interactive demonstration of escalation and fallback routing will be added here, showing how AI agents hand off work to humans or alternative agents when limits are reached.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function EscalationFallbackRoutingPattern() {
   return (
@@ -171,7 +64,7 @@ export default function EscalationFallbackRoutingPattern() {
 
         {/* Interactive Demo */}
         <section className="pattern-section" aria-label="Escalation and fallback routing example">
-          <EscalationFallbackRoutingDemo />
+          <EscalationDemo />
         </section>
 
         {/* Problem & When to Use */}

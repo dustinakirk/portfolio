@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import AssignmentBoardDemo from '../demos/AssignmentBoardDemo';
 
 // SEO metadata for this pattern page
 export const ASSIGNMENT_BOARD_WORK_QUEUES_SEO = {
@@ -11,73 +12,6 @@ export const ASSIGNMENT_BOARD_WORK_QUEUES_SEO = {
   keywords: ["AI task board", "work queues", "multi-agent AI", "AI oversight", "task management", "agent coordination", "AI trust", "agentic UX"],
   canonicalPath: "/agentic_ai_patterns/assignment-board-work-queues"
 };
-
-// Interactive demo component - Assignment Board & Work Queues
-function AssignmentBoardDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    placeholder: {
-      padding: '80px 40px',
-      textAlign: 'center',
-      backgroundColor: '#f9fafb',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '0.95rem',
-      margin: 0,
-    },
-    placeholderSubtext: {
-      color: '#9ca3af',
-      fontSize: '0.85rem',
-      marginTop: '8px',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Assignment Board & Work Queues demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Assignment Board & Work Queues</h2>
-        <p style={styles.demoDescription}>
-          This example demonstrates a Kanban-style task board where AI agents and humans collaborate on work items, with clear status, ownership, and intervention controls.
-        </p>
-      </div>
-      <div style={styles.placeholder}>
-        <p style={styles.placeholderText}>Interactive demo coming soon</p>
-        <p style={styles.placeholderSubtext}>
-          The demo will show a task board with columns for Planned, In Progress, Blocked, and Done states, featuring drag-and-drop reassignment and real-time status updates.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function AssignmentBoardWorkQueuesPattern() {
   return (

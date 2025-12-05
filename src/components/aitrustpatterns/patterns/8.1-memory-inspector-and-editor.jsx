@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import MemoryInspectorDemo from '../demos/MemoryInspectorDemo';
 
 // SEO metadata for this pattern page
 export const MEMORY_INSPECTOR_EDITOR_SEO = {
@@ -12,18 +13,6 @@ export const MEMORY_INSPECTOR_EDITOR_SEO = {
   canonicalPath: "/agentic_ai_patterns/memory-inspector-editor"
 };
 
-// Placeholder demo component
-function MemoryInspectorEditorDemo() {
-  return (
-    <div className="pattern-example--placeholder">
-      <p>Interactive demo coming soon</p>
-      <p style={{ fontSize: '0.75rem', marginTop: '0.5rem', color: 'var(--gray-400)' }}>
-        This demo will showcase a memory inspector panel with editable memory records,
-        category filters, and usage attribution.
-      </p>
-    </div>
-  );
-}
 
 export default function MemoryInspectorEditorPattern() {
   return (
@@ -78,7 +67,7 @@ export default function MemoryInspectorEditorPattern() {
 
         {/* Interactive Demo */}
         <section className="pattern-section" aria-label="Memory Inspector & Editor example">
-          <MemoryInspectorEditorDemo />
+          <MemoryInspectorDemo />
         </section>
 
         {/* Problem & When to Use */}

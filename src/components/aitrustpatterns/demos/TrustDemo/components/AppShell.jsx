@@ -92,7 +92,12 @@ export default function AppShell({ children, activeNav = 'chats' }) {
                 <span className="td-trust-demo__nav-icon">{renderIcon(item.icon)}</span>
                 <span className="td-trust-demo__nav-label">{item.label}</span>
                 {item.id === 'chats' && <span className="td-trust-demo__nav-badge">3</span>}
-                {item.id === 'tasks' && <span className="td-trust-demo__nav-badge td-trust-demo__nav-badge--warning">2</span>}
+                {item.id === 'tasks' && (
+                  <div className="td-trust-demo__nav-badges">
+                    <span className="td-trust-demo__nav-badge td-trust-demo__nav-badge--error">1</span>
+                    <span className="td-trust-demo__nav-badge td-trust-demo__nav-badge--active">2</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
