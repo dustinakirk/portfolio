@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import ToolUsageIndicatorsDemo from '../demos/ToolUsageIndicatorsDemo';
 
 // SEO metadata for this pattern page
 export const TOOL_USAGE_INDICATORS_SEO = {
@@ -12,19 +13,6 @@ export const TOOL_USAGE_INDICATORS_SEO = {
   canonicalPath: "/agentic_ai_patterns/tool-usage-indicators"
 };
 
-// Placeholder demo component - Tool Usage Indicators
-function ToolUsageIndicatorsDemo() {
-  return (
-    <div className="pattern-example--placeholder">
-      <p>Interactive demo placeholder</p>
-      <p style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--gray-400)' }}>
-        A future demo could show a chat interface with live tool usage indicators,
-        displaying read-only searches, write operations pending approval,
-        and an expandable activity timeline.
-      </p>
-    </div>
-  );
-}
 
 export default function ToolUsageIndicatorsPattern() {
   return (

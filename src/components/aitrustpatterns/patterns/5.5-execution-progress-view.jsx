@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import ExecutionProgressDemo from '../demos/ExecutionProgressDemo';
 
 // SEO metadata for this pattern page
 export const EXECUTION_PROGRESS_VIEW_SEO = {
@@ -12,15 +13,6 @@ export const EXECUTION_PROGRESS_VIEW_SEO = {
   canonicalPath: "/agentic_ai_patterns/execution-progress-view"
 };
 
-// Placeholder demo component
-function ExecutionProgressViewDemo() {
-  return (
-    <div className="pattern-example--placeholder">
-      <p>Interactive demo coming soon.</p>
-      <p>This will demonstrate a multi-step execution progress view with status indicators and controls.</p>
-    </div>
-  );
-}
 
 export default function ExecutionProgressViewPattern() {
   return (
@@ -80,7 +72,7 @@ export default function ExecutionProgressViewPattern() {
 
         {/* Interactive Demo */}
         <section className="pattern-section" aria-label="Execution progress view example">
-          <ExecutionProgressViewDemo />
+          <ExecutionProgressDemo />
         </section>
 
         {/* Problem & When to Use */}

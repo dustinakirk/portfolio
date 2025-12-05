@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import MultiplePresentedOptionsDemo from '../demos/MultiplePresentedOptionsDemo';
 
 // SEO metadata for this pattern page
 export const MULTIPLE_PRESENTED_OPTIONS_SEO = {
@@ -12,25 +13,6 @@ export const MULTIPLE_PRESENTED_OPTIONS_SEO = {
   canonicalPath: "/agentic_ai_patterns/multiple-presented-options"
 };
 
-// Interactive demo component - Placeholder
-function MultiplePresentedOptionsDemo() {
-  return (
-    <div style={{
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-      padding: '48px',
-      textAlign: 'center',
-      border: '1px solid #e5e7eb',
-      maxWidth: '800px',
-      margin: '0 auto'
-    }}>
-      <p style={{ color: '#6b7280', fontSize: '1rem' }}>
-        Interactive demo placeholder - Multiple Presented Options
-      </p>
-    </div>
-  );
-}
 
 export default function MultiplePresentedOptionsPattern() {
   return (

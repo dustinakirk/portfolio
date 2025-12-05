@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
+import SourceAnchoringDemo from '../demos/SourceAnchoringDemo';
 import FeedbackLink from '../FeedbackLink';
 
 // SEO metadata for this pattern page
@@ -12,92 +13,6 @@ export const SOURCE_ANCHORING_GROUNDING_SEO = {
   canonicalPath: "/agentic_ai_patterns/source-anchoring-grounding"
 };
 
-// Placeholder Demo Component
-function SourceAnchoringDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '300px',
-      backgroundColor: '#fafafa',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#e0e7ff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      maxWidth: '400px',
-      lineHeight: 1.6,
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Source Anchoring & Grounding demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Source Anchoring & Grounding</h2>
-        <p style={styles.demoDescription}>
-          This demo will show an AI assistant with inline citations that link to source documents,
-          with hover previews and a side panel for detailed evidence inspection.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-        </div>
-        <p style={styles.placeholderText}>
-          Interactive demo coming soon. This will demonstrate inline citations, hover previews,
-          and source panel interactions for grounding AI responses in verifiable evidence.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function SourceAnchoringGroundingPattern() {
   return (

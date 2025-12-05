@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import SupervisorAgentDemo from '../demos/SupervisorAgentDemo';
 
 // SEO metadata for this pattern page
 export const SUPERVISOR_AGENT_SEO = {
@@ -12,32 +13,6 @@ export const SUPERVISOR_AGENT_SEO = {
   canonicalPath: "/agentic_ai_patterns/supervisor-agent"
 };
 
-// Pattern example image component - Supervisor Agent
-function SupervisorAgentDemo() {
-  return (
-    <div
-      style={{
-        maxWidth: '900px',
-        width: '100%',
-        margin: '0 auto',
-      }}
-      role="img"
-      aria-label="Supervisor Agent pattern example showing a centralized oversight agent reviewing proposed actions"
-    >
-      <img
-        src="/agentic/pattern_images/supervisor-agent.png"
-        alt="Supervisor Agent pattern example demonstrating how a centralized oversight agent reviews proposed actions, applies policies, and surfaces interventions to users with clear explanations"
-        style={{
-          width: '100%',
-          height: 'auto',
-          borderRadius: '12px',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-          border: '1px solid #e5e7eb',
-        }}
-      />
-    </div>
-  );
-}
 
 export default function SupervisorAgentPattern() {
   return (

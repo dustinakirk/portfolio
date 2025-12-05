@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
+import ConfidenceThermometerDemo from '../demos/ConfidenceThermometerDemo';
 import FeedbackLink from '../FeedbackLink';
 
 // SEO metadata for this pattern page
@@ -12,79 +13,6 @@ export const CONFIDENCE_THERMOMETER_SEO = {
   canonicalPath: "/agentic_ai_patterns/confidence-thermometer"
 };
 
-// Interactive demo component - Confidence Thermometer
-function ConfidenceThermometerDemo() {
-  // Styles object - fully self-contained
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      textAlign: 'center',
-      color: '#6b7280',
-      backgroundColor: '#f9fafb',
-      borderRadius: '8px',
-      margin: '24px',
-      border: '2px dashed #d1d5db',
-    },
-    placeholderText: {
-      fontSize: '1rem',
-      marginBottom: '8px',
-    },
-    placeholderSubtext: {
-      fontSize: '0.875rem',
-      color: '#9ca3af',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Confidence Thermometer demo">
-      {/* Demo Header */}
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Confidence Thermometer</h2>
-        <p style={styles.demoDescription}>
-          This example demonstrates how confidence indicators can be attached to AI-generated outputs,
-          helping users understand when to trust recommendations and when to apply additional scrutiny.
-        </p>
-      </div>
-
-      {/* Placeholder Content */}
-      <div style={styles.placeholderContent}>
-        <p style={styles.placeholderText}>Interactive demo coming soon</p>
-        <p style={styles.placeholderSubtext}>
-          This will showcase confidence thermometers attached to AI recommendations with expandable explanations.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function ConfidenceThermometerPattern() {
   return (

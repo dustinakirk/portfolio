@@ -1,0 +1,288 @@
+/* Semantic Highlighting of Uncertainty Demo Styles */
+/* BEM naming with shd- prefix to prevent CSS conflicts */
+
+/* --- Main Container --- */
+.shd-showcase {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Header Styling --- */
+.shd-showcase__header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.shd-showcase__header-content {
+  flex: 1;
+}
+
+.shd-showcase__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.shd-showcase__description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.shd-showcase__reset-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.shd-showcase__reset-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+/* --- Content Area --- */
+.shd-content {
+  padding: 24px;
+  position: relative;
+  min-height: 300px;
+  background-color: #f9fafb;
+}
+
+/* --- User Message Styles --- */
+.shd-user-msg {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.shd-user-bubble {
+  background: #3b82f6;
+  color: white;
+  border-radius: 12px 12px 0 12px;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 80%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.shd-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  color: #475569;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* --- Agent Message Styles --- */
+.shd-agent-msg {
+  display: flex;
+  gap: 16px;
+}
+
+.shd-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.shd-bubble {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0 12px 12px 12px;
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  width: 100%;
+}
+
+.shd-bubble p {
+  margin: 0 0 16px 0;
+}
+
+.shd-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- The UX Pattern: Highlights --- */
+.shd-highlight {
+  cursor: pointer;
+  border-bottom-width: 2px;
+  border-bottom-style: dotted;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  position: relative;
+  white-space: nowrap;
+}
+
+.shd-highlight:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Variant: Medium Uncertainty */
+.shd-highlight--medium {
+  background-color: #fef9c3;
+  border-bottom-color: #eab308;
+}
+
+.shd-highlight--medium:hover {
+  background-color: #fef08a;
+}
+
+/* Variant: High Uncertainty */
+.shd-highlight--high {
+  background-color: #fee2e2;
+  border-bottom-color: #ef4444;
+}
+
+.shd-highlight--high:hover {
+  background-color: #fecaca;
+}
+
+/* Variant: Resolved */
+.shd-highlight--resolved {
+  background-color: #dcfce7;
+  border-bottom: none;
+  color: #166534;
+  cursor: default;
+  padding-left: 24px;
+}
+
+.shd-highlight--resolved::before {
+  content: "\2713";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  font-weight: bold;
+}
+
+/* --- The Popover (Details) --- */
+.shd-popover {
+  position: absolute;
+  width: 280px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  visibility: hidden;
+}
+
+.shd-popover--visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.shd-popover__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.shd-popover__header--high {
+  color: #b91c1c;
+}
+
+.shd-popover__header--medium {
+  color: #a16207;
+}
+
+.shd-popover__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.shd-popover__body {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.shd-popover__actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.shd-btn {
+  flex: 1;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.shd-btn:hover {
+  background: #f9fafb;
+}
+
+.shd-btn--primary {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.shd-btn--primary:hover {
+  background: #2563eb;
+}

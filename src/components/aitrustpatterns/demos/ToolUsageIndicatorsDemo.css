@@ -1,0 +1,424 @@
+/* Tool Usage Indicators Demo Styles */
+/* BEM naming with tui- prefix to prevent CSS conflicts */
+
+/* --- Main Container --- */
+.tui-showcase {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Header Styling --- */
+.tui-showcase__header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tui-showcase__header-content {
+  flex: 1;
+}
+
+.tui-showcase__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.tui-showcase__description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tui-showcase__reset-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  white-space: nowrap;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tui-showcase__reset-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+/* --- Chat Interface --- */
+.tui-chat {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  position: relative;
+}
+
+.tui-chat__messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- Message Bubbles --- */
+.tui-message {
+  display: flex;
+  animation: tui-fadeIn 0.3s ease-out;
+}
+
+@keyframes tui-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tui-message--user {
+  justify-content: flex-end;
+}
+
+.tui-message__bubble {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.tui-message--user .tui-message__bubble {
+  background-color: #4f46e5;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* --- Agent Response Container --- */
+.tui-agent-response {
+  display: flex;
+  gap: 12px;
+}
+
+.tui-agent-response__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tui-agent-response__avatar-text {
+  color: #047857;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tui-agent-response__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* --- Thinking Indicator --- */
+.tui-thinking {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+  animation: tui-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes tui-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* --- Tool Activity Block --- */
+.tui-activity {
+  border-left: 2px solid #e2e8f0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- Individual Tool Row --- */
+.tui-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.tui-row--active,
+.tui-row--done,
+.tui-row--waiting {
+  opacity: 1;
+}
+
+/* --- Tool Icon Container --- */
+.tui-row__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.tui-row__icon--success {
+  color: #10b981;
+}
+
+.tui-row__icon--warning {
+  color: #f59e0b;
+}
+
+.tui-row__icon--blue {
+  color: #3b82f6;
+}
+
+/* --- Tool Content Area --- */
+.tui-row__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tui-row__label {
+  font-weight: 500;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tui-row__details {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.tui-row__details--writing {
+  color: #ea580c;
+}
+
+/* --- Status Badge --- */
+.tui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tui-badge--read {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.tui-badge--write {
+  background-color: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #ffedd5;
+}
+
+/* --- Approval Box --- */
+.tui-approval {
+  background-color: #fff7ed;
+  border: 1px solid #fdba74;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tui-approval__header {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9a3412;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tui-approval__text {
+  font-size: 14px;
+  color: #c2410c;
+  margin: 0;
+}
+
+.tui-approval__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* --- Buttons --- */
+.tui-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tui-btn--primary {
+  background-color: #ea580c;
+  color: white;
+  border: none;
+}
+
+.tui-btn--primary:hover {
+  background-color: #c2410c;
+}
+
+.tui-btn--secondary {
+  background-color: transparent;
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+}
+
+.tui-btn--secondary:hover {
+  background-color: #fff7ed;
+}
+
+/* --- Final Response Bubble --- */
+.tui-final-response {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  margin-top: 4px;
+  animation: tui-slideIn 0.5s ease-out;
+}
+
+.tui-final-response__text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@keyframes tui-slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Spinner Animation --- */
+.tui-spinner {
+  animation: tui-spin 1.5s linear infinite;
+}
+
+@keyframes tui-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Controls Area --- */
+.tui-chat__controls {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tui-control-input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background-color: #f8fafc;
+  color: #374151;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.tui-control-input--disabled {
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+.tui-control-btn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tui-control-btn:hover {
+  background-color: #4338ca;
+}
+
+.tui-control-btn:disabled {
+  background-color: #e5e7eb;
+  color: #6b7280;
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}

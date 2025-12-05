@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import SemanticHighlightingDemo from '../demos/SemanticHighlightingDemo';
 
 // SEO metadata for this pattern page
 export const SEMANTIC_HIGHLIGHTING_UNCERTAINTY_SEO = {
@@ -11,95 +12,6 @@ export const SEMANTIC_HIGHLIGHTING_UNCERTAINTY_SEO = {
   keywords: ["AI uncertainty", "confidence visualization", "AI trust", "uncertainty highlighting", "AI review", "human-in-the-loop", "agentic UX", "AI transparency", "calibrated confidence"],
   canonicalPath: "/agentic_ai_patterns/semantic-highlighting-uncertainty"
 };
-
-// Interactive demo component - Placeholder
-function SemanticHighlightingDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      textAlign: 'center',
-      backgroundColor: '#fefce8',
-      borderTop: '2px dashed #fbbf24',
-    },
-    placeholderIcon: {
-      width: '48px',
-      height: '48px',
-      margin: '0 auto 16px',
-      backgroundColor: '#fef3c7',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#d97706',
-    },
-    placeholderTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1rem',
-      fontWeight: 600,
-      color: '#92400e',
-    },
-    placeholderText: {
-      margin: 0,
-      color: '#a16207',
-      fontSize: '0.875rem',
-      lineHeight: 1.6,
-      maxWidth: '500px',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Semantic Highlighting of Uncertainty demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Semantic Highlighting of Uncertainty</h2>
-        <p style={styles.demoDescription}>
-          This demo will show AI-generated text with highlighted uncertain segments. Users can hover to see why
-          the system is uncertain and take actions like clarifying, viewing alternatives, or escalating for review.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <AlertCircle size={24} />
-        </div>
-        <h3 style={styles.placeholderTitle}>Interactive Demo Coming Soon</h3>
-        <p style={styles.placeholderText}>
-          The interactive demo will display a contract or document with highlighted segments showing low, medium,
-          and high uncertainty. Hovering reveals tooltips with explanations and action buttons for clarification,
-          viewing alternatives, or escalating to human review.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function SemanticHighlightingUncertaintyPattern() {
   return (

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle, ExternalLink } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import ConfessionsViewDemo from '../demos/ConfessionsViewDemo';
 
 // SEO metadata for this pattern page
 export const CONFESSIONS_VIEW_SEO = {
@@ -11,93 +12,6 @@ export const CONFESSIONS_VIEW_SEO = {
   keywords: ["AI confessions", "self-report", "AI transparency", "AI trust", "AI honesty", "policy compliance", "AI oversight", "agentic UX", "AI accountability"],
   canonicalPath: "/agentic_ai_patterns/confessions-view"
 };
-
-// Placeholder demo component
-function ConfessionsViewDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#fafafa',
-      minHeight: '300px',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#e0e7ff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      maxWidth: '400px',
-    },
-    placeholderSubtext: {
-      color: '#9ca3af',
-      fontSize: '0.875rem',
-      marginTop: '8px',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Confessions View demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Confessions View</h2>
-        <p style={styles.demoDescription}>
-          This example will demonstrate a split-view interface where an AI agent&apos;s answer is paired with
-          a structured self-report showing objectives, compliance status, shortcuts, and uncertainties.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <AlertCircle size={32} color="#6366f1" />
-        </div>
-        <p style={styles.placeholderText}>
-          Interactive demo coming soon
-        </p>
-        <p style={styles.placeholderSubtext}>
-          The demo will show a confession panel with compliance checkboxes, shortcut disclosures, and uncertainty flags.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function ConfessionsViewPattern() {
   return (

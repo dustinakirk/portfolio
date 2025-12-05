@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import OrchestrationGraphDemo from '../demos/OrchestrationGraphDemo';
 
 // SEO metadata for this pattern page
 export const ORCHESTRATION_GRAPH_SEO = {
@@ -12,32 +13,6 @@ export const ORCHESTRATION_GRAPH_SEO = {
   canonicalPath: "/agentic_ai_patterns/orchestration-graph"
 };
 
-// Interactive demo component - Placeholder
-function OrchestrationGraphDemo() {
-  return (
-    <div
-      style={{
-        background: '#f9fafb',
-        border: '2px dashed #d1d5db',
-        borderRadius: '12px',
-        padding: '48px 24px',
-        textAlign: 'center',
-        color: '#6b7280',
-        maxWidth: '800px',
-        margin: '0 auto'
-      }}
-      role="region"
-      aria-label="Orchestration Graph demo placeholder"
-    >
-      <p style={{ fontSize: '1rem', fontWeight: 500, margin: '0 0 8px 0' }}>Interactive Demo Coming Soon</p>
-      <p style={{ fontSize: '0.875rem', margin: 0, lineHeight: 1.5 }}>
-        This will show an animated orchestration graph with nodes representing agents
-        and edges showing data flow between them. Visitors will be able to hover nodes,
-        toggle approval gates, and switch between Graph and Timeline views.
-      </p>
-    </div>
-  );
-}
 
 export default function OrchestrationGraphPattern() {
   return (

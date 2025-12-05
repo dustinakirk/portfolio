@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import CounterEvidenceDemo from '../demos/CounterEvidenceDemo';
 
 // SEO metadata for this pattern page
 export const COUNTER_EVIDENCE_SEO = {
@@ -11,99 +12,6 @@ export const COUNTER_EVIDENCE_SEO = {
   keywords: ["counter-evidence", "AI evidence", "supporting evidence", "AI transparency", "trust calibration", "AI decision support", "evidence display", "agentic UX"],
   canonicalPath: "/agentic_ai_patterns/counter-evidence"
 };
-
-// Placeholder demo component
-function CounterEvidenceDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#f9fafb',
-      border: '2px dashed #d1d5db',
-      borderRadius: '8px',
-      margin: '24px',
-    },
-    placeholderIcon: {
-      width: '48px',
-      height: '48px',
-      backgroundColor: '#e5e7eb',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderTitle: {
-      fontSize: '1rem',
-      fontWeight: 600,
-      color: '#374151',
-      margin: '0 0 8px 0',
-    },
-    placeholderText: {
-      fontSize: '0.875rem',
-      color: '#6b7280',
-      margin: 0,
-      textAlign: 'center',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Counter-Evidence demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Counter-Evidence Display</h2>
-        <p style={styles.demoDescription}>
-          This example would demonstrate a chat-based agent presenting both supporting and counter-evidence
-          alongside its recommendations, with expandable details and filtering controls.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="9" y1="3" x2="9" y2="21"></line>
-          </svg>
-        </div>
-        <p style={styles.placeholderTitle}>Interactive Demo Coming Soon</p>
-        <p style={styles.placeholderText}>
-          A dual-column evidence panel showing supporting vs. counter-evidence<br />
-          with expandable details, filtering, and feedback controls.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function CounterEvidencePattern() {
   return (

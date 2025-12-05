@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import AgentRegistryDemo from '../demos/AgentRegistryDemo';
 
 // SEO metadata for this pattern page
 export const AGENT_REGISTRY_PROFILES_SEO = {
@@ -12,24 +13,6 @@ export const AGENT_REGISTRY_PROFILES_SEO = {
   canonicalPath: "/agentic_ai_patterns/agent-registry-profiles"
 };
 
-// Placeholder demo component
-function AgentRegistryProfilesDemo() {
-  return (
-    <div style={{
-      background: '#f9fafb',
-      border: '1px solid #e5e7eb',
-      borderRadius: '12px',
-      padding: '48px 24px',
-      textAlign: 'center',
-      maxWidth: '800px',
-      margin: '0 auto',
-    }}>
-      <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: 0 }}>
-        Interactive demo coming soon
-      </p>
-    </div>
-  );
-}
 
 export default function AgentRegistryProfilesPattern() {
   return (
@@ -82,7 +65,7 @@ export default function AgentRegistryProfilesPattern() {
 
         {/* Interactive Demo */}
         <section className="pattern-section" aria-label="Agent registry demo">
-          <AgentRegistryProfilesDemo />
+          <AgentRegistryDemo />
         </section>
 
         {/* Problem & When to Use */}
