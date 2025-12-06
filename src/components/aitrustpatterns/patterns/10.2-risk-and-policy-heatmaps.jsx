@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import RiskPolicyHeatmapsDemo from '../demos/RiskPolicyHeatmapsDemo';
 
 // SEO metadata for this pattern page
 export const RISK_AND_POLICY_HEATMAPS_SEO = {
@@ -11,95 +12,6 @@ export const RISK_AND_POLICY_HEATMAPS_SEO = {
   keywords: ["AI risk", "policy heatmaps", "AI governance", "risk visualization", "AI trust", "compliance", "fleet governance", "agentic UX"],
   canonicalPath: "/agentic_ai_patterns/risk-and-policy-heatmaps"
 };
-
-// Placeholder demo component
-function RiskPolicyHeatmapsDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '300px',
-      backgroundColor: '#fafafa',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#e5e7eb',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      margin: 0,
-    },
-    placeholderSubtext: {
-      color: '#9ca3af',
-      fontSize: '0.875rem',
-      textAlign: 'center',
-      margin: '8px 0 0 0',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Risk & Policy Heatmaps demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Risk & Policy Heatmap</h2>
-        <p style={styles.demoDescription}>
-          An interactive heatmap visualization showing AI agent risk across workflows and risk dimensions, with drill-down policy controls.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderIcon}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <rect x="7" y="7" width="3" height="9"></rect>
-            <rect x="14" y="7" width="3" height="5"></rect>
-          </svg>
-        </div>
-        <p style={styles.placeholderText}>Interactive demo coming soon</p>
-        <p style={styles.placeholderSubtext}>
-          This will show a heatmap grid with workflows on one axis and risk dimensions on the other, with clickable cells for policy adjustment.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function RiskAndPolicyHeatmapsPattern() {
   return (

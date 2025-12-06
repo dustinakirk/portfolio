@@ -1002,9 +1002,9 @@ export const AI_TRUST_PATTERNS = [
   {
     id: 'context-repository-profile-store',
     index: '8.4',
-    title: 'Context Repository & Profile Store',
+    title: 'Agent Context Repository & Workspace Profiles',
     category: 'memory',
-    shortDescription: 'A centralized, user-managed store for long-lived context—such as roles, goals, preferences, constraints, and examples—that AI agents can safely and consistently reuse across sessions, agents, and tools.',
+    shortDescription: 'A centralized, governed workspace context store that gives agents shared, non-personal knowledge—brand, policy, goals, and project briefs—so behavior is consistent and explainable across users, agents, and sessions.',
     content: {
       problem: 'Without a dedicated context repository, AI systems rely on transient chat history or opaque internal memory, leading to repeated re-briefing, fragmented personalization, staleness and drift, and team misalignment on shared context.',
       solution: 'Create a dedicated, structured space where long-term context is defined, maintained, and governed. Organize into sections like Profile, Goals, Preferences, Constraints, and Artifacts. Surface context usage transparently in AI interactions.',

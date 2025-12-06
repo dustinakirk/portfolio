@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import PrivacyDataUsageControlsDemo from '../demos/PrivacyDataUsageControlsDemo';
 
 // SEO metadata for this pattern page
 export const PRIVACY_DATA_USAGE_CONTROLS_SEO = {
@@ -12,17 +13,6 @@ export const PRIVACY_DATA_USAGE_CONTROLS_SEO = {
   canonicalPath: "/agentic_ai_patterns/privacy-and-data-usage-controls"
 };
 
-// Interactive demo component - Placeholder
-function PrivacyDataUsageControlsDemo() {
-  return (
-    <div className="pattern-example--placeholder">
-      <p>Interactive demo coming soon</p>
-      <p style={{ fontSize: '0.75rem', marginTop: '0.5rem', color: 'var(--gray-400)' }}>
-        A privacy center example with toggles for memory, training, and incognito mode
-      </p>
-    </div>
-  );
-}
 
 export default function PrivacyDataUsageControlsPattern() {
   return (

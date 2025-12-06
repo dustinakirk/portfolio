@@ -1,0 +1,317 @@
+/* Safe Failure States Demo Styles */
+/* BEM naming with sfs- prefix to prevent CSS conflicts */
+
+/* --- Main Container --- */
+.sfs-showcase {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Header Styling --- */
+.sfs-showcase__header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sfs-showcase__header-content {
+  flex: 1;
+}
+
+.sfs-showcase__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.sfs-showcase__description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sfs-showcase__reset-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.sfs-showcase__reset-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+/* --- Chat Interface --- */
+.sfs-chat {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+}
+
+.sfs-chat__viewport {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sfs-chat__input-area {
+  padding: 16px 24px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 8px;
+}
+
+.sfs-chat__fake-input {
+  flex: 1;
+  height: 40px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.sfs-chat__fake-btn {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+/* --- Message Bubbles --- */
+.sfs-message {
+  max-width: 85%;
+  line-height: 1.5;
+  font-size: 14px;
+  animation: sfs-fadeIn 0.3s ease-out;
+}
+
+@keyframes sfs-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sfs-message--user {
+  align-self: flex-end;
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px 12px 0 12px;
+}
+
+.sfs-message--agent {
+  align-self: flex-start;
+  display: flex;
+  gap: 8px;
+}
+
+.sfs-message__avatar {
+  width: 32px;
+  height: 32px;
+  background: #e0e7ff;
+  color: #4338ca;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.sfs-message__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sfs-message__text {
+  padding: 8px 0 4px 0;
+  color: #374151;
+}
+
+.sfs-message__bubble {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 0 12px 12px 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #374151;
+}
+
+/* --- Safe Failure Block (The Core UX Pattern) --- */
+.sfs-safe-failure {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 4px;
+}
+
+.sfs-safe-failure__header {
+  padding: 16px;
+  background-color: #fffbeb;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sfs-safe-failure__icon {
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+}
+
+.sfs-safe-failure__title {
+  font-weight: 600;
+  color: #92400e;
+  font-size: 14px;
+}
+
+.sfs-safe-failure__body {
+  padding: 16px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.sfs-safe-failure__impact {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  padding-top: 8px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.sfs-safe-failure__actions {
+  padding: 8px 16px 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* --- Action Buttons --- */
+.sfs-action-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.sfs-action-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.sfs-action-btn--primary {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+  color: #374151;
+}
+
+.sfs-action-btn--primary:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #6b7280;
+}
+
+.sfs-action-btn--secondary {
+  background-color: transparent;
+  color: #6b7280;
+}
+
+.sfs-action-btn--secondary:hover:not(:disabled) {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+.sfs-action-btn--danger {
+  margin-left: auto;
+  color: #dc2626;
+  background: transparent;
+}
+
+.sfs-action-btn--danger:hover:not(:disabled) {
+  background-color: #fef2f2;
+}
+
+/* --- Typing Indicator --- */
+.sfs-typing {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 0 12px 12px 12px;
+  display: inline-block;
+  color: #6b7280;
+  font-size: 13px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.sfs-typing__dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #6b7280;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: sfs-bounce 1.4s infinite ease-in-out both;
+}
+
+.sfs-typing__dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.sfs-typing__dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes sfs-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import ApologyRemedyBundleDemo from '../demos/ApologyRemedyBundleDemo';
 
 // SEO metadata for this pattern page
 export const APOLOGY_REMEDY_BUNDLE_SEO = {
@@ -11,36 +12,6 @@ export const APOLOGY_REMEDY_BUNDLE_SEO = {
   keywords: ["AI apology", "AI error recovery", "trust repair", "AI remedy", "AI corrections", "agentic UX", "AI accountability", "error handling"],
   canonicalPath: "/agentic_ai_patterns/apology-remedy-bundle"
 };
-
-// Interactive demo component - Apology + Remedy Bundle
-function ApologyRemedyBundleDemo() {
-  return (
-    <div
-      style={{
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-        background: '#ffffff',
-        borderRadius: '12px',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        maxWidth: '800px',
-        width: '100%',
-        overflow: 'hidden',
-        border: '1px solid #e5e7eb',
-        margin: '0 auto',
-        padding: '48px 24px',
-        textAlign: 'center',
-      }}
-      role="region"
-      aria-label="Apology + Remedy Bundle demo"
-    >
-      <div style={{ color: '#6b7280', fontSize: '0.875rem' }}>
-        Interactive demo coming soon
-      </div>
-      <div style={{ color: '#9ca3af', fontSize: '0.75rem', marginTop: '8px' }}>
-        This pattern demonstrates how AI systems can acknowledge errors and offer structured remediation options.
-      </div>
-    </div>
-  );
-}
 
 export default function ApologyRemedyBundlePattern() {
   return (

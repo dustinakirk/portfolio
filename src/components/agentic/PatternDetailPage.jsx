@@ -41,8 +41,8 @@ import EscalationFallbackRoutingPattern from '../aitrustpatterns/patterns/7.6-es
 import MemoryInspectorEditorPattern from '../aitrustpatterns/patterns/8.1-memory-inspector-and-editor';
 import PreferencePersonaSettingsPattern from '../aitrustpatterns/patterns/8.2-preference-persona-settings';
 import PrivacyDataUsageControlsPattern from '../aitrustpatterns/patterns/8.3-privacy-and-data-usage-controls';
-import ContextRepositoryProfileStorePattern from '../aitrustpatterns/patterns/8.4-context-repository-and-profile-store';
-import UserPreferenceContextProfilesPattern from '../aitrustpatterns/patterns/8.5-user-preference-context-profiles';
+import ContextRepositoryProfileStorePattern from '../aitrustpatterns/patterns/8.4-agent-context-repository-and-workspace-profiles';
+import UserPreferenceContextProfilesPattern from '../aitrustpatterns/patterns/8.5-user-preference-and-personal-context-profiles';
 import SafeFailureStatesPattern from '../aitrustpatterns/patterns/9.1-safe-failure-states';
 import GuidedRepairFlowsPattern from '../aitrustpatterns/patterns/9.2-guided-repair-flows';
 import SentimentAwareResponseStylesPattern from '../aitrustpatterns/patterns/9.3-sentiment-aware-response-styles';

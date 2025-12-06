@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import GuidedRepairFlowsDemo from '../demos/GuidedRepairFlowsDemo';
 
 // SEO metadata for this pattern page
 export const GUIDED_REPAIR_FLOWS_SEO = {
@@ -12,83 +13,6 @@ export const GUIDED_REPAIR_FLOWS_SEO = {
   canonicalPath: "/agentic_ai_patterns/guided-repair-flows"
 };
 
-// Interactive demo component - Guided Repair Flows
-function GuidedRepairFlowsDemo() {
-  // Placeholder demo - to be implemented with full interactivity
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#fafafa',
-      minHeight: '300px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      margin: 0,
-    },
-    placeholderIcon: {
-      width: '48px',
-      height: '48px',
-      marginBottom: '16px',
-      color: '#9ca3af',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Guided Repair Flows demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Guided Repair Flow</h2>
-        <p style={styles.demoDescription}>
-          This example demonstrates a guided repair flow where an AI copilot helps resolve a dashboard creation failure
-          due to unmatched field names, walking the user through dataset confirmation, field mapping, and rule saving.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <svg style={styles.placeholderIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-        </svg>
-        <p style={styles.placeholderText}>
-          Interactive demo coming soon.<br />
-          This will showcase a step-by-step guided repair experience.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function GuidedRepairFlowsPattern() {
   return (

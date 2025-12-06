@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, AlertCircle, Activity, Server, BarChart3, Shield, Clock, Users, Settings, Eye, Gauge } from 'lucide-react';
+import { CheckCircle, XCircle, AlertCircle, Server, BarChart3, Shield, Clock, Users, Eye, Gauge } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import FleetHealthDashboardDemo from '../demos/FleetHealthDashboardDemo';
 
 // SEO metadata for this pattern page
 export const FLEET_HEALTH_DASHBOARD_SEO = {
@@ -11,95 +12,6 @@ export const FLEET_HEALTH_DASHBOARD_SEO = {
   keywords: ["AI fleet", "agent dashboard", "AI monitoring", "AI governance", "AI operations", "fleet health", "AI trust", "agentic UX", "AI observability", "agent management"],
   canonicalPath: "/agentic_ai_patterns/fleet-health-dashboard"
 };
-
-// Placeholder demo component - Fleet Health Dashboard
-function FleetHealthDashboardDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderArea: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '300px',
-      backgroundColor: '#fafafa',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#dbeafe',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      maxWidth: '400px',
-      lineHeight: 1.6,
-    },
-    placeholderTitle: {
-      color: '#374151',
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      marginBottom: '8px',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Fleet Health Dashboard demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Fleet Health Dashboard</h2>
-        <p style={styles.demoDescription}>
-          This example would demonstrate a centralized operations view showing agent health status,
-          performance metrics, and governance controls for a multi-agent AI fleet.
-        </p>
-      </div>
-      <div style={styles.placeholderArea}>
-        <div style={styles.placeholderIcon}>
-          <Activity size={32} color="#2563eb" />
-        </div>
-        <p style={styles.placeholderTitle}>Interactive Demo Coming Soon</p>
-        <p style={styles.placeholderText}>
-          This space will feature an interactive demonstration of a Fleet Health Dashboard
-          showing real-time agent status, performance metrics, incident alerts,
-          and operational controls for managing AI agent fleets at scale.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function FleetHealthDashboardPattern() {
   return (

@@ -794,23 +794,44 @@ A dedicated surface that exposes an AI agent's stored memories as structured, ed
 
 ---
 
-### 8.2 Agent Persona Profiles & Settings
+## 8.2 Agent Persona Profiles & Settings
 
 **Purpose**
-Configurable, reusable definitions of how a specific AI agent should behave—its role, tone, capabilities, and boundaries—applied consistently across interactions to make agent behavior predictable, governable, and trustworthy. This pattern treats agent identity and operating mode as a visible, governed object rather than hidden implementation details.
+Configurable, reusable definitions of how a specific AI **agent** should behave—its role, tone, capabilities, and risk posture—applied consistently across workflows. This pattern makes the *agent* itself a visible, governed object (“who is acting on my behalf?”) distinct from user preferences (“who am I?”) and shared context (“what world are we in?”).
 
 **Implementation**
-* Define agent personas as first-class objects with structured fields: name/label, role & mission, scope of responsibility, tone & style, risk posture, tooling & capabilities, limitations, and escalation behavior
-* Provide an agent gallery or catalog where users can see available agents with persona summaries showing role, risk posture, and typical use cases
-* Display the active agent in the chat UI with a chip or indicator showing "Agent: [Name]" that expands to reveal persona details on click
-* Support versioning and governance workflows for persona changes with audit trails, especially for regulated or high-risk use cases
-* Enable persona variants for different contexts (e.g., "Support Agent - Internal Notes" vs "Support Agent - Customer Replies")
+
+* Treat **agent personas as first-class objects** with structured fields:
+
+  * Identity: name, label, avatar, owner
+  * Role & mission: what this agent is for, what it is not for
+  * Scope of responsibility: which domains/surfaces it is allowed to touch
+  * Tone & style: concise vs verbose, formal vs casual, exploratory vs conservative
+  * Risk posture: aggressive vs cautious, experimentation vs safety-first
+  * Tooling & capabilities: what tools and data sources it may use
+  * Escalation behavior: when it should defer to humans or supervisor agents
+* Provide an **Agent Gallery** where users can:
+
+  * Browse available agents with persona summaries (“Empathetic Support Drafter,” “Strict Compliance Reviewer”)
+  * View risk posture and environment (dev/stage/prod) at a glance
+  * Filter by role, domain, risk level, and owning team
+* Display the **active agent** in the UI (e.g., chip or header: “Agent: Compliance Reviewer”) that expands to show persona details and limitations.
+* Support **versioning and governance**:
+
+  * Approval workflows for persona changes in high-risk domains (legal, finance, healthcare)
+  * Audit trails for what changed, by whom, and when
+* Allow **persona variants** for different audiences or channels (e.g., “Support Agent – Customer Replies” vs “Support Agent – Internal Notes”) while sharing a common core role.
 
 **Use Cases**
-* **Organizational AI Agent Gallery**: A SaaS platform offers pre-configured agents ("Customer Email Drafter - Empathetic & Cautious," "Risk & Compliance Reviewer - Highly Conservative") owned by specific teams, with users picking agents from the gallery depending on the task
-* **Incident Management Companion Agents**: An observability platform defines "Incident Scribe" for chronological summaries, "Exec Incident Briefing Agent" for leadership, and "Postmortem Drafting Agent" for retros, each with distinct tone, audience, and templates
-* **Multi-Agent Document Workflow**: A Brainstorming Agent helps explore ideas (marked speculative), a Fact-Checking Agent runs after drafting (focused on verification), and a Compliance Agent runs before publishing (strict, governed by Legal)
-* **Customer-Facing Support Copilot**: "Customer Reply Drafting Agent" with empathetic, precise, external-facing persona contrasts with "Internal Notes Agent" allowing informal shorthand for teammates
+
+* **Organizational AI Agent Gallery (B2B SaaS)**
+  Admins publish pre-configured agents like “Customer Email Drafter – Empathetic & Cautious,” “Risk & Compliance Reviewer – Highly Conservative.” Product teams choose an agent persona for a feature instead of rolling their own prompts, keeping behavior consistent.
+* **Incident Management Companions (Observability Platform)**
+  Separate personas: “Incident Scribe” (chronological summaries), “Exec Briefing Agent” (high-level status), and “Postmortem Drafting Agent” (root cause + action items), each with different tone, audience, and templates.
+* **Multi-Agent Document Workflow (Knowledge Tools)**
+  A Brainstorming Agent (speculative, divergent), Fact-Checking Agent (literal, grounded, conservative), and Compliance Agent (rigid, policy-bound) chain together. Their personas clarify why outputs differ at each stage.
+* **Customer-Facing vs Internal Support Copilot (Support Platform)**
+  “Customer Reply Drafting Agent” has empathetic, precise external tone and stricter guardrails; “Internal Notes Agent” is optimized for fast shorthand between teammates with more informal style.
 
 ---
 
@@ -834,43 +855,104 @@ Controls that make AI data collection, storage, and usage visible and adjustable
 
 ---
 
-### 8.4 Context Repository & Profile Store
+## 8.4 Agent Context Repository & Workspace Profiles
 
 **Purpose**
-A centralized, user-managed store for long-lived context—such as roles, goals, preferences, constraints, and examples—that AI agents can safely and consistently reuse across sessions, agents, and tools. This separates persistent context from transient conversation history, creating an explicit "source of truth" that agents draw from to personalize behavior over time.
+A centralized, governed **context store** for long-lived, non-personal information—brand guidelines, policies, team goals, project briefs, templates, and domain-specific constraints—that agents can safely and consistently reuse across **sessions, agents, and users**.
+
+Here, the emphasis is on **shared workspace/project context**, not on an individual user or agent.
 
 **Implementation**
-* Structure the repository into intuitive sections (Profile, Goals & Objectives, Preferences & Styles, Constraints & Policies, Artifacts & Examples) with clear distinction from temporary chat history
-* Implement context items with label, category, value/definition, scope (personal/project/workspace/org), usage metadata, source & ownership, and inline controls for edit/disable/delete
-* Support in-chat capture and promotion where the system detects candidate facts and proposes "Save as preference" with explicit confirmation and scoping options
-* Display context chips in AI responses showing which items were referenced with hover/click actions to reveal details and edit directly
-* Provide review, expiration, and maintenance tools including time-bound item tagging, periodic review prompts, and bulk cleanup operations
+
+* Structure the repository into clear, non-personal sections such as:
+
+  * **Workspace Profile**: organization name, domain, regions, time zones, fiscal year
+  * **Goals & Objectives**: OKRs, team KPIs, key initiatives
+  * **Brand, Voice & Style Guides**: tone-of-voice pillars, terminology, do/don’t lists
+  * **Constraints & Policies**: legal/compliance rules, redaction rules, do-not-touch entities, escalation policies
+  * **Artifacts & Examples**: approved templates, canonical examples, reference decks, sample outputs
+* Model each **context item** as a structured object with:
+
+  * Label & category
+  * Value/definition (text, structured data, links)
+  * Scope: project / workspace / org / region
+  * Ownership & approver
+  * Sensitivity level (public/internal/confidential)
+  * Usage metadata (last referenced, agents using it)
+* Support **in-chat capture and promotion**:
+
+  * Detect candidate facts (e.g., “Our fiscal year starts in July”, “We always call this product ‘Workspace’”) and propose **“Save to workspace context”** with scoping and approver.
+* Surface **context chips in responses**:
+
+  * E.g., “Using: Brand Voice – SaaS, optimistic · Policy: No internal ticket IDs in public replies”
+  * Clicking a chip opens the underlying context item for inspection/editing (with appropriate permissions).
+* Provide **maintenance and lifecycle tooling**:
+
+  * Time-bound items with expiry (“Promo pricing valid Q3 only”)
+  * Periodic review prompts for stale or low-usage items
+  * Bulk cleanup and change history (who edited what, when)
+* Make **boundaries explicit**:
+
+  * Visually distinguish context from user profile (“Workspace context applied”) and from agent persona (“Agent style: Compliance Reviewer”).
 
 **Use Cases**
-* **Long-Term Planning Support**: A product designer records role, seniority, responsibilities, and quarterly OKRs; the planning agent automatically pulls this context when designing a career plan, explaining which items influenced recommendations with links to edit
-* **Team Alignment on Brand and Content**: Marketing teams maintain shared Brand Voice, Target Audiences, and Approved Messaging Pillars at workspace level; all content agents reference these items with updates flowing through automatically
-* **Cross-Session Reporting Personalization**: A data analyst uploads a preferred executive report template and defines preferences for time horizons and metrics; reporting agents apply these by default across repeated cycles while allowing overrides
-* **Policy-Aware Customer Support**: Organizations define policies like "Never share internal ticket IDs" and "Mask emails in public replies" in the Constraints section; support agents reference these when drafting responses with immediate reflection when policies change
+
+* **Brand-Consistent Content Across Teams (Marketing Platform)**
+  Marketing ops maintains shared Brand Voice, Approved Messaging Pillars, and Target Audiences in the context repository. Campaign agents, blog-drafting agents, and ad-copy agents all pull from these same items. When Brand updates a tagline once, all agents automatically align.
+* **Policy-Aware Support Workflows (Support Platform)**
+  Organization-wide policies like “Never share internal ticket IDs in public comments” and “Mask emails in external replies” live in the Constraints & Policies section. The support drafting agent reads these as context and applies them across queues, without embedding them in each agent persona.
+* **Project Profiles for Long-Running Initiatives (Product/Project Tools)**
+  A launch project profile holds a project brief, success metrics, deadlines, and target audiences. Research, content, and analytics agents all reference the same profile when working on tasks for that project, so they stay aligned without repeatedly re-specifying the brief in prompts.
+* **Cross-Region Compliance Rules (Global SaaS)**
+  Region-specific constraints—like data residency rules, allowed channels, or copy disclaimers—are stored as scoped context. Whenever agents act on EU vs US vs APAC workspaces, they pull and apply the relevant contextual rules instantly.
 
 ---
 
-### 8.5 User Preference & Context Profiles
+## 8.5 User Preference & Personal Context Profiles
 
 **Purpose**
-A persistent, user-controlled "about me" profile that captures goals, background, working style, and constraints, applied across agents and sessions so every interaction feels tailored, consistent, and respectful of the user's intent and boundaries. This pattern focuses on who the user is and what they care about, separate from how any specific agent behaves.
+A persistent, **user-controlled** “about me” profile that captures the human’s goals, background, working style, and constraints, applied across agents and sessions so every interaction feels tailored and respectful of their boundaries.
+
+Here, the unit is “*this person* and how they like to work.”
 
 **Implementation**
-* Capture high-signal dimensions: identity & role (title, level, domain), goals (near-term and ongoing), knowledge & skill assumptions (self-rated proficiency), working style & format preferences, constraints & boundaries, tools/ecosystem, and accessibility needs
-* Provide a "My AI Profile" entry point accessible from account settings and in-chat indicators showing "Using your AI Profile" that expand to reveal which fields were applied
-* Support profile application across all agents in a workspace by default with per-agent or per-conversation override options
-* Implement role-based and activity-based templates as starting points ("Product Manager starting out," "Improve my skills") that users can customize
-* Enable multiple profiles for different contexts (Work profile, Personal profile) with clear active state indicators
+
+* Capture high-signal **user dimensions** such as:
+
+  * Identity & role: title, seniority, domain expertise
+  * Goals: near-term objectives and ongoing ambitions
+  * Skill assumptions: self-rated proficiency (e.g., SQL, design, finance)
+  * Working style preferences: prefers options vs single recommendation, prefers visuals vs text, favored formats (bullets, briefs, docs)
+  * Constraints & boundaries: topics to avoid, timeboxed sessions, autopilot comfort level
+  * Tools & ecosystem: primary systems (Figma vs Sketch, Salesforce vs HubSpot, Jira vs Linear)
+  * Accessibility & communication needs: language, reading level, pacing, font/contrast preferences (if applicable)
+* Provide a **“My AI Profile”** surface:
+
+  * Accessible from account settings and from within AI surfaces (“Using your AI Profile” badge)
+  * Editable by the user with clear explanations of how each field is used
+* Apply profiles **across agents by default**:
+
+  * New agents inherit profile application automatically; users can opt out or override per agent or per conversation.
+  * E.g., “Write for me as a principal IC with strong technical background, prefer concise bullets first, then optional detail.”
+* Enable **multiple profiles for different contexts**:
+
+  * Work vs personal, different roles (e.g., “PM hat” vs “Founder hat”)
+  * Clear indicators of which profile is active and easy switching inside the product.
+* Make **usage explicit and controllable**:
+
+  * In responses, show small callouts like “Tailored using: Work Profile · Prefers visuals and concise summaries”
+  * Allow quick toggles (“Ignore my profile for this answer” / “Apply Work profile here”) and session-level overrides.
 
 **Use Cases**
-* **Multi-Agent Team of Assistants**: A Principal Product Designer configures role, goals ("Ship better specs faster"), and working style ("Start with options, prefer visuals"); the design assistant, analytics assistant, and meeting assistant all use this profile without requiring repeated explanation
-* **Learning and Upskilling Companion**: A user sets a goal to become proficient in SQL within 3 months with beginner skill level and preference for practice exercises; the AI tracks progress across sessions and periodically asks whether to update skill level
-* **Accessibility-Aware Experience**: A user opts into plain language, step-by-step breakdowns, and short paragraphs; all agents structure content accordingly, and new agents ask to apply the existing profile with a single click
-* **Work vs Personal Contexts**: A user maintains separate Work and Personal profiles; in the main product the Work profile is active by default while a "Personal space" tab switches to the personal profile with clear indication of which is active
+
+* **Multi-Agent AI Workspace for a Principal Product Designer**
+  The designer configures role, seniority, goals (“Ship better specs faster”), working style (“Start with options, prefer visuals”), and tools (Figma, Jira, Notion). Design, analytics, and meeting assistants all draw on this profile, so no one has to repeatedly explain their role or preferences in every new chat.
+* **Learning and Upskilling Companion (Education/Dev Tools)**
+  A user sets a 3‑month goal to learn SQL, notes beginner level, and selects “prefer practice-heavy, short explanations.” Both the analytics copilot and learning coach adapt content and pacing, track progress, and occasionally ask if skill level should be updated.
+* **Accessibility-Aware Experience (Productivity Suite)**
+  A user selects plain language, step-by-step breakdowns, and short paragraphs as preferences. All agents honor this by default; when a complex task needs more nuance, the agent surfaces “Show advanced detail” as an opt-in rather than default.
+* **Work vs Personal Contexts (Consumer + Enterprise Blend)**
+  The same account has a Work profile (enterprise SaaS PM) and a Personal profile (parent planning travel and finances). In the main workspace, the Work profile is active by default. A “Personal space” switches to the Personal profile, so recommendations and assumptions change without mixing contexts.
 
 ---
 

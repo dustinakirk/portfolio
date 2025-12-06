@@ -3,46 +3,15 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import AgentPersonaProfilesDemo from '../demos/AgentPersonaProfilesDemo';
 
 // SEO metadata for this pattern page
-export const PREFERENCE_PERSONA_SETTINGS_SEO = {
+export const AGENT_PERSONA_PROFILES_SEO = {
   title: "Agent Persona Profiles & Settings - AI Trust Pattern",
-  description: "Configurable, reusable definitions of how a specific AI agent should behave—its role, tone, capabilities, and boundaries—applied consistently across interactions to make agent behavior predictable, governable, and trustworthy.",
-  keywords: ["AI agent personas", "agent profiles", "AI agent configuration", "AI trust", "multi-agent systems", "agent behavior", "AI governance", "agentic UX"],
-  canonicalPath: "/agentic_ai_patterns/agent-persona-profiles"
+  description: "Configurable agent persona profiles that define how AI agents behave—including role, tone, capabilities, and risk posture—and are surfaced as governed, reusable objects across the product.",
+  keywords: ["AI preferences", "persona settings", "AI personalization", "behavior profiles", "AI trust", "tone settings", "AI configuration", "agentic UX", "AI customization", "persona builder", "agent gallery"],
+  canonicalPath: "/agentic_ai_patterns/preference-persona-settings"
 };
-
-// Interactive demo component - Placeholder
-function PreferencePersonaSettingsDemo() {
-  return (
-    <div
-      style={{
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-        background: '#ffffff',
-        borderRadius: '12px',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        maxWidth: '800px',
-        width: '100%',
-        overflow: 'hidden',
-        border: '1px solid #e5e7eb',
-        margin: '0 auto',
-        padding: '48px 24px',
-        textAlign: 'center',
-      }}
-      role="region"
-      aria-label="Agent Persona Profiles demo"
-    >
-      <div style={{ color: '#6b7280', fontSize: '0.875rem' }}>
-        <p style={{ margin: '0 0 8px 0', fontWeight: 600, color: '#374151' }}>
-          Interactive Demo Coming Soon
-        </p>
-        <p style={{ margin: 0 }}>
-          This demo will showcase an agent gallery with persona profiles, role definitions, and capability controls.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function PreferencePersonaSettingsPattern() {
   return (
@@ -59,7 +28,7 @@ export default function PreferencePersonaSettingsPattern() {
             <div>
               <h1 className="pattern-header__title">Agent Persona Profiles & Settings</h1>
               <p className="pattern-header__subtitle">
-                Configurable, reusable definitions of how a specific AI agent should behave—its role, tone, capabilities, and boundaries—applied consistently across interactions to make agent behavior predictable, governable, and trustworthy.
+                Configurable agent persona profiles that define how AI agents behave—including role, tone, capabilities, and risk posture—and are surfaced as governed, reusable objects across the product.
               </p>
             </div>
           </div>
@@ -76,29 +45,33 @@ export default function PreferencePersonaSettingsPattern() {
           <div className="pattern-section__content">
             <p className="pattern-kicker">Overview</p>
             <p className="pattern-hero">
-              Agent persona profiles define <span className="pattern-body--bold">who an AI agent is and how it operates</span> across tasks, channels, and sessions. Instead of burying this in hidden system prompts or ad-hoc instructions, this pattern makes the agent&apos;s role, style, and constraints a first-class, inspectable configuration.
+              Agent Persona Profiles & Settings define how an AI agent behaves in a product, and make that behavior explicit, consistent, and governable.
             </p>
             <p className="pattern-body">
-              In multi-agent and agentic systems, these profiles are the backbone of a &quot;team of AI agents&quot;: each agent has a clear persona (e.g., &quot;Support Triage Nurse,&quot; &quot;Risk-Aware Data Strategist,&quot; &quot;Red-Team Critic&quot;) that encodes what the agent is good at and what it refuses to do.
+              Instead of a single opaque &quot;assistant,&quot; the system exposes named, structured personas that answer a clear question: <span className="pattern-body--bold">&quot;Which agent is acting, on whose behalf, with what powers, and in what style?&quot;</span>
             </p>
             <p className="pattern-body">
-              At runtime, each interaction can be thought of as a combination of: (1) <span className="pattern-body--bold">Agent persona</span>—this pattern (the agent&apos;s role, voice, tools, guardrails), (2) <span className="pattern-body--bold">User preferences & context</span>—a separate pattern (who the human is, what they like), and (3) <span className="pattern-body--bold">Task-specific instructions</span>—the immediate ask. This pattern focuses on agent personas.
+              In B2B and B2C web applications, this pattern typically appears as:
             </p>
             <ul className="pattern-list">
-              <li>Encode what the agent <span className="pattern-body--bold">is good at and what it refuses</span> to do</li>
-              <li>Define <span className="pattern-body--bold">tone, level of detail, and preferred outputs</span></li>
-              <li>Specify <span className="pattern-body--bold">tools and integrations</span> it may or may not use</li>
-              <li>Operate within <span className="pattern-body--bold">org-level safety and compliance constraints</span></li>
+              <li>A central <span className="pattern-body--bold">Agent Gallery</span> or configuration area where personas are created, reviewed, and managed.</li>
+              <li><span className="pattern-body--bold">Inline agent selectors</span> in workflows that let teams pick which persona to use (e.g., &quot;Compliance Reviewer&quot; vs &quot;Brainstorming Partner&quot;).</li>
+              <li><span className="pattern-body--bold">Visible agent indicators</span> in the chat or activity surfaces that show the active persona, its risk posture, and its limitations.</li>
             </ul>
             <p className="pattern-body">
-              <span className="pattern-body--bold">Example concept:</span> A product analytics platform exposes a gallery of AI agents: &quot;Executive Reporting Analyst,&quot; &quot;Experiment Design Coach,&quot; and &quot;Data QA Auditor.&quot; Each agent card shows its persona summary (&quot;Writes executive-ready briefs with clear recommendations, avoids speculative claims, and calls out data quality risks&quot;). In the chat header, a chip shows &quot;Agent: Executive Reporting Analyst.&quot; Clicking it opens the persona profile: role, tone, risk posture, allowed tools, and limitations.
+              The core value is trust and predictability. End-users, admins, and stakeholders can see that:
             </p>
+            <ul className="pattern-list">
+              <li>The same persona behaves consistently across features and teams.</li>
+              <li>Risk posture and capabilities are not improvised per prompt but governed centrally.</li>
+              <li>Differences between agents (e.g., exploratory vs conservative, customer-facing vs internal) are intentional and legible.</li>
+            </ul>
           </div>
         </section>
 
         {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Agent persona profiles example">
-          <PreferencePersonaSettingsDemo />
+        <section className="pattern-section" aria-label="Agent Persona Profiles example">
+          <AgentPersonaProfilesDemo />
         </section>
 
         {/* Problem & When to Use */}
@@ -106,24 +79,24 @@ export default function PreferencePersonaSettingsPattern() {
           <div className="pattern-section__content">
             <p className="pattern-kicker">Problem</p>
             <p className="pattern-body">
-              Without explicit agent personas, AI-powered products often feel arbitrary and untrustworthy:
+              Without explicit agent personas, AI behavior often feels arbitrary and unreliable:
             </p>
             <ul className="pattern-list">
               <li>
-                <span className="pattern-body--bold">Unclear roles and boundaries</span> – The same &quot;assistant&quot; seems to do everything and nothing—sometimes brainstorming, sometimes acting as an expert, sometimes refusing unexpectedly.
+                <span className="pattern-body--bold">Opaque behavior and identity.</span> Users are unsure whether a response comes from a generic assistant, a specialized internal tool, or a test agent. It becomes difficult to answer &quot;who is acting on my behalf?&quot; or &quot;is this a production-grade agent or an experiment?&quot;
               </li>
               <li>
-                <span className="pattern-body--bold">Inconsistent behavior across surfaces</span> – A &quot;support bot&quot; in chat behaves differently from the &quot;same&quot; bot in email drafting or ticket triage because each surface hard-codes slightly different prompts.
+                <span className="pattern-body--bold">Inconsistent tone, risk posture, and capabilities.</span> Different teams prompt and configure agents independently, leading to divergent behavior across surfaces. In one part of the product the AI is cautious and literal; elsewhere it guesses aggressively and edits data without clear confirmation.
               </li>
               <li>
-                <span className="pattern-body--bold">Opaque system prompts</span> – Behavior is encoded in hidden prompts or code, making it impossible for users (and often teams) to understand why an agent responded the way it did.
+                <span className="pattern-body--bold">Unclear limits and responsibilities.</span> Users do not know what the agent is allowed to do (e.g., &quot;Can this agent send emails?&quot; &quot;Can it access PII?&quot;), which leads either to over-trust (taking speculative output as authoritative) or under-trust (ignoring useful suggestions).
               </li>
               <li>
-                <span className="pattern-body--bold">Difficult to manage multi-agent systems</span> – As more agents are added, their responsibilities overlap, conflict, or drift over time, creating confusion and safety risks.
+                <span className="pattern-body--bold">Weak governance and auditability.</span> Prompt text and configuration are scattered in code and config files, so changes are hard to review, version, or trace. Risk and compliance teams cannot easily answer &quot;what agents exist, what can they do, and who approved them?&quot;
               </li>
             </ul>
             <p className="pattern-body">
-              Agent persona profiles address these issues by treating <span className="pattern-body--bold">the agent&apos;s identity and operating mode as a visible, governed object</span>, not a hidden implementation detail.
+              A structured Agent Persona pattern addresses this by turning the agent itself into a first-class, inspectable object—separate from user preferences (&quot;who is the human?&quot;) and shared context (&quot;what world are we in?&quot;).
             </p>
           </div>
 
@@ -134,21 +107,11 @@ export default function PreferencePersonaSettingsPattern() {
                 Use this pattern when…
               </h3>
               <ul className="pattern-card__list">
-                <li>
-                  <span className="pattern-body--bold">Multiple agents or a &quot;team of AI agents&quot;</span> – Each agent has distinct roles and responsibilities that need clear definition.
-                </li>
-                <li>
-                  <span className="pattern-body--bold">Agents across channels or surfaces</span> – Web app, email, Slack, Chrome extension—agents must behave consistently.
-                </li>
-                <li>
-                  <span className="pattern-body--bold">Brand, legal, or regulatory standards</span> – Outputs must conform to org-level constraints, and teams need to define and enforce those standards per agent.
-                </li>
-                <li>
-                  <span className="pattern-body--bold">Clear mental models needed</span> – End users need to know &quot;Talk to the Pricing Advisor for pricing questions; talk to the Risk Advisor for regulatory impact.&quot;
-                </li>
-                <li>
-                  <span className="pattern-body--bold">Iterate and govern agent behavior</span> – Product teams want to update agent behavior over time without re-deploying code for every prompt tweak.
-                </li>
+                <li>When multiple AI agents are present in a product (e.g., drafting, reviewing, summarizing, or triaging) and must behave differently by design.</li>
+                <li>When organizations require <span className="pattern-body--bold">consistent, reusable AI behavior</span> across teams or surfaces.</li>
+                <li>In <span className="pattern-body--bold">regulated or high-risk domains</span> (e.g., healthcare, finance, HR, security) where risk posture, escalation behavior, and tool access must be governed and auditable.</li>
+                <li>When features rely on <span className="pattern-body--bold">multi-agent workflows</span> (e.g., brainstorming → fact checking → compliance review) and each stage needs a clear role and responsibility.</li>
+                <li>When offering <span className="pattern-body--bold">tenant-configurable AI</span> and administrators need a safe way to adjust tone, tools, and scope without editing raw prompts or code.</li>
               </ul>
               <hr className="pattern-divider" />
               <h3 className="pattern-card__title pattern-card__title--muted pattern-card__title--with-icon">
@@ -156,10 +119,10 @@ export default function PreferencePersonaSettingsPattern() {
                 Probably overkill when…
               </h3>
               <ul className="pattern-card__list pattern-card__list--muted">
-                <li>You have <span className="pattern-body--bold">only one very simple agent</span> (e.g., a focused &quot;SQL fix&quot; bot) with a narrow, static behavior.</li>
-                <li>The interaction is <span className="pattern-body--bold">low-stakes and purely exploratory</span>, where a generic &quot;assistant&quot; identity is sufficient.</li>
-                <li>Agent behavior is fully defined by a <span className="pattern-body--bold">single, highly constrained workflow</span> with little need for differentiation (e.g., a one-shot form filler).</li>
-                <li>You&apos;re still <span className="pattern-body--bold">validating whether AI adds value at all</span>; introducing a persona system may be premature complexity.</li>
+                <li>There is only a <span className="pattern-body--bold">single, low-risk assistant</span> with a fixed role, minimal capabilities, and no need for organizational governance.</li>
+                <li>AI functionalities are <span className="pattern-body--bold">non-agentic and bounded</span>, such as inline autocomplete suggestions or simple grammar corrections.</li>
+                <li>The product is an <span className="pattern-body--bold">early-stage prototype</span> where behavior is still being explored and formal governance has not yet been introduced.</li>
+                <li>A small team or single owner can manage behavior through <span className="pattern-body--bold">a simple global settings panel</span> without confusion.</li>
               </ul>
             </div>
           </aside>
@@ -171,7 +134,7 @@ export default function PreferencePersonaSettingsPattern() {
             <div>
               <p className="pattern-kicker">Pattern anatomy</p>
               <p className="pattern-body pattern-body--narrow">
-                Agent persona profiles are treated as <span className="pattern-body--bold">first-class objects</span> that define who an agent is and how it should behave.
+                This pattern has two main surfaces: configuration & discovery surfaces (Agent Gallery, admin settings, creation flows), and runtime surfaces (chat interfaces, action panels, document tools) where an active agent is visible and selectable.
               </p>
             </div>
           </div>
@@ -181,100 +144,79 @@ export default function PreferencePersonaSettingsPattern() {
             <div className="pattern-card">
               <h3 className="pattern-card__title pattern-card__title--icon">
                 <span className="pattern-card__dot" />
-                Agent Gallery / Catalog
+                Global / Navigation-Level
               </h3>
-              <p className="pattern-card__intro">
-                &quot;AI Agents,&quot; &quot;AI Workspace,&quot; or &quot;Agent Library&quot; section listing available agents.
-              </p>
               <ul className="pattern-card__list">
-                <li>Each card shows name, role summary, risk posture (e.g., &quot;Conservative&quot;), and typical use cases</li>
-                <li>Often under &quot;Admin → AI & Automation → Agents&quot; or a dedicated &quot;Agents&quot; section</li>
+                <li>&quot;AI Agents&quot; or &quot;Personas&quot; entry in admin or workspace settings.</li>
+                <li>Organization-level &quot;Agent Gallery&quot; accessible from an AI or automation section.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">In-Chat Controls</h3>
-              <p className="pattern-card__intro">
-                Agent indicators and switches within the conversation.
-              </p>
+              <h3 className="pattern-card__title">Workflow-Level</h3>
               <ul className="pattern-card__list">
-                <li>A chip in the header: &quot;Agent: Executive Reporting Analyst&quot;</li>
-                <li>A dropdown or switcher for &quot;Change agent&quot; with brief persona descriptions</li>
+                <li>Agent selector dropdown or segmented control near the chat input or generation trigger.</li>
+                <li>Per-feature configuration (e.g., pipeline settings, runbooks) that specify which persona is used by default.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Configuration Surfaces (Builders/Admins)</h3>
-              <p className="pattern-card__intro">
-                &quot;Agent configuration&quot; or &quot;Persona designer&quot; surfaces for creating and maintaining agent personas.
-              </p>
+              <h3 className="pattern-card__title">Contextual / Inline</h3>
               <ul className="pattern-card__list">
-                <li>Product teams define role, scope, tone, tools, and safety stance</li>
-                <li>Preview shows example behavior for typical tasks to validate fit</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Administrative Surfaces</h3>
-              <p className="pattern-card__intro">
-                Admin pages for org-level agent governance.
-              </p>
-              <ul className="pattern-card__list">
-                <li>Agent lifecycle management (Experimental → Beta → Org-standard → Deprecated)</li>
-                <li>Permissions for who can create, edit, or expose agents externally</li>
+                <li>A chip or badge in the conversation header: <code>Agent: Compliance Reviewer (Conservative)</code>.</li>
+                <li>Inline link in a system message or tooltip (&quot;Configured as: Exec Briefing Agent – View details&quot;).</li>
+                <li>Empty-state hints when no default agent is configured for a workflow.</li>
               </ul>
             </div>
           </div>
 
           {/* Core Item / Object */}
           <div className="pattern-card pattern-grid--mt-md">
-            <h3 className="pattern-card__title">Core Item: Agent Persona Profile</h3>
+            <h3 className="pattern-card__title">Core Item: Agent Persona</h3>
             <p className="pattern-card__intro">
-              The main unit is an <span className="pattern-body--bold">Agent Persona Profile</span>—a structured description of an agent&apos;s role, style, and constraints.
+              The core object is the Agent Persona, treated as a first-class, structured entity with the following fields:
             </p>
             <div className="pattern-grid--auto-fit pattern-grid--mt-sm">
               <div>
-                <p className="pattern-body--bold pattern-body--mb-sm">Name / Label</p>
+                <p className="pattern-body--bold pattern-body--mb-sm">Identity & Ownership</p>
                 <ul className="pattern-card__list">
-                  <li>&quot;Customer Support Drafting Agent – Cautious&quot;</li>
-                  <li>&quot;Marketing Copy Partner&quot;</li>
-                  <li>&quot;SRE On-Call Companion&quot;</li>
+                  <li>Label: concise, human-readable name (e.g., &quot;Compliance Reviewer (Conservative)&quot;)</li>
+                  <li>Description / Mission Statement: testable definition of purpose</li>
+                  <li>Owner metadata (team, group, or individual responsible)</li>
+                  <li>Environment tags (dev / stage / prod)</li>
                 </ul>
               </div>
               <div>
-                <p className="pattern-body--bold pattern-body--mb-sm">Role & Mission</p>
+                <p className="pattern-body--bold pattern-body--mb-sm">Scope & Capabilities</p>
                 <ul className="pattern-card__list">
-                  <li>Short description of what the agent is for and problems it solves</li>
-                  <li>Example: &quot;Helps PMs turn analytics into exec-ready narratives with clear recommendations and minimal jargon.&quot;</li>
+                  <li>Domains and surfaces where the persona is allowed to act</li>
+                  <li>Supported content types (emails, knowledge articles, incident reports)</li>
+                  <li>Allowed tools and actions (data sources, action permissions, external APIs)</li>
                 </ul>
               </div>
               <div>
-                <p className="pattern-body--bold pattern-body--mb-sm">Scope of Responsibility</p>
+                <p className="pattern-body--bold pattern-body--mb-sm">Tone & Risk Posture</p>
                 <ul className="pattern-card__list">
-                  <li>What the agent <em>does</em> (e.g., &quot;Summarizes data,&quot; &quot;Drafts messages&quot;)</li>
-                  <li>What it <em>explicitly does not do</em> (e.g., &quot;Does not approve production changes&quot;)</li>
+                  <li>Tone & Style: concise vs detailed, formal vs casual, speculative vs reserved</li>
+                  <li>Risk Posture: &quot;Experimental,&quot; &quot;Balanced,&quot; &quot;Conservative,&quot; or &quot;Safety-first&quot;</li>
+                  <li>Mapping from posture to guardrails and escalation behavior</li>
                 </ul>
               </div>
               <div>
-                <p className="pattern-body--bold pattern-body--mb-sm">Tone, Style & Risk Posture</p>
+                <p className="pattern-body--bold pattern-body--mb-sm">Escalation & Controls</p>
                 <ul className="pattern-card__list">
-                  <li>Default tone (formal vs. conversational), level of detail, audience assumptions</li>
-                  <li>Risk stance: Conservative, neutral, or exploratory within non-negotiable safety guardrails</li>
-                </ul>
-              </div>
-              <div>
-                <p className="pattern-body--bold pattern-body--mb-sm">Tooling & Capabilities</p>
-                <ul className="pattern-card__list">
-                  <li>Which tools, data sources, and APIs the agent can use (and which it must avoid)</li>
-                  <li>Preferred formats (code, tables, emails) and default output channels</li>
+                  <li>Rules for when the agent should defer to a human or supervisor agent</li>
+                  <li>Triggers: risk score, confidence level, sensitive topics</li>
+                  <li>Controls: Activate, Set as default, Edit, Duplicate, Archive, View version history</li>
                 </ul>
               </div>
               <div>
                 <p className="pattern-body--bold pattern-body--mb-sm">Metadata</p>
                 <ul className="pattern-card__list">
-                  <li>Owner (team or role), Scope (Org-wide, workspace, product-specific)</li>
-                  <li>Status (Draft, Active, Deprecated), compliance tags</li>
-                  <li>Last updated date, last reviewed date</li>
+                  <li>Tags (e.g., &quot;Legal,&quot; &quot;Support,&quot; &quot;Internal-only&quot;)</li>
+                  <li>Status: Draft, Under Review, Approved, Deprecated</li>
+                  <li>Last updated timestamp and change summary</li>
+                  <li>Approvals (e.g., Compliance, Security, Data Protection)</li>
                 </ul>
               </div>
             </div>
@@ -287,400 +229,395 @@ export default function PreferencePersonaSettingsPattern() {
             <div>
               <p className="pattern-kicker">Behavior & lifecycle</p>
               <p className="pattern-body pattern-body--narrow">
-                The lifecycle of agent persona profiles spans from initial creation through governance and eventual retirement.
+                A well-implemented persona pattern follows a predictable lifecycle from creation through ongoing usage.
               </p>
             </div>
           </div>
 
           <div className="pattern-grid pattern-grid--three pattern-grid--mt-sm">
             <div className="pattern-card">
-              <h3 className="pattern-card__title">1. Default State</h3>
+              <h3 className="pattern-card__title">1. Creation & Drafting</h3>
               <ul className="pattern-card__list">
-                <li>Products ship with at least one <span className="pattern-body--bold">baseline agent persona</span> (e.g., &quot;General Product Copilot&quot;) with conservative, safe defaults.</li>
-                <li>For enterprise deployments, orgs may replace or constrain the baseline persona with an org-specific one.</li>
+                <li>A persona is created from scratch or from a template.</li>
+                <li>The creator defines role, scope, tone, capabilities, and risk posture using structured fields.</li>
+                <li>The system provides guardrails (default safe settings, required fields for high-risk domains).</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">2. Agent Creation / Onboarding</h3>
+              <h3 className="pattern-card__title">2. Review & Governance</h3>
               <ul className="pattern-card__list">
-                <li>Builders or admins use an <span className="pattern-body--bold">agent persona designer</span> to define new agents: role, scope, tone, tools, safety stance.</li>
-                <li>A preview shows example behavior for typical tasks to validate fit.</li>
+                <li>For higher-risk personas, changes follow an approval workflow (e.g., legal or compliance review).</li>
+                <li>Changes are versioned, with clear diffs of what changed in the persona.</li>
+                <li>Personas transition through states: Draft → In Review → Approved → Live.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">3. Persona Refinement & Editing</h3>
+              <h3 className="pattern-card__title">3. Assignment & Targeting</h3>
               <ul className="pattern-card__list">
-                <li>Persona profiles can be updated to improve performance: adjust tone, tool usage, or refusal patterns.</li>
-                <li>Changes are versioned and auditable, especially in enterprise settings.</li>
+                <li>Personas are assigned to specific surfaces or workflows.</li>
+                <li>Default persona for a workspace or product area.</li>
+                <li>Override persona per team, project, or pipeline.</li>
+                <li>Assignment rules determine where the persona appears in selectors.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">4. Application During Interaction</h3>
+              <h3 className="pattern-card__title">4. Runtime Activation</h3>
               <ul className="pattern-card__list">
-                <li>When a user selects an agent (or one is chosen by default), that agent&apos;s persona is applied to every model call.</li>
-                <li>The chat UI clearly indicates which agent is active; switching agents is explicit.</li>
+                <li>At runtime, the active agent is clearly indicated near the interaction surface.</li>
+                <li>Switching personas is explicit and often requires confirmation.</li>
+                <li>The agent&apos;s identity and limits are visible without leaving the current context.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">5. Contextual Overrides & Variants</h3>
+              <h3 className="pattern-card__title">5. Interaction & Escalation</h3>
               <ul className="pattern-card__list">
-                <li>Builders can define <span className="pattern-body--bold">persona variants</span> (e.g., &quot;Support Agent – Internal Notes&quot; vs &quot;Support Agent – Customer Replies&quot;).</li>
-                <li>Users may temporarily switch agents for a specific task, but the switch is visible and recorded.</li>
+                <li>The agent behaves according to its defined role and risk posture.</li>
+                <li>Asks for clarification when appropriate.</li>
+                <li>Requests approval to perform higher-risk actions.</li>
+                <li>Escalates to a human reviewer or supervisor agent when triggered.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">6. Cross-Agent & Cross-Surface Propagation</h3>
+              <h3 className="pattern-card__title">6. Monitoring & Feedback</h3>
               <ul className="pattern-card__list">
-                <li>The same agent persona can be used in-product chat, as a sidebar in docs, or as a background workflow.</li>
-                <li>Differences per surface (e.g., mobile constraints) are minimal and clearly documented.</li>
+                <li>Feedback on outputs (ratings, corrections, safety flags) is attributed to the persona and version.</li>
+                <li>Usage analytics reveal where personas perform well or poorly.</li>
+                <li>High override rates or frequent handoffs indicate misalignment.</li>
               </ul>
+            </div>
+          </div>
+
+          <div className="pattern-card pattern-grid--mt-sm">
+            <h3 className="pattern-card__title">7. Evolution & Deprecation</h3>
+            <ul className="pattern-card__list">
+              <li>Persona changes are rolled out gradually where appropriate (e.g., to a subset of teams or environments).</li>
+              <li>Older versions are retained for audit and rollback.</li>
+              <li>Deprecated personas are hidden from selectors but preserved in logs for historical interpretation.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Implementation Guidelines */}
+        <section className="pattern-section">
+          <div className="pattern-section__header-row">
+            <div>
+              <p className="pattern-kicker">Implementation guidelines</p>
+              <p className="pattern-body pattern-body--narrow">
+                Key technical and design considerations for implementing Agent Persona Profiles & Settings.
+              </p>
             </div>
           </div>
 
           <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
             <div className="pattern-card">
-              <h3 className="pattern-card__title">7. Review and Evolution</h3>
+              <h3 className="pattern-card__title">Structured Persona Model</h3>
               <ul className="pattern-card__list">
-                <li>Agents with high usage or high risk are periodically reviewed: &quot;Last persona review: 90 days ago&quot; prompts for evaluation.</li>
-                <li>Observed issues (e.g., confusion, unsafe suggestions) feed into persona updates.</li>
+                <li>Represent personas as structured objects, not only as long prompt strings.</li>
+                <li>Include explicit fields for: identity and owner, role/mission/exclusions, data access scope, tone/style/risk posture, and escalation triggers.</li>
+                <li>Separate three concerns: <span className="pattern-body--bold">Agent Persona</span> (who the AI is), <span className="pattern-body--bold">User Preferences</span> (how the human prefers to interact), and <span className="pattern-body--bold">Context & Environment</span> (the workspace, data, and policies in effect).</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">8. Archival and Retirement</h3>
+              <h3 className="pattern-card__title">Agent Gallery & Browsing</h3>
               <ul className="pattern-card__list">
-                <li>Agents can be deprecated: hidden from new users but kept for audit.</li>
-                <li>Cleanly redirected to newer agents (&quot;This agent has been replaced by…&quot;); retirement is communicated to users who rely on the agent.</li>
+                <li>Provide an <span className="pattern-body--bold">Agent Gallery</span> that presents personas in a scannable layout.</li>
+                <li>Each card shows name, mission snippet, risk badge, and environment.</li>
+                <li>Filters support role, risk posture, domain, and owning team.</li>
+                <li>Offer search over persona names, descriptions, and domains.</li>
+                <li>Differentiate: Organization-wide personas, Team-level personas, Personal/experimental personas.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Display of Active Agent</h3>
+              <ul className="pattern-card__list">
+                <li>Surface the active agent prominently near the interaction surface.</li>
+                <li>A labeled chip or pill in the chat header: <code>Agent: Postmortem Drafter (Balanced)</code>.</li>
+                <li>Provide quick access to details via hover or click: mission, risk posture, allowed tools, data scope.</li>
+                <li>Indicate environment (e.g., <code>Environment: Staging</code>, <code>Actions: Draft-only</code>).</li>
+                <li>Reflect significant changes to the active persona in the UI.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Versioning & Change Management</h3>
+              <ul className="pattern-card__list">
+                <li>Maintain <span className="pattern-body--bold">versioned personas</span> with immutable version identifiers.</li>
+                <li>Human-readable change logs: &quot;v7 – enabled access to CRM notes; approved by Legal.&quot;</li>
+                <li>Support <span className="pattern-body--bold">approval workflows</span> for risky changes.</li>
+                <li>Tie persona versions into logs and audit trails.</li>
+                <li>Incident analysis and model evaluations can be filtered by persona.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Persona Variants & Inheritance</h3>
+              <ul className="pattern-card__list">
+                <li>Use shared <span className="pattern-body--bold">core personas</span> with variants for different audiences or channels.</li>
+                <li>Example: &quot;Support Agent – Customer Replies&quot; vs &quot;Support Agent – Internal Notes&quot;.</li>
+                <li>Implement an inheritance model: shared core mission, risk posture, and tool access with variant-specific adjustments.</li>
+                <li>Clearly present relationships in the UI: show parent persona and variant badges.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Tooling & Capability Boundaries</h3>
+              <ul className="pattern-card__list">
+                <li>Map each persona to explicit capabilities: read access only vs read/write vs administrative actions.</li>
+                <li>Treat tool access as a permission model tied to personas.</li>
+                <li>Admins manage which tools and data domains a persona can use.</li>
+                <li>Reflect capability boundaries visually with icons or labels for tool categories.</li>
+                <li>Clear messaging when the agent declines an action due to limited scope.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Escalation & Human Handoff</h3>
+              <ul className="pattern-card__list">
+                <li>Encode escalation rules directly within persona settings.</li>
+                <li>Triggers based on content type, confidence, or policy rules.</li>
+                <li>Preferred handoff channels (e.g., assign to human queue, tag a team, open a ticket).</li>
+                <li>Make escalation explainable: the agent states when it is deferring and why.</li>
+                <li>Each escalation event indicates which persona initiated it and under what rule.</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Configuration & Persona Builder */}
+        {/* States & Edge Cases */}
         <section className="pattern-section">
           <div className="pattern-section__header-row">
             <div>
-              <p className="pattern-kicker">Configuration & persona builder</p>
+              <p className="pattern-kicker">States & edge cases</p>
               <p className="pattern-body pattern-body--narrow">
-                The persona builder is primarily a <span className="pattern-body--bold">builder/admin tool</span>. For agent personas, it emphasizes role, mission, tools, and constraints.
+                Consider explicit handling for these scenarios:
+              </p>
+            </div>
+          </div>
+
+          <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">No Persona Selected</h3>
+              <ul className="pattern-card__list">
+                <li>Provide a safe default agent or block high-risk actions until a persona is chosen.</li>
+                <li>Explain why a persona needs to be selected (e.g., different risk profiles).</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Persona Unavailable</h3>
+              <ul className="pattern-card__list">
+                <li>When a persona is removed, deprecated, or not allowed in a given environment, show clear fallback behavior and messaging.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">Capability Mismatch</h3>
+              <ul className="pattern-card__list">
+                <li>If a persona cannot perform a requested action (e.g., no write access), the agent should explicitly state its limitation.</li>
+                <li>Where appropriate, suggest a persona that can perform the action.</li>
+              </ul>
+            </div>
+
+            <div className="pattern-card">
+              <h3 className="pattern-card__title">User-Level Restrictions</h3>
+              <ul className="pattern-card__list">
+                <li>A persona may be available globally but restricted to certain roles.</li>
+                <li>The UI should hide or disable personas that a user is not allowed to invoke, with appropriate explanation in admin contexts.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* User Experience Considerations */}
+        <section className="pattern-section">
+          <div className="pattern-section__header-row">
+            <div>
+              <p className="pattern-kicker">User experience considerations</p>
+              <p className="pattern-body pattern-body--narrow">
+                Guidelines for naming, explaining risk, and gathering feedback on agent personas.
               </p>
             </div>
           </div>
 
           <div className="pattern-grid pattern-grid--three pattern-grid--mt-sm">
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Role & Mission</h3>
+              <h3 className="pattern-card__title">Names & Mental Models</h3>
               <ul className="pattern-card__list">
-                <li>&quot;What problem does this agent solve?&quot; and &quot;For whom?&quot;</li>
-                <li>Intended users (e.g., PMs, SREs, Sales reps) and typical tasks (e.g., &quot;Summarize incidents,&quot; &quot;Draft customer updates&quot;).</li>
+                <li>Use <span className="pattern-body--bold">functional names</span> that emphasize role and responsibilities: &quot;Invoice Classifier,&quot; &quot;Security Policy Reviewer.&quot;</li>
+                <li>Combine role with risk posture: &quot;Compliance Reviewer (Conservative),&quot; &quot;Brainstorm Coach (Experimental).&quot;</li>
+                <li>Avoid overly anthropomorphic or whimsical names in serious or regulated contexts.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Tone of Voice & Style</h3>
+              <h3 className="pattern-card__title">Explaining Risk Posture</h3>
               <ul className="pattern-card__list">
-                <li>Sliders or pickers: Formal ↔ Conversational, Concise ↔ Thorough.</li>
-                <li>Structural preferences: &quot;Use bullet lists by default,&quot; &quot;Always lead with TL;DR, followed by detail.&quot;</li>
+                <li>Represent risk posture using both labels and descriptions.</li>
+                <li>&quot;Experimental – open to speculative ideas and may hallucinate; outputs require human review.&quot;</li>
+                <li>&quot;Conservative – avoids speculation; prefers to omit answers over guessing.&quot;</li>
+                <li>Avoid encoding risk posture purely through color (for accessibility). Combine iconography and text.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Level of Detail & Audience</h3>
+              <h3 className="pattern-card__title">Feedback & Correction</h3>
               <ul className="pattern-card__list">
-                <li>Presets: &quot;Executive summary only,&quot; &quot;Detailed reasoning with steps,&quot; &quot;Code-focused with comments.&quot;</li>
-                <li>Audience: Domain expertise (novice ↔ expert), preferred framing (business outcomes vs. technical specifics).</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Risk Tolerance & Operating Mode</h3>
-              <ul className="pattern-card__list">
-                <li>&quot;Conservative: prefer citing sources, highlight uncertainty, refuse ambiguous tasks.&quot;</li>
-                <li>&quot;Exploratory: generate broader ideas but clearly mark speculation.&quot;</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Tooling & Data Access</h3>
-              <ul className="pattern-card__list">
-                <li>Which tools the agent can call: &quot;May query production metrics, but only read-only views.&quot;</li>
-                <li>Tool usage aggression: &quot;Always check internal knowledge base before answering.&quot;</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Limitations & Escalation Rules</h3>
-              <ul className="pattern-card__list">
-                <li>Explicit refusal patterns: &quot;If user asks for production changes, suggest a runbook and involve on-call.&quot;</li>
-                <li>Handoffs: &quot;Tag the Security team for review if the request mentions regulated data.&quot;</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Presets & Templates */}
-          <div className="pattern-grid pattern-grid--three pattern-grid--mt-md">
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">Org-Provided Agent Templates</h3>
-              <ul className="pattern-card__list">
-                <li>&quot;Customer Support Drafting Agent – Cautious&quot;</li>
-                <li>&quot;Marketing Copy Partner – On-brand & Creative&quot;</li>
-                <li>&quot;Compliance Reviewer – Highly Conservative&quot;</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">Activity-Based Templates</h3>
-              <ul className="pattern-card__list">
-                <li>&quot;Brainstorming agent,&quot; &quot;Red-team critic,&quot; &quot;Documentation refiner,&quot; &quot;Data QA checker.&quot;</li>
-                <li>Teams can create variants tuned to their domain (e.g., Developer Tools vs HR Communications).</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">Dynamic Examples & Previews</h3>
-              <ul className="pattern-card__list">
-                <li>Sample tasks for the agent&apos;s expected use cases with live preview of responses.</li>
-                <li>Side-by-side previews for different agents to highlight differences.</li>
+                <li>Provide lightweight feedback mechanisms: thumbs up/down or short tags (&quot;Too risky,&quot; &quot;Too speculative&quot;).</li>
+                <li>Attribute feedback to the persona and version.</li>
+                <li>Use feedback to refine mission statements, guardrails, and defaults.</li>
+                <li>Allow teams to propose new personas when recurring feedback suggests a missing role.</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Integration with AI Ecosystem */}
+        {/* Data, Privacy & Policy Considerations */}
         <section className="pattern-section">
           <div className="pattern-section__header-row">
             <div>
-              <p className="pattern-kicker">Integration with the AI ecosystem</p>
+              <p className="pattern-kicker">Data, privacy & policy considerations</p>
               <p className="pattern-body pattern-body--narrow">
-                Agent personas live inside a larger configuration stack and interact with other patterns.
+                Important considerations for data scope, memory, and policy enforcement.
               </p>
             </div>
           </div>
 
           <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Application Scope & Inheritance</h3>
+              <h3 className="pattern-card__title">Data Scope Transparency</h3>
               <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">Org-level policies:</span> Non-editable constraints, mandatory disclaimers, restrictions on tools, data sources, and risk domains.</li>
-                <li><span className="pattern-body--bold">Agent persona:</span> Defines the agent&apos;s role, tone, tools, and operating mode within org constraints.</li>
-                <li><span className="pattern-body--bold">User preferences (separate pattern):</span> Adjusts things like preferred language, level of detail, and personal goals.</li>
-                <li><span className="pattern-body--bold">Task-level instructions:</span> The immediate user request or conversation context.</li>
+                <li>Clearly indicate which data each persona can access (e.g., &quot;Reads: Tickets and internal KB; no access to customer PII fields.&quot;).</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Precedence Rule (Example)</h3>
+              <h3 className="pattern-card__title">Personalization & Memory</h3>
               <ul className="pattern-card__list">
-                <li>Org policies → Agent persona → User preferences → Task instructions.</li>
-                <li>The UI should hint at that layering without overwhelming users.</li>
+                <li>Show whether the persona uses: no memory (stateless), per-user memory (preferences, recent context), or shared team/organizational memory.</li>
+                <li>Provide controls to reset or limit what the persona remembers.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Interactions with Other Patterns</h3>
+              <h3 className="pattern-card__title">Policy Enforcement</h3>
               <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">User Preference Profiles (separate pattern):</span> Agent persona defines &quot;who the agent is&quot;; user profile defines &quot;who you are.&quot;</li>
-                <li><span className="pattern-body--bold">Memory Controls:</span> Agent personas should not be conflated with long-term memory—persona is stable and inspectable separately.</li>
-                <li><span className="pattern-body--bold">Safety & Guardrails:</span> Personas must operate within hard safety constraints. Risk tolerance is local nuance, not a way to disable safety.</li>
+                <li>Associate personas with policy bundles (e.g., regional compliance, allowed content).</li>
+                <li>Ensure that persona configuration respects data residency and regulatory constraints.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Multi-Agent & Multi-Channel</h3>
+              <h3 className="pattern-card__title">Auditability</h3>
               <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">Multi-agent orchestration:</span> Orchestrators select agents based on persona metadata; each agent&apos;s persona is logged when it contributes.</li>
-                <li><span className="pattern-body--bold">Channels:</span> The same persona should behave similarly across surfaces; if channel constraints force differences, document them clearly.</li>
+                <li>Include persona identifiers in all logs where AI actions are recorded.</li>
+                <li>Maintain audit logs of persona changes (who changed what, when, and why).</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Maintenance, Governance & Feedback */}
+        {/* Instrumentation & Metrics */}
         <section className="pattern-section">
           <div className="pattern-section__header-row">
             <div>
-              <p className="pattern-kicker">Maintenance, governance & feedback</p>
+              <p className="pattern-kicker">Instrumentation & metrics</p>
               <p className="pattern-body pattern-body--narrow">
-                Even though personas are agent-centric, users should still be able to comment on persona fit.
+                Monitor the impact and health of agent personas with these metrics:
               </p>
             </div>
           </div>
 
-          <div className="pattern-grid pattern-grid--three pattern-grid--mt-sm">
+          <div className="pattern-grid--auto-fit pattern-grid--mt-sm">
             <div className="pattern-card">
-              <h3 className="pattern-card__title">User-Facing Feedback Loops</h3>
+              <h3 className="pattern-card__title">Adoption & Usage</h3>
               <ul className="pattern-card__list">
-                <li>Per-response microfeedback: &quot;Did this match what you expect from the &apos;Executive Reporting Analyst&apos; agent?&quot;</li>
-                <li>Persona-aware re-run: &quot;Try this with the &apos;Data QA Auditor&apos; agent instead.&quot;</li>
-                <li>These signals feed into persona tuning or prompt for a different agent selection.</li>
+                <li>Number of sessions and interactions per persona.</li>
+                <li>Personas most selected or set as default by teams.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Admin & Org Controls</h3>
+              <h3 className="pattern-card__title">Behavioral Fit</h3>
               <ul className="pattern-card__list">
-                <li>Permissions: Who can create, edit, or mark agents as &quot;Org-approved&quot; or &quot;Experimental.&quot;</li>
-                <li>Audit & versioning: Track persona changes over time; log which version produced which outputs.</li>
-                <li>Policy integration: Automated checks on persona descriptions for prohibited framing.</li>
+                <li>Rate of persona switching mid-workflow.</li>
+                <li>Frequency of overrides (e.g., disabling actions, editing generated output heavily).</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Evolution Over Time</h3>
+              <h3 className="pattern-card__title">Outcome Quality & Safety</h3>
               <ul className="pattern-card__list">
-                <li>Lifecycle management: Move agents from Experimental → Beta → Org-standard → Deprecated.</li>
-                <li>Track usage per agent, satisfaction and override rates, error or escalation rates by persona.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Transparency & Control Indicators */}
-        <section className="pattern-section">
-          <div className="pattern-section__header-row">
-            <div>
-              <p className="pattern-kicker">Transparency & control indicators</p>
-              <p className="pattern-body pattern-body--narrow">
-                How to surface active agent status and provide user control.
-              </p>
-            </div>
-          </div>
-
-          <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Active Agent Chip</h3>
-              <ul className="pattern-card__list">
-                <li>Display the active agent and persona summary near the conversation title: &quot;Agent: Exec Reporting Analyst · Conservative risk.&quot;</li>
-                <li>Clicking opens key fields: role, scope, limitations, last reviewed date.</li>
+                <li>Output ratings segmented by persona and version.</li>
+                <li>Incidents, policy violations, or safety escalations per persona.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">Inline Explanations for Agent Changes</h3>
+              <h3 className="pattern-card__title">Governance & Change Impact</h3>
               <ul className="pattern-card__list">
-                <li>When an agent is switched or retired, show inline notes: &quot;Switched to &apos;Data QA Auditor&apos; for this conversation.&quot;</li>
-                <li>&quot;This agent has been replaced by &apos;Compliance Reviewer&apos; for regulatory reasons.&quot;</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Agent Responsibility Hints</h3>
-              <ul className="pattern-card__list">
-                <li>Short reminders at the top of new conversations: &quot;This agent helps you explain dashboards to executives. It does not edit production data.&quot;</li>
-                <li>Clear boundary-setting builds trust that the agent has a stable contract.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Separation from User Preferences</h3>
-              <ul className="pattern-card__list">
-                <li>Clearly distinguish: &quot;Agent persona: Exec Reporting Analyst&quot; vs. &quot;Your profile: Prefers concise answers, EN-US.&quot;</li>
-                <li>This distinction builds trust that the agent has its own stable contract, not just a fuzzy personalization layer.</li>
+                <li>Post-change metrics: behavior changes following persona updates or new versions.</li>
+                <li>Effectiveness of approval workflows (e.g., reduced incidents after governance introduction).</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
+        {/* Examples */}
         <section className="pattern-section">
           <div className="pattern-section__header-row">
             <div>
-              <p className="pattern-kicker">Use cases</p>
+              <p className="pattern-kicker">Example scenarios</p>
               <p className="pattern-body pattern-body--narrow">
-                How agent persona profiles apply across different organizational contexts.
+                How Agent Persona Profiles & Settings apply across different B2B and B2C contexts.
               </p>
             </div>
           </div>
 
           <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
             <div className="pattern-card">
-              <h3 className="pattern-card__title">1. Organizational AI &quot;Agent Gallery&quot;</h3>
-              <p className="pattern-card__intro">SaaS Platform</p>
+              <h3 className="pattern-card__title">Organizational AI Agent Gallery (B2B SaaS)</h3>
+              <p className="pattern-card__intro">Enterprise SaaS Platform</p>
               <ul className="pattern-card__list">
-                <li>Gallery of pre-configured agents: &quot;Customer Email Drafter – Empathetic & Cautious,&quot; &quot;Release Notes Summarizer – Data-forward & Neutral,&quot; &quot;Risk & Compliance Reviewer – Highly Conservative.&quot;</li>
-                <li>Each persona is owned by a specific team (Support, Product, Legal).</li>
-                <li>Org can confidently expose certain agents externally while keeping others internal-only.</li>
+                <li>An <span className="pattern-body--bold">Agent Gallery</span> in admin settings with agents like &quot;Customer Email Drafter – Empathetic & Cautious,&quot; &quot;Risk & Compliance Reviewer – Highly Conservative,&quot; and &quot;Product Update Summarizer – Internal-only.&quot;</li>
+                <li>Feature teams select from approved personas when adding AI to a workflow.</li>
+                <li>Ensures consistent behavior and a single place to adjust tone, risk posture, and capabilities.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">2. Incident Management Companion Agents</h3>
+              <h3 className="pattern-card__title">Incident Management Companions</h3>
               <p className="pattern-card__intro">Observability Platform</p>
               <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">&quot;Incident Scribe&quot;</span> – Focused on chronological summaries, neutral tone, detailed steps.</li>
-                <li><span className="pattern-body--bold">&quot;Exec Incident Briefing Agent&quot;</span> – Creates short, non-technical incident summaries for leadership.</li>
-                <li><span className="pattern-body--bold">&quot;Postmortem Drafting Agent&quot;</span> – Helps write detailed retros with standardized structure.</li>
+                <li><span className="pattern-body--bold">Incident Scribe:</span> Tracks chronological narrative of events, neutral and factual tone, read-only access to logs and alerts.</li>
+                <li><span className="pattern-body--bold">Exec Briefing Agent:</span> Concise status updates for leaders, executive-friendly tone, summarizes but does not propose remediations.</li>
+                <li><span className="pattern-body--bold">Postmortem Drafting Agent:</span> Helps draft post-incident reports, balanced risk posture, flags speculative content.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">3. Multi-Agent Document Workflow</h3>
-              <p className="pattern-card__intro">Document Authoring Tool</p>
+              <h3 className="pattern-card__title">Multi-Agent Document Workflow</h3>
+              <p className="pattern-card__intro">Knowledge Tools Platform</p>
               <ul className="pattern-card__list">
-                <li>A <span className="pattern-body--bold">Brainstorming Agent</span> helps authors explore ideas, explicitly marked as speculative.</li>
-                <li>A <span className="pattern-body--bold">Fact-Checking Agent</span> runs after drafting, focused on cautious verification and citation.</li>
-                <li>A <span className="pattern-body--bold">Compliance Agent</span> runs before external publishing, with a strict persona governed by Legal.</li>
+                <li><span className="pattern-body--bold">Brainstorming Agent:</span> Generates diverse, speculative ideas; experimental risk posture; clearly marked as ideation only.</li>
+                <li><span className="pattern-body--bold">Fact-Checking Agent:</span> Cross-checks claims against approved sources; conservative risk posture; refuses unverifiable statements.</li>
+                <li><span className="pattern-body--bold">Compliance Agent:</span> Reviews for policy, brand, or legal compliance; rigid risk posture; flags issues and may block publication.</li>
               </ul>
             </div>
 
             <div className="pattern-card">
-              <h3 className="pattern-card__title">4. Customer-Facing Support Copilot</h3>
+              <h3 className="pattern-card__title">Customer-Facing vs Internal Support</h3>
               <p className="pattern-card__intro">Support Platform</p>
               <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">&quot;Customer Reply Drafting Agent&quot;</span> – Empathetic, precise, never overpromises, follows brand tone, external-facing.</li>
-                <li><span className="pattern-body--bold">&quot;Internal Notes Agent&quot;</span> – More informal, shorthand allowed, focuses on summarizing for teammates.</li>
-                <li>Both share underlying models but differ meaningfully in persona and allowed output styles.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Data, Privacy & Compliance */}
-        <section className="pattern-section">
-          <div className="pattern-section__header-row">
-            <div>
-              <p className="pattern-kicker">Data, privacy & compliance</p>
-              <p className="pattern-body pattern-body--narrow">
-                Key considerations for handling agent persona configuration responsibly.
-              </p>
-            </div>
-          </div>
-
-          <div className="pattern-grid pattern-grid--three pattern-grid--mt-sm">
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Separation from User Data</h3>
-              <ul className="pattern-card__list">
-                <li>Store agent persona configuration separately from user-specific content or identity.</li>
-                <li>Avoid encoding sensitive data directly into personas; reference data sources instead.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Access Control</h3>
-              <ul className="pattern-card__list">
-                <li>Limit who can view or edit agent personas, especially in regulated environments.</li>
-                <li>Distinguish internal-only personas from those exposed to external customers.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Retention & Auditability</h3>
-              <ul className="pattern-card__list">
-                <li>Log which persona version produced given outputs for high-risk domains.</li>
-                <li>Keep a version history without storing unnecessary user content in persona definitions.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Regulatory Alignment</h3>
-              <ul className="pattern-card__list">
-                <li>Ensure persona descriptions do not conflict with regulatory requirements.</li>
-                <li>Avoid implying investment advice, legal advice, or medical diagnosis capabilities where prohibited.</li>
+                <li><span className="pattern-body--bold">Customer Reply Drafting Agent:</span> Writes customer-facing email and chat responses; empathetic, respectful, precise tone; conservative risk posture.</li>
+                <li><span className="pattern-body--bold">Internal Notes Agent:</span> Summarizes interactions for teammates; concise, shorthand, more technical tone; can include internal tags and jargon.</li>
+                <li>Agents share a common understanding of the domain but vary in tone, audience, and allowed disclosures.</li>
               </ul>
             </div>
           </div>
@@ -690,9 +627,9 @@ export default function PreferencePersonaSettingsPattern() {
         <section className="pattern-section">
           <div className="pattern-section__header-row">
             <div>
-              <p className="pattern-kicker">Risks & anti-patterns</p>
+              <p className="pattern-kicker">Anti-patterns & failure modes</p>
               <p className="pattern-body pattern-body--narrow">
-                Certain implementations of agent persona profiles can unintentionally undermine trust.
+                Common mistakes that undermine trust in agent personas.
               </p>
             </div>
           </div>
@@ -705,16 +642,16 @@ export default function PreferencePersonaSettingsPattern() {
                 </div>
                 <div className="antipattern-header-text">
                   <span className="antipattern-label">Anti-Pattern</span>
-                  <h3 className="antipattern-title">Persona Sprawl</h3>
-                  <p className="antipattern-subtitle">Too many overlapping agents confuse users.</p>
+                  <h3 className="antipattern-title">Hidden Personas</h3>
+                  <p className="antipattern-subtitle">Agent role, scope, and risk posture are embedded in prompts but never exposed in the UI.</p>
                 </div>
               </div>
               <p className="antipattern-description">
-                Too many overlapping agents (&quot;Writer – 1,&quot; &quot;Writer – 2&quot;) confuse users and dilute trust. Users cannot tell which agent to use.
+                When personas are hidden, users are surprised by agent behavior and cannot understand or predict how the AI will act in different contexts.
               </p>
               <div className="antipattern-alternative">
                 <span className="antipattern-alternative-label">Better</span>
-                <span className="antipattern-alternative-text">Favor fewer, clearly differentiated agents with distinct roles and responsibilities.</span>
+                <span className="antipattern-alternative-text">Make personas visible and inspectable with clear indicators in the UI.</span>
               </div>
             </div>
 
@@ -725,16 +662,16 @@ export default function PreferencePersonaSettingsPattern() {
                 </div>
                 <div className="antipattern-header-text">
                   <span className="antipattern-label">Anti-Pattern</span>
-                  <h3 className="antipattern-title">Misleading Names</h3>
-                  <p className="antipattern-subtitle">Names like &quot;Legal Expert&quot; or &quot;Doctor&quot; overstate capabilities.</p>
+                  <h3 className="antipattern-title">Overlapping or Confusing Personas</h3>
+                  <p className="antipattern-subtitle">Many personas with similar names and unclear distinctions.</p>
                 </div>
               </div>
               <p className="antipattern-description">
-                Names that imply professional credentials or guarantees can mislead users and expose the organization to liability.
+                Personas like &quot;Sales Helper 1&quot; and &quot;Sales Helper 2&quot; cause misselection and inconsistent behavior because users cannot tell them apart.
               </p>
               <div className="antipattern-alternative">
                 <span className="antipattern-alternative-label">Better</span>
-                <span className="antipattern-alternative-text">Prefer accurate, scoped labels like &quot;Legal Content Reviewer&quot; or &quot;Health Information Explainer.&quot;</span>
+                <span className="antipattern-alternative-text">Use distinct, functional names with clear descriptions of each persona&apos;s unique purpose.</span>
               </div>
             </div>
 
@@ -745,16 +682,16 @@ export default function PreferencePersonaSettingsPattern() {
                 </div>
                 <div className="antipattern-header-text">
                   <span className="antipattern-label">Anti-Pattern</span>
-                  <h3 className="antipattern-title">Hidden Behavior Changes</h3>
-                  <p className="antipattern-subtitle">Updating personas silently without surfacing changes.</p>
+                  <h3 className="antipattern-title">Unbounded Editing by End-Users</h3>
+                  <p className="antipattern-subtitle">Allowing arbitrary editing of high-risk personas without governance.</p>
                 </div>
               </div>
               <p className="antipattern-description">
-                Updating personas silently without surfacing that behavior might change confuses users. Material changes should be communicated.
+                When anyone can modify compliance or safety-critical personas without review, the governance model breaks down and risk increases.
               </p>
               <div className="antipattern-alternative">
                 <span className="antipattern-alternative-label">Better</span>
-                <span className="antipattern-alternative-text">Communicate material changes and, in some cases, version personas per-workspace.</span>
+                <span className="antipattern-alternative-text">Implement approval workflows and role-based access for editing sensitive personas.</span>
               </div>
             </div>
 
@@ -765,16 +702,16 @@ export default function PreferencePersonaSettingsPattern() {
                 </div>
                 <div className="antipattern-header-text">
                   <span className="antipattern-label">Anti-Pattern</span>
-                  <h3 className="antipattern-title">Overloading a Single Agent</h3>
-                  <p className="antipattern-subtitle">One agent that tries to do everything becomes unpredictable.</p>
+                  <h3 className="antipattern-title">Mismatch Between Persona and Capability</h3>
+                  <p className="antipattern-subtitle">A persona presented as &quot;Compliance Reviewer&quot; but configured with weak guardrails.</p>
                 </div>
               </div>
               <p className="antipattern-description">
-                One agent that tries to do everything (brainstorming, compliance, QA, drafting) becomes unpredictable and hard to trust.
+                When a persona&apos;s name implies strict behavior but the configuration allows broad write access, users over-trust and potential violations occur.
               </p>
               <div className="antipattern-alternative">
                 <span className="antipattern-alternative-label">Better</span>
-                <span className="antipattern-alternative-text">Break it into multiple personas with clear scopes and handoff rules.</span>
+                <span className="antipattern-alternative-text">Ensure persona names accurately reflect their actual capabilities and risk posture.</span>
               </div>
             </div>
 
@@ -785,163 +722,79 @@ export default function PreferencePersonaSettingsPattern() {
                 </div>
                 <div className="antipattern-header-text">
                   <span className="antipattern-label">Anti-Pattern</span>
-                  <h3 className="antipattern-title">Using Risk Posture as a Safety Bypass</h3>
-                  <p className="antipattern-subtitle">&quot;High-risk&quot; settings must not override baseline safety.</p>
+                  <h3 className="antipattern-title">Silent Changes</h3>
+                  <p className="antipattern-subtitle">Personas are modified without visible change logs or notifications.</p>
                 </div>
               </div>
               <p className="antipattern-description">
-                &quot;High-risk&quot; settings must not override baseline safety and compliance guardrails. Risk posture is about style (exploratory vs cautious), not permission to be unsafe.
+                When persona behavior suddenly shifts without explanation, users lose trust and cannot understand why the AI is acting differently.
               </p>
               <div className="antipattern-alternative">
                 <span className="antipattern-alternative-label">Better</span>
-                <span className="antipattern-alternative-text">Risk posture operates within non-negotiable safety constraints—style, not permission.</span>
+                <span className="antipattern-alternative-text">Maintain visible version history and notify users of significant persona updates.</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Implementation Notes */}
-        <section className="pattern-section">
-          <div className="pattern-section__header-row">
-            <div>
-              <p className="pattern-kicker">Implementation notes</p>
-              <p className="pattern-body pattern-body--narrow">
-                Key considerations for UX, product, and engineering teams.
-              </p>
-            </div>
-          </div>
-
-          <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">UX & Product</h3>
-              <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">Make agents first-class concepts:</span> Use consistent naming and visual treatments for agent personas in galleries, chat headers, and configuration surfaces.</li>
-                <li><span className="pattern-body--bold">Provide clear positioning:</span> Let users quickly answer &quot;Which agent should I use for this task?&quot; and &quot;What does this agent do and not do?&quot;</li>
-                <li><span className="pattern-body--bold">Start with a small set:</span> Better to have a few high-quality, trustworthy agents than a large gallery of slightly different ones.</li>
-                <li><span className="pattern-body--bold">Support graceful switching:</span> Make it easy to switch agents mid-conversation, with a clear record of which agent produced which messages.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Engineering & System Design</h3>
-              <ul className="pattern-card__list">
-                <li><span className="pattern-body--bold">Treat personas as structured configuration:</span> JSON or similar schema for role, tone, tools, risk posture, and constraints. Map to prompt templates and tool access policies.</li>
-                <li><span className="pattern-body--bold">Support versioning and rollout strategies:</span> Blue/green or phased rollout of persona updates. Pin users/workspaces to specific versions for stability.</li>
-                <li><span className="pattern-body--bold">Log persona identifiers with interactions:</span> Enable analysis of behavior and trust metrics by persona and version. Avoid logging sensitive prompt contents.</li>
-                <li><span className="pattern-body--bold">Design for multi-tenancy:</span> Isolate personas per tenant when needed; allow shared base templates with per-tenant overrides.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Metrics & Evaluation */}
-        <section className="pattern-section">
-          <div className="pattern-section__header-row">
-            <div>
-              <p className="pattern-kicker">Metrics & evaluation</p>
-              <p className="pattern-body pattern-body--narrow">
-                To assess the effectiveness of Agent Persona Profiles as a trust-building pattern, teams can track:
-              </p>
-            </div>
-          </div>
-
-          <div className="pattern-grid--auto-fit pattern-grid--mt-sm">
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Adoption & Usage</h3>
-              <ul className="pattern-card__list">
-                <li>How many users actively choose specific agents instead of a generic default?</li>
-                <li>Distribution of tasks by agent—are specialized agents being used appropriately?</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Task Success & Satisfaction</h3>
-              <ul className="pattern-card__list">
-                <li>Task completion and satisfaction scores segmented by agent persona.</li>
-                <li>&quot;Did this agent behave as described?&quot; feedback.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Friction & Confusion</h3>
-              <ul className="pattern-card__list">
-                <li>Frequency of agent switching mid-task (healthy when intentional, problematic if users are hunting for a working agent).</li>
-                <li>Support tickets or complaints mentioning &quot;wrong agent&quot; behavior.</li>
-              </ul>
-            </div>
-
-            <div className="pattern-card">
-              <h3 className="pattern-card__title">Safety & Compliance</h3>
-              <ul className="pattern-card__list">
-                <li>Incidents or escalations linked to specific personas.</li>
-                <li>False-positive and false-negative rates for refusal behavior by persona.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Design checklist */}
+        {/* Implementation Checklist */}
         <section className="pattern-section">
           <div className="pattern-section__header-row pattern-section__header-row--tight">
-            <p className="pattern-kicker">Checklist for teams</p>
+            <p className="pattern-kicker">Implementation checklist</p>
           </div>
           <div className="pattern-checklist-group">
             <div className="pattern-checklist-category">
-              <p className="pattern-checklist-category__title">Entry & Visibility</p>
+              <p className="pattern-checklist-category__title">Persona Model</p>
               <ul className="pattern-checklist pattern-checklist--single-column">
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Are agent personas defined as explicit, structured profiles—not just hidden prompts?</span>
+                  <span>Define a structured persona model with clear fields for role, scope, tone, risk, tools, and ownership.</span>
                 </li>
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Is there an agent gallery or other clear entry point where users can see available agents and their roles?</span>
-                </li>
-                <li className="pattern-checklist__item">
-                  <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Is the active agent always visible in the UI, with an easy way to inspect its persona?</span>
+                  <span>Implement an <span className="pattern-body--bold">Agent Gallery</span> with filters, search, and clear summaries for each persona.</span>
                 </li>
               </ul>
             </div>
 
             <div className="pattern-checklist-category">
-              <p className="pattern-checklist-category__title">Scope & Responsibility</p>
+              <p className="pattern-checklist-category__title">Runtime Display</p>
               <ul className="pattern-checklist pattern-checklist--single-column">
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Does each agent persona have a crisp, understandable scope of responsibility and clear limitations?</span>
+                  <span>Surface the <span className="pattern-body--bold">active agent</span> prominently in all relevant interaction surfaces.</span>
                 </li>
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Are tone, level of detail, risk posture, and tools captured in a structured way?</span>
+                  <span>Make data scope, memory behavior, and tool access visible and understandable.</span>
                 </li>
               </ul>
             </div>
 
             <div className="pattern-checklist-category">
-              <p className="pattern-checklist-category__title">Governance & Versioning</p>
+              <p className="pattern-checklist-category__title">Governance</p>
               <ul className="pattern-checklist pattern-checklist--single-column">
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Can teams safely iterate on personas with versioning, staging, and rollback?</span>
+                  <span>Establish <span className="pattern-body--bold">versioning and governance</span> workflows for persona changes, including audit logs and approvals.</span>
                 </li>
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Are agent persona changes auditable, especially for regulated or high-risk use cases?</span>
+                  <span>Support persona variants for different audiences or channels while keeping a shared core definition.</span>
                 </li>
               </ul>
             </div>
 
             <div className="pattern-checklist-category">
-              <p className="pattern-checklist-category__title">Separation & Safety</p>
+              <p className="pattern-checklist-category__title">Feedback & Monitoring</p>
               <ul className="pattern-checklist pattern-checklist--single-column">
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Are personas clearly distinguished from user preferences and long-term memory?</span>
+                  <span>Capture metrics and feedback per persona and version to inform iteration and risk management.</span>
                 </li>
                 <li className="pattern-checklist__item">
                   <CheckCircle size={14} className="pattern-checklist__icon" />
-                  <span>Are safety and compliance guardrails enforced independently of persona risk posture?</span>
+                  <span>Document relationships to other patterns (memory, activity logs, approvals) to keep the experience coherent.</span>
                 </li>
               </ul>
             </div>
@@ -950,35 +803,17 @@ export default function PreferencePersonaSettingsPattern() {
 
         {/* Related Patterns */}
         <section className="pattern-section">
-          <div className="pattern-section__header-row pattern-section__header-row--tight">
-            <p className="pattern-kicker">Related patterns</p>
-          </div>
-          <div className="pattern-grid pattern-grid--two pattern-grid--mt-sm">
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">8.x User Preference & Context Profiles</h3>
-              <p className="pattern-card__intro">
-                Capturing &quot;who the user is&quot; (role, goals, preferences) to combine with agent personas at runtime.
-              </p>
-            </div>
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">8.1 Memory Controls & History Management</h3>
-              <p className="pattern-card__intro">
-                Managing what the AI remembers about specific workstreams and past interactions.
-              </p>
-            </div>
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">4.x Structured Clarification & Task Scoping</h3>
-              <p className="pattern-card__intro">
-                Ensuring tasks are framed clearly for a given agent persona.
-              </p>
-            </div>
-            <div className="pattern-card pattern-card--secondary">
-              <h3 className="pattern-card__title">3.x AI Onboarding & First-Run Education</h3>
-              <p className="pattern-card__intro">
-                Introducing users to the agent gallery and helping them choose the right agent.
-              </p>
+          <div className="pattern-section__header-row">
+            <div>
+              <p className="pattern-kicker">Related patterns</p>
             </div>
           </div>
+          <ul className="pattern-list">
+            <li><span className="pattern-body--bold">8.1 Memory Inspector & Editor</span> – Distinguishes between personal, team, and global memory and how agents use stored context.</li>
+            <li><span className="pattern-body--bold">Activity Timeline & Audit Log</span> – Shows how agent actions and decisions are logged and surfaced.</li>
+            <li><span className="pattern-body--bold">Human-in-the-Loop Review & Approvals</span> – Governs when and how agents require or request human confirmation.</li>
+            <li><span className="pattern-body--bold">Prompt & Instruction Transparency</span> – Exposes system instructions and constraints that shape agent behavior.</li>
+          </ul>
         </section>
       </main>
     </motion.div>

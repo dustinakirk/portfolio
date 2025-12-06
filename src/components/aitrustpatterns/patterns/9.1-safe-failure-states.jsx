@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle, ExternalLink } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import SafeFailureStatesDemo from '../demos/SafeFailureStatesDemo';
 
 // SEO metadata for this pattern page
 export const SAFE_FAILURE_STATES_SEO = {
@@ -11,95 +12,6 @@ export const SAFE_FAILURE_STATES_SEO = {
   keywords: ["AI failure states", "safe failure", "AI error handling", "graceful degradation", "AI trust", "agentic UX", "AI recovery", "AI abstention"],
   canonicalPath: "/agentic_ai_patterns/safe-failure-states"
 };
-
-// Placeholder demo component - Safe Failure States
-function SafeFailureStatesDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderArea: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '300px',
-      backgroundColor: '#fafafa',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#fee2e2',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      maxWidth: '400px',
-      lineHeight: 1.6,
-    },
-    placeholderTitle: {
-      color: '#374151',
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      marginBottom: '8px',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Safe Failure States demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Safe Failure State</h2>
-        <p style={styles.demoDescription}>
-          This example would demonstrate a DevOps copilot detecting elevated error rates and pausing a deployment,
-          presenting structured options for recovery.
-        </p>
-      </div>
-      <div style={styles.placeholderArea}>
-        <div style={styles.placeholderIcon}>
-          <AlertCircle size={32} color="#dc2626" />
-        </div>
-        <p style={styles.placeholderTitle}>Interactive Demo Coming Soon</p>
-        <p style={styles.placeholderText}>
-          This space will feature an interactive demonstration of a Safe Failure Block
-          showing how an AI agent communicates failures clearly, preserves context,
-          and offers structured recovery options.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function SafeFailureStatesPattern() {
   return (

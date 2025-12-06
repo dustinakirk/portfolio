@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { User, Bot } from 'lucide-react';
 import './ExplanationOnDemandDemo.css';
 
 export default function ExplanationOnDemandDemo() {
@@ -36,12 +37,24 @@ export default function ExplanationOnDemandDemo() {
           <div className="eod-chat-interface__messages">
             {/* User Message */}
             <div className="eod-message eod-message--user">
-              Who should take ticket P-402 (Database Migration)?
+              <div className="eod-message__avatar eod-message__avatar--user">
+                <User size={16} />
+              </div>
+              <div className="eod-message__content">
+                <span className="eod-message__name">Alex Chen</span>
+                <div className="eod-message__bubble eod-message__bubble--user">
+                  Who should take ticket P-402 (Database Migration)?
+                </div>
+              </div>
             </div>
 
             {/* Agent Response with Embedded Pattern */}
             <div className="eod-message eod-message--agent">
-              <div className="eod-message__avatar">PM Copilot</div>
+              <div className="eod-message__avatar eod-message__avatar--agent">
+                <Bot size={16} />
+              </div>
+              <div className="eod-message__content">
+                <span className="eod-message__name">PM Copilot</span>
 
               {/* The Recommendation Card */}
               <div className="eod-suggestion-card">
@@ -72,6 +85,7 @@ export default function ExplanationOnDemandDemo() {
                     </button>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>

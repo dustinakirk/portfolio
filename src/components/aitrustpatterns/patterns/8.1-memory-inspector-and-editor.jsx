@@ -54,14 +54,6 @@ export default function MemoryInspectorEditorPattern() {
             <p className="pattern-body">
               By treating memories as data objects rather than opaque model state, the pattern improves predictability, enables correction of inaccuracies, reduces risk from outdated information, and supports privacy and compliance expectations. It also creates a shared debugging surface for end users, admins, and support teams to reason about agent behavior.
             </p>
-            <p className="pattern-body">
-              A design example embedded into a product page could show:
-            </p>
-            <ul className="pattern-list">
-              <li>On the right side of a chat interface, a <span className="pattern-body--bold">&quot;Memory&quot; panel</span> lists items such as &quot;Preferred tone: concise&quot;, &quot;Team: EMEA Sales&quot;, and &quot;Primary product focus: Data Platform&quot;, each with inline edit and delete controls.</li>
-              <li>As the agent composes a reply, <span className="pattern-body--bold">chips appear under the draft</span> labeled &quot;Using memories: [Tone: concise] [Team: EMEA Sales]&quot;.</li>
-              <li>Hovering any chip <span className="pattern-body--bold">highlights the corresponding entry</span> in the panel and shows when it was last updated.</li>
-            </ul>
           </div>
         </section>
 

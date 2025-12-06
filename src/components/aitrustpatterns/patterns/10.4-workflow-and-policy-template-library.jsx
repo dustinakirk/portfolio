@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle, FileText, FolderOpen, Shield, Users, Settings, GitBranch, Layers } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import WorkflowPolicyTemplateLibraryDemo from '../demos/WorkflowPolicyTemplateLibraryDemo';
 
 // SEO metadata for this pattern page
 export const WORKFLOW_POLICY_TEMPLATE_LIBRARY_SEO = {
@@ -12,94 +13,6 @@ export const WORKFLOW_POLICY_TEMPLATE_LIBRARY_SEO = {
   canonicalPath: "/agentic_ai_patterns/workflow-policy-template-library"
 };
 
-// Placeholder demo component - Workflow & Policy Template Library
-function WorkflowPolicyTemplateLibraryDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderArea: {
-      padding: '48px 24px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '300px',
-      backgroundColor: '#fafafa',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '50%',
-      backgroundColor: '#dbeafe',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: '16px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      textAlign: 'center',
-      maxWidth: '400px',
-      lineHeight: 1.6,
-    },
-    placeholderTitle: {
-      color: '#374151',
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      marginBottom: '8px',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Workflow & Policy Template Library demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Workflow & Policy Template Library</h2>
-        <p style={styles.demoDescription}>
-          This example would demonstrate a centralized gallery of reusable AI workflow templates
-          with policy bindings, risk levels, and clone-and-customize functionality.
-        </p>
-      </div>
-      <div style={styles.placeholderArea}>
-        <div style={styles.placeholderIcon}>
-          <Layers size={32} color="#2563eb" />
-        </div>
-        <p style={styles.placeholderTitle}>Interactive Demo Coming Soon</p>
-        <p style={styles.placeholderText}>
-          This space will feature an interactive demonstration of a Template Library
-          showing workflow cards with risk badges, policy indicators, HITL requirements,
-          and controls for cloning, customizing, and deploying templates.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function WorkflowPolicyTemplateLibraryPattern() {
   return (

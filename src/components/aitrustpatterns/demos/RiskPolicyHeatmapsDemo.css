@@ -1,0 +1,377 @@
+/* Risk & Policy Heatmaps Demo Styles */
+/* BEM naming with rph- prefix to prevent CSS conflicts */
+
+/* --- Main Container --- */
+.rph-showcase {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Header Styling --- */
+.rph-showcase__header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.rph-showcase__header-content {
+  flex: 1;
+}
+
+.rph-showcase__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.rph-showcase__description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rph-showcase__reset-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.rph-showcase__reset-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+/* --- Stage Area --- */
+.rph-showcase__stage {
+  display: flex;
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/* --- Heatmap Component --- */
+.rph-heatmap {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+  background-color: #f9fafb;
+}
+
+.rph-heatmap__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+
+.rph-heatmap__header {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  padding-bottom: 8px;
+  font-weight: 600;
+}
+
+.rph-heatmap__row-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
+  padding-right: 16px;
+}
+
+/* --- Heatmap Cells --- */
+.rph-heatmap__cell {
+  border-radius: 6px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.rph-heatmap__cell:hover {
+  transform: scale(1.02);
+  z-index: 10;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.rph-heatmap__cell--selected {
+  border-color: #111827;
+  z-index: 20;
+}
+
+/* Risk Level Modifiers */
+.rph-heatmap__cell--low {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.rph-heatmap__cell--med {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.rph-heatmap__cell--high {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.rph-heatmap__score {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+}
+
+.rph-heatmap__status {
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+/* --- Policy Panel --- */
+.rph-panel {
+  width: 320px;
+  background: #ffffff;
+  border-left: 1px solid #e5e7eb;
+  padding: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 15px rgb(0 0 0 / 0.05);
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.rph-panel--active {
+  transform: translateX(0);
+}
+
+.rph-panel__header {
+  margin-bottom: 20px;
+}
+
+.rph-panel__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.rph-panel__subtitle {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.rph-panel__metric-card {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e5e7eb;
+}
+
+.rph-panel__metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rph-panel__metric-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rph-panel__actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  padding-top: 20px;
+}
+
+/* --- Form Elements --- */
+.rph-form__group {
+  margin-bottom: 20px;
+}
+
+.rph-form__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.rph-form__select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+}
+
+.rph-form__select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 0.2);
+}
+
+.rph-form__range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rph-form__range-label {
+  font-size: 12px;
+  color: #6b7280;
+  min-width: 60px;
+}
+
+.rph-form__range-label--end {
+  text-align: right;
+}
+
+.rph-form__range {
+  flex: 1;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.rph-form__help {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* --- Buttons --- */
+.rph-btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  flex: 1;
+  transition: all 0.2s;
+}
+
+.rph-btn--primary {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.rph-btn--primary:hover {
+  background-color: #374151;
+}
+
+.rph-btn--secondary {
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.rph-btn--secondary:hover {
+  background-color: #f9fafb;
+}
+
+/* --- Risk Badges --- */
+.rph-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rph-badge--low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.rph-badge--med {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.rph-badge--high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .rph-showcase__stage {
+    flex-direction: column;
+  }
+
+  .rph-panel {
+    position: relative;
+    width: 100%;
+    transform: translateY(100%);
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -4px 15px rgb(0 0 0 / 0.05);
+  }
+
+  .rph-panel--active {
+    transform: translateY(0);
+  }
+
+  .rph-heatmap__table {
+    font-size: 12px;
+  }
+
+  .rph-heatmap__cell {
+    height: 50px;
+  }
+
+  .rph-heatmap__score {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,312 @@
+/* Apology + Remedy Bundle Demo Styles */
+/* BEM naming with arb- prefix to prevent CSS conflicts */
+
+/* --- Main Container --- */
+.arb-showcase {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Header Styling --- */
+.arb-showcase__header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.arb-showcase__header-content {
+  flex: 1;
+}
+
+.arb-showcase__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.arb-showcase__description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.arb-showcase__reset-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.arb-showcase__reset-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+/* --- Chat Interface --- */
+.arb-chat {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+}
+
+.arb-chat__messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Message Bubbles --- */
+.arb-message {
+  max-width: 90%;
+  display: flex;
+  gap: 12px;
+  animation: arb-fadeIn 0.3s ease-out;
+}
+
+.arb-message--user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.arb-message--ai {
+  align-self: flex-start;
+}
+
+.arb-message__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.arb-message--user .arb-message__avatar {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.arb-message--ai .arb-message__avatar {
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+
+.arb-message__content {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.arb-message--user .arb-message__content {
+  background-color: #3b82f6;
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.arb-message--ai .arb-message__content {
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-bottom-left-radius: 2px;
+}
+
+/* --- THE PATTERN: Remedy Bundle --- */
+.arb-remedy-bundle {
+  margin-top: 12px;
+  background-color: #fff;
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #fcd34d;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  animation: arb-slideUp 0.4s ease-out;
+}
+
+.arb-remedy-bundle--success {
+  border-color: #86efac;
+  border-left-color: #86efac;
+}
+
+.arb-remedy-bundle--dismissed {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.arb-remedy-bundle__header {
+  padding: 10px 12px;
+  background-color: #fffbeb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(252, 211, 77, 0.3);
+}
+
+.arb-remedy-bundle--success .arb-remedy-bundle__header {
+  background-color: #f0fdf4;
+  border-bottom-color: rgba(134, 239, 172, 0.3);
+}
+
+.arb-remedy-bundle__header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arb-remedy-bundle__header-icon--warning {
+  color: #92400e;
+}
+
+.arb-remedy-bundle__header-icon--success {
+  color: #166534;
+}
+
+.arb-remedy-bundle__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.arb-remedy-bundle--success .arb-remedy-bundle__title {
+  color: #166534;
+}
+
+.arb-remedy-bundle__body {
+  padding: 12px;
+}
+
+.arb-remedy-bundle__explanation {
+  font-size: 13px;
+  color: #374151;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.arb-remedy-bundle__context {
+  font-size: 12px;
+  color: #6b7280;
+  background: #f8fafc;
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.arb-remedy-bundle__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.arb-remedy-bundle__loading {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.arb-remedy-bundle__success-message {
+  font-size: 13px;
+  color: #166534;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- Button Styles --- */
+.arb-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arb-btn--primary {
+  background-color: #111827;
+  color: white;
+}
+
+.arb-btn--primary:hover {
+  background-color: #000000;
+}
+
+.arb-btn--secondary {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.arb-btn--secondary:hover {
+  background-color: #f1f5f9;
+}
+
+.arb-btn--ghost {
+  background-color: transparent;
+  color: #6b7280;
+}
+
+.arb-btn--ghost:hover {
+  color: #374151;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* --- Animations --- */
+@keyframes arb-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arb-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

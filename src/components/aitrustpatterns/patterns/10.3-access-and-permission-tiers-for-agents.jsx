@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
+import AccessPermissionTiersDemo from '../demos/AccessPermissionTiersDemo';
 import FeedbackLink from '../FeedbackLink';
 
 // SEO metadata for this pattern page
@@ -11,99 +12,6 @@ export const ACCESS_PERMISSION_TIERS_SEO = {
   keywords: ["AI permissions", "agent tiers", "AI governance", "permission levels", "AI trust", "agent access control", "AI security", "agentic UX", "enterprise AI", "role-based AI"],
   canonicalPath: "/agentic_ai_patterns/access-permission-tiers"
 };
-
-// Interactive demo component - Placeholder
-function AccessPermissionTiersDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-    },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-    placeholderContent: {
-      padding: '48px 24px',
-      textAlign: 'center',
-      backgroundColor: '#f9fafb',
-      minHeight: '300px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '16px',
-    },
-    placeholderIcon: {
-      width: '64px',
-      height: '64px',
-      borderRadius: '12px',
-      backgroundColor: '#e0e7ff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#4f46e5',
-      fontSize: '24px',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      maxWidth: '400px',
-      lineHeight: 1.6,
-    },
-    placeholderLabel: {
-      color: '#9ca3af',
-      fontSize: '0.75rem',
-      textTransform: 'uppercase',
-      letterSpacing: '0.05em',
-      fontWeight: 600,
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Access & Permission Tiers demo">
-      <div style={styles.demoHeader}>
-        <h2 style={styles.demoTitle}>Example: Agent Permission Tiers</h2>
-        <p style={styles.demoDescription}>
-          This example would demonstrate an admin interface for managing AI agent permission tiers across environments,
-          showing tier assignment, permission matrices, and environment-specific controls.
-        </p>
-      </div>
-      <div style={styles.placeholderContent}>
-        <div style={styles.placeholderLabel}>Interactive Demo</div>
-        <div style={styles.placeholderIcon}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-        </div>
-        <p style={styles.placeholderText}>
-          An interactive demonstration of agent permission tier management would appear here,
-          showing how administrators can view and configure agent access levels across different environments.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function AccessPermissionTiersPattern() {
   return (

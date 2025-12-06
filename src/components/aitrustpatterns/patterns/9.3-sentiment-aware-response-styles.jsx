@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import '../PatternPage.css';
 import FeedbackLink from '../FeedbackLink';
+import SentimentAwareResponseStylesDemo from '../demos/SentimentAwareResponseStylesDemo';
 
 // SEO metadata for this pattern page
 export const SENTIMENT_AWARE_RESPONSE_STYLES_SEO = {
@@ -11,46 +12,6 @@ export const SENTIMENT_AWARE_RESPONSE_STYLES_SEO = {
   keywords: ["AI sentiment", "adaptive responses", "AI tone", "AI trust", "empathetic AI", "frustration detection", "AI UX", "agentic UX"],
   canonicalPath: "/agentic_ai_patterns/sentiment-aware-response-styles"
 };
-
-// Placeholder demo component
-function SentimentAwareResponseStylesDemo() {
-  const styles = {
-    demoWrapper: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-      background: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      maxWidth: '800px',
-      width: '100%',
-      overflow: 'hidden',
-      border: '1px solid #e5e7eb',
-      margin: '0 auto',
-      padding: '48px 24px',
-      textAlign: 'center',
-    },
-    placeholderText: {
-      color: '#6b7280',
-      fontSize: '1rem',
-      lineHeight: 1.6,
-    },
-    placeholderTitle: {
-      color: '#374151',
-      fontSize: '1.125rem',
-      fontWeight: 600,
-      marginBottom: '8px',
-    },
-  };
-
-  return (
-    <div style={styles.demoWrapper} role="region" aria-label="Sentiment-Aware Response Styles demo">
-      <p style={styles.placeholderTitle}>Interactive Demo</p>
-      <p style={styles.placeholderText}>
-        An interactive demonstration of sentiment-aware response styles will be added here,
-        showing how an AI agent adapts its tone, length, and structure based on detected user sentiment.
-      </p>
-    </div>
-  );
-}
 
 export default function SentimentAwareResponseStylesPattern() {
   return (
