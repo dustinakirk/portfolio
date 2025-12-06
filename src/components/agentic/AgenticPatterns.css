@@ -1183,6 +1183,60 @@
 /* ===========================================
    Overview Page
    =========================================== */
+/* ===========================================
+   Overview Intro Section
+   =========================================== */
+.agentic-overview__intro {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .agentic-overview__intro {
+    grid-template-columns: 1fr;
+  }
+}
+
+.agentic-overview__intro-content {
+  /* Text content column */
+}
+
+.agentic-overview__intro-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.agentic-overview__intro-text {
+  color: var(--gray-800);
+  line-height: 1.7;
+}
+
+.agentic-overview__intro-video {
+  /* Video column */
+}
+
+.agentic-overview__video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--gray-900);
+}
+
+.agentic-overview__video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .agentic-overview__category-section {
   margin-bottom: 1.5rem;
 }

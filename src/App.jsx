@@ -34,7 +34,7 @@ function App() {
         <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
         <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
         <Route path="/agentic_ai_patterns" element={<AgenticOverviewPage />} />
-        <Route path="/agentic_ai_patterns/patterns" element={<Navigate to="/agentic_ai_patterns" replace />} />
+        <Route path="/agentic_ai_patterns/patterns" element={<Navigate to="/agentic_ai_patterns/agent-identity-role-contract" replace />} />
         <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternDetailPage />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
       </Routes>

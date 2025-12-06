@@ -101,6 +101,26 @@ export default function AgenticOverviewPage() {
       title="Agentic AI UX Patterns"
       subtitle="45+ Trust building UX design patterns for agentic applications. A comprehensive guide for designers and developers creating trustworthy AI experiences."
     >
+      {/* Overview Section with Video */}
+      <div className="agentic-overview__intro">
+        <div className="agentic-overview__intro-content">
+          <h2 className="agentic-overview__intro-title">Overview</h2>
+          <p className="agentic-overview__intro-text">
+            This extensive guide defines best practices for designing Agentic AI systems, focusing on maintaining human oversight and building user trust across diverse workflows. The framework mandates explicit controls, such as defined agent identity and role contracts and clear delegation modes (Advisor, Co-Pilot, Autopilot), allowing users to manage levels of autonomy. Safety and transparency are prioritized through mechanisms like persistent kill switch, pause &amp; resume functionality, required Human-in-the-Loop (HITL) gates for critical actions, and visual rollback &amp; version history. To manage inherent uncertainty, patterns suggest displaying a confidence thermometer, anchoring outputs to verifiable source grounding, and presenting alternative or counter-evidence display. Finally, the guide addresses systemic complexity through patterns for multi-agent orchestration and organizational governance tools, including risk and policy heatmaps and specialized supervisor agents for centralized monitoring.
+          </p>
+        </div>
+        <div className="agentic-overview__intro-video">
+          <div className="agentic-overview__video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/ieDlBThOLAo"
+              title="Agentic AI UX Patterns Overview"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Category Navigation Card - at the top for easy access */}
       <div className="agentic-overview__category-section">
         <CategoryCard />
@@ -123,15 +143,27 @@ export default function AgenticOverviewPage() {
         <h2 className="agentic-overview__about-title">About These Patterns</h2>
         <div>
           <p className="agentic-overview__about-text">
-            As AI systems become more autonomous and integrated into critical workflows,
-            building user trust is essential. These patterns address the unique challenges
-            of AI interfaces: uncertainty, lack of transparency, limited user control,
-            and the need for graceful error handling.
+            These patterns are compiled from today's best practices in AI and agentic system design,
+            with a foundation rooted in human psychology—specifically, the principles of how trust
+            is built and maintained in relationships. Understanding that trust is earned through
+            transparency, consistency, and demonstrated competence, these patterns translate those
+            fundamentals into actionable design guidance for AI interfaces.
           </p>
           <p className="agentic-overview__about-text">
-            Each pattern provides a problem statement, solution approach, and implementation
-            guidance to help you design AI experiences that users can understand, control,
-            and trust.
+            This is a living resource. As AI capabilities evolve and new challenges emerge,
+            these patterns will be continuously iterated and improved to reflect industry best
+            practices. What works today may need refinement tomorrow—and that's by design.
+          </p>
+        </div>
+
+        {/* Contribution CTA */}
+        <div className="pattern-magazine__purpose" style={{ marginTop: '1.5rem' }}>
+          <p style={{ margin: 0 }}>
+            <strong>Contributions welcome.</strong> Have a pattern to suggest or feedback to share?
+            Reach out at{' '}
+            <a href="mailto:dustin@dustinkirk.com" style={{ color: 'var(--agentic-accent)', textDecoration: 'underline' }}>
+              dustin@dustinkirk.com
+            </a>
           </p>
         </div>
       </div>
