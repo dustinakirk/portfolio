@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import PortfolioFresh from './components/PortfolioFresh'
 import AiStoriesProject from './components/projects/AiStoriesProject'
 import EmailProject from './components/projects/EmailProject'
@@ -16,10 +17,21 @@ import AgenticOverviewPage from './components/agentic/AgenticOverviewPage'
 import PatternDetailPage from './components/agentic/PatternDetailPage'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
 
-function App() {
+const GA_MEASUREMENT_ID = 'G-W16VDWWV0S'
+
+function AppRoutes() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', GA_MEASUREMENT_ID, {
+        page_path: location.pathname + location.search,
+      })
+    }
+  }, [location])
+
   return (
-    <Router>
-      <Routes>
+    <Routes>
         <Route path="/" element={<PortfolioFresh />} />
         <Route path="/projects/aistories" element={<AiStoriesProject />} />
         <Route path="/projects/email" element={<EmailProject />} />
@@ -38,6 +50,13 @@ function App() {
         <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternDetailPage />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
       </Routes>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
     </Router>
   )
 }
