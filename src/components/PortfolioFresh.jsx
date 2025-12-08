@@ -534,7 +534,66 @@ export default function PortfolioFresh() {
     // Apply max limit
     return projects.slice(0, FEATURED_PROJECTS_CONFIG.maxFeatured);
   }, []);
-  
+
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    const pageTitle = 'Dustin Kirk - Principal Product Designer';
+    const pageDescription = 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns. 15+ years of experience designing enterprise SaaS at Salesforce, New Relic, and Tealium.';
+    const pageUrl = 'https://dustinkirk.com';
+    const pageImage = 'https://dustinkirk.com/images/dustin_kirk_avatar.png';
+
+    // Set document title
+    document.title = pageTitle;
+
+    // Update or create meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', pageDescription);
+    } else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = pageDescription;
+      document.head.appendChild(metaDesc);
+    }
+
+    // Helper to set or create meta tags
+    const setMetaTag = (attribute, value, content) => {
+      let tag = document.querySelector(`meta[${attribute}="${value}"]`);
+      if (tag) {
+        tag.setAttribute('content', content);
+      } else {
+        tag = document.createElement('meta');
+        tag.setAttribute(attribute, value);
+        tag.setAttribute('content', content);
+        document.head.appendChild(tag);
+      }
+    };
+
+    // Open Graph tags
+    setMetaTag('property', 'og:title', pageTitle);
+    setMetaTag('property', 'og:description', pageDescription);
+    setMetaTag('property', 'og:url', pageUrl);
+    setMetaTag('property', 'og:image', pageImage);
+    setMetaTag('property', 'og:type', 'website');
+    setMetaTag('property', 'og:site_name', 'Dustin Kirk - Principal Product Designer');
+
+    // Twitter Card tags
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:title', pageTitle);
+    setMetaTag('name', 'twitter:description', pageDescription);
+    setMetaTag('name', 'twitter:image', pageImage);
+
+    // Set canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', pageUrl);
+    } else {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = pageUrl;
+      document.head.appendChild(canonical);
+    }
+  }, []);
 
   // Diagonal stripe configuration
   const diagonalConfig = {

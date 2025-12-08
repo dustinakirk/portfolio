@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CONTACT_EMAIL } from "../constants";
+import { CONTACT_EMAIL, WORK } from "../constants";
 import ProjectNav from "./ProjectNav";
 import {
   Mail,
@@ -70,10 +70,72 @@ const diagonalConfig = {
 };
 
 export default function ProjectLayout({ children, title, subtitle, projectId }) {
-  // Scroll to top on mount
+  // Scroll to top on mount and set meta tags
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [projectId]);
+
+    // Get project data for image
+    const project = WORK.find(p => p.id === projectId);
+    const baseUrl = 'https://dustinkirk.com';
+    const pageTitle = `${title} | Dustin Kirk`;
+    const pageDescription = subtitle || `Product design case study: ${title}`;
+    const pageUrl = `${baseUrl}/projects/${projectId}`;
+    const pageImage = project?.image
+      ? `${baseUrl}${project.image}`
+      : `${baseUrl}/images/dustin_kirk_avatar.png`;
+
+    // Set document title
+    document.title = pageTitle;
+
+    // Update or create meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', pageDescription);
+    } else {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = pageDescription;
+      document.head.appendChild(metaDesc);
+    }
+
+    // Helper to set or create meta tags
+    const setMetaTag = (attribute, value, content) => {
+      let tag = document.querySelector(`meta[${attribute}="${value}"]`);
+      if (tag) {
+        tag.setAttribute('content', content);
+      } else {
+        tag = document.createElement('meta');
+        tag.setAttribute(attribute, value);
+        tag.setAttribute('content', content);
+        document.head.appendChild(tag);
+      }
+    };
+
+    // Open Graph tags
+    setMetaTag('property', 'og:title', pageTitle);
+    setMetaTag('property', 'og:description', pageDescription);
+    setMetaTag('property', 'og:url', pageUrl);
+    setMetaTag('property', 'og:image', pageImage);
+    setMetaTag('property', 'og:type', 'website');
+    setMetaTag('property', 'og:site_name', 'Dustin Kirk - Principal Product Designer');
+
+    // Twitter Card tags
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:title', pageTitle);
+    setMetaTag('name', 'twitter:description', pageDescription);
+    setMetaTag('name', 'twitter:image', pageImage);
+
+    // Set canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', pageUrl);
+    } else {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = pageUrl;
+      document.head.appendChild(canonical);
+    }
+  }, [projectId, title, subtitle]);
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f7f7f9_0%,#eef0f4_100%)] dark:bg-[linear-gradient(180deg,#0a0a0a_0%,#0f1115_100%)] text-black dark:text-white">

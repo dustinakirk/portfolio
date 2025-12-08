@@ -15,6 +15,75 @@ const SOCIAL_CRAWLERS = [
   'tumblr'
 ];
 
+// Project metadata extracted from src/constants.js
+const PROJECTS = {
+  "aitrustpatterns": {
+    title: "Agentic AI UX Patterns",
+    description: "45+ UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+    image: "/projects/aitrustpatterns/ai-trust-patterns.png"
+  },
+  "generativeuicanvas": {
+    title: "Generative UI Canvas",
+    description: "Natural Language UI + Agentic Backend + Generative UI - Reimagining B2B software with AI-powered interfaces.",
+    image: "/projects/generativeuicanvas/robot_with_ui.png"
+  },
+  "aistories": {
+    title: "AI Powered Expandable Stories",
+    description: "AI-powered platform generating never-ending fictional stories with interconnected characters and evolving narratives.",
+    image: "/projects/aistories/bot_writing_stories.png"
+  },
+  "salesforceaihackathon": {
+    title: "Salesforce AI Hackathon",
+    description: "Won 'Most Innovative' award among 90 teams with generative AI solutions for Sales Cloud.",
+    image: "/projects/salesforceaihackathon/hero_salesforce.png"
+  },
+  "email": {
+    title: "Micro Efficiencies",
+    description: "Transforming repetitive micro-tasks into delightful moments by parsing name data from 70% of corporate email addresses.",
+    image: "/projects/email/hero_email.png"
+  },
+  "scaling": {
+    title: "Design Team Scaling Framework",
+    description: "Organizational design methodology for scaling design teams through different growth phases.",
+    image: "/projects/scaling/org_phases.png"
+  },
+  "patent": {
+    title: "User Interaction Monitoring System",
+    description: "Patented CSS/JS-based monitoring system for tracking user interactions in data networks.",
+    image: "/projects/patent/css_js.svg"
+  },
+  "architecture": {
+    title: "UX Architecture for Enterprise SaaS",
+    description: "Modern UI patterns and workflow optimization for scalable enterprise design systems.",
+    image: "/projects/architecture/hero_architecture.png"
+  },
+  "charts": {
+    title: "Data Visualization System",
+    description: "Comprehensive charting components built with atomic design principles for complex data display.",
+    image: "/projects/charts/hero_chart.png"
+  },
+  "color": {
+    title: "Systematic Color Design Framework",
+    description: "Brand colors, accessibility standards, and systematic application rules for design consistency.",
+    image: "/projects/color/hero_color.png"
+  },
+  "loadorder": {
+    title: "Tag Load Order Management",
+    description: "Complex drag-and-drop interface for managing tag sequences with bulk actions and filtering.",
+    image: "/projects/loadorder/drag_and_drop.gif"
+  },
+  "pillars": {
+    title: "Design Principles Framework",
+    description: "Foundational design principles and organizational framework for consistent design decisions.",
+    image: "/images/dustin_kirk_avatar.png"
+  },
+  "apps": {
+    title: "iOS Mobile Applications Portfolio",
+    description: "Seven iOS apps including disc golf scorecards, games, and utility applications.",
+    image: "/projects/apps/golfscorecards.png"
+  }
+};
+
 // Pattern metadata extracted from src/data/aiTrustPatterns.js
 const PATTERNS = {
   "agent-identity-role-contract": {
@@ -215,8 +284,9 @@ const PATTERNS = {
   }
 };
 
+// Match all routes that need meta tags
 export const config = {
-  matcher: ['/agentic_ai_patterns', '/agentic_ai_patterns/:path*']
+  matcher: ['/', '/projects/:path*', '/design_system', '/agentic_ai_patterns', '/agentic_ai_patterns/:path*']
 };
 
 export default function middleware(request) {
@@ -228,11 +298,9 @@ export default function middleware(request) {
   }
 
   const url = new URL(request.url);
-  const pathParts = url.pathname.split('/').filter(Boolean);
-  // pathParts[0] = 'agentic_ai_patterns', pathParts[1] = pattern slug (if exists)
-  const patternSlug = pathParts[1] || null;
+  const pathname = url.pathname;
 
-  const meta = getMetaForRoute(patternSlug);
+  const meta = getMetaForRoute(pathname);
   const html = generateCrawlerHTML(meta);
 
   return new Response(html, {
@@ -240,36 +308,101 @@ export default function middleware(request) {
   });
 }
 
-function getMetaForRoute(patternSlug) {
-  const baseImage = 'https://dustinkirk.com/projects/aitrustpatterns/ai-trust-patterns.png';
+function getMetaForRoute(pathname) {
+  const baseUrl = 'https://dustinkirk.com';
+  const avatarImage = `${baseUrl}/images/dustin_kirk_avatar.png`;
+  const patternsImage = `${baseUrl}/projects/aitrustpatterns/ai-trust-patterns.png`;
 
-  // Overview page (no pattern slug or 'patterns' route)
-  if (!patternSlug || patternSlug === 'patterns') {
+  // Homepage
+  if (pathname === '/' || pathname === '') {
+    return {
+      title: 'Dustin Kirk - Principal Product Designer',
+      description: 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns. 15+ years of experience designing enterprise SaaS at Salesforce, New Relic, and Tealium.',
+      image: avatarImage,
+      url: baseUrl
+    };
+  }
+
+  // Project pages
+  if (pathname.startsWith('/projects/')) {
+    const projectId = pathname.split('/')[2];
+    const project = PROJECTS[projectId];
+    if (project) {
+      return {
+        title: `${project.title} | Dustin Kirk`,
+        description: project.description,
+        image: `${baseUrl}${project.image}`,
+        url: `${baseUrl}${pathname}`
+      };
+    }
+    // Fallback for unknown projects
+    return {
+      title: 'Portfolio Project | Dustin Kirk',
+      description: 'Product design case study by Dustin Kirk, Principal Product Designer.',
+      image: avatarImage,
+      url: `${baseUrl}${pathname}`
+    };
+  }
+
+  // Design System page
+  if (pathname === '/design_system') {
+    return {
+      title: 'Design System Showcase | Dustin Kirk',
+      description: 'Comprehensive design system documentation and component library showcasing systematic design approaches.',
+      image: avatarImage,
+      url: `${baseUrl}/design_system`
+    };
+  }
+
+  // Agentic AI Patterns - Overview page
+  if (pathname === '/agentic_ai_patterns' || pathname === '/agentic_ai_patterns/') {
     return {
       title: 'Agentic AI UX Patterns - Building Trust in AI Applications | Dustin Kirk',
       description: '45+ UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.',
-      image: baseImage,
-      url: 'https://dustinkirk.com/agentic_ai_patterns'
+      image: patternsImage,
+      url: `${baseUrl}/agentic_ai_patterns`
     };
   }
 
-  // Individual pattern page
-  const pattern = PATTERNS[patternSlug];
-  if (pattern) {
+  // Agentic AI Patterns - Individual pattern pages
+  if (pathname.startsWith('/agentic_ai_patterns/')) {
+    const patternSlug = pathname.split('/')[2];
+
+    // Handle the /patterns redirect route
+    if (patternSlug === 'patterns') {
+      return {
+        title: 'Pattern Library - Agentic AI UX Patterns | Dustin Kirk',
+        description: '45+ UX design patterns for building trust in AI and agentic applications.',
+        image: patternsImage,
+        url: `${baseUrl}/agentic_ai_patterns/patterns`
+      };
+    }
+
+    const pattern = PATTERNS[patternSlug];
+    if (pattern) {
+      return {
+        title: `${pattern.title} - Agentic AI UX Patterns | Dustin Kirk`,
+        description: pattern.description,
+        image: patternsImage,
+        url: `${baseUrl}/agentic_ai_patterns/${patternSlug}`
+      };
+    }
+
+    // Fallback for unknown patterns
     return {
-      title: `${pattern.title} - Agentic AI UX Patterns | Dustin Kirk`,
-      description: pattern.description,
-      image: baseImage,
-      url: `https://dustinkirk.com/agentic_ai_patterns/${patternSlug}`
+      title: 'Agentic AI UX Patterns | Dustin Kirk',
+      description: 'UX design patterns for building trust in AI and agentic applications.',
+      image: patternsImage,
+      url: `${baseUrl}/agentic_ai_patterns/${patternSlug}`
     };
   }
 
-  // Fallback for unknown patterns
+  // Default fallback
   return {
-    title: 'Agentic AI UX Patterns | Dustin Kirk',
-    description: 'UX design patterns for building trust in AI and agentic applications.',
-    image: baseImage,
-    url: `https://dustinkirk.com/agentic_ai_patterns/${patternSlug}`
+    title: 'Dustin Kirk - Principal Product Designer',
+    description: 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns.',
+    image: avatarImage,
+    url: `${baseUrl}${pathname}`
   };
 }
 
@@ -302,8 +435,6 @@ function generateCrawlerHTML(meta) {
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
   <meta property="og:image" content="${image}">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="572">
   <meta property="og:site_name" content="Dustin Kirk - Principal Product Designer">
 
   <!-- Twitter Card -->
