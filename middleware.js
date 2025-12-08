@@ -310,7 +310,7 @@ export default function middleware(request) {
 
 function getMetaForRoute(pathname) {
   const baseUrl = 'https://dustinkirk.com';
-  const avatarImage = `${baseUrl}/images/dustin_kirk_avatar.png`;
+  const avatarImage = `${baseUrl}/images/dustin_kirk2.png`;
   const patternsImage = `${baseUrl}/projects/aitrustpatterns/ai-trust-patterns.png`;
 
   // Homepage

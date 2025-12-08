@@ -540,7 +540,7 @@ export default function PortfolioFresh() {
     const pageTitle = 'Dustin Kirk - Principal Product Designer';
     const pageDescription = 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns. 15+ years of experience designing enterprise SaaS at Salesforce, New Relic, and Tealium.';
     const pageUrl = 'https://dustinkirk.com';
-    const pageImage = 'https://dustinkirk.com/images/dustin_kirk_avatar.png';
+    const pageImage = 'https://dustinkirk.com/images/dustin_kirk2.png';
 
     // Set document title
     document.title = pageTitle;
