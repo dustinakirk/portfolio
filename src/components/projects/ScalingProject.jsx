@@ -74,7 +74,7 @@ function ScalingProject() {
             
             <p className="text-black/80 dark:text-white/80">
               One notable trend was whether a company used "Product Designer" or "UX Designer" 
-              The use of these titles primarily determined by how large the company was and what coast 
+              The use of these titles was primarily determined by how large the company was and what coast 
               the company was on. Larger organizations used the "UX Designer" title, possibly because 
               it has been around longer. Smaller companies, especially those on the west coast used 
               the title "Product Designer" for essentially the same purpose.
@@ -85,7 +85,7 @@ function ScalingProject() {
               UI Designer is not a common title any more, and instead has morphed into a Visual Designer 
               title over time. And the Visual Designer title has come to encompass a larger set of design 
               elements than just those related to UI. The role now plays a part in determining product 
-              branding, product creating product content, and owning the look and feel across all 
+              branding, creating product content, and owning the look and feel across all 
               customer touch-points.
             </p>
           </div>
@@ -183,7 +183,7 @@ function ScalingProject() {
             </p>
             
             <p className="text-black/80 dark:text-white/80">
-              Scrum teams cover much of the work, as a product suite grows, there are ancillary projects 
+              While scrum teams cover much of the work, as a product suite grows, there are ancillary projects 
               to account for as well. This ecosystem includes customer touch-points such as Support Portals, 
               Documentation Portals, Community Forums, etc. Lastly, there is always overhead to account for. 
               To keep overhead to a minimum, it is important to stave off filling positions in Design 
