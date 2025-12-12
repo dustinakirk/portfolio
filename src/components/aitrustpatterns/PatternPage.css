@@ -8,7 +8,7 @@
    =========================================== */
 .pattern-page {
   min-height: 100vh;
-  background: var(--gray-50);
+  background: var(--agentic-bg-light);
   color: var(--gray-900);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
 }
@@ -117,7 +117,6 @@
   max-width: 72rem;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 6rem;
-  background-color: #F8F7F2;
 }
 
 /* ===========================================
@@ -143,8 +142,14 @@
 }
 
 .pattern-section__content {
-  flex: 1 1 40rem;
+  flex: 1 1 auto;
   min-width: 0;
+}
+@media (min-width: 768px) {
+  .pattern-section__content {
+    flex: 1 1;
+    min-width: 0;
+  }
 }
 
 .pattern-section__aside {
@@ -170,18 +175,6 @@
   .pattern-section__header-row {
     flex-direction: row;
     align-items: flex-end;
-  }
-}
-
-@media (max-width: 1023px) {
-  .pattern-section--intro {
-    flex-direction: column;
-  }
-  .pattern-section__content {
-    flex-basis: auto;
-  }
-  .pattern-section--two-column {
-    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1004,8 +997,8 @@
    Overview Section Image
    =========================================== */
 .pattern-section__image {
-  flex: 0 300px;
-  max-width: 300px;
+  flex: 0 0 350px;
+  max-width: 350px;
   order: 1;
   margin: 12px;
 }
@@ -1016,7 +1009,7 @@
 }
 
 /* Mobile: Image appears first (before kicker) */
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .pattern-section__image {
     order: -1;
     flex: 0 0 auto;
