@@ -69,10 +69,22 @@ export default function UserPreferenceContextProfilesPattern() {
               By centralizing context in a user-controlled profile, the system avoids repeated intake questions, reduces friction, and makes AI outputs feel more relevant, while maintaining transparency and consent around data use.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/8.5 user preference profile.png"
+              alt="User Preference & Personal Context Profiles pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="User Preference Context Profiles example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This example illustrates how a persistent "Principal Designer" profile automatically tailors AI responses to match individual working preferences. The left sidebar shows an active Work profile with communication style and constraint settings. Toggle "Concise / Bullet Points" to switch between brief, scannable summaries and detailed narrative explanations. Enable or disable "Include Visuals/Charts" to add or remove data visualizations. Try "Exclude Technical Jargon" to see how the assistant adapts language complexity. Notice the context chip below each AI response that shows which profile settings were applied—demonstrating transparent, user-controlled personalization across all interactions.
+            </p>
+          </div>
           <UserPreferenceContextProfilesDemo />
         </section>
 

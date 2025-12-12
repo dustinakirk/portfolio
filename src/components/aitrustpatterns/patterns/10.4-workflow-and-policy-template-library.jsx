@@ -58,10 +58,22 @@ export default function WorkflowPolicyTemplateLibraryPattern() {
               This reduces risk, accelerates adoption, and makes AI behavior more predictable and explainable.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/10.1 policy template library.png"
+              alt="Workflow & Policy Template Library pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Workflow & policy template library example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This template library presents three pre-approved workflow templates for administrators to deploy: a medium-risk &quot;Tiered Support Escalation&quot; with human review for low-confidence cases, a high-risk &quot;Marketing Draft with Legal Review&quot; requiring legal approval before sending, and a low-risk &quot;Safe Data Summary&quot; with read-only access. Each card displays the risk level, key governance tags (like PII Redaction and Human Review), and a brief description. Click any template card to open a detailed modal showing the step-by-step workflow visualization on the left and governing policies on the right. Notice how human-in-the-loop checkpoints are highlighted with warning icons in the workflow. This demonstrates how templates bundle both operational logic and governance rules into reusable, auditable patterns.
+            </p>
+          </div>
           <WorkflowPolicyTemplateLibraryDemo />
         </section>
 

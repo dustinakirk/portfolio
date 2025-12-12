@@ -310,6 +310,12 @@ export default function DelegationModesPattern() {
               By aligning with established &quot;levels of autonomy&quot; and human‑in‑the‑loop concepts, Delegation Modes provide a shared language for &quot;who is in charge&quot; at any moment. This reduces anxiety, enables gradual trust-building, and makes it easier for organizations to adopt higher degrees of automation without losing oversight.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/1.2 delegation modes.png"
+              alt="Delegation Modes pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive demo showing the three delegation modes */}

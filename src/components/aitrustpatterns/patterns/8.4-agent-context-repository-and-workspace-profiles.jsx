@@ -60,10 +60,22 @@ export default function AgentContextRepositoryPattern() {
               This pattern builds trust by making it clear <span className="pattern-body--bold">what the AI is grounded on</span>, who owns that context, and how to update or revoke it.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/8.4 agent context repo.png"
+              alt="Agent Context Repository & Workspace Profiles pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Agent Context Repository example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This scenario demonstrates how workspace context items shape agent behavior in real time. The left panel shows three shared context items: brand voice guidelines, privacy policies, and project-specific details. Type a message (or use the pre-filled example) and click "Send" to see how the agent generates a response. Notice how the agent's reply includes context chips that attribute specific facts and tone to workspace rules. Try unchecking context items before sending to see how the agent's output changes when Brand, Policy, or Project context is removed—the response becomes generic, formal, or lacks specific details.
+            </p>
+          </div>
           <AgentContextRepositoryDemo />
         </section>
 

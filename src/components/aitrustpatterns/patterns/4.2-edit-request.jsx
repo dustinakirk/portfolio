@@ -56,6 +56,12 @@ export default function EditRequestPattern() {
               <li>Reduces prompt anxiety by signaling that requests are not permanent or brittle.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/4.2 edit request.png"
+              alt="Edit Request pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo Placeholder */}

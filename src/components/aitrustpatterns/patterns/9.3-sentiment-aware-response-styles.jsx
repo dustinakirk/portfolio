@@ -60,10 +60,22 @@ export default function SentimentAwareResponseStylesPattern() {
               This pattern aims to avoid the &quot;frustration spiral&quot; where a user feels misunderstood, repeats themselves, and loses trust in the AI—and by extension, in the product that embeds it.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/9.1 sentiment-aware response.png"
+              alt="Sentiment-Aware Response Styles pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Sentiment-aware response styles example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive demo shows how an AI deployment assistant adapts its response style based on detected user frustration. Start by choosing neutral responses to see the agent provide verbose technical explanations during repeated failures. Then select the frustrated response ("This is failing again! Why is this so hard?") and observe how the agent immediately shifts to a concise, action-oriented style: acknowledging the frustration, diagnosing the root cause, and offering a single recommended fix with a clear action button—no lengthy explanations.
+            </p>
+          </div>
           <SentimentAwareResponseStylesDemo />
         </section>
 

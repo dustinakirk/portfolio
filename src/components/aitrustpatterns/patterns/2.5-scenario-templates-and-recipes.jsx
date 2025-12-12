@@ -301,6 +301,12 @@ export default function ScenarioTemplatesAndRecipesPattern() {
               In a product, this typically appears as a &quot;Templates&quot; or &quot;Recipes&quot; gallery attached to a planning surface, workspace, or AI entry point. Selecting a recipe pre-populates a plan or workflow with editable steps, parameters, and agent assignments, which can then be reviewed, customized, and executed.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/2.5 recipes.png"
+              alt="Scenario Templates & Recipes pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

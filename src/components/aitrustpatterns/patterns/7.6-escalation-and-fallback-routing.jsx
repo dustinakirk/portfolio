@@ -60,10 +60,22 @@ export default function EscalationFallbackRoutingPattern() {
               Its core value is trust: tasks are handled predictably, reasons for escalation are visible, and controls exist to tune behavior over time. The system demonstrates that it knows when to stop guessing and bring in a more reliable path.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/7.6 escalation routing.png"
+              alt="Escalation & Fallback Routing pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Escalation and fallback routing example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI agent handling a financial request that exceeds its permission boundaries. Click Send to watch the agent create an execution plan, successfully retrieve tax records, then encounter a permission barrier when trying to generate financial projections. Instead of failing silently, the agent escalates the task to a Financial Specialist queue with a detailed case summary. Expand "View Details" on the escalation card to see the trigger condition, attempted actions, and full context provided to the human reviewer—demonstrating how structured escalation maintains transparency and accountability when automation reaches its limits.
+            </p>
+          </div>
           <EscalationDemo />
         </section>
 

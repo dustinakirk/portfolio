@@ -60,10 +60,22 @@ export default function ConfidenceThermometerPattern() {
               This pattern often sits adjacent to AI-generated messages, recommended actions (such as &quot;update CRM records&quot;), or generated artifacts (contracts, forecasts, triage decisions). It is particularly valuable where the AI can act on behalf of the user or make recommendations with material consequences.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/6.2 confidence thermometer.png"
+              alt="Confidence Thermometer pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Confidence thermometer example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows how confidence indicators work across different AI predictions in a sales forecasting context. Each forecast row displays a confidence thermometer (Low, Medium, or High) that reflects the AI's certainty based on data quality and historical patterns. Click "Show details" on any row to see why the system assigned that confidence level, including specific factors like data recency, pattern strength, and known limitations. Try the "Regenerate Forecasts" button to see how confidence varies with different scenarios.
+            </p>
+          </div>
           <ConfidenceThermometerDemo />
         </section>
 

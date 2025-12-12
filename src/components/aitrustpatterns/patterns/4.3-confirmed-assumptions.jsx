@@ -55,6 +55,12 @@ export default function ConfirmedAssumptionsPattern() {
               how they influence outcomes.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/4.3 confirmed assumptions.png"
+              alt="Confirmed Assumptions pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Pattern example */}

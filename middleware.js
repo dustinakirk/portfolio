@@ -19,7 +19,7 @@ const SOCIAL_CRAWLERS = [
 const PROJECTS = {
   "aitrustpatterns": {
     title: "Agentic AI UX Patterns",
-    description: "45+ UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+    get description() { return `${PATTERN_COUNT} UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.`; },
     image: "/projects/aitrustpatterns/ai-trust-patterns.png"
   },
   "generativeuicanvas": {
@@ -284,6 +284,9 @@ const PATTERNS = {
   }
 };
 
+// Dynamic pattern count for metadata
+const PATTERN_COUNT = Object.keys(PATTERNS).length;
+
 // Match all routes that need meta tags
 export const config = {
   matcher: ['/', '/projects/:path*', '/design_system', '/agentic_ai_patterns', '/agentic_ai_patterns/:path*']
@@ -358,7 +361,7 @@ function getMetaForRoute(pathname) {
   if (pathname === '/agentic_ai_patterns' || pathname === '/agentic_ai_patterns/') {
     return {
       title: 'Agentic AI UX Patterns - Building Trust in AI Applications | Dustin Kirk',
-      description: '45+ UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.',
+      description: `${PATTERN_COUNT} UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.`,
       image: patternsImage,
       url: `${baseUrl}/agentic_ai_patterns`
     };
@@ -372,7 +375,7 @@ function getMetaForRoute(pathname) {
     if (patternSlug === 'patterns') {
       return {
         title: 'Pattern Library - Agentic AI UX Patterns | Dustin Kirk',
-        description: '45+ UX design patterns for building trust in AI and agentic applications.',
+        description: `${PATTERN_COUNT} UX design patterns for building trust in AI and agentic applications.`,
         image: patternsImage,
         url: `${baseUrl}/agentic_ai_patterns/patterns`
       };

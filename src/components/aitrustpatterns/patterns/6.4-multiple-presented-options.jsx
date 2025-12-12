@@ -66,10 +66,22 @@ export default function MultiplePresentedOptionsPattern() {
               <li>Troubleshooting and diagnostic flows offering different investigation strategies</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/6.4 multiple options.png"
+              alt="Multiple Presented Options pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Multiple presented options example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows how presenting multiple AI-generated options supports better decision-making for a product launch campaign. Instead of showing a single "best" strategy, the AI presents three distinct approaches—Conservative, Balanced, and Aggressive—each optimized for different priorities (cost efficiency, steady growth, or maximum reach). Click "Compare options" to view them side-by-side, highlighting the key trade-offs in budget, timeline, and expected outcomes. Notice how each option is labeled with clear differentiators to guide your choice.
+            </p>
+          </div>
           <MultiplePresentedOptionsDemo />
         </section>
 

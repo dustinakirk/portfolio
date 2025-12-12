@@ -571,6 +571,12 @@ export default function UserDirectedToolUsePattern() {
               By making mode and tool choice explicit, the pattern strengthens mental models, supports safety and compliance, and reduces the perception of the AI as a hidden &quot;black box.&quot; It also provides a clean bridge to related patterns such as <span className="pattern-body--bold">Scoped Permissions & Tool Consent (3.5)</span> and <span className="pattern-body--bold">Tool Usage Indicators (5.3)</span>.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.7 user-directed tool use.png"
+              alt="User-Directed Tool Use & Output Mode Selection pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

@@ -375,6 +375,12 @@ export default function PlanThenExecuteWorkflowPattern() {
               <li>Approval, pause, cancel, and other controls are always one click away <span className="pattern-body--bold">by jumping straight to the relevant inline plan card</span>.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.3 plan-then-execute.png"
+              alt="Plan-then-Execute Workflow pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

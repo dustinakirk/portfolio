@@ -59,6 +59,12 @@ export default function StructuredClarificationPromptsPattern() {
               The core idea is to <span className="pattern-body--bold">ask the minimum number of high-value questions</span>, in a structured format, only when needed. This reduces error cascades and rework, supports auditability, and helps users feel that the system is careful rather than careless or needy.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/4.1 clarification prompts.png"
+              alt="Structured Clarification Prompts pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

@@ -716,6 +716,12 @@ export default function ScopedPermissionsToolConsentPattern() {
               <li><span className="pattern-body--bold">How to revoke</span> access at any time</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.5 scoped permissions.png"
+              alt="Scoped Permissions & Tool Consent pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

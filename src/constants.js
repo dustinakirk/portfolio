@@ -1,3 +1,5 @@
+import { AI_TRUST_PATTERNS } from './data/aiTrustPatterns';
+
 export const CONTACT_EMAIL = 'dustin.kirk@gmail.com';
 
 // Featured projects configuration
@@ -16,7 +18,7 @@ export const WORK = [
     id: "aitrustpatterns",
     title: "Agentic AI UX Patterns",
     subtitle:
-      "45+ UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+      `${AI_TRUST_PATTERNS.length} UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.`,
     href: "/agentic_ai_patterns",
     category: "AI & Innovation",
     image: "/projects/aitrustpatterns/ai-trust-patterns.png",

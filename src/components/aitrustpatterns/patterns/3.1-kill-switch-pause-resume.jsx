@@ -555,6 +555,12 @@ export default function KillSwitchPauseResumePattern() {
               The pattern is particularly important in B2B/B2C web applications where agents touch production data, execute multi-step workflows, or run asynchronously in the background&mdash;scenarios where the cost of runaway execution can be significant.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.1 kill switch.png"
+              alt="Kill Switch, Pause & Resume pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Kill Switch Demo Example */}

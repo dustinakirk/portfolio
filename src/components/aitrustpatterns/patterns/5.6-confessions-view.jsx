@@ -62,6 +62,12 @@ export default function ConfessionsViewPattern() {
               <li>A <span className="pattern-body--bold">training and evaluation hook</span> for collecting signals about honesty and policy adherence.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/5.6 confessions.png"
+              alt="Confessions View pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

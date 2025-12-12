@@ -57,6 +57,12 @@ export default function FleetHealthDashboardPattern() {
               This pattern is not only an operations tool. It also underpins end-user trust by making it possible to show simplified AI status indicators inside the product (for example, &quot;AI services currently degraded – some responses may be slower&quot;).
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/10.1 fleet health dashboard.png"
+              alt="Fleet Health Dashboard pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Example Scenario */}
@@ -77,8 +83,14 @@ export default function FleetHealthDashboardPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Fleet health dashboard example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive demo simulates a Fleet Health Dashboard monitoring six AI agents across different functions. The dashboard prioritizes agents by health status, surfacing critical and degraded agents first. Notice how the &quot;Contract-Analyzer-v2&quot; shows a degradation reason inline, and the &quot;Data-Sanitizer&quot; is flagged as critical. Click any agent row to open the detail panel where you can view live telemetry logs and access governance controls like rollback and emergency pause. This demonstrates how operators can quickly identify issues, understand their context, and take immediate action to maintain fleet health.
+            </p>
+          </div>
           <FleetHealthDashboardDemo />
         </section>
 

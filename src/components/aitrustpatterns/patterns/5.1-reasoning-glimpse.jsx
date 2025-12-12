@@ -62,6 +62,12 @@ export default function ReasoningGlimpsePattern() {
               <li><span className="pattern-body--bold">Audit</span> how a result was produced, especially in regulated or high-impact environments.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/5.1 reasoning glimpse.png"
+              alt="Reasoning Glimpse pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

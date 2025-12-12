@@ -59,10 +59,22 @@ export default function CounterEvidencePattern() {
               The core idea is to make the AI&apos;s reasoning auditable and contestable, so that users can see where the model&apos;s view is strong, where it is weak, and where alternative interpretations might exist. This supports calibrated trust, reduces blind acceptance, and helps organizations meet regulatory and governance expectations for explainability.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/6.6 counter-evidence.png"
+              alt="Counter-Evidence pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Counter-evidence example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI-powered incident diagnosis system for DevOps. The AI suggests a root cause (database connection pool exhaustion) but instead of only showing supporting evidence, it presents both supporting signals and counter-evidence in clearly separated panels. The supporting panel shows error rate spikes and similar past incidents, while the counter-evidence panel highlights conflicting signals like stable traffic patterns and concurrent anomalies elsewhere. Toggle between the panels or use "View all evidence" to see the balanced view. This demonstrates how exposing both sides helps operators make more informed decisions.
+            </p>
+          </div>
           <CounterEvidenceDemo />
         </section>
 

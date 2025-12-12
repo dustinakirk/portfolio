@@ -64,6 +64,12 @@ export default function GuidedRepairFlowsPattern() {
               By framing failures as co-learning opportunities rather than dead ends, guided repair flows reduce frustration, increase success rates, and gradually deepen trust in agentic AI systems.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/9.1 guided repair flows.png"
+              alt="Guided Repair Flows pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Example Scenario */}
@@ -95,8 +101,14 @@ export default function GuidedRepairFlowsPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Guided repair flows example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive demo shows an analytics AI attempting to generate a chart but failing because the user's natural language term "Monthly Revenue" doesn't match the database schema. Click "Help fix mapping" to launch a three-step guided repair flow that confirms the dataset, maps the field to the correct column with confidence scores, and offers to save the mapping as a reusable rule. Notice how each step is clearly numbered, provides helpful context, and allows you to navigate back if needed.
+            </p>
+          </div>
           <GuidedRepairFlowsDemo />
         </section>
 

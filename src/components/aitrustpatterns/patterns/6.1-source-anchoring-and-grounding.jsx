@@ -64,10 +64,22 @@ export default function SourceAnchoringGroundingPattern() {
               <li>Builds a mental model that AI acts as a lens over existing systems, not as an opaque oracle</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/6.1 source anchoring.png"
+              alt="Source Anchoring & Grounding pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Source anchoring and grounding example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive demo simulates an AI legal assistant analyzing a Master Services Agreement. Ask a question about data breach liability and watch as the AI streams a response with inline citations. Hover over or click the citation numbers (e.g., [1], [2]) to see the exact source clauses highlighted in the document viewer on the right. Notice how each claim is anchored to specific, verifiable passages, making it easy to validate the AI's interpretation.
+            </p>
+          </div>
           <SourceAnchoringDemo />
         </section>
 

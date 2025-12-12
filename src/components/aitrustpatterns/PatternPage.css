@@ -998,3 +998,30 @@
   color: #374151;
   line-height: 1.5;
 }
+
+/* ===========================================
+   Overview Section Image
+   =========================================== */
+.pattern-section__image {
+  flex: 0 300px;
+  max-width: 300px;
+  order: 1;
+  margin: 20px;
+}
+
+.pattern-section__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.625rem;
+  border: 1px solid var(--gray-200);
+}
+
+/* Mobile: Image appears first (before kicker) */
+@media (max-width: 1023px) {
+  .pattern-section__image {
+    order: -1;
+    flex: 0 0 auto;
+    max-width: 100%;
+    margin: 0px auto;
+  }
+}

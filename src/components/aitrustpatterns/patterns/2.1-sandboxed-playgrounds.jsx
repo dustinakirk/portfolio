@@ -605,6 +605,12 @@ export default function SandboxedPlaygroundsPattern() {
               <li>A primary action near the end of the flow: <span className="pattern-body--bold">&quot;Promote this configuration and run on live data&quot;</span> gated by confirmation and role-based permissions</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/2.1 sandboxed playgrounds.png"
+              alt="Sandboxed Playgrounds pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

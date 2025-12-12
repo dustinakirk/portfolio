@@ -637,6 +637,12 @@ export default function FeedbackOnResultsPattern() {
               <li>Feels respectful of user effort and interrupts the workflow as little as possible</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/2.6 feedback on results.png"
+              alt="Feedback on Results & Rating Controls pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

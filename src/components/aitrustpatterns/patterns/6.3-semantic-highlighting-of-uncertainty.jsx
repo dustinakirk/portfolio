@@ -57,10 +57,22 @@ export default function SemanticHighlightingUncertaintyPattern() {
               This increases trust not by claiming that the AI is always right, but by being explicit about where it may be wrong.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/6.3 semantic highlighting.png"
+              alt="Semantic Highlighting of Uncertainty pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Semantic highlighting example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo presents an AI-generated market analysis report with semantic uncertainty highlighting. Phrases where the AI has lower confidence are visually distinguished with dotted underlines and subtle background colors—amber for medium uncertainty, orange for high uncertainty. Hover over any highlighted segment to see a tooltip explaining why the system flagged it (e.g., "Limited data" or "Conflicting sources"). Use the "Show uncertainty highlights" toggle to see the difference between raw output and calibrated transparency.
+            </p>
+          </div>
           <SemanticHighlightingDemo />
         </section>
 

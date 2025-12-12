@@ -57,10 +57,22 @@ export default function ApologyRemedyBundlePattern() {
               <span className="pattern-body--bold">Example concept:</span> An AI revenue-ops copilot mislabels several opportunities as &quot;Closed Lost.&quot; A correction card appears in the conversation and in the activity log: <span className="pattern-body--bold">&quot;Correction: Opportunity status update was inaccurate.&quot;</span> The card explains the issue, lists the affected records, shows the proposed new statuses, and presents primary actions such as <span className="pattern-body--bold">&quot;Apply fixes to 7 opportunities&quot;</span>, <span className="pattern-body--bold">&quot;Review details&quot;</span>, and <span className="pattern-body--bold">&quot;Ignore for now.&quot;</span>
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/9.1 apology and remedy bundle.png"
+              alt="Apology & Remedy Bundle pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Apology + Remedy Bundle example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive demo shows a revenue operations AI agent that mistakenly marks opportunities as "Closed Lost" during a cleanup job. Watch as the agent detects its error through a sync check, then surfaces a correction bundle that explains what went wrong, identifies the impact (5 specific opportunities), and offers clear remedy actions. Click "Restore to 'Stalled'" to apply the fix and see how the bundle transitions to a success state, confirming the correction and maintaining trust through transparent accountability.
+            </p>
+          </div>
           <ApologyRemedyBundleDemo />
         </section>
 

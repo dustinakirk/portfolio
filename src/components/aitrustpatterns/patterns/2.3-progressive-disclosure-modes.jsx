@@ -581,6 +581,12 @@ export default function ProgressiveDisclosureModesPattern() {
               <li><span className="pattern-body--bold">Workflow designers</span> – visual tools for configuring agent behavior</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/2.3 progressive disclosure.png"
+              alt="Progressive Disclosure Modes pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Demo placeholder */}

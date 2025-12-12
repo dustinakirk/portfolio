@@ -554,6 +554,12 @@ export default function TeachMeInterfacesPattern() {
               <li>As a &quot;rule center&quot; or preference hub where previous teaching moments can be reviewed, edited, and disabled</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/2.4 teach me interfaces.png"
+              alt="Teach Me Interfaces pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

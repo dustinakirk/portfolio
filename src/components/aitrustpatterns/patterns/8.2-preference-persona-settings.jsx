@@ -67,10 +67,22 @@ export default function PreferencePersonaSettingsPattern() {
               <li>Differences between agents (e.g., exploratory vs conservative, customer-facing vs internal) are intentional and legible.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/8.2 agent persona.png"
+              alt="Preference & Persona Settings pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Agent Persona Profiles example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This administrative configuration interface demonstrates how agent personas are defined as governed, structured objects. Select different personas from the sidebar (Legal Briefing Agent, Contract Drafter, or Negotiation Strategist) to see how each has distinct mission statements, risk postures, and capabilities. Try adjusting the risk tolerance between Conservative, Balanced, and Experimental to understand how behavioral guardrails are explicitly defined. Toggle capabilities on and off to control tool access, and notice how changes are versioned and require explicit saving to take effect.
+            </p>
+          </div>
           <AgentPersonaProfilesDemo />
         </section>
 

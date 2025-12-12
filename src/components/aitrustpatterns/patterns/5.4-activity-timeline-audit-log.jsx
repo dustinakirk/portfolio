@@ -64,6 +64,12 @@ export default function ActivityTimelineAuditLogPattern() {
               The core idea is to log <span className="pattern-body--bold">who/what acted</span>, <span className="pattern-body--bold">when</span>, <span className="pattern-body--bold">on which resource</span>, <span className="pattern-body--bold">using which tool or data</span>, and <span className="pattern-body--bold">with what outcome</span>&mdash;and to present this in a way that is legible to non-technical stakeholders while still being precise enough for engineering, security, and legal teams.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/5.4 activity timeline.png"
+              alt="Activity Timeline & Audit Log pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

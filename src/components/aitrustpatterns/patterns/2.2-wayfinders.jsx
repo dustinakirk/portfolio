@@ -597,6 +597,12 @@ export default function WayfindersPattern() {
               <li>Optional &quot;Show more ideas&quot; affordance to expand to advanced tasks</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/2.2 wayfinders.png"
+              alt="Wayfinders pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Demo Example */}

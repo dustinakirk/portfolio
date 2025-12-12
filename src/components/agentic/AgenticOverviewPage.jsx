@@ -3,13 +3,14 @@ import AgenticPatternsLayout from '../AgenticPatternsLayout';
 import CategoryCard from './CategoryCard';
 import { TrustDemo } from '../aitrustpatterns/demos';
 import '../aitrustpatterns/demos/TrustDemo/TrustDemo.css';
+import { AI_TRUST_PATTERNS } from '../../data/aiTrustPatterns';
 
 export default function AgenticOverviewPage() {
   // SEO: Update document title and meta
   useEffect(() => {
     document.title = 'Agentic AI UX Patterns - Building Trust in AI Applications | Dustin Kirk';
 
-    const description = '45+ UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.';
+    const description = `${AI_TRUST_PATTERNS.length} UX design patterns for building trust in AI and agentic applications. Learn how to design transparent, controllable, and trustworthy AI experiences.`;
     const ogImage = 'https://dustinkirk.com/projects/aitrustpatterns/ai-trust-patterns.png';
     const pageUrl = 'https://dustinkirk.com/agentic_ai_patterns';
 
@@ -99,7 +100,7 @@ export default function AgenticOverviewPage() {
   return (
     <AgenticPatternsLayout
       title="Agentic AI UX Patterns"
-      subtitle="45+ Trust building UX design patterns for agentic applications. A comprehensive guide for designers and developers creating trustworthy AI experiences."
+      subtitle={`${AI_TRUST_PATTERNS.length} Trust building UX design patterns for agentic applications. A comprehensive guide for designers and developers creating trustworthy AI experiences.`}
     >
       {/* Overview Section with Video */}
       <div className="agentic-overview__intro">

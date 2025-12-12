@@ -69,10 +69,22 @@ export default function SupervisorAgentPattern() {
               <li>Policy configuration screens where administrators define rules, thresholds, and escalation paths</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/7.3 supervisor agent.png"
+              alt="Supervisor Agent pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Supervisor Agent example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows a customer service AI agent responding to a request about payment information. Watch how the supervisor agent automatically intercepts the response before it's sent to the customer, detects a credit card number in the outbound message, and blocks it to prevent a PCI compliance violation. The intervention happens transparently: the customer sees a safe, redacted response, and a clear notice explains that sensitive data was automatically removed. This demonstrates how supervision can enforce policies without disrupting the user experience or requiring manual review.
+            </p>
+          </div>
           <SupervisorAgentDemo />
         </section>
 

@@ -68,6 +68,12 @@ export default function ExecutionProgressViewPattern() {
               During execution, the chat shows a vertical stepper with checkmarks for finished steps, a highlighted state for the active one (&quot;Correlate patterns&quot;), and muted icons for upcoming steps. Below, a horizontal progress bar labeled &quot;Step 3 of 4 &ndash; Correlation analyst processing...&quot; fills as work proceeds, with a clear percentage and controls to <strong>Pause</strong> or <strong>Show details</strong>. If the agent gets stuck (e.g., missing datastore credentials), the active step switches to a &quot;Blocked&quot; state with a short explanation and a quick action to resolve it.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/5.5 execution progress.png"
+              alt="Execution Progress View pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

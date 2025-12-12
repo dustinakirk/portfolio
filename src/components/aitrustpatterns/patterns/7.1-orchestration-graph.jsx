@@ -64,10 +64,22 @@ export default function OrchestrationGraphPattern() {
               This is especially valuable in B2B and B2C SaaS contexts where multiple stakeholders (operators, admins, domain experts, engineers) depend on AI automation but must maintain reliability, compliance, and accountability.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/7.1 orchestration graph.png"
+              alt="Orchestration Graph pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Orchestration graph example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo simulates a cloud tenant migration workflow orchestrated across multiple specialized agents. Click Start to watch how a Migration Assistant coordinates pre-flight checks, data replication, and validation steps. The tree view on the left shows the agent hierarchy expanding in real-time as parallel work spawns, while the timeline on the right logs each agent's activity and output. Notice how parallel execution groups (like Compliance Guardian and Capacity Planner) run concurrently, and how the graph makes it easy to trace which agent did what, in what order, and with what result.
+            </p>
+          </div>
           <OrchestrationGraphDemo />
         </section>
 

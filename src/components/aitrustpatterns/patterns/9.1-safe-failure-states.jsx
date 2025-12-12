@@ -65,6 +65,12 @@ export default function SafeFailureStatesPattern() {
               The core idea is simple: when the AI cannot safely proceed, it stops or limits its own behavior, explains why, and offers a set of clearly bounded next steps.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/9.1 safe failure states.png"
+              alt="Safe Failure States pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Example Scenario */}
@@ -87,8 +93,14 @@ export default function SafeFailureStatesPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Safe failure states example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive demo simulates a DevOps deployment scenario where an AI agent detects elevated error rates and pauses a production deploy. Notice how the agent clearly communicates what was detected, confirms that no changes were made, and presents three distinct recovery options: viewing metrics for investigation, canceling the deployment safely, or overriding with admin authorization. Try clicking any action button to see how the agent responds to your choice.
+            </p>
+          </div>
           <SafeFailureStatesDemo />
         </section>
 

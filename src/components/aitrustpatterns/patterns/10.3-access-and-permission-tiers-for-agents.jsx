@@ -62,10 +62,22 @@ export default function AccessPermissionTiersPattern() {
               The core idea is to align agent privileges with existing identity and access management (IAM) constructs, apply least-privilege by default, and make the agent&apos;s effective capabilities observable to both administrators and end-users. When implemented well, this pattern reduces security and compliance risk while increasing trust in autonomous or semi-autonomous AI behavior.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/10.1 access and permission tiers.png"
+              alt="Access & Permission Tiers for Agents pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Access & Permission Tiers example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This administrative interface shows a fleet of five AI agents across different environments (Production, Staging, Sandbox), each assigned to one of four permission tiers: Viewer, Editor, Supervised Executor, or Executor. Notice how the Patient Intake Assistant in Production uses the Supervised Executor tier, requiring approval for workflow execution, while the QA Stress Tester in Staging has full Executor permissions. Click any agent row to view its detailed permission matrix in the right panel, which shows exactly which capabilities are allowed, denied, or conditionally granted. Use the tier dropdown in each row to change an agent&apos;s permissions and observe how the permission matrix updates instantly, demonstrating environment-specific access control.
+            </p>
+          </div>
           <AccessPermissionTiersDemo />
         </section>
 

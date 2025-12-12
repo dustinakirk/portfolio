@@ -55,10 +55,22 @@ export default function MemoryInspectorEditorPattern() {
               By treating memories as data objects rather than opaque model state, the pattern improves predictability, enables correction of inaccuracies, reduces risk from outdated information, and supports privacy and compliance expectations. It also creates a shared debugging surface for end users, admins, and support teams to reason about agent behavior.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/8.1 memory inspector.png"
+              alt="Memory Inspector & Editor pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Memory Inspector & Editor example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This interactive example shows an agent using stored memory records to personalize its response. The left panel displays a conversation where the agent references workspace context and org policies. The right panel shows the Memory Inspector with categorized memory records. Hover over any memory record to view its metadata, scope, and edit controls. Notice how admin-set organizational rules are protected and cannot be deleted, while user preferences and personal facts can be freely edited or removed.
+            </p>
+          </div>
           <MemoryInspectorDemo />
         </section>
 

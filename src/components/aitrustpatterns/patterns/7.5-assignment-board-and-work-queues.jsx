@@ -57,10 +57,22 @@ export default function AssignmentBoardWorkQueuesPattern() {
               In many B2B and B2C applications, the assignment board becomes the central &quot;control room&quot; for multi-agent operations, enabling supervisors, operators, and domain experts to intervene: reassign tasks, adjust priorities, review logs, or cancel risky actions. By making agent behavior visible and controllable, the pattern supports trust, auditability, and coordination between humans and agents.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/7.5 assignment board.png"
+              alt="Assignment Board & Work Queues pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Assignment board example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo presents a task board showing AI work across multiple agents in different states. Notice the blocked task at the top, which surfaces a human-in-the-loop blocker requiring clarification before the agent can proceed. Below, active tasks show live progress bars and can be paused or resumed using the controls. Click the chat icon on any task to jump to its conversation context. The board makes it easy to see what agents are working on, what's stuck, how long tasks have been running, and their associated costs—providing a single control room for monitoring and managing autonomous AI work.
+            </p>
+          </div>
           <AssignmentBoardDemo />
         </section>
 

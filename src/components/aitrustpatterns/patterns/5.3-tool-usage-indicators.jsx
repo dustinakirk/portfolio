@@ -72,6 +72,12 @@ export default function ToolUsageIndicatorsPattern() {
               Tool Usage Indicators integrate naturally with a Reasoning Glimpse or plan visualization pattern. Reasoning steps such as &quot;Gather context&quot; or &quot;Update records&quot; can be annotated with tool badges and live status, forming a coherent picture of both <span className="pattern-body--bold">why</span> the agent is doing something and <span className="pattern-body--bold">how</span> it is doing it.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/5.3 tool usage.png"
+              alt="Tool Usage Indicators pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

@@ -60,10 +60,22 @@ export default function ExplanationOnDemandPattern() {
               <li>Reinforces that the human operator is the final decision-maker, not the AI.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/6.5 explanation-on-demand.png"
+              alt="Explanation-on-Demand pattern illustration"
+            />
+          </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Explanation-on-demand example">
+        {/* Demo */}
+        <section className="pattern-section">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo simulates a lead scoring system where each prospect is ranked by the AI. Next to each lead's priority score, you'll see a subtle "Why?" link. Click it to reveal a layered explanation panel showing the key factors that influenced the score (e.g., engagement metrics, company fit, and timing signals), along with their relative weights. Notice how the explanation starts with a concise summary and offers progressive disclosure to deeper details. Try clicking "Why?" on different leads to see how reasoning varies based on the data.
+            </p>
+          </div>
           <ExplanationOnDemandDemo />
         </section>
 

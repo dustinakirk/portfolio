@@ -67,6 +67,12 @@ export default function AgentIdentityRoleContractPattern() {
               The pattern is particularly important in B2B/B2C web applications where agents touch production data (CRMs, finance tools, HR platforms, security systems) and where governance and accountability requirements are strict or evolving.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/1.1 agent identity.png"
+              alt="Agent Identity & Role Contract pattern  illustration"
+            />
+          </div>
         </section>
 
         {/* Agent Identity Demo Example */}

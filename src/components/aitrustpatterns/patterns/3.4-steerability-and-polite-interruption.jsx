@@ -54,6 +54,12 @@ export default function SteerabilityPoliteInterruptionPattern() {
               This pattern defines how the agent detects and responds to interruptions (both explicit and implicit), how it adjusts its plan, and how it communicates status back to the user in a calm, trustworthy manner.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.4 steerability.png"
+              alt="Steerability & Polite Interruption pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

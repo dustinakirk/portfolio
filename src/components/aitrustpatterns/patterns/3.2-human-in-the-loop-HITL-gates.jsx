@@ -623,6 +623,12 @@ export default function HITLGatesPattern() {
               The core value is <span className="pattern-body--bold">predictable, explainable control</span>. Stakeholders can rely on clear visibility into what the AI intends to do, the ability to edit or decline actions before any irreversible change, and organizational and regulatory alignment via auditable approval flows.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.2 human-in-the-loop.png"
+              alt="Human-in-the-Loop Gates pattern illustration"
+            />
+          </div>
         </section>
 
         {/* HITL Gates Demo Example */}

@@ -737,6 +737,12 @@ export default function StreamingResultsVisualizationsPattern() {
               The analyst can filter, sort, and inspect accounts while additional rows are still arriving, without waiting for the full result set.
             </p>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/5.2 streaming results.png"
+              alt="Streaming Results Visualizations pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}

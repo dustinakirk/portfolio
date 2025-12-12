@@ -626,6 +626,12 @@ export default function RollbackVersionHistoryPattern() {
               <li><span className="pattern-body--bold">Accountability:</span> Version history makes changes auditable, explainable, and reviewable across teams.</li>
             </ul>
           </div>
+          <div className="pattern-section__image">
+            <img
+              src="/agentic/pattern_images/3.6 rollback.png"
+              alt="Rollback & Version History pattern illustration"
+            />
+          </div>
         </section>
 
         {/* Interactive Demo */}
