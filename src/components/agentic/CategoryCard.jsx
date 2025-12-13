@@ -4,23 +4,18 @@ import { ArrowRight } from 'lucide-react';
 import { AI_TRUST_PATTERN_CATEGORIES, getPatternsByCategory, AI_TRUST_PATTERNS } from '../../data/aiTrustPatterns';
 
 export default function CategoryCard() {
-  // Get the first pattern to link "View all patterns" to
-  const firstPattern = AI_TRUST_PATTERNS[0];
-
   return (
     <div className="agentic-category-card">
       <div className="agentic-category-card__content">
         <div className="agentic-category-card__header">
           <h2 className="agentic-category-card__title">Pattern Library</h2>
-          {firstPattern && (
-            <Link
-              to={`/agentic_ai_patterns/${firstPattern.id}`}
-              className="agentic-category-card__view-all"
-            >
-              View all patterns
-              <ArrowRight className="agentic-category-card__view-all-icon" />
-            </Link>
-          )}
+          <Link
+            to="/agentic_ai_patterns/overview"
+            className="agentic-category-card__view-all"
+          >
+            View all patterns
+            <ArrowRight className="agentic-category-card__view-all-icon" />
+          </Link>
         </div>
 
         <div className="agentic-category-card__grid">

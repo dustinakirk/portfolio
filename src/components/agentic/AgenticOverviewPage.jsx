@@ -127,9 +127,9 @@ export default function AgenticOverviewPage() {
         <CategoryCard />
       </div>
 
-      {/* Interactive Demo Section */}
+      {/* Demo Slideshow Section */}
       <div className="td-demo-section">
-        <h2 className="td-demo-heading">Interactive Demo</h2>
+        <h2 className="td-demo-heading">Demo Slideshow</h2>
         <p className="agentic-overview__demo-description">
           Explore how these patterns work together in a real agentic AI workflow.
           This interactive demo shows trust-building UX patterns in action.

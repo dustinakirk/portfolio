@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Home } from 'lucide-react';
 
 export default function PatternSidebar({
   patterns,
@@ -117,6 +117,9 @@ export default function PatternSidebar({
   // expandedCategories derived from history
   const expandedCategories = categoryHistory;
 
+  // Check if overview is selected
+  const isOverviewSelected = selectedId === 'overview';
+
   // Render the pattern list (shared between full-height and card modes)
   const renderPatternList = (showProgress = false) => (
     <div
@@ -127,8 +130,19 @@ export default function PatternSidebar({
       role="navigation"
       aria-label="Pattern navigation"
     >
+      {/* Overview link at the top */}
+      <div className="agentic-sidebar__overview">
+        <Link
+          to="/agentic_ai_patterns/overview"
+          className={`agentic-sidebar__overview-link ${isOverviewSelected ? 'agentic-sidebar__overview-link--active' : ''}`}
+        >
+          <Home className="agentic-sidebar__overview-icon" />
+          <span>Overview</span>
+        </Link>
+      </div>
+
       {/* Position indicator */}
-      {showProgress && selectedId && currentPatternIndex !== -1 && (
+      {showProgress && selectedId && selectedId !== 'overview' && currentPatternIndex !== -1 && (
         <div className="agentic-sidebar__progress">
           Pattern {currentPatternIndex + 1} of {flatPatterns.length}
         </div>
@@ -223,11 +237,6 @@ export default function PatternSidebar({
       {/* Desktop: Sticky sidebar */}
       <div className="agentic-sidebar-desktop">
         <div className="agentic-sidebar-desktop__card">
-          {/* Header */}
-          <div className="agentic-sidebar__header">
-            <h3 className="agentic-sidebar__title">Trust Patterns</h3>
-          </div>
-
           {/* Scrollable pattern list */}
           {renderPatternList(true)}
         </div>

@@ -19,8 +19,8 @@ export default function AgenticPatternsLayout({
   fullBleed = false,
 }) {
   const location = useLocation();
-  const isOverview = location.pathname === '/agentic_ai_patterns';
-  const isPatterns = location.pathname.startsWith('/agentic_ai_patterns/') || location.pathname === '/agentic_ai_patterns/patterns';
+  const isDemo = location.pathname === '/agentic_ai_patterns';
+  const isPatternLibrary = location.pathname.startsWith('/agentic_ai_patterns/') && location.pathname !== '/agentic_ai_patterns';
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Close sidebar when route changes
@@ -114,13 +114,13 @@ export default function AgenticPatternsLayout({
             <nav className="agentic-nav">
               <Link
                 to="/agentic_ai_patterns"
-                className={`agentic-nav__link ${isOverview ? 'agentic-nav__link--active' : ''}`}
+                className={`agentic-nav__link agentic-nav__link--demo-only ${isDemo ? 'agentic-nav__link--active' : ''}`}
               >
                 Demo
               </Link>
               <Link
-                to="/agentic_ai_patterns/patterns"
-                className={`agentic-nav__link ${isPatterns ? 'agentic-nav__link--active' : ''}`}
+                to="/agentic_ai_patterns/overview"
+                className={`agentic-nav__link ${isPatternLibrary ? 'agentic-nav__link--active' : ''}`}
               >
                 Pattern Library
               </Link>

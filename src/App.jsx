@@ -15,6 +15,7 @@ import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasP
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
 import AgenticOverviewPage from './components/agentic/AgenticOverviewPage'
 import PatternDetailPage from './components/agentic/PatternDetailPage'
+import PatternLibraryHome from './components/agentic/PatternLibraryHome'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
 
 const GA_MEASUREMENT_ID = 'G-W16VDWWV0S'
@@ -46,7 +47,7 @@ function AppRoutes() {
         <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
         <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
         <Route path="/agentic_ai_patterns" element={<AgenticOverviewPage />} />
-        <Route path="/agentic_ai_patterns/patterns" element={<Navigate to="/agentic_ai_patterns/agent-identity-role-contract" replace />} />
+        <Route path="/agentic_ai_patterns/overview" element={<PatternLibraryHome />} />
         <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternDetailPage />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
       </Routes>
