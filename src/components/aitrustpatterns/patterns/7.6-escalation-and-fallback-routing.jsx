@@ -69,14 +69,16 @@ export default function EscalationFallbackRoutingPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo shows an AI agent handling a financial request that exceeds its permission boundaries. Click Send to watch the agent create an execution plan, successfully retrieve tax records, then encounter a permission barrier when trying to generate financial projections. Instead of failing silently, the agent escalates the task to a Financial Specialist queue with a detailed case summary. Expand "View Details" on the escalation card to see the trigger condition, attempted actions, and full context provided to the human reviewer—demonstrating how structured escalation maintains transparency and accountability when automation reaches its limits.
             </p>
           </div>
-          <EscalationDemo />
+          <div className="pattern-demo" aria-label="Escalation and Fallback Routing interactive demo">
+            <EscalationDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

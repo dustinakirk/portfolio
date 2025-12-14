@@ -76,15 +76,9 @@ export default function SupervisorAgentDemo() {
   return (
     <div className="sad-showcase">
       {/* Header */}
-      <header className="sad-showcase__header">
-        <div className="sad-showcase__header-content">
-          <h2 className="sad-showcase__title">Customer Service AI</h2>
-          <p className="sad-showcase__description">
-            The Supervisor Agent automatically detects and blocks sensitive PII (Credit Card info)
-            inline, ensuring PCI compliance.
-          </p>
-        </div>
-        <button className="sad-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

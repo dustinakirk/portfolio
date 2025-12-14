@@ -346,15 +346,9 @@ export default function OrchestrationGraphDemo() {
 
   return (
     <div className="ogd-showcase">
-      <header className="ogd-showcase__header">
-        <div className="ogd-showcase__header-content">
-          <h2 className="ogd-showcase__title">Orchestration Graph</h2>
-          <p className="ogd-showcase__description">
-            Watch a multi-agent workflow execute in real-time. The tree view shows agent
-            hierarchy and execution state, while the timeline logs each step&apos;s activity and output.
-          </p>
-        </div>
-        <button className="ogd-showcase__reset-btn" onClick={resetDemo}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={resetDemo}>
           Reset Demo
         </button>
       </header>

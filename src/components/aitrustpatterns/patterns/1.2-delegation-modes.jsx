@@ -318,9 +318,17 @@ export default function DelegationModesPattern() {
           </div>
         </section>
 
-        {/* Interactive demo showing the three delegation modes */}
-        <section className="pattern-section" aria-label="Delegation modes example">
-          <DelegationModesDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo illustrates the three delegation modes in a customer support context. Each panel shows how the same incoming ticket is handled differently depending on the autonomy level: Advisor provides suggestions only, Co-Pilot drafts and queues for approval, and Autopilot executes automatically within guardrails.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Delegation modes interactive demo">
+            <DelegationModesDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

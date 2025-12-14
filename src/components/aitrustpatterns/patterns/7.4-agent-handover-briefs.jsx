@@ -66,14 +66,16 @@ export default function AgentHandoverBriefsPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo illustrates a handoff from a familiar AI assistant to an external travel booking agent. When the user requests flight booking, the assistant generates a structured handover brief summarizing the goal, key details, and open questions before passing control to the TravelLink Agent. You can review and edit the brief fields (try changing the goal or questions), then click Approve to complete the handoff. Notice how the brief preserves context across the boundary, ensuring the external agent receives everything it needs to continue the task without asking the user to repeat information.
             </p>
           </div>
-          <AgentHandoverBriefsDemo />
+          <div className="pattern-demo" aria-label="Agent Handover Briefs interactive demo">
+            <AgentHandoverBriefsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

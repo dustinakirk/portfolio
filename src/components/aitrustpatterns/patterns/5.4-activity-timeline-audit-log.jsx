@@ -72,9 +72,17 @@ export default function ActivityTimelineAuditLogPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Activity timeline example">
-          <ActivityTimelineDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an activity timeline that provides a complete record of an AI agent&apos;s actions. Each entry captures what happened, when, which tools were used, and the outcome—creating an audit trail that supports debugging, compliance, and user trust.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Activity Timeline interactive demo">
+            <ActivityTimelineDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

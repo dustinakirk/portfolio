@@ -631,9 +631,26 @@ export default function HITLGatesPattern() {
           </div>
         </section>
 
-        {/* HITL Gates Demo Example */}
-        <section aria-label="HITL Gates example">
-          <HITLGatesDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI marketing agent that has prepared a bulk email campaign and is waiting at a human-in-the-loop gate before sending. The agent displays the campaign details for review and pauses for explicit human approval before proceeding with external communication.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Review the pending email campaign details</li>
+                <li>Click &quot;Approve &amp; Send&quot; to proceed or &quot;Reject&quot; to cancel</li>
+                <li>Observe the confirmation message after your decision</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="HITL Gates interactive demo">
+            <HITLGatesDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

@@ -645,9 +645,26 @@ export default function FeedbackOnResultsPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Feedback rating example">
-          <FeedbackDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows a feedback and repair loop for AI-generated content. An AI assistant has drafted a cold email that&apos;s too long and formal. When you rate it negatively, the system offers structured feedback options and can regenerate the content based on your input.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click the thumbs down button to rate the response as unhelpful</li>
+                <li>Select one or more issue tags (e.g., &quot;Too long&quot;, &quot;Too formal&quot;)</li>
+                <li>Click &quot;Submit &amp; Repair&quot; to see the regenerated response</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Feedback on Results interactive demo">
+            <FeedbackDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

@@ -159,15 +159,9 @@ export default function MemoryInspectorDemo() {
 
   return (
     <div className="mid-showcase">
-      <header className="mid-showcase__header">
-        <div className="mid-showcase__header-content">
-          <h2 className="mid-showcase__title">Memory Inspector & Editor</h2>
-          <p className="mid-showcase__description">
-            The agent uses stored memories to personalize its response. Hover over
-            memory records to see metadata and controls.
-          </p>
-        </div>
-        <button className="mid-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

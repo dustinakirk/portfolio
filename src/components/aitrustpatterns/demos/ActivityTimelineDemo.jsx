@@ -27,14 +27,6 @@ const icons = {
   ),
 };
 
-// Replay icon for reset button
-const ReplayIcon = () => (
-  <svg className="atl-showcase__reset-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 12"/>
-    <path d="M3 3v9h9"/>
-  </svg>
-);
-
 // Chevron icon for expand/collapse
 const ChevronIcon = () => (
   <svg className="atl-audit-log__toggle-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -233,18 +225,10 @@ export default function ActivityTimelineDemo() {
 
   return (
     <div className="atl-showcase" role="region" aria-label="Activity Timeline demo">
-      <header className="atl-showcase__header">
-        <div className="atl-showcase__header-content">
-          <h2 className="atl-showcase__title">Activity Timeline: Incident Investigation</h2>
-          <p className="atl-showcase__description">
-            This timeline demonstrates the &quot;Activity Timeline &amp; Audit Log&quot; pattern.
-            It provides transparency into an AI agent&apos;s tool usage, decision-making steps,
-            and outcomes during a security workflow.
-          </p>
-        </div>
-        <button className="atl-showcase__reset-btn" onClick={handleReset}>
-          <ReplayIcon />
-          Replay
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
+          Reset Demo
         </button>
       </header>
 

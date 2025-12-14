@@ -226,15 +226,9 @@ export default function AgentRegistryDemo() {
 
   return (
     <div className="ard-showcase" role="region" aria-label="Agent Registry demo">
-      <header className="ard-showcase__header">
-        <div className="ard-showcase__header-content">
-          <h2 className="ard-showcase__title">Agent Registry & Profiles</h2>
-          <p className="ard-showcase__description">
-            A centralized view to manage AI agents, inspect their permissions, and monitor their risk.
-            Click on the <strong>&quot;Expense Audit Agent&quot;</strong> to view the detailed Profile pattern.
-          </p>
-        </div>
-        <button className="ard-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

@@ -84,14 +84,16 @@ export default function RiskAndPolicyHeatmapsPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This heatmap visualizes risk levels across four AI workflows (Contract Renewal Bot, Social Posting Assistant, L1 Support Agent, and Invoice Processing) against four risk dimensions (Data Privacy, Regulatory, Financial Impact, and Brand Safety). Each cell displays a risk score from 1-10, color-coded as Low (green), Medium (yellow), or High (red). Notice the high-risk red cells for Contract Renewal under Regulatory (9) and Social Posting under Brand Safety (9). Click any cell to open the policy adjustment panel where you can modify Human-in-the-Loop requirements and Data Access levels. Watch how adjusting these controls simulates a lower risk score in real time, demonstrating how governance policies directly impact overall risk posture.
             </p>
           </div>
-          <RiskPolicyHeatmapsDemo />
+          <div className="pattern-demo" aria-label="Risk and Policy Heatmaps interactive demo">
+            <RiskPolicyHeatmapsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

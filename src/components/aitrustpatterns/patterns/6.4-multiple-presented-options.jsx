@@ -75,14 +75,16 @@ export default function MultiplePresentedOptionsPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo shows how presenting multiple AI-generated options supports better decision-making for a product launch campaign. Instead of showing a single "best" strategy, the AI presents three distinct approaches—Conservative, Balanced, and Aggressive—each optimized for different priorities (cost efficiency, steady growth, or maximum reach). Click "Compare options" to view them side-by-side, highlighting the key trade-offs in budget, timeline, and expected outcomes. Notice how each option is labeled with clear differentiators to guide your choice.
             </p>
           </div>
-          <MultiplePresentedOptionsDemo />
+          <div className="pattern-demo" aria-label="Multiple Presented Options interactive demo">
+            <MultiplePresentedOptionsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

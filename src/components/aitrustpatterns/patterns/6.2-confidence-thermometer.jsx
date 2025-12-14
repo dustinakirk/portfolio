@@ -69,14 +69,16 @@ export default function ConfidenceThermometerPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo shows how confidence indicators work across different AI predictions in a sales forecasting context. Each forecast row displays a confidence thermometer (Low, Medium, or High) that reflects the AI's certainty based on data quality and historical patterns. Click "Show details" on any row to see why the system assigned that confidence level, including specific factors like data recency, pattern strength, and known limitations. Try the "Regenerate Forecasts" button to see how confidence varies with different scenarios.
             </p>
           </div>
-          <ConfidenceThermometerDemo />
+          <div className="pattern-demo" aria-label="Confidence Thermometer interactive demo">
+            <ConfidenceThermometerDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

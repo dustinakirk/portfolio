@@ -102,14 +102,16 @@ export default function GuidedRepairFlowsPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive demo shows an analytics AI attempting to generate a chart but failing because the user's natural language term "Monthly Revenue" doesn't match the database schema. Click "Help fix mapping" to launch a three-step guided repair flow that confirms the dataset, maps the field to the correct column with confidence scores, and offers to save the mapping as a reusable rule. Notice how each step is clearly numbered, provides helpful context, and allows you to navigate back if needed.
             </p>
           </div>
-          <GuidedRepairFlowsDemo />
+          <div className="pattern-demo" aria-label="Guided Repair Flows interactive demo">
+            <GuidedRepairFlowsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

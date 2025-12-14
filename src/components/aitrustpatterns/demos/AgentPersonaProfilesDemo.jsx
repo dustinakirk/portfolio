@@ -191,14 +191,9 @@ export default function AgentPersonaProfilesDemo() {
 
   return (
     <div className="appd-showcase">
-      <header className="appd-showcase__header">
-        <div className="appd-showcase__header-content">
-          <h2 className="appd-showcase__title">Agent Persona Configuration</h2>
-          <p className="appd-showcase__description">
-            The administrative view for the Agent Persona Pattern. This is where the governed object is defined, including its capabilities, risk posture, and specific tone instructions.
-          </p>
-        </div>
-        <button className="appd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

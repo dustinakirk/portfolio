@@ -71,14 +71,16 @@ export default function AccessPermissionTiersPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This administrative interface shows a fleet of five AI agents across different environments (Production, Staging, Sandbox), each assigned to one of four permission tiers: Viewer, Editor, Supervised Executor, or Executor. Notice how the Patient Intake Assistant in Production uses the Supervised Executor tier, requiring approval for workflow execution, while the QA Stress Tester in Staging has full Executor permissions. Click any agent row to view its detailed permission matrix in the right panel, which shows exactly which capabilities are allowed, denied, or conditionally granted. Use the tier dropdown in each row to change an agent&apos;s permissions and observe how the permission matrix updates instantly, demonstrating environment-specific access control.
             </p>
           </div>
-          <AccessPermissionTiersDemo />
+          <div className="pattern-demo" aria-label="Access and Permission Tiers interactive demo">
+            <AccessPermissionTiersDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

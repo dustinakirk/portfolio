@@ -84,14 +84,16 @@ export default function FleetHealthDashboardPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive demo simulates a Fleet Health Dashboard monitoring six AI agents across different functions. The dashboard prioritizes agents by health status, surfacing critical and degraded agents first. Notice how the &quot;Contract-Analyzer-v2&quot; shows a degradation reason inline, and the &quot;Data-Sanitizer&quot; is flagged as critical. Click any agent row to open the detail panel where you can view live telemetry logs and access governance controls like rollback and emergency pause. This demonstrates how operators can quickly identify issues, understand their context, and take immediate action to maintain fleet health.
             </p>
           </div>
-          <FleetHealthDashboardDemo />
+          <div className="pattern-demo" aria-label="Fleet Health Dashboard interactive demo">
+            <FleetHealthDashboardDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

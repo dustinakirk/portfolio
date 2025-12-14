@@ -43,15 +43,9 @@ export default function ConfessionsViewDemo() {
 
   return (
     <div className="cvd-showcase">
-      <header className="cvd-showcase__header">
-        <div className="cvd-showcase__header-content">
-          <h2 className="cvd-showcase__title">Confessions View (Post-Task Self-Report)</h2>
-          <p className="cvd-showcase__description">
-            A transparency pattern where the AI agent explicitly reports on its own compliance,
-            shortcuts taken, and uncertainties after completing a high-stakes task.
-          </p>
-        </div>
-        <button className="cvd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

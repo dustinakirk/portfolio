@@ -68,14 +68,16 @@ export default function CounterEvidencePattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo shows an AI-powered incident diagnosis system for DevOps. The AI suggests a root cause (database connection pool exhaustion) but instead of only showing supporting evidence, it presents both supporting signals and counter-evidence in clearly separated panels. The supporting panel shows error rate spikes and similar past incidents, while the counter-evidence panel highlights conflicting signals like stable traffic patterns and concurrent anomalies elsewhere. Toggle between the panels or use "View all evidence" to see the balanced view. This demonstrates how exposing both sides helps operators make more informed decisions.
             </p>
           </div>
-          <CounterEvidenceDemo />
+          <div className="pattern-demo" aria-label="Counter-Evidence interactive demo">
+            <CounterEvidenceDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

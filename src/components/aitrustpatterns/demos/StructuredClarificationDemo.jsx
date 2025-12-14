@@ -57,17 +57,12 @@ export default function StructuredClarificationDemo() {
 
   return (
     <div className="scd-demo">
-      <div className="scd-demo__header">
-        <div>
-          <h2 className="scd-demo__title">Structured Clarification Prompts</h2>
-          <p className="scd-demo__description">
-            The agent pauses a high-risk workflow to gather specific inputs via a structured form inside the chat.
-          </p>
-        </div>
-        <button className="scd-demo__reset-btn" onClick={resetDemo}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={resetDemo}>
           Reset Demo
         </button>
-      </div>
+      </header>
 
       <div className="scd-chat">
         <div className="scd-chat__messages">

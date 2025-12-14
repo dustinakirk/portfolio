@@ -66,14 +66,16 @@ export default function ApologyRemedyBundlePattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive demo shows a revenue operations AI agent that mistakenly marks opportunities as "Closed Lost" during a cleanup job. Watch as the agent detects its error through a sync check, then surfaces a correction bundle that explains what went wrong, identifies the impact (5 specific opportunities), and offers clear remedy actions. Click "Restore to 'Stalled'" to apply the fix and see how the bundle transitions to a success state, confirming the correction and maintaining trust through transparent accountability.
             </p>
           </div>
-          <ApologyRemedyBundleDemo />
+          <div className="pattern-demo" aria-label="Apology and Remedy Bundle interactive demo">
+            <ApologyRemedyBundleDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

@@ -94,14 +94,16 @@ export default function SafeFailureStatesPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive demo simulates a DevOps deployment scenario where an AI agent detects elevated error rates and pauses a production deploy. Notice how the agent clearly communicates what was detected, confirms that no changes were made, and presents three distinct recovery options: viewing metrics for investigation, canceling the deployment safely, or overriding with admin authorization. Try clicking any action button to see how the agent responds to your choice.
             </p>
           </div>
-          <SafeFailureStatesDemo />
+          <div className="pattern-demo" aria-label="Safe Failure States interactive demo">
+            <SafeFailureStatesDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

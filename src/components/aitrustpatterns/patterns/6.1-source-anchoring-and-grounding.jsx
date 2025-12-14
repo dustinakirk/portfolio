@@ -73,14 +73,16 @@ export default function SourceAnchoringGroundingPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive demo simulates an AI legal assistant analyzing a Master Services Agreement. Ask a question about data breach liability and watch as the AI streams a response with inline citations. Hover over or click the citation numbers (e.g., [1], [2]) to see the exact source clauses highlighted in the document viewer on the right. Notice how each claim is anchored to specific, verifiable passages, making it easy to validate the AI's interpretation.
             </p>
           </div>
-          <SourceAnchoringDemo />
+          <div className="pattern-demo" aria-label="Source Anchoring interactive demo">
+            <SourceAnchoringDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

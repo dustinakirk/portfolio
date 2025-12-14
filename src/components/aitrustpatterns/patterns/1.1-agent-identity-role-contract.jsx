@@ -75,9 +75,17 @@ export default function AgentIdentityRoleContractPattern() {
           </div>
         </section>
 
-        {/* Agent Identity Demo Example */}
-        <section aria-label="Agent identity example">
-          <AgentIdentityDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows a B2B sales agent chat interface with an explicit role contract panel. The agent header displays the agent&apos;s identity (Revenue Ops Agent), while the sidebar reveals its full role contract—including capabilities, limitations, and connected systems.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Agent identity interactive demo">
+            <AgentIdentityDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

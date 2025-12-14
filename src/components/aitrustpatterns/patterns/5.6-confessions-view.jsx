@@ -70,9 +70,17 @@ export default function ConfessionsViewPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Confessions View example">
-          <ConfessionsViewDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows a confessions view where an AI agent proactively discloses limitations, uncertainties, and potential issues with its output. Rather than presenting a polished facade, the agent surfaces what it&apos;s unsure about, what shortcuts it took, and where human review might be needed.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Confessions View interactive demo">
+            <ConfessionsViewDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

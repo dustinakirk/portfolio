@@ -745,9 +745,26 @@ export default function StreamingResultsVisualizationsPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Streaming results example">
-          <StreamingResultsDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo illustrates how streaming results can reduce perceived latency and increase trust. As the AI processes a query, results appear progressively in the table rather than all at once, giving users immediate feedback that the system is working and allowing early inspection of partial results.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Review or modify the pre-filled query</li>
+                <li>Click &quot;Submit&quot; to start the query</li>
+                <li>Watch as results stream into the table progressively</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Streaming Results interactive demo">
+            <StreamingResultsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

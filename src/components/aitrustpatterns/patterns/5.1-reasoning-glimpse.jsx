@@ -70,9 +70,17 @@ export default function ReasoningGlimpsePattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Reasoning Glimpse example">
-          <ReasoningGlimpseDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows how an AI agent can reveal its reasoning process through an expandable &quot;glimpse&quot; panel. The agent provides a high-level answer while making its underlying logic, data sources, and decision steps available for users who want to verify or understand the reasoning.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Reasoning Glimpse interactive demo">
+            <ReasoningGlimpseDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

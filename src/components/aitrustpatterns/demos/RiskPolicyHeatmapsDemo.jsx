@@ -239,15 +239,9 @@ export default function RiskPolicyHeatmapsDemo() {
 
   return (
     <div className="rph-showcase" role="region" aria-label="Risk & Policy Heatmaps demo">
-      <header className="rph-showcase__header">
-        <div className="rph-showcase__header-content">
-          <h2 className="rph-showcase__title">AI Risk & Policy Heatmap</h2>
-          <p className="rph-showcase__description">
-            Visualize AI agent risk across workflows. Click a cell to inspect contributing factors
-            and adjust governance policies to mitigate exposure.
-          </p>
-        </div>
-        <button className="rph-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

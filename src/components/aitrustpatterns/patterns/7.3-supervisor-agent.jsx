@@ -78,14 +78,16 @@ export default function SupervisorAgentPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo shows a customer service AI agent responding to a request about payment information. Watch how the supervisor agent automatically intercepts the response before it's sent to the customer, detects a credit card number in the outbound message, and blocks it to prevent a PCI compliance violation. The intervention happens transparently: the customer sees a safe, redacted response, and a clear notice explains that sensitive data was automatically removed. This demonstrates how supervision can enforce policies without disrupting the user experience or requiring manual review.
             </p>
           </div>
-          <SupervisorAgentDemo />
+          <div className="pattern-demo" aria-label="Supervisor Agent interactive demo">
+            <SupervisorAgentDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

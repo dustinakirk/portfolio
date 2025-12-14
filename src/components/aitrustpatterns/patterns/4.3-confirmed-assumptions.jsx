@@ -63,8 +63,15 @@ export default function ConfirmedAssumptionsPattern() {
           </div>
         </section>
 
-        {/* Pattern example */}
-        <section className="pattern-section" aria-label="Confirmed assumptions demo">
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI assistant that explicitly surfaces its working assumptions before executing a task. The assumptions panel lets users review and edit contextual defaults—like region, timing, and currency—ensuring the agent&apos;s behavior aligns with user expectations.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Confirmed Assumptions interactive demo">
           <style>{`
             .cap-showcase {
               background: #ffffff;
@@ -593,6 +600,7 @@ export default function ConfirmedAssumptionsPattern() {
               </li>
             </ul>
             </aside>
+          </div>
           </div>
           </div>
         </section>

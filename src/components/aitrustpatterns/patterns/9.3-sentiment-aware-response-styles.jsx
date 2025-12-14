@@ -69,14 +69,16 @@ export default function SentimentAwareResponseStylesPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive demo shows how an AI deployment assistant adapts its response style based on detected user frustration. Start by choosing neutral responses to see the agent provide verbose technical explanations during repeated failures. Then select the frustrated response ("This is failing again! Why is this so hard?") and observe how the agent immediately shifts to a concise, action-oriented style: acknowledging the frustration, diagnosing the root cause, and offering a single recommended fix with a clear action button—no lengthy explanations.
             </p>
           </div>
-          <SentimentAwareResponseStylesDemo />
+          <div className="pattern-demo" aria-label="Sentiment-Aware Response Styles interactive demo">
+            <SentimentAwareResponseStylesDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

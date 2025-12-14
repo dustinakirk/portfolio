@@ -336,14 +336,9 @@ export default function EscalationDemo() {
 
   return (
     <div className="efd-showcase">
-      <header className="efd-showcase__header">
-        <div className="efd-showcase__header-content">
-          <h2 className="efd-showcase__title">Example: Escalation & Fallback Routing</h2>
-          <p className="efd-showcase__description">
-            Ask the AI agent about tax filings and projections. Watch how the agent encounters a permission boundary and escalates the task to a human specialist.
-          </p>
-        </div>
-        <button className="efd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

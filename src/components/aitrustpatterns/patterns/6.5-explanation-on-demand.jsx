@@ -69,14 +69,16 @@ export default function ExplanationOnDemandPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo simulates a lead scoring system where each prospect is ranked by the AI. Next to each lead's priority score, you'll see a subtle "Why?" link. Click it to reveal a layered explanation panel showing the key factors that influenced the score (e.g., engagement metrics, company fit, and timing signals), along with their relative weights. Notice how the explanation starts with a concise summary and offers progressive disclosure to deeper details. Try clicking "Why?" on different leads to see how reasoning varies based on the data.
             </p>
           </div>
-          <ExplanationOnDemandDemo />
+          <div className="pattern-demo" aria-label="Explanation on Demand interactive demo">
+            <ExplanationOnDemandDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

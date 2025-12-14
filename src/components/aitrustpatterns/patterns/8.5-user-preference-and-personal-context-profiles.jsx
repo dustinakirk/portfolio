@@ -78,14 +78,16 @@ export default function UserPreferenceContextProfilesPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This example illustrates how a persistent "Principal Designer" profile automatically tailors AI responses to match individual working preferences. The left sidebar shows an active Work profile with communication style and constraint settings. Toggle "Concise / Bullet Points" to switch between brief, scannable summaries and detailed narrative explanations. Enable or disable "Include Visuals/Charts" to add or remove data visualizations. Try "Exclude Technical Jargon" to see how the assistant adapts language complexity. Notice the context chip below each AI response that shows which profile settings were applied—demonstrating transparent, user-controlled personalization across all interactions.
             </p>
           </div>
-          <UserPreferenceContextProfilesDemo />
+          <div className="pattern-demo" aria-label="User Preference and Personal Context Profiles interactive demo">
+            <UserPreferenceContextProfilesDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

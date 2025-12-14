@@ -164,15 +164,9 @@ export default function ConfidenceThermometerDemo() {
 
   return (
     <div className="ctd-showcase">
-      <header className="ctd-showcase__header">
-        <div className="ctd-showcase__header-content">
-          <h2 className="ctd-showcase__title">Confidence Thermometer Demo</h2>
-          <p className="ctd-showcase__description">
-            A Sales Manager asks the AI to forecast revenue. The AI returns a prediction with
-            a &quot;Medium&quot; confidence level due to mixed data signals, prompting user scrutiny.
-          </p>
-        </div>
-        <button className="ctd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

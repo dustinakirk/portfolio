@@ -62,9 +62,26 @@ export default function SteerabilityPoliteInterruptionPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Steerability demo">
-          <SteerabilityDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI agent executing a marketing outreach campaign that can be redirected mid-task. The agent is preparing email and discount code steps when the user interrupts with new instructions, demonstrating how the system acknowledges the change and adapts its plan accordingly.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Watch the agent begin executing its initial plan</li>
+                <li>Click &quot;Submit&quot; to interrupt with the pre-filled redirect instruction</li>
+                <li>Observe how the agent acknowledges the change and updates its plan</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Steerability interactive demo">
+            <SteerabilityDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

@@ -19,14 +19,9 @@ export default function ExplanationOnDemandDemo() {
 
   return (
     <div className="eod-showcase" role="region" aria-label="Explanation-on-Demand demo">
-      <header className="eod-showcase__header">
-        <div className="eod-showcase__header-content">
-          <h2 className="eod-showcase__title">Use Case: Task Delegation Agent</h2>
-          <p className="eod-showcase__description">
-            The user asks the AI to assign a ticket. The AI makes a decision, but provides an optional &quot;Why?&quot; affordance to reveal the reasoning signals (Skills, Load, Context).
-          </p>
-        </div>
-        <button className="eod-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

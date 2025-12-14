@@ -41,15 +41,9 @@ export default function AgentHandoverBriefsDemo() {
 
   return (
     <div className="ahb-showcase" role="region" aria-label="Agent Handover Briefs demo">
-      <header className="ahb-showcase__header">
-        <div className="ahb-showcase__header-content">
-          <h2 className="ahb-showcase__title">External Agent Handover</h2>
-          <p className="ahb-showcase__description">
-            Safe handoff from a familiar assistant to a specialized 3rd-party agent.
-            Review and approve the handover brief to see the external agent connect.
-          </p>
-        </div>
-        <button className="ahb-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

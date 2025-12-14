@@ -33,15 +33,9 @@ export default function PrivacyDataUsageControlsDemo() {
 
   return (
     <div className="pdc-showcase">
-      <header className="pdc-showcase__header">
-        <div className="pdc-showcase__header-content">
-          <h2 className="pdc-showcase__title">Privacy & Data Usage Controls</h2>
-          <p className="pdc-showcase__description">
-            This example demonstrates contextual indicators in the chat header linked to a granular
-            privacy control panel. Try toggling memory, training, or enabling &quot;Incognito Mode&quot;.
-          </p>
-        </div>
-        <button className="pdc-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

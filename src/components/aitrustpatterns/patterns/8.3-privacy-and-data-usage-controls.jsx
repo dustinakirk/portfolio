@@ -72,14 +72,16 @@ export default function PrivacyDataUsageControlsPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This example shows how privacy settings are surfaced directly within the AI chat interface. The chat header displays current data usage status—memory, training, and retention policies—with a link to manage settings. Click "Manage data & memory" to open the privacy control panel and explore granular toggles for chat memory, model training, and analytics. Notice how the data lifecycle diagram updates when you toggle settings. Try enabling "Incognito Session" to see how all privacy controls lock into their most restrictive state, with memory and training disabled and session-only retention applied.
             </p>
           </div>
-          <PrivacyDataUsageControlsDemo />
+          <div className="pattern-demo" aria-label="Privacy and Data Usage Controls interactive demo">
+            <PrivacyDataUsageControlsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

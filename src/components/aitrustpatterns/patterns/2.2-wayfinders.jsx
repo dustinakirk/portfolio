@@ -133,45 +133,6 @@ function WayfindersDemo() {
       flexDirection: 'column',
       margin: '0 auto',
     },
-    patternDemoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#ffffff',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-      gap: '20px',
-    },
-    headerContent: {
-      flex: 1,
-    },
-    headerTitle: {
-      fontSize: '18px',
-      fontWeight: 700,
-      color: '#111827',
-      margin: '0 0 8px 0',
-      lineHeight: 1.2,
-    },
-    headerDescription: {
-      fontSize: '14px',
-      color: '#6b7280',
-      lineHeight: 1.5,
-      margin: 0,
-    },
-    resetBtn: {
-      background: '#ffffff',
-      border: '1px solid #e5e7eb',
-      color: '#374151',
-      padding: '8px 16px',
-      borderRadius: '6px',
-      fontSize: '13px',
-      fontWeight: 500,
-      cursor: 'pointer',
-      transition: 'all 0.2s',
-      boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-      whiteSpace: 'nowrap',
-      height: 'fit-content',
-    },
     aiIcon: {
       width: '20px',
       height: '20px',
@@ -388,27 +349,9 @@ function WayfindersDemo() {
       `}</style>
 
       {/* Demo Header */}
-      <header style={styles.patternDemoHeader}>
-        <div style={styles.headerContent}>
-          <h2 style={styles.headerTitle}>Wayfinders</h2>
-          <p style={styles.headerDescription}>
-            This demo shows how wayfinders adapt to context. Click a row to select an account and watch the AI suggestions update dynamically. Click any suggestion to see a sample response.
-          </p>
-        </div>
-        <button
-          style={styles.resetBtn}
-          onClick={handleReset}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#f9fafb';
-            e.currentTarget.style.borderColor = '#d1d5db';
-            e.currentTarget.style.color = '#111827';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#ffffff';
-            e.currentTarget.style.borderColor = '#e5e7eb';
-            e.currentTarget.style.color = '#374151';
-          }}
-        >
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>
@@ -605,9 +548,26 @@ export default function WayfindersPattern() {
           </div>
         </section>
 
-        {/* Demo Example */}
-        <section aria-label="Wayfinders example">
-          <WayfindersDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows how wayfinders adapt to context in a CRM setting. The AI sidebar displays contextual suggestions based on what&apos;s selected in the account table, demonstrating how capability discovery evolves with user actions.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click any account row in the table to select it</li>
+                <li>Notice how the AI suggestions update to reflect the selected context</li>
+                <li>Click any suggestion to see a sample AI response</li>
+                <li>Use &quot;Reset Demo&quot; to return to the default state</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Wayfinders interactive demo">
+            <WayfindersDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

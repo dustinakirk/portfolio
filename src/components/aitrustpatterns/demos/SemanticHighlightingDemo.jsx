@@ -152,15 +152,9 @@ export default function SemanticHighlightingDemo() {
 
   return (
     <div className="shd-showcase">
-      <header className="shd-showcase__header">
-        <div className="shd-showcase__header-content">
-          <h2 className="shd-showcase__title">Semantic Highlighting of Uncertainty</h2>
-          <p className="shd-showcase__description">
-            Click on highlighted text to see why the AI is uncertain. Then confirm the value
-            to mark it as reviewed, or explore sources for more context.
-          </p>
-        </div>
-        <button className="shd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

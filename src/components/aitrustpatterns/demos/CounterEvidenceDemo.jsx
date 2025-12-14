@@ -272,17 +272,9 @@ export default function CounterEvidenceDemo() {
 
   return (
     <div className="ced-showcase" role="region" aria-label="Counter-Evidence demo">
-      <header className="ced-showcase__header">
-        <div className="ced-showcase__header-content">
-          <h2 className="ced-showcase__title">Counter-Evidence: Root Cause Analysis</h2>
-          <p className="ced-showcase__description">
-            This demo shows how surfacing both supporting and counter-evidence helps users
-            evaluate AI reasoning. Click on hypothesis cards to expand evidence panels,
-            and click individual evidence items to mark them as reviewed.
-          </p>
-        </div>
-        <button className="ced-showcase__reset-btn" onClick={handleReset}>
-          <ReplayIcon spinning={loading} />
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

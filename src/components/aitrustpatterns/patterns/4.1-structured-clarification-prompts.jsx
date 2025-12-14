@@ -67,9 +67,26 @@ export default function StructuredClarificationPromptsPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Structured clarification prompts example">
-          <StructuredClarificationDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI deployment agent that pauses before a high-risk operation to gather specific inputs. Rather than making assumptions about environment, traffic allocation, and notifications, the agent presents a structured form that captures the required parameters before proceeding.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Review the clarification form with pre-filled defaults</li>
+                <li>Modify the environment, traffic percentage, or notification settings</li>
+                <li>Click &quot;Confirm &amp; Deploy&quot; to proceed or &quot;Cancel&quot; to abort</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Structured Clarification Prompts interactive demo">
+            <StructuredClarificationDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

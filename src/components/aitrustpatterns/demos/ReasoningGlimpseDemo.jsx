@@ -190,14 +190,9 @@ export default function ReasoningGlimpseDemo() {
   return (
     <div className="rgd-demo" key={key}>
       {/* Header */}
-      <header className="rgd-header">
-        <div className="rgd-header__content">
-          <h2 className="rgd-header__title">Reasoning Glimpse (Chain-of-Thought)</h2>
-          <p className="rgd-header__description">
-            The agent makes its internal process visible. Click &quot;View Activity Timeline&quot; to see how thoughts flow between actions.
-          </p>
-        </div>
-        <button className="rgd-header__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

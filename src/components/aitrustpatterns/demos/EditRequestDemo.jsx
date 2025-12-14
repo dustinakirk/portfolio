@@ -224,20 +224,15 @@ export default function EditRequestDemo() {
     return (
         <div className="erd-demo">
             {/* Header */}
-            <div className="erd-demo__header">
-                <div className="erd-demo__header-content">
-                    <h2 className="erd-demo__title">Edit Request</h2>
-                    <p className="erd-demo__subtitle">
-                        The agent allows users to revise a previously sent prompt or instruction after the AI agent has already responded. Click the edit icon to refine the request.
-                    </p>
-                </div>
+            <header className="pattern-demo__header">
+                <h2 className="pattern-demo__title">Interactive Demo</h2>
                 <button
                     onClick={handleReset}
-                    className="erd-demo__reset-btn"
+                    className="pattern-demo__reset-btn"
                 >
                     Reset Demo
                 </button>
-            </div>
+            </header>
 
             {/* Chat Thread */}
             <div className="erd-thread">

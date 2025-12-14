@@ -179,15 +179,9 @@ export default function ApologyRemedyBundleDemo() {
 
   return (
     <div className="arb-showcase">
-      <header className="arb-showcase__header">
-        <div className="arb-showcase__header-content">
-          <h2 className="arb-showcase__title">Apology + Remedy Bundle</h2>
-          <p className="arb-showcase__description">
-            Demonstrating how an AI agent handles a mistake (incorrect status update)
-            by acknowledging it and offering a direct, actionable fix.
-          </p>
-        </div>
-        <button className="arb-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

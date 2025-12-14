@@ -724,9 +724,26 @@ export default function ScopedPermissionsToolConsentPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Scoped permissions example">
-          <ScopedPermissionsDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an incident response agent requesting just-in-time permissions to access PagerDuty data. The agent explains why it needs access and presents configurable scope options, demonstrating transparent permission requests with user control over data access boundaries.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click &quot;Grant Access&quot; to open the permission dialog</li>
+                <li>Configure the scope (this incident only, all incidents, or all data)</li>
+                <li>Toggle read/write capabilities as needed</li>
+                <li>Click &quot;Grant Access&quot; to approve or use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Scoped Permissions interactive demo">
+            <ScopedPermissionsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

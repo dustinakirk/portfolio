@@ -7,7 +7,7 @@ import FeedbackLink from '../FeedbackLink';
 // Interactive demo component - Teach Me Interfaces
 function TeachMeDemo() {
   const [step, setStep] = useState('initial'); // 'initial' | 'corrected' | 'teaching' | 'saved' | 'dismissed'
-  const [resetBtnHovered, setResetBtnHovered] = useState(false);
+  // Removed resetBtnHovered state - using CSS class for hover
   const [primaryBtnHovered, setPrimaryBtnHovered] = useState(false);
   const [secondaryBtnHovered, setSecondaryBtnHovered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -58,47 +58,6 @@ function TeachMeDemo() {
       display: 'flex',
       flexDirection: 'column',
     },
-    patternDemoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#ffffff',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-      gap: '20px',
-    },
-    patternDemoHeaderContent: {
-      flex: 1,
-    },
-    patternDemoTitle: {
-      fontSize: '18px',
-      fontWeight: 700,
-      color: '#111827',
-      margin: '0 0 8px 0',
-      lineHeight: 1.2,
-    },
-    patternDemoDescription: {
-      fontSize: '14px',
-      color: '#6b7280',
-      lineHeight: 1.5,
-      margin: 0,
-    },
-    resetBtn: {
-      background: resetBtnHovered ? '#f9fafb' : '#ffffff',
-      border: '1px solid #e5e7eb',
-      borderColor: resetBtnHovered ? '#d1d5db' : '#e5e7eb',
-      color: resetBtnHovered ? '#111827' : '#374151',
-      padding: '8px 16px',
-      borderRadius: '6px',
-      fontSize: '13px',
-      fontWeight: 500,
-      cursor: 'pointer',
-      transition: 'all 0.2s',
-      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-      whiteSpace: 'nowrap',
-      height: 'fit-content',
-    },
-
     // Chat UI
     chatUi: {
       padding: '1.5rem',
@@ -348,19 +307,9 @@ function TeachMeDemo() {
       `}</style>
 
       {/* Demo Header */}
-      <header style={styles.patternDemoHeader}>
-        <div style={styles.patternDemoHeaderContent}>
-          <h2 style={styles.patternDemoTitle}>Teach Me Interface</h2>
-          <p style={styles.patternDemoDescription}>
-            Experience how the AI Agent learns from your corrections. Use the category dropdown to change from &quot;General Expenses&quot; to &quot;Marketing&quot; to trigger the pattern.
-          </p>
-        </div>
-        <button
-          style={styles.resetBtn}
-          onClick={handleReset}
-          onMouseEnter={() => setResetBtnHovered(true)}
-          onMouseLeave={() => setResetBtnHovered(false)}
-        >
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>
@@ -562,9 +511,26 @@ export default function TeachMeInterfacesPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Teach Me Interfaces example">
-          <TeachMeDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo illustrates how an AI system can learn from user corrections. An expense processing agent has categorized an invoice, and when you correct that categorization, it offers to create a persistent rule for future invoices from the same vendor.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click the category dropdown to change from &quot;General Expenses&quot; to &quot;Marketing&quot;</li>
+                <li>Observe the &quot;Teach me a new rule?&quot; prompt that appears</li>
+                <li>Click &quot;Yes, create rule&quot; to save the rule or &quot;No, just this once&quot; to dismiss</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Teach Me Interfaces interactive demo">
+            <TeachMeDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

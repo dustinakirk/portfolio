@@ -76,9 +76,17 @@ export default function ExecutionProgressViewPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Execution progress view example">
-          <ExecutionProgressDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an execution progress view that breaks down a multi-step workflow into visible phases. Users can see which step is currently running, which have completed, and what remains—replacing vague &quot;thinking&quot; indicators with meaningful progress information.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Execution Progress View interactive demo">
+            <ExecutionProgressDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

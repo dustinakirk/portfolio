@@ -64,9 +64,26 @@ export default function EditRequestPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo Placeholder */}
-        <section className="pattern-section" aria-label="Edit request example">
-          <EditRequestDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows how users can refine their original request after seeing the AI&apos;s interpretation. When the agent produces a report that doesn&apos;t match what you wanted, you can edit your original message to add specificity rather than starting a new conversation thread.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Review the initial vague request and the AI&apos;s response</li>
+                <li>Click the pencil icon on the user message to edit it</li>
+                <li>Modify the request to be more specific (e.g., add region or status filters)</li>
+                <li>Submit the edit to see the updated response</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Edit Request interactive demo">
+            <EditRequestDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

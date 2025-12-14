@@ -223,14 +223,9 @@ export default function SafeFailureStatesDemo() {
 
   return (
     <div className="sfs-showcase">
-      <header className="sfs-showcase__header">
-        <div className="sfs-showcase__header-content">
-          <h2 className="sfs-showcase__title">Safe Failure State</h2>
-          <p className="sfs-showcase__description">
-            Scenario: A DevOps agent pauses a deployment due to elevated error rates.
-          </p>
-        </div>
-        <button className="sfs-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

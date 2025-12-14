@@ -53,14 +53,9 @@ export default function GuidedRepairFlowsDemo() {
 
   return (
     <div className="grf-showcase" role="region" aria-label="Guided Repair Flows demo">
-      <header className="grf-showcase__header">
-        <div className="grf-showcase__header-content">
-          <h2 className="grf-showcase__title">Guided Repair Flow Example</h2>
-          <p className="grf-showcase__description">
-            Scenario: AI Agent fails to map user intent to database schema.
-          </p>
-        </div>
-        <button className="grf-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

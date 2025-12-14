@@ -64,14 +64,16 @@ export default function MemoryInspectorEditorPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This interactive example shows an agent using stored memory records to personalize its response. The left panel displays a conversation where the agent references workspace context and org policies. The right panel shows the Memory Inspector with categorized memory records. Hover over any memory record to view its metadata, scope, and edit controls. Notice how admin-set organizational rules are protected and cannot be deleted, while user preferences and personal facts can be freely edited or removed.
             </p>
           </div>
-          <MemoryInspectorDemo />
+          <div className="pattern-demo" aria-label="Memory Inspector interactive demo">
+            <MemoryInspectorDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

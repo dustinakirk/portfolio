@@ -320,16 +320,9 @@ export default function SteerabilityDemo() {
 
   return (
     <div className="spd-showcase">
-      <header className="spd-showcase__header">
-        <div className="spd-showcase__header-content">
-          <h2 className="spd-showcase__title">Steerability & Polite Interruption</h2>
-          <p className="spd-showcase__description">
-            The agent is currently executing Step 2 of a campaign. Submit the pre-filled
-            change request to see how the agent pauses, adapts the plan to &quot;SMS-only&quot;,
-            and continues.
-          </p>
-        </div>
-        <button className="spd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

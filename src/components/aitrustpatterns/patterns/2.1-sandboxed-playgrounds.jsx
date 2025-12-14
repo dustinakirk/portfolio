@@ -15,7 +15,7 @@ export const SANDBOXED_PLAYGROUNDS_SEO = {
 // Interactive demo component - Sandboxed Playgrounds
 function SandboxedPlaygroundsDemo() {
   const [step, setStep] = useState('initial'); // 'initial' | 'loading' | 'results' | 'applying' | 'success'
-  const [resetBtnHovered, setResetBtnHovered] = useState(false);
+  // Removed resetBtnHovered state - using CSS class for hover
   const [sandboxBtnHovered, setSandboxBtnHovered] = useState(false);
   const [discardBtnHovered, setDiscardBtnHovered] = useState(false);
   const [promoteBtnHovered, setPromoteBtnHovered] = useState(false);
@@ -60,40 +60,6 @@ function SandboxedPlaygroundsDemo() {
       border: '1px solid #e5e7eb',
       margin: '0 auto',
     },
-    demoHeader: {
-      padding: '24px',
-      borderBottom: '1px solid #e5e7eb',
-      backgroundColor: '#f9fafb',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-    },
-    demoTitle: {
-      margin: '0 0 8px 0',
-      fontSize: '1.25rem',
-      fontWeight: 600,
-      color: '#111827',
-    },
-    demoDescription: {
-      margin: 0,
-      color: '#6b7280',
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    resetBtn: {
-      backgroundColor: resetBtnHovered ? '#f3f4f6' : 'white',
-      border: '1px solid',
-      borderColor: resetBtnHovered ? '#9ca3af' : '#d1d5db',
-      color: '#374151',
-      padding: '6px 12px',
-      borderRadius: '6px',
-      fontSize: '0.875rem',
-      cursor: 'pointer',
-      transition: 'all 0.2s',
-      flexShrink: 0,
-    },
-
     // Agent interface
     agentInterface: {
       display: 'flex',
@@ -362,20 +328,9 @@ function SandboxedPlaygroundsDemo() {
       `}</style>
 
       {/* Demo Header */}
-      <div style={styles.demoHeader}>
-        <div>
-          <h2 style={styles.demoTitle}>Example: Sandboxed Playground</h2>
-          <p style={styles.demoDescription}>
-            This example demonstrates a B2B SaaS agent offering a &quot;Sandbox Mode&quot; to safely test a bulk cleanup operation.
-            Note the visual distinction (amber/yellow) indicating simulation mode.
-          </p>
-        </div>
-        <button
-          style={styles.resetBtn}
-          onClick={handleReset}
-          onMouseEnter={() => setResetBtnHovered(true)}
-          onMouseLeave={() => setResetBtnHovered(false)}
-        >
+      <div className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </div>
@@ -613,9 +568,26 @@ export default function SandboxedPlaygroundsPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Sandboxed playgrounds example">
-          <SandboxedPlaygroundsDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo simulates a B2B data agent offering a sandbox mode to safely test a bulk cleanup operation. The agent detects duplicate records and allows you to preview exactly what changes would be made before applying them to production data.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click &quot;Test in Sandbox&quot; to start the simulation</li>
+                <li>Review the proposed changes in the diff table</li>
+                <li>Click &quot;Run Merge&quot; to apply changes or &quot;Discard &amp; Exit&quot; to cancel</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Sandboxed playgrounds interactive demo">
+            <SandboxedPlaygroundsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

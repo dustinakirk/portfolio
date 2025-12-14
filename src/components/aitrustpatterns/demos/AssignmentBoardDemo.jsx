@@ -243,16 +243,9 @@ export default function AssignmentBoardDemo() {
 
   return (
     <div className="abd-showcase">
-      <header className="abd-showcase__header">
-        <div className="abd-showcase__header-content">
-          <h2 className="abd-showcase__title">AI Work Orchestrator</h2>
-          <p className="abd-showcase__description">
-            This task queue visualizes asynchronous AI operations, distinguishing between active,
-            blocked, and completed work. It demonstrates how to surface agent status, costs, and
-            critical &quot;human-in-the-loop&quot; blockers in a unified dashboard.
-          </p>
-        </div>
-        <button className="abd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

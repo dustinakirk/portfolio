@@ -249,16 +249,9 @@ export default function AccessPermissionTiersDemo() {
   return (
     <div className="apt-showcase" role="region" aria-label="Access & Permission Tiers demo">
       {/* Header */}
-      <header className="apt-showcase__header">
-        <div className="apt-showcase__header-content">
-          <h2 className="apt-showcase__title">Access & Permission Tiers Example</h2>
-          <p className="apt-showcase__description">
-            Interactive demo of an administrative table for setting AI agent permissions.
-            Select an agent to view its permission matrix in the sidebar.
-            Change the tier to see permissions update in real-time.
-          </p>
-        </div>
-        <button className="apt-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

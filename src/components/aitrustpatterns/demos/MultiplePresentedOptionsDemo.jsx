@@ -122,15 +122,10 @@ export default function MultiplePresentedOptionsDemo() {
 
   return (
     <div className="mpo-showcase">
-      <header className="mpo-showcase__header">
-        <div className="mpo-showcase__header-content">
-          <h2 className="mpo-showcase__title">Pattern Example: Plurality Options</h2>
-          <p className="mpo-showcase__description">
-            For simple tasks, Plurality allows users to choose based on the <strong>actual result</strong> rather than abstract settings. Here, the user sees three email variations immediately.
-          </p>
-        </div>
-        <button className="mpo-showcase__reset-btn" onClick={resetDemo}>
-          <RotateCcwIcon /> Reset Demo
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={resetDemo}>
+          Reset Demo
         </button>
       </header>
 

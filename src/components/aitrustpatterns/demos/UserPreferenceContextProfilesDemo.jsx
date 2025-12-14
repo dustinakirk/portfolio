@@ -138,16 +138,9 @@ export default function UserPreferenceContextProfilesDemo() {
   return (
     <div className="upcp-showcase">
       {/* Header with Pattern Context */}
-      <header className="upcp-showcase__header">
-        <div className="upcp-showcase__header-content">
-          <h2 className="upcp-showcase__title">User Context Profile</h2>
-          <p className="upcp-showcase__description">
-            This pattern demonstrates how a persistent &quot;About Me&quot; profile shapes AI responses.
-            Toggle the controls in the sidebar to see how the Agent instantly adapts its output format and tone
-            to fit the user&apos;s &quot;Principal Designer&quot; persona.
-          </p>
-        </div>
-        <button className="upcp-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

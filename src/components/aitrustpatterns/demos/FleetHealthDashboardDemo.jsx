@@ -266,16 +266,9 @@ export default function FleetHealthDashboardDemo() {
 
   return (
     <div className="fhd-showcase" role="region" aria-label="Fleet Health Dashboard demo">
-      <header className="fhd-showcase__header">
-        <div className="fhd-showcase__header-content">
-          <h2 className="fhd-showcase__title">Fleet Health Dashboard</h2>
-          <p className="fhd-showcase__description">
-            A centralized operations view for monitoring AI agents. The list view prioritizes
-            critical items, surfacing context for degradations immediately. Click an agent row
-            to view details and governance controls.
-          </p>
-        </div>
-        <button className="fhd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

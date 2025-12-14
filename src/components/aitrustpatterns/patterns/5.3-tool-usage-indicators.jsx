@@ -80,9 +80,17 @@ export default function ToolUsageIndicatorsPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Tool usage indicators example">
-          <ToolUsageIndicatorsDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows how an AI agent can make its tool usage visible to users. As the agent processes a request, it displays which tools are being called, what data they&apos;re accessing, and the results—providing transparency about where information comes from and what actions are being taken.
+            </p>
+          </div>
+          <div className="pattern-demo" aria-label="Tool Usage Indicators interactive demo">
+            <ToolUsageIndicatorsDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

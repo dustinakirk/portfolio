@@ -73,14 +73,16 @@ export default function OrchestrationGraphPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo simulates a cloud tenant migration workflow orchestrated across multiple specialized agents. Click Start to watch how a Migration Assistant coordinates pre-flight checks, data replication, and validation steps. The tree view on the left shows the agent hierarchy expanding in real-time as parallel work spawns, while the timeline on the right logs each agent's activity and output. Notice how parallel execution groups (like Compliance Guardian and Capacity Planner) run concurrently, and how the graph makes it easy to trace which agent did what, in what order, and with what result.
             </p>
           </div>
-          <OrchestrationGraphDemo />
+          <div className="pattern-demo" aria-label="Orchestration Graph interactive demo">
+            <OrchestrationGraphDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

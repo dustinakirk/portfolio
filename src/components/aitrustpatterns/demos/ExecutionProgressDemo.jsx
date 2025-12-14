@@ -212,15 +212,9 @@ export default function ExecutionProgressDemo() {
 
   return (
     <div className="epd-showcase">
-      <header className="epd-showcase__header">
-        <div className="epd-showcase__header-content">
-          <h2 className="epd-showcase__title">Execution Progress View</h2>
-          <p className="epd-showcase__description">
-            Provides transparency for multi-step AI workflows. This example shows
-            an investigation agent handling blockers.
-          </p>
-        </div>
-        <button className="epd-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

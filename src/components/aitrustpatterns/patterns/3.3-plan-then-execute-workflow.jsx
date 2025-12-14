@@ -383,9 +383,26 @@ export default function PlanThenExecuteWorkflowPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Plan-then-execute workflow example">
-          <PlanThenExecuteDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo illustrates a plan-then-execute workflow where an AI agent presents its proposed plan before taking any actions. The agent breaks down a complex request into discrete steps, allowing you to review, approve, or modify the plan before execution begins.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Review the pre-filled query or modify it</li>
+                <li>Click &quot;Send&quot; to submit the request</li>
+                <li>Review the proposed plan and click &quot;Approve Plan&quot; to execute</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Plan-then-Execute interactive demo">
+            <PlanThenExecuteDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

@@ -227,16 +227,9 @@ export default function AgentContextRepositoryDemo() {
 
   return (
     <div className="acr-showcase">
-      <header className="acr-showcase__header">
-        <div className="acr-showcase__header-content">
-          <h2 className="acr-showcase__title">Agent Context Repository & Workspace Profiles</h2>
-          <p className="acr-showcase__description">
-            This demo shows how an AI agent uses transparent, governed context items (left) to
-            generate responses. Notice how the agent attributes its answer to specific workspace
-            rules.
-          </p>
-        </div>
-        <button className="acr-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

@@ -69,14 +69,16 @@ export default function AgentContextRepositoryPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This scenario demonstrates how workspace context items shape agent behavior in real time. The left panel shows three shared context items: brand voice guidelines, privacy policies, and project-specific details. Type a message (or use the pre-filled example) and click "Send" to see how the agent generates a response. Notice how the agent's reply includes context chips that attribute specific facts and tone to workspace rules. Try unchecking context items before sending to see how the agent's output changes when Brand, Policy, or Project context is removed—the response becomes generic, formal, or lacks specific details.
             </p>
           </div>
-          <AgentContextRepositoryDemo />
+          <div className="pattern-demo" aria-label="Agent Context Repository interactive demo">
+            <AgentContextRepositoryDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

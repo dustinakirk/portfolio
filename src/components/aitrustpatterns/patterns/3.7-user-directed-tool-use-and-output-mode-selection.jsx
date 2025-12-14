@@ -579,9 +579,26 @@ export default function UserDirectedToolUsePattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Interactive demo">
-          <UserDirectedToolUseDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows a data analyst agent that lets you choose how responses are delivered. By selecting different output modes, you can control whether the agent responds conversationally, generates visual charts, produces structured data tables, or creates exportable reports.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Use the mode dropdown to select an output format (Chat, Chart, Table, or Report)</li>
+                <li>Notice how the example query updates to match the selected mode</li>
+                <li>Click &quot;Send&quot; to see the agent respond in that format</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="User-Directed Tool Use interactive demo">
+            <UserDirectedToolUseDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

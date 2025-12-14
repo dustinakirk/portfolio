@@ -309,9 +309,26 @@ export default function ScenarioTemplatesAndRecipesPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section className="pattern-section" aria-label="Scenario templates example">
-          <ScenarioTemplatesDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo showcases a recipe gallery for multi-step AI workflows. Each recipe card represents a pre-configured workflow that orchestrates multiple agents to complete a business task, from release readiness reviews to customer QBR preparation.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click any recipe card to open the detail panel</li>
+                <li>Review the workflow steps, data sources, and required inputs</li>
+                <li>Click &quot;Use this Recipe&quot; to see the instantiation confirmation</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Scenario Templates interactive demo">
+            <ScenarioTemplatesDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

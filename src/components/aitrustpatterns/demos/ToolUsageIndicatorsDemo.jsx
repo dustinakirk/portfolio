@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   Loader2,
   Play,
-  RotateCcw,
   FileText,
   ShieldCheck
 } from 'lucide-react';
@@ -84,16 +83,9 @@ export default function ToolUsageIndicatorsDemo() {
 
   return (
     <div className="tui-showcase">
-      <header className="tui-showcase__header">
-        <div className="tui-showcase__header-content">
-          <h2 className="tui-showcase__title">Tool Usage Indicators</h2>
-          <p className="tui-showcase__description">
-            Visualizing the difference between &quot;thinking&quot;, &quot;read-only&quot; searches,
-            and &quot;write&quot; operations that modify data.
-          </p>
-        </div>
-        <button className="tui-showcase__reset-btn" onClick={resetDemo}>
-          <RotateCcw size={14} />
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={resetDemo}>
           Reset Demo
         </button>
       </header>

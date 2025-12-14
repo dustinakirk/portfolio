@@ -19,44 +19,6 @@ const rollbackDemoStyles = {
     flexDirection: 'column',
     margin: '0 auto',
   },
-  // Header
-  header: {
-    background: '#fafafa',
-    padding: '16px 24px',
-    borderBottom: '1px solid #e2e8f0',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    zIndex: 10,
-  },
-  headerContent: {
-    flex: 1,
-  },
-  title: {
-    fontSize: '1.1rem',
-    fontWeight: 700,
-    color: '#1e293b',
-    marginBottom: '4px',
-  },
-  description: {
-    fontSize: '0.9rem',
-    color: '#64748b',
-    lineHeight: 1.4,
-    maxWidth: '600px',
-  },
-  resetButton: {
-    background: 'white',
-    border: '1px solid #e2e8f0',
-    color: '#64748b',
-    padding: '6px 12px',
-    borderRadius: '4px',
-    cursor: 'pointer',
-    fontSize: '0.85rem',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-    transition: 'all 0.2s',
-  },
   // Interface
   interface: {
     display: 'flex',
@@ -386,28 +348,12 @@ function RollbackDemo() {
 
       <div style={rollbackDemoStyles.container}>
         {/* Demo Header */}
-        <div style={rollbackDemoStyles.header}>
-          <div style={rollbackDemoStyles.headerContent}>
-            <div style={rollbackDemoStyles.title}>Rollback & Version History</div>
-            <div style={rollbackDemoStyles.description}>
-              <strong>Try it:</strong> Click &quot;Submit&quot; to ask the agent to undo changes. Then, select a task from the history panel to revert.
-            </div>
-          </div>
-          <button
-            style={rollbackDemoStyles.resetButton}
-            onClick={resetDemo}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#f1f5f9';
-              e.currentTarget.style.borderColor = '#cbd5e1';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'white';
-              e.currentTarget.style.borderColor = '#e2e8f0';
-            }}
-          >
-            <RotateCcw size={14} /> Reset Demo
+        <header className="pattern-demo__header">
+          <h2 className="pattern-demo__title">Interactive Demo</h2>
+          <button className="pattern-demo__reset-btn" onClick={resetDemo}>
+            Reset Demo
           </button>
-        </div>
+        </header>
 
         {/* App Interface */}
         <div style={rollbackDemoStyles.interface}>
@@ -634,9 +580,26 @@ export default function RollbackVersionHistoryPattern() {
           </div>
         </section>
 
-        {/* Interactive Demo */}
-        <section aria-label="Rollback demo example">
-          <RollbackDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo shows an AI agent that has completed a database optimization task. When you request an undo, the system presents a detailed history of changes with the ability to selectively rollback specific actions, demonstrating how version history enables safe recovery from unwanted changes.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Click &quot;Send&quot; with the pre-filled &quot;undo changes&quot; message</li>
+                <li>Review the task history panel that appears</li>
+                <li>Click &quot;Revert&quot; on any completed task to roll it back</li>
+                <li>Use &quot;Reset Demo&quot; to start over</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Rollback and Version History interactive demo">
+            <RollbackDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

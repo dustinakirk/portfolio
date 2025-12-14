@@ -70,14 +70,16 @@ export default function AgentRegistryProfilesPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo presents a centralized registry of AI agents used across an organization. Use the search and filter controls to explore agents by environment (Production, Staging, Dev) or risk level. Click on the "Expense Audit Agent" row to open its detailed profile panel, which reveals its description, tool permissions, and governance controls. Notice how each agent clearly displays its risk classification, owner, and active status, making it easy to understand what each agent can do, what data it can access, and how to manage it safely across different environments.
             </p>
           </div>
-          <AgentRegistryDemo />
+          <div className="pattern-demo" aria-label="Agent Registry interactive demo">
+            <AgentRegistryDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

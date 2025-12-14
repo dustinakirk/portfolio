@@ -141,15 +141,9 @@ export default function SentimentAwareResponseStylesDemo() {
 
   return (
     <div className="sars-showcase">
-      <header className="sars-showcase__header">
-        <div className="sars-showcase__header-content">
-          <h2 className="sars-showcase__title">Sentiment-Aware Response Styles</h2>
-          <p className="sars-showcase__description">
-            The AI Agent detects user frustration during a failed DevOps workflow and adapts
-            its response style from &quot;Neutral Verbose&quot; to &quot;Action-Oriented Concise.&quot;
-          </p>
-        </div>
-        <button className="sars-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>

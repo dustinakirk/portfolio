@@ -158,55 +158,6 @@ function KillSwitchDemo() {
           margin: 0 auto;
         }
 
-        .ks-demo__header-showcase {
-          padding: 24px;
-          border-bottom: 1px solid var(--ks-color-border);
-          background-color: #ffffff;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          gap: 20px;
-        }
-
-        .ks-demo__header-content {
-          flex: 1;
-        }
-
-        .ks-demo__header-title {
-          font-size: 18px;
-          font-weight: 700;
-          color: #111827;
-          margin: 0 0 8px 0;
-          line-height: 1.2;
-        }
-
-        .ks-demo__header-desc {
-          font-size: 14px;
-          color: #6b7280;
-          line-height: 1.5;
-          margin: 0;
-        }
-
-        .ks-demo__reset-btn {
-          background: #ffffff;
-          border: 1px solid #e5e7eb;
-          color: #374151;
-          padding: 8px 16px;
-          border-radius: 6px;
-          font-size: 13px;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2s;
-          box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-          white-space: nowrap;
-          height: fit-content;
-        }
-        .ks-demo__reset-btn:hover {
-          background: #f9fafb;
-          border-color: #d1d5db;
-          color: #111827;
-        }
-
         .ks-demo__agent {
           display: flex;
           flex-direction: column;
@@ -420,14 +371,9 @@ function KillSwitchDemo() {
       `}</style>
 
       <div className="ks-demo">
-        <header className="ks-demo__header-showcase">
-          <div className="ks-demo__header-content">
-            <h2 className="ks-demo__header-title">Kill Switch, Pause & Resume</h2>
-            <p className="ks-demo__header-desc">
-              Simulating a long-running AI agent. Try using Pause to intervene between steps, or Stop to halt immediately.
-            </p>
-          </div>
-          <button className="ks-demo__reset-btn" onClick={handleReset}>
+        <header className="pattern-demo__header">
+          <h2 className="pattern-demo__title">Interactive Demo</h2>
+          <button className="pattern-demo__reset-btn" onClick={handleReset}>
             Reset Demo
           </button>
         </header>
@@ -563,9 +509,26 @@ export default function KillSwitchPauseResumePattern() {
           </div>
         </section>
 
-        {/* Kill Switch Demo Example */}
-        <section aria-label="Kill switch example">
-          <KillSwitchDemo />
+        {/* Demo */}
+        <section className="pattern-section pattern-section--demo">
+          <div className="pattern-section__content">
+            <p className="pattern-kicker">Demo</p>
+            <p className="pattern-body">
+              This demo simulates an AI agent executing a multi-step data migration workflow. The kill switch controls allow you to pause the operation mid-execution, resume it later, or stop it entirely—demonstrating how users maintain control over long-running autonomous processes.
+            </p>
+            <div className="pattern-demo-instructions">
+              <p className="pattern-body--bold">How to interact with this demo:</p>
+              <ol className="pattern-list pattern-list--numbered">
+                <li>Observe the agent processing steps automatically</li>
+                <li>Click &quot;Pause&quot; to temporarily halt execution</li>
+                <li>Click &quot;Resume&quot; to continue or &quot;Stop&quot; to terminate</li>
+                <li>Use &quot;Reset Demo&quot; to restart the workflow</li>
+              </ol>
+            </div>
+          </div>
+          <div className="pattern-demo" aria-label="Kill Switch interactive demo">
+            <KillSwitchDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

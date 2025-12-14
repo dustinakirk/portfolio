@@ -66,14 +66,16 @@ export default function AssignmentBoardWorkQueuesPattern() {
         </section>
 
         {/* Demo */}
-        <section className="pattern-section">
+        <section className="pattern-section pattern-section--demo">
           <div className="pattern-section__content">
             <p className="pattern-kicker">Demo</p>
             <p className="pattern-body">
               This demo presents a task board showing AI work across multiple agents in different states. Notice the blocked task at the top, which surfaces a human-in-the-loop blocker requiring clarification before the agent can proceed. Below, active tasks show live progress bars and can be paused or resumed using the controls. Click the chat icon on any task to jump to its conversation context. The board makes it easy to see what agents are working on, what's stuck, how long tasks have been running, and their associated costs—providing a single control room for monitoring and managing autonomous AI work.
             </p>
           </div>
-          <AssignmentBoardDemo />
+          <div className="pattern-demo" aria-label="Assignment Board interactive demo">
+            <AssignmentBoardDemo />
+          </div>
         </section>
 
         {/* Problem & When to Use */}

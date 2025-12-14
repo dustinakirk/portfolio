@@ -285,16 +285,9 @@ export default function WorkflowPolicyTemplateLibraryDemo() {
 
   return (
     <div className="wptl-showcase" role="region" aria-label="Workflow & Policy Template Library demo">
-      <header className="wptl-showcase__header">
-        <div className="wptl-showcase__header-content">
-          <h2 className="wptl-showcase__title">Workflow & Policy Template Library</h2>
-          <p className="wptl-showcase__description">
-            A centralized catalog for Admins to select vetted AI agent patterns. This separates
-            the definition of &quot;what the agent does&quot; (workflow) from &quot;rules it must
-            follow&quot; (policy).
-          </p>
-        </div>
-        <button className="wptl-showcase__reset-btn" onClick={handleReset}>
+      <header className="pattern-demo__header">
+        <h2 className="pattern-demo__title">Interactive Demo</h2>
+        <button className="pattern-demo__reset-btn" onClick={handleReset}>
           Reset Demo
         </button>
       </header>
