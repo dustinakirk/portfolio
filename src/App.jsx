@@ -12,6 +12,7 @@ import LoadOrderProject from './components/projects/LoadOrderProject'
 import PillarsProject from './components/projects/PillarsProject'
 import AppsProject from './components/projects/AppsProject'
 import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasProject'
+import EventIntroProject from './components/projects/EventIntroProject'
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
 import AgenticOverviewPage from './components/agentic/AgenticOverviewPage'
 import PatternDetailPage from './components/agentic/PatternDetailPage'
@@ -45,6 +46,7 @@ function AppRoutes() {
         <Route path="/projects/pillars" element={<PillarsProject />} />
         <Route path="/projects/apps" element={<AppsProject />} />
         <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
+        <Route path="/projects/eventintro" element={<EventIntroProject />} />
         <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
         <Route path="/agentic_ai_patterns" element={<AgenticOverviewPage />} />
         <Route path="/agentic_ai_patterns/overview" element={<PatternLibraryHome />} />

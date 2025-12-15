@@ -9,7 +9,7 @@ export const FEATURED_PROJECTS_CONFIG = {
   showAll: false, // Set to true to show all projects as featured
   maxFeatured: 9, // Maximum number of featured projects to show
   // Alternatively, you can specify project IDs to feature
-  featuredIds: ['aitrustpatterns', 'generativeuicanvas', 'aistories', 'salesforceaihackathon', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
+  featuredIds: ['aitrustpatterns', 'eventintro', 'generativeuicanvas', 'aistories', 'salesforceaihackathon', 'email', 'color', 'architecture', 'charts'] // Leave empty to use 'featured' flag
 };
 
 // Portfolio projects data
@@ -23,6 +23,17 @@ export const WORK = [
     category: "AI & Innovation",
     image: "/projects/aitrustpatterns/ai-trust-patterns.png",
     tags: ["AI/ML", "UX Patterns", "Trust Design"],
+    featured: true,
+  },
+  {
+    id: "eventintro",
+    title: "EventIntro: AI-Powered Smart Networking",
+    subtitle:
+      "Full-stack web application transforming professional networking through AI-powered matching, personalized introductions, and intelligent breakout group formation.",
+    href: "/projects/eventintro",
+    category: "AI & Innovation",
+    image: "/projects/eventintro/eventintro.png",
+    tags: ["GenAI", "Full-Stack", "Product Design"],
     featured: true,
   },
   {
