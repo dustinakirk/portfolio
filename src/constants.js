@@ -1,5 +1,3 @@
-import { AI_TRUST_PATTERNS } from './data/aiTrustPatterns';
-
 export const CONTACT_EMAIL = 'dustin.kirk@gmail.com';
 
 // Featured projects configuration
@@ -18,12 +16,13 @@ export const WORK = [
     id: "aitrustpatterns",
     title: "Agentic AI UX Patterns",
     subtitle:
-      `${AI_TRUST_PATTERNS.length} UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.`,
-    href: "/agentic_ai_patterns",
+      "44+ UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+    href: "https://agenticuxpatterns.com",
     category: "AI & Innovation",
     image: "/projects/aitrustpatterns/ai-trust-patterns.png",
     tags: ["AI/ML", "UX Patterns", "Trust Design"],
     featured: true,
+    external: true,
   },
   {
     id: "eventintro",
@@ -33,6 +32,7 @@ export const WORK = [
     href: "/projects/eventintro",
     category: "AI & Innovation",
     image: "/projects/eventintro/eventintro.png",
+    imagePosition: "top",
     tags: ["GenAI", "Full-Stack", "Product Design"],
     featured: true,
   },
@@ -54,7 +54,8 @@ export const WORK = [
       "AI-powered platform generating never-ending fictional stories with interconnected characters and evolving narratives.",
     href: "/projects/aistories",
     category: "AI & Innovation",
-    image: "/projects/aistories/bot_writing_stories.png",
+    image: "/projects/aistories/nuvvel.png",
+    imagePosition: "top",
     tags: ["GenAI", "Literature", "Platform"],
     featured: true,
   },

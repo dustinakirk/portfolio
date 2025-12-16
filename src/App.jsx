@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import PortfolioFresh from './components/PortfolioFresh'
 import AiStoriesProject from './components/projects/AiStoriesProject'
@@ -14,10 +14,32 @@ import AppsProject from './components/projects/AppsProject'
 import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasProject'
 import EventIntroProject from './components/projects/EventIntroProject'
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
-import AgenticOverviewPage from './components/agentic/AgenticOverviewPage'
-import PatternDetailPage from './components/agentic/PatternDetailPage'
-import PatternLibraryHome from './components/agentic/PatternLibraryHome'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
+
+// Redirect component for external URLs
+function ExternalRedirect({ to }) {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'system-ui' }}>
+      <p>Redirecting to {to}...</p>
+    </div>
+  );
+}
+
+// Redirect component for pattern library pages (preserves slug in URL)
+function PatternRedirect() {
+  const { patternSlug } = useParams();
+  useEffect(() => {
+    window.location.href = `https://agenticuxpatterns.com/${patternSlug}`;
+  }, [patternSlug]);
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'system-ui' }}>
+      <p>Redirecting to https://agenticuxpatterns.com/{patternSlug}...</p>
+    </div>
+  );
+}
 
 const GA_MEASUREMENT_ID = 'G-W16VDWWV0S'
 
@@ -48,9 +70,10 @@ function AppRoutes() {
         <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
         <Route path="/projects/eventintro" element={<EventIntroProject />} />
         <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
-        <Route path="/agentic_ai_patterns" element={<AgenticOverviewPage />} />
-        <Route path="/agentic_ai_patterns/overview" element={<PatternLibraryHome />} />
-        <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternDetailPage />} />
+        {/* Redirect pattern library routes to new domain */}
+        <Route path="/agentic_ai_patterns" element={<ExternalRedirect to="https://agenticuxpatterns.com" />} />
+        <Route path="/agentic_ai_patterns/overview" element={<ExternalRedirect to="https://agenticuxpatterns.com/overview" />} />
+        <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternRedirect />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
       </Routes>
   )

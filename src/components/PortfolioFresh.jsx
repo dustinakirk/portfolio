@@ -344,15 +344,14 @@ function AvatarBlock() {
 
 // ===== Work Card =====
 function WorkCard({ item }) {
-  const isInternalLink = item.href?.startsWith("/projects/");
-  const linkPath = isInternalLink 
-    ? item.href
-    : item.href;
+  // Check if it's an external link (starts with http or has external flag)
+  const isExternalLink = item.external || item.href?.startsWith("http");
+  const isInternalLink = !isExternalLink && item.href?.startsWith("/");
 
   const CardWrapper = isInternalLink ? Link : 'a';
-  const cardProps = isInternalLink 
-    ? { to: linkPath }
-    : { href: linkPath, target: "_blank", rel: "noreferrer" };
+  const cardProps = isInternalLink
+    ? { to: item.href }
+    : { href: item.href, target: "_blank", rel: "noreferrer" };
 
   return (
     <motion.div
@@ -368,6 +367,7 @@ function WorkCard({ item }) {
             alt={item.title}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             fallbackClassName="h-full w-full"
+            style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
           />
         </div>
 
