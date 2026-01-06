@@ -1,0 +1,363 @@
+/* PeakActiveLanding - BEM CSS */
+
+/* Block: peak-active */
+.peak-active {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+}
+
+.peak-active--dark {
+  background: linear-gradient(to bottom, #111827, #030712);
+}
+
+/* Block: hero */
+.hero {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 6rem 1rem;
+  }
+}
+
+.hero__container {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.75rem;
+  }
+}
+
+.peak-active--dark .hero__title {
+  color: #ffffff;
+}
+
+.hero__description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+  .hero__description {
+    font-size: 1.25rem;
+  }
+}
+
+.peak-active--dark .hero__description {
+  color: #d1d5db;
+}
+
+/* Block: waitlist-form */
+.waitlist-form {
+  max-width: 28rem;
+  margin: 0 auto 1rem;
+}
+
+.waitlist-form__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .waitlist-form__inner {
+    flex-direction: row;
+  }
+}
+
+.waitlist-form__input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.waitlist-form__input::placeholder {
+  color: #6b7280;
+}
+
+.waitlist-form__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+  border-color: transparent;
+}
+
+.waitlist-form__input:disabled {
+  opacity: 0.5;
+}
+
+.peak-active--dark .waitlist-form__input {
+  border-color: #4b5563;
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.peak-active--dark .waitlist-form__input::placeholder {
+  color: #9ca3af;
+}
+
+.waitlist-form__button {
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.waitlist-form__button:hover {
+  background-color: #1d4ed8;
+}
+
+.waitlist-form__button:disabled {
+  background-color: #60a5fa;
+  cursor: not-allowed;
+}
+
+.waitlist-form__button-icon {
+  width: 1rem;
+  height: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Block: status-message */
+.status-message {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.status-message--success {
+  color: #16a34a;
+}
+
+.status-message--error {
+  color: #dc2626;
+}
+
+.peak-active--dark .status-message--success {
+  color: #4ade80;
+}
+
+.peak-active--dark .status-message--error {
+  color: #f87171;
+}
+
+/* Block: waitlist-count */
+.waitlist-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.peak-active--dark .waitlist-count {
+  color: #9ca3af;
+}
+
+/* Block: features */
+.features {
+  padding: 4rem 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.peak-active--dark .features {
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+.features__container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Block: feature */
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .feature {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
+.feature__icon-wrapper {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.peak-active--dark .feature__icon-wrapper {
+  background-color: rgba(30, 58, 138, 0.3);
+}
+
+.feature__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #2563eb;
+}
+
+.peak-active--dark .feature__icon {
+  color: #60a5fa;
+}
+
+.feature__content {
+  flex: 1;
+}
+
+.feature__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.peak-active--dark .feature__title {
+  color: #ffffff;
+}
+
+.feature__description {
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+.peak-active--dark .feature__description {
+  color: #d1d5db;
+}
+
+/* Block: preview */
+.preview {
+  padding: 4rem 1rem;
+}
+
+.preview__container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.preview__image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Block: cta */
+.cta {
+  padding: 4rem 1rem;
+  background-color: #111827;
+}
+
+.peak-active--dark .cta {
+  background-color: #030712;
+}
+
+.cta__container {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta__title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cta__title {
+    font-size: 1.875rem;
+  }
+}
+
+.cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+}
+
+.cta__button:hover {
+  background-color: #1d4ed8;
+}
+
+.cta__button-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Block: footer */
+.footer {
+  padding: 2rem 1rem;
+  background-color: #111827;
+  border-top: 1px solid #1f2937;
+}
+
+.peak-active--dark .footer {
+  background-color: #030712;
+}
+
+.footer__container {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

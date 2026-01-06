@@ -1,0 +1,261 @@
+/* WaitlistAdmin - BEM CSS */
+
+/* Block: waitlist-admin */
+.waitlist-admin {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .waitlist-admin {
+    padding: 4rem 2rem;
+  }
+}
+
+.waitlist-admin__container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.waitlist-admin__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.waitlist-admin__title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .waitlist-admin__title {
+    font-size: 2.5rem;
+  }
+}
+
+.waitlist-admin__subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.waitlist-admin__count {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-top: 1rem;
+}
+
+/* Block: login-form */
+.login-form {
+  max-width: 24rem;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.login-form__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-form__group {
+  margin-bottom: 1rem;
+}
+
+.login-form__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.login-form__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #111827;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form__input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.login-form__input::placeholder {
+  color: #9ca3af;
+}
+
+.login-form__button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.login-form__button:hover {
+  background-color: #1d4ed8;
+}
+
+.login-form__button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.login-form__error {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  color: #dc2626;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.login-form__spinner {
+  width: 1rem;
+  height: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Block: waitlist-table */
+.waitlist-table {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.waitlist-table__wrapper {
+  overflow-x: auto;
+}
+
+.waitlist-table__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.waitlist-table__header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.waitlist-table__header-cell {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.waitlist-table__header-cell--number {
+  width: 5rem;
+  text-align: center;
+}
+
+.waitlist-table__header-cell--date {
+  width: 12rem;
+}
+
+.waitlist-table__row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.15s;
+}
+
+.waitlist-table__row:last-child {
+  border-bottom: none;
+}
+
+.waitlist-table__row:hover {
+  background-color: #f9fafb;
+}
+
+.waitlist-table__cell {
+  padding: 1rem 1.5rem;
+  font-size: 0.9375rem;
+  color: #111827;
+}
+
+.waitlist-table__cell--number {
+  text-align: center;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.waitlist-table__cell--email {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+}
+
+.waitlist-table__cell--date {
+  color: #6b7280;
+}
+
+.waitlist-table__empty {
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Block: logout */
+.logout {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.logout__button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout__button:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}

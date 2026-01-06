@@ -70,7 +70,6 @@ function SafeImg({ src, alt, className, fallbackClassName = "", onState, style }
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.25),transparent_40%),radial-gradient(ellipse_at_bottom_left,rgba(16,185,129,0.25),transparent_40%)]" />
       )}
       {ok ? (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={src}
           alt={alt || ""}
@@ -390,15 +389,7 @@ function WorkCard({ item }) {
 // ===== Data =====
 // WORK array is now imported from constants.js
 
-// Skills, Experience, Education, Patents — summarized for the page
-const SKILLS = [
-  { group: "AI & GenAI", items: ["LLMs & agents", "Prompt engineering", "Natural language UIs"] },
-  { group: "Design Systems", items: ["System architecture", "Color & type tokens", "Pattern libraries"] },
-  { group: "UX Methods", items: ["UX architecture", "Research & synthesis", "Design specs"] },
-  { group: "Craft & Prototyping", items: ["Figma", "Rapid prototyping", "Data visualization"] },
-  { group: "Tech", items: ["HTML/CSS/JS", "Python", "Accessibility"] },
-];
-
+// Experience, Education data — summarized for the page
 const EXPERIENCE = [
   {
     company: "New Relic",
@@ -504,12 +495,6 @@ const EDUCATION = [
     dates: "2000 - 2003",
     logo: "/images/logo_rensselaer_polytechnic_institute.jpeg"
   },
-];
-
-const PATENTS = [
-  { title: "Config of content-site user interaction monitoring", note: "US 10,268,657 (2019)" },
-  { title: "Salesforce — Multi-layered LLM customization (pending)", note: "" },
-  { title: "Salesforce — AI sourcing attribution in RAG (pending)", note: "" },
 ];
 
 export default function PortfolioFresh() {
@@ -694,8 +679,8 @@ export default function PortfolioFresh() {
               <br className="hidden sm:block" /> <span className="text-xl md:text-3xl">AI Enthusiast</span>
             </motion.h1>
             <p className="mt-4 text-base md:text-lg text-black/70 dark:text-white/70 max-w-2xl">
-              Software is fundamentally changing with agentic systems, generative UI, and natrual language interfaces. 
-              Lets build AI-first software together and push the boundries of what has become the status-quo over the last 30 year to create hyper-personalized experiences that scale and evolve.
+              Software is fundamentally changing with agentic systems, generative UI, and natural language interfaces.
+              Let's build AI-first software together and push the boundaries of what has become the status-quo over the last 30 years to create hyper-personalized experiences that scale and evolve.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               <Badge>Agentic AI</Badge>
@@ -767,7 +752,7 @@ export default function PortfolioFresh() {
 
               {/* AI Thought Leadership */}
               <motion.div
-                id="highlight-ai-leadership"
+                id="highlight-ai-technologist"
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

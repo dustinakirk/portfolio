@@ -15,6 +15,8 @@ import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasP
 import EventIntroProject from './components/projects/EventIntroProject'
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
+import PeakActiveLanding from './components/PeakActiveLanding'
+import WaitlistAdmin from './components/WaitlistAdmin'
 
 // Redirect component for external URLs
 function ExternalRedirect({ to }) {
@@ -75,6 +77,8 @@ function AppRoutes() {
         <Route path="/agentic_ai_patterns/overview" element={<ExternalRedirect to="https://agenticuxpatterns.com/overview" />} />
         <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternRedirect />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
+        <Route path="/peakactive" element={<PeakActiveLanding />} />
+        <Route path="/peakactive/admin" element={<WaitlistAdmin />} />
       </Routes>
   )
 }

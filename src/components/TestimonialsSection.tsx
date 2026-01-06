@@ -103,7 +103,6 @@ function TestimonialCard({ t }: { t: Testimonial }) {
     >
       <div className="mb-5 flex items-center gap-3 text-slate-700">
         {t.avatarUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={t.avatarUrl}
             alt={`${t.name} headshot`}
