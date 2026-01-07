@@ -231,6 +231,57 @@
   color: #6b7280;
 }
 
+.waitlist-table__cell--actions {
+  width: 4rem;
+  text-align: center;
+}
+
+.waitlist-table__header-cell--actions {
+  width: 4rem;
+  text-align: center;
+}
+
+.waitlist-table__delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.waitlist-table__delete-button:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.waitlist-table__delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.waitlist-table__delete-button:disabled:hover {
+  background-color: transparent;
+  color: #9ca3af;
+}
+
+.waitlist-table__delete-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.waitlist-table__delete-spinner {
+  width: 1rem;
+  height: 1rem;
+  animation: spin 1s linear infinite;
+}
+
 .waitlist-table__empty {
   padding: 3rem;
   text-align: center;

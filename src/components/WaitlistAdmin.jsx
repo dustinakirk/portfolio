@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Loader2, Lock } from 'lucide-react';
+import { Loader2, Lock, Trash2 } from 'lucide-react';
 import './WaitlistAdmin.css';
 
 function formatDate(dateString) {
@@ -16,16 +17,18 @@ function formatDate(dateString) {
 }
 
 export default function WaitlistAdmin() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [emails, setEmails] = useState([]);
+  const [deletingEmail, setDeletingEmail] = useState(null);
+  const autoLoginAttempted = useRef(false);
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError('');
+  const attemptLogin = async (pwd) => {
     setIsLoading(true);
+    setError('');
 
     try {
       const response = await fetch('/api/waitlist-admin', {
@@ -33,22 +36,74 @@ export default function WaitlistAdmin() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ password: pwd }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setPassword(pwd);
+        setEmails(data.emails);
+        setIsAuthenticated(true);
+        return true;
+      } else {
+        setError(data.message || 'Invalid password');
+        return false;
+      }
+    } catch (err) {
+      setError('Failed to authenticate. Please try again.');
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Auto-login from query parameter
+  useEffect(() => {
+    if (autoLoginAttempted.current) return;
+
+    const passwordParam = searchParams.get('password');
+    if (passwordParam) {
+      autoLoginAttempted.current = true;
+      // Clear password from URL for security
+      setSearchParams({}, { replace: true });
+      attemptLogin(passwordParam);
+    }
+  }, [searchParams, setSearchParams]);
+
+  const handleDelete = async (emailToDelete) => {
+    if (!confirm(`Delete ${emailToDelete} from the waitlist?`)) {
+      return;
+    }
+
+    setDeletingEmail(emailToDelete);
+
+    try {
+      const response = await fetch('/api/waitlist-admin', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password, email: emailToDelete }),
       });
 
       const data = await response.json();
 
       if (data.success) {
         setEmails(data.emails);
-        setIsAuthenticated(true);
       } else {
-        setError(data.message || 'Invalid password');
+        alert(data.message || 'Failed to delete email');
       }
     } catch (err) {
-      setError('Failed to authenticate. Please try again.');
+      alert('Failed to delete email. Please try again.');
     } finally {
-      setIsLoading(false);
+      setDeletingEmail(null);
     }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    attemptLogin(password);
   };
 
   const handleLogout = () => {
@@ -152,6 +207,7 @@ export default function WaitlistAdmin() {
                     <th className="waitlist-table__header-cell waitlist-table__header-cell--number">#</th>
                     <th className="waitlist-table__header-cell">Email</th>
                     <th className="waitlist-table__header-cell waitlist-table__header-cell--date">Date Added</th>
+                    <th className="waitlist-table__header-cell waitlist-table__header-cell--actions"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -165,6 +221,20 @@ export default function WaitlistAdmin() {
                       </td>
                       <td className="waitlist-table__cell waitlist-table__cell--date">
                         {formatDate(entry.date)}
+                      </td>
+                      <td className="waitlist-table__cell waitlist-table__cell--actions">
+                        <button
+                          onClick={() => handleDelete(entry.email)}
+                          disabled={deletingEmail === entry.email}
+                          className="waitlist-table__delete-button"
+                          title="Delete from waitlist"
+                        >
+                          {deletingEmail === entry.email ? (
+                            <Loader2 className="waitlist-table__delete-spinner" />
+                          ) : (
+                            <Trash2 className="waitlist-table__delete-icon" />
+                          )}
+                        </button>
                       </td>
                     </tr>
                   ))}

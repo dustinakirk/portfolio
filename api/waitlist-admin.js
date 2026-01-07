@@ -1,4 +1,4 @@
-import { list } from '@vercel/blob';
+import { list, put } from '@vercel/blob';
 
 const BLOB_FILENAME = 'peakactive-waitlist.json';
 const ADMIN_PASSWORD = 'peakactivewaitlist5005';
@@ -17,20 +17,20 @@ async function getWaitlistData() {
   }
 }
 
+async function saveWaitlistData(data) {
+  await put(BLOB_FILENAME, JSON.stringify(data), {
+    access: 'public',
+    addRandomSuffix: false,
+  });
+}
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({
-      success: false,
-      message: 'Method not allowed',
-    });
   }
 
   const { password } = req.body;
@@ -42,23 +42,76 @@ export default async function handler(req, res) {
     });
   }
 
-  try {
-    const data = await getWaitlistData();
+  // DELETE: Remove an email from the waitlist
+  if (req.method === 'DELETE') {
+    const { email } = req.body;
 
-    // Sort by date descending (newest first)
-    const sortedEmails = data.emails.sort((a, b) => {
-      return new Date(b.date) - new Date(a.date);
-    });
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email is required',
+      });
+    }
 
-    return res.status(200).json({
-      success: true,
-      emails: sortedEmails,
-    });
-  } catch (error) {
-    console.error('Admin API error:', error);
-    return res.status(500).json({
-      success: false,
-      message: 'Failed to fetch waitlist data',
-    });
+    try {
+      const data = await getWaitlistData();
+      const originalLength = data.emails.length;
+
+      data.emails = data.emails.filter(
+        (entry) => entry.email !== email.toLowerCase()
+      );
+
+      if (data.emails.length === originalLength) {
+        return res.status(404).json({
+          success: false,
+          message: 'Email not found',
+        });
+      }
+
+      await saveWaitlistData(data);
+
+      const sortedEmails = data.emails.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      return res.status(200).json({
+        success: true,
+        message: 'Email deleted',
+        emails: sortedEmails,
+      });
+    } catch (error) {
+      console.error('Delete error:', error);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to delete email',
+      });
+    }
   }
+
+  // POST: Fetch waitlist data
+  if (req.method === 'POST') {
+    try {
+      const data = await getWaitlistData();
+
+      const sortedEmails = data.emails.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      return res.status(200).json({
+        success: true,
+        emails: sortedEmails,
+      });
+    } catch (error) {
+      console.error('Admin API error:', error);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to fetch waitlist data',
+      });
+    }
+  }
+
+  return res.status(405).json({
+    success: false,
+    message: 'Method not allowed',
+  });
 }
