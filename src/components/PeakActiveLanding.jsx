@@ -26,6 +26,7 @@ const FEATURES = [
 
 export default function PeakActiveLanding() {
   const [email, setEmail] = useState('');
+  const [wantsBeta, setWantsBeta] = useState(false);
   const [status, setStatus] = useState('idle');
   const [message, setMessage] = useState('');
   const [count, setCount] = useState(null);
@@ -80,7 +81,7 @@ export default function PeakActiveLanding() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, wantsBeta }),
       });
 
       const data = await response.json();
@@ -90,6 +91,7 @@ export default function PeakActiveLanding() {
         setMessage(data.message);
         setCount(data.count);
         setEmail('');
+        setWantsBeta(false);
       } else {
         setStatus('error');
         setMessage(data.message);
@@ -161,6 +163,19 @@ export default function PeakActiveLanding() {
                 )}
               </button>
             </div>
+            <label className="waitlist-form__toggle">
+              <input
+                type="checkbox"
+                checked={wantsBeta}
+                onChange={(e) => setWantsBeta(e.target.checked)}
+                disabled={status === 'loading'}
+                className="waitlist-form__toggle-input"
+              />
+              <span className="waitlist-form__toggle-switch"></span>
+              <span className="waitlist-form__toggle-label">
+                I'd like to participate in beta testing
+              </span>
+            </label>
           </motion.form>
 
           {/* Status Message */}

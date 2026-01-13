@@ -153,6 +153,81 @@
   }
 }
 
+/* Toggle */
+.waitlist-form__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.waitlist-form__toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.waitlist-form__toggle-switch {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.waitlist-form__toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.waitlist-form__toggle-input:checked + .waitlist-form__toggle-switch {
+  background-color: #2563eb;
+}
+
+.waitlist-form__toggle-input:checked + .waitlist-form__toggle-switch::after {
+  transform: translateX(1.25rem);
+}
+
+.waitlist-form__toggle-input:focus + .waitlist-form__toggle-switch {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.waitlist-form__toggle-input:disabled + .waitlist-form__toggle-switch {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.waitlist-form__toggle-label {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.peak-active--dark .waitlist-form__toggle-switch {
+  background-color: #4b5563;
+}
+
+.peak-active--dark .waitlist-form__toggle-input:checked + .waitlist-form__toggle-switch {
+  background-color: #2563eb;
+}
+
+.peak-active--dark .waitlist-form__toggle-label {
+  color: #d1d5db;
+}
+
 /* Block: status-message */
 .status-message {
   font-size: 0.875rem;

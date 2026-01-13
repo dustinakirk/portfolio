@@ -54,7 +54,7 @@ export default async function handler(req, res) {
 
   if (req.method === 'POST') {
     try {
-      const { email } = req.body;
+      const { email, wantsBeta = false } = req.body;
 
       // Validate email presence
       if (!email || typeof email !== 'string') {
@@ -77,30 +77,36 @@ export default async function handler(req, res) {
       // Get existing data
       const data = await getWaitlistData();
 
-      // Check for duplicates
-      const isDuplicate = data.emails.some(
+      // Check for existing entry
+      const existingIndex = data.emails.findIndex(
         (entry) => entry.email === sanitizedEmail
       );
 
-      if (isDuplicate) {
-        return res.status(400).json({
-          success: false,
-          message: 'This email is already on the waitlist',
+      let isUpdate = false;
+
+      if (existingIndex !== -1) {
+        // Update existing entry with new preference
+        data.emails[existingIndex] = {
+          email: sanitizedEmail,
+          date: new Date().toISOString(),
+          wantsBeta: Boolean(wantsBeta),
+        };
+        isUpdate = true;
+      } else {
+        // Add new entry
+        data.emails.push({
+          email: sanitizedEmail,
+          date: new Date().toISOString(),
+          wantsBeta: Boolean(wantsBeta),
         });
       }
-
-      // Add new entry
-      data.emails.push({
-        email: sanitizedEmail,
-        date: new Date().toISOString(),
-      });
 
       // Save updated data
       await saveWaitlistData(data);
 
       return res.status(200).json({
         success: true,
-        message: "You're on the list!",
+        message: isUpdate ? 'Your preferences have been updated!' : "You're on the list!",
         count: data.emails.length,
       });
     } catch (error) {

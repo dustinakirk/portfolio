@@ -206,6 +206,7 @@ export default function WaitlistAdmin() {
                   <tr>
                     <th className="waitlist-table__header-cell waitlist-table__header-cell--number">#</th>
                     <th className="waitlist-table__header-cell">Email</th>
+                    <th className="waitlist-table__header-cell waitlist-table__header-cell--beta">Beta Tester</th>
                     <th className="waitlist-table__header-cell waitlist-table__header-cell--date">Date Added</th>
                     <th className="waitlist-table__header-cell waitlist-table__header-cell--actions"></th>
                   </tr>
@@ -218,6 +219,9 @@ export default function WaitlistAdmin() {
                       </td>
                       <td className="waitlist-table__cell waitlist-table__cell--email">
                         {entry.email}
+                      </td>
+                      <td className="waitlist-table__cell waitlist-table__cell--beta">
+                        {entry.wantsBeta ? 'Yes' : 'No'}
                       </td>
                       <td className="waitlist-table__cell waitlist-table__cell--date">
                         {formatDate(entry.date)}

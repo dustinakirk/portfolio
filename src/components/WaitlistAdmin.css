@@ -198,6 +198,11 @@
   width: 12rem;
 }
 
+.waitlist-table__header-cell--beta {
+  width: 7rem;
+  text-align: center;
+}
+
 .waitlist-table__row {
   border-bottom: 1px solid #f3f4f6;
   transition: background-color 0.15s;
@@ -228,6 +233,11 @@
 }
 
 .waitlist-table__cell--date {
+  color: #6b7280;
+}
+
+.waitlist-table__cell--beta {
+  text-align: center;
   color: #6b7280;
 }
 
