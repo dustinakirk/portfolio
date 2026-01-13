@@ -329,7 +329,7 @@
   flex: 1;
   padding: 0.875rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid #888d96;
   background-color: #ffffff;
   color: #111827;
   font-size: 1rem;
@@ -527,4 +527,41 @@
 
 .peak-active--dark .footer__text {
   color: #9ca3af;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.peak-active--dark .footer__link {
+  color: #9ca3af;
+}
+
+.peak-active--dark .footer__link:hover {
+  color: #818cf8;
+}
+
+.footer__divider {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
+
+.peak-active--dark .footer__divider {
+  color: #4b5563;
 }

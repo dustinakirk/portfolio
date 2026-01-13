@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Check, Loader2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Check, Loader2 } from 'lucide-react';
 import './PeakActiveLanding.css';
 
 const META_INFO = {
@@ -23,10 +24,12 @@ const FEATURES = [
 ];
 
 const CAROUSEL_IMAGES = [
-  { id: 1, src: '/projects/peakactive/pano1.png', alt: 'Peak Active screenshot 1' },
-  { id: 2, src: '/projects/peakactive/pano2.png', alt: 'Peak Active screenshot 2' },
-  { id: 3, src: '/projects/peakactive/pano3.png', alt: 'Peak Active screenshot 3' },
-  { id: 4, src: '/projects/peakactive/pano4.png', alt: 'Peak Active screenshot 4' },
+  { id: 1, src: '/projects/peakactive/pano1.png', alt: 'Peak Active' },
+  { id: 2, src: '/projects/peakactive/pano2.png', alt: 'Peak Active' },
+  { id: 3, src: '/projects/peakactive/pano3.png', alt: 'Peak Active' },
+  { id: 4, src: '/projects/peakactive/pano4.png', alt: 'Peak Active' },
+  { id: 5, src: '/projects/peakactive/pano5.png', alt: 'Peak Active' },
+  { id: 6, src: '/projects/peakactive/pano6.png', alt: 'Peak Active' },
 ];
 
 export default function PeakActiveLanding() {
@@ -167,14 +170,6 @@ export default function PeakActiveLanding() {
     setCurrentSlide(index);
   };
 
-  const goToPrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length);
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -237,21 +232,7 @@ export default function PeakActiveLanding() {
                 </div>
               ))}
             </div>
-            <button
-              className="carousel__arrow carousel__arrow--prev"
-              onClick={goToPrevSlide}
-              aria-label="Previous slide"
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              className="carousel__arrow carousel__arrow--next"
-              onClick={goToNextSlide}
-              aria-label="Next slide"
-            >
-              <ChevronRight />
-            </button>
-          </div>
+                      </div>
           <div className="carousel__dots">
             {CAROUSEL_IMAGES.map((_, index) => (
               <button
@@ -396,6 +377,11 @@ export default function PeakActiveLanding() {
 
         {/* Footer */}
         <footer className="footer">
+          <div className="footer__links">
+            <Link to="/peakactive/terms" className="footer__link">Terms of Service</Link>
+            <span className="footer__divider">|</span>
+            <Link to="/peakactive/privacy" className="footer__link">Privacy Policy</Link>
+          </div>
           <p className="footer__text">
             &copy; {new Date().getFullYear()} Peak Active. All rights reserved.
           </p>
