@@ -9,10 +9,12 @@ const META_INFO = {
   description: 'Track your walks automatically without hitting start or stop. Peak Active uses Apple HealthKit to detect your walks, showing steps, distance, calories, and duration. Private, battery-friendly, and perfect for casual walkers.',
   keywords: 'walk tracker, passive activity tracking, iPhone walking app, step counter, HealthKit app, fitness tracker, walking exercise, health tracking',
   ogImage: 'https://dustinkirk.com/projects/peakactive/og_image.png',
+  ogImageType: 'image/png',
   ogImageWidth: '1200',
   ogImageHeight: '630',
   ogImageAlt: 'Peak Active - Passive walk tracking app for iPhone',
   url: 'https://dustinkirk.com/peakactive',
+  twitterHandle: '@Dustin_Kirk',
   faviconPath: '/projects/peakactive/favicons',
 };
 
@@ -22,7 +24,7 @@ const FEATURES = [
   { title: 'View All Past Activity', description: 'View all past walks and hikes' },
   { title: 'Hassle Free', description: "No need to hit 'start' or 'stop'" },
   { title: 'Private', description: 'No data leaves your device' },
-  { title: 'Battery Friendly', description: 'insanely battery efficient' },
+  { title: 'Battery Friendly', description: 'Insanely battery efficient' },
   { title: 'Ad Free', description: 'Relax, and enjoy' },
 ];
 
@@ -81,6 +83,8 @@ export default function PeakActiveLanding() {
     setMetaTag('og:image:width', META_INFO.ogImageWidth, true);
     setMetaTag('og:image:height', META_INFO.ogImageHeight, true);
     setMetaTag('og:image:alt', META_INFO.ogImageAlt, true);
+    setMetaTag('og:image:type', META_INFO.ogImageType, true);
+    setMetaTag('og:image:secure_url', META_INFO.ogImage, true);
     setMetaTag('og:url', META_INFO.url, true);
     setMetaTag('og:type', 'website', true);
     setMetaTag('og:site_name', 'Peak Active', true);
@@ -88,6 +92,8 @@ export default function PeakActiveLanding() {
 
     // Twitter Card tags
     setMetaTag('twitter:card', 'summary_large_image');
+    setMetaTag('twitter:site', META_INFO.twitterHandle);
+    setMetaTag('twitter:creator', META_INFO.twitterHandle);
     setMetaTag('twitter:title', META_INFO.title);
     setMetaTag('twitter:description', META_INFO.description);
     setMetaTag('twitter:image', META_INFO.ogImage);
