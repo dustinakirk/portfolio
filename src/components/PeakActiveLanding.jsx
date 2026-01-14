@@ -8,7 +8,10 @@ const META_INFO = {
   title: 'Peak Active - Passive Walk Tracker for iPhone',
   description: 'Track your walks automatically without hitting start or stop. Peak Active uses Apple HealthKit to detect your walks, showing steps, distance, calories, and duration. Private, battery-friendly, and perfect for casual walkers.',
   keywords: 'walk tracker, passive activity tracking, iPhone walking app, step counter, HealthKit app, fitness tracker, walking exercise, health tracking',
-  ogImage: '/projects/peakactive/og_image.png',
+  ogImage: 'https://dustinkirk.com/projects/peakactive/og_image.png',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  ogImageAlt: 'Peak Active - Passive walk tracking app for iPhone',
   url: 'https://dustinkirk.com/peakactive',
   faviconPath: '/projects/peakactive/favicons',
 };
@@ -75,15 +78,20 @@ export default function PeakActiveLanding() {
     setMetaTag('og:title', META_INFO.title, true);
     setMetaTag('og:description', META_INFO.description, true);
     setMetaTag('og:image', META_INFO.ogImage, true);
+    setMetaTag('og:image:width', META_INFO.ogImageWidth, true);
+    setMetaTag('og:image:height', META_INFO.ogImageHeight, true);
+    setMetaTag('og:image:alt', META_INFO.ogImageAlt, true);
     setMetaTag('og:url', META_INFO.url, true);
     setMetaTag('og:type', 'website', true);
     setMetaTag('og:site_name', 'Peak Active', true);
+    setMetaTag('og:locale', 'en_US', true);
 
     // Twitter Card tags
     setMetaTag('twitter:card', 'summary_large_image');
     setMetaTag('twitter:title', META_INFO.title);
     setMetaTag('twitter:description', META_INFO.description);
     setMetaTag('twitter:image', META_INFO.ogImage);
+    setMetaTag('twitter:image:alt', META_INFO.ogImageAlt);
 
     // Favicon management
     const originalFavicons = [];
