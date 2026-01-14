@@ -16,7 +16,7 @@ const META_INFO = {
 const FEATURES = [
   { title: 'Activity Log', description: 'View your walks in detail' },
   { title: 'Daily Step Counter', description: 'Large text & accurate data' },
-  { title: 'View All Past Data', description: 'View all past walks and hikes' },
+  { title: 'View All Past Activity', description: 'View all past walks and hikes' },
   { title: 'Hassle Free', description: "No need to hit 'start' or 'stop'" },
   { title: 'Private', description: 'No data leaves your device' },
   { title: 'Battery Friendly', description: 'insanely battery efficient' },

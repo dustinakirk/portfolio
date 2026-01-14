@@ -14,26 +14,23 @@
 .peak-active__body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
   background-color: #ffffff;
   min-height: 100vh;
 }
 
 @media (max-width: 768px) {
-  .peak-active__body {
-    padding: 0 20px;
+  .peak-active {
+    padding: 0 0px;
   }
 }
 
 /* Block: carousel */
 .carousel {
-  padding-top: 40px;
   margin-bottom: 60px;
 }
 
 @media (max-width: 768px) {
   .carousel {
-    padding-top: 20px;
     margin-bottom: 40px;
   }
 }
@@ -41,7 +38,6 @@
 .carousel__container {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
   background-color: #e5e5e5;
   aspect-ratio: 1120 / 350;
 }
@@ -166,6 +162,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
+  padding: 0px 40px;
   padding-bottom: 60px;
   align-items: start;
 }
