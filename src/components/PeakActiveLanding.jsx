@@ -37,6 +37,7 @@ const CAROUSEL_IMAGES = [
   { id: 6, src: '/projects/peakactive/pano6.png', alt: 'Peak Active' },
 ];
 
+
 export default function PeakActiveLanding() {
   const [email, setEmail] = useState('');
   const [wantsBeta, setWantsBeta] = useState(false);
