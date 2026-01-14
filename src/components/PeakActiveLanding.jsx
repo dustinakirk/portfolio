@@ -218,21 +218,19 @@ export default function PeakActiveLanding() {
         {/* Carousel Section */}
         <section className="carousel">
           <div className="carousel__container">
-            <div
-              className="carousel__track"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {CAROUSEL_IMAGES.map((image) => (
-                <div key={image.id} className="carousel__slide">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="carousel__image"
-                  />
-                </div>
-              ))}
-            </div>
-                      </div>
+            {CAROUSEL_IMAGES.map((image, index) => (
+              <div
+                key={image.id}
+                className={`carousel__slide${index === currentSlide ? ' carousel__slide--active' : ''}`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="carousel__image"
+                />
+              </div>
+            ))}
+          </div>
           <div className="carousel__dots">
             {CAROUSEL_IMAGES.map((_, index) => (
               <button
