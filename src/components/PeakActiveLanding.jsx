@@ -5,14 +5,14 @@ import { Check, Loader2 } from 'lucide-react';
 import './PeakActiveLanding.css';
 
 const META_INFO = {
-  title: 'Peak Active - Passive Walk Tracker for iPhone',
+  title: 'Peak Active - Automatic Walk Tracker for iPhone',
   description: 'Track your walks automatically without hitting start or stop. Peak Active uses Apple HealthKit to detect your walks, showing steps, distance, calories, and duration. Private, battery-friendly, and perfect for casual walkers.',
   keywords: 'walk tracker, passive activity tracking, iPhone walking app, step counter, HealthKit app, fitness tracker, walking exercise, health tracking',
   ogImage: 'https://dustinkirk.com/projects/peakactive/og_image.png',
   ogImageType: 'image/png',
   ogImageWidth: '1200',
   ogImageHeight: '630',
-  ogImageAlt: 'Peak Active - Passive walk tracking app for iPhone',
+  ogImageAlt: 'Peak Active - Automatic walk tracking app for iPhone',
   url: 'https://dustinkirk.com/peakactive',
   twitterHandle: '@Dustin_Kirk',
   faviconPath: '/projects/peakactive/favicons',
@@ -276,7 +276,7 @@ export default function PeakActiveLanding() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="content__subtitle"
             >
-              Passive walk tracking for iPhone
+              Automatic walk tracking for iPhone
             </motion.p>
 
             {/* Feature List */}

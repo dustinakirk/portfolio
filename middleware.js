@@ -329,7 +329,7 @@ function getMetaForRoute(pathname) {
   // Peak Active page
   if (pathname === '/peakactive') {
     return {
-      title: 'Peak Active - Passive Walk Tracker for iPhone',
+      title: 'Peak Active - Automatic Walk Tracker for iPhone',
       description: 'Track your walks automatically without hitting start or stop. Peak Active uses Apple HealthKit to detect your walks, showing steps, distance, calories, and duration.',
       image: `${baseUrl}/projects/peakactive/og_image.png`,
       url: `${baseUrl}/peakactive`
