@@ -320,7 +320,7 @@ function getMetaForRoute(pathname) {
   if (pathname === '/' || pathname === '') {
     return {
       title: 'Dustin Kirk - Principal Product Designer',
-      description: 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns. 15+ years of experience designing enterprise SaaS at Salesforce, New Relic, and Tealium.',
+      description: 'Principal Product Designer with 20 years of experience in enterprise SaaS and PaaS, focused on AI-powered products: AI copilots, generative AI, agentic systems, and natural language interfaces at New Relic, Salesforce, and Tealium.',
       image: avatarImage,
       url: baseUrl
     };

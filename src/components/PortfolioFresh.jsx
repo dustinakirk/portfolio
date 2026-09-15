@@ -399,7 +399,7 @@ const EXPERIENCE = [
     points: [
       "Contributed AI-first thought leadership through proof-of-concept explorations.",
       "Led the creation of design-system patterns for the integration of AI.",
-      "Formed and led design group of AI enthusiasts up-skill and mentor others.",
+      "Formed and led a design group of AI enthusiasts to upskill and mentor others.",
       "Collaborated on strategic roadmap items for both short- and long-term initiatives.",
       "Championed user-centric and hyper-personalized interfaces by using AI.",
     ],
@@ -408,35 +408,35 @@ const EXPERIENCE = [
     company: "Salesforce",
     subtitle: "Sales Cloud",
     role: "Lead Product Designer",
-    dates: "Sep 2021 – Oct 2023",
-    duration: "2 years",
+    dates: "Sept 2021 – Oct 2023",
+    duration: "2 yrs 1 mo",
     logo: "/images/logo_salesforce.jpeg",
     points: [
-      "Led design on Sales Cloud Co-pilot.",
+      "Led design for Einstein Copilot in Sales Cloud.",
       "Pioneered generative email and autonomous experiences for Sales Cloud.",
-      "Won 'most-innovative' award in generative AI hackathon among 90 teams",
-      "Championed and extended SLDS Design System",
+      "Won the 'Most Innovative' award at a generative AI hackathon.",
+      "Championed and extended the Salesforce Lightning Design System (SLDS).",
     ],
   },
   {
     company: "LeadIQ",
     role: "Lead Product Designer / Manager",
-    dates: "Dec 2020 – Sep 2021",
+    dates: "Dec 2020 – Sept 2021",
     duration: "10 mos",
     logo: "/images/logo_leadiq_inc.jpeg",
     points: [
-      "Lead the remote Product Design and UX Research teams across Asia and US.",
+      "Led the remote product design and UX research teams across Asia and the U.S.",
       "Established UX architecture and Design System for next-generation product.",
       "Established persona library, research processes, and research repository.",
       "Implemented design processes and specs to streamline product development.",
-      "Work closely with leadership to realize both short- and long-term OKRs.",
+      "Worked closely with leadership to realize both short- and long-term OKRs.",
     ],
   },
   {
     company: "Tealium",
-    role: "Principal Product Designer / Manager",
+    role: "Lead Product Designer",
     dates: "Aug 2012 – Oct 2020",
-    duration: "8 Years 3 mos",
+    duration: "8 yrs 3 mos",
     logo: "/images/logo_tealium.jpeg",
     points: [
       "Established cross-functional relationships with product and engineering leads.",
@@ -479,19 +479,19 @@ const EXPERIENCE = [
 const EDUCATION = [
   { 
     school: "Rensselaer Polytechnic Institute", 
-    program: "MS, Human Computer Interaction (HCI)", 
+    program: "M.S., Human-Computer Interaction (HCI)", 
     dates: "2005 - 2008",
     logo: "/images/logo_rensselaer_polytechnic_institute.jpeg"
   },
   { 
     school: "MIT Sloan School of Management", 
     program: "Certificate, Entrepreneurship Development Program", 
-    dates: "2008 - 2008",
+    dates: "January 2008",
     logo: "/images/logo_mit.jpeg"
   },
   { 
     school: "Rensselaer Polytechnic Institute", 
-    program: "BS, Computer Science & Psychology", 
+    program: "B.S., Computer Science & Psychology", 
     dates: "2000 - 2003",
     logo: "/images/logo_rensselaer_polytechnic_institute.jpeg"
   },
@@ -523,7 +523,7 @@ export default function PortfolioFresh() {
   // Set page title and meta tags for SEO
   useEffect(() => {
     const pageTitle = 'Dustin Kirk - Principal Product Designer';
-    const pageDescription = 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns. 15+ years of experience designing enterprise SaaS at Salesforce, New Relic, and Tealium.';
+    const pageDescription = 'Principal Product Designer with 20 years of experience in enterprise SaaS and PaaS, focused on AI-powered products: AI copilots, generative AI, agentic systems, and natural language interfaces at New Relic, Salesforce, and Tealium.';
     const pageUrl = 'https://dustinkirk.com';
     const pageImage = 'https://dustinkirk.com/images/dustin_kirk2.png';
 
@@ -724,13 +724,13 @@ export default function PortfolioFresh() {
             <div id="about-content" className="lg:col-span-8">
               <div className="space-y-4 text-black/80 dark:text-white/80">
                 <p>
-                  With 20 years of experience in enterprise SaaS and PaaS, I deliver high-quality work quickly while leading design across multiple projects.
+                  I'm a Principal Product Designer with 20 years of experience in enterprise SaaS and PaaS, with a focus on AI-powered products and user experiences. I've led design for AI copilots, generative AI email tools, and autonomous experiences, supported by hands-on expertise in large language models (LLMs), AI agents, prompt engineering, and natural language interfaces.
                 </p>
                 <p>
-                  As AI has come to the forefront, my fascination has led me to explore its potential, integrate it into my workflows, explore capabilities through personal projects, and share that knowledge with others. I believe software as we know it will change dramatically, and I'm here for it. I'm eager to help bring the vast and emerging capabilities of AI to software and provide greater agency to people around the world.
+                  I combine a background in computer science and human-computer interaction with hands-on prototyping, UX research, design systems, and team leadership. I translate complex AI capabilities into intuitive workflows and partner with product and engineering teams to shape product strategy.
                 </p>
                 <p>
-                  I have an innate curiosity about technology and enjoy taking on increasingly complex challenges that blend people and technology—and now AI agents. I studied Computer Science and Psychology at Rensselaer and earned an M.S. in Human-Computer Interaction. Other highlights include completing MIT's Entrepreneurship Development Program, presenting at the O'Reilly Strata Data Conference, and earning three patents: one for event tracking via CSS and two related to AI.
+                  I studied Computer Science and Psychology at Rensselaer, earned an M.S. in Human-Computer Interaction, and completed MIT's Entrepreneurship Development Program. I'm a named inventor on three U.S. patents, including two focused on AI.
                 </p>
               </div>
               
@@ -805,7 +805,7 @@ export default function PortfolioFresh() {
                   </span>
                   <div>
                     <div className="font-medium mb-2">Patents</div>
-                    <div className="text-sm opacity-70">Three patents demonstrating innovation - one issued for CSS-based event tracking, two pending for AI-powered LLM customization and RAG attribution.</div>
+                    <div className="text-sm opacity-70">Named inventor on three issued U.S. patents - one for CSS-based event tracking and two focused on AI: generated content source attribution and a multi-layered customization framework.</div>
                   </div>
                 </div>
               </motion.div>
@@ -977,7 +977,7 @@ export default function PortfolioFresh() {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
-                    <span>Eight years' of experience designing and developing mobile applications.</span>
+                    <span>Eight years of experience designing and developing mobile applications.</span>
                   </li>
                 </ul>
               </div>
@@ -988,7 +988,11 @@ export default function PortfolioFresh() {
                 <ul className="space-y-2 text-sm opacity-80">
                   <li className="flex items-start">
                     <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
-                    <span><strong>AI Tools</strong>: Chat GPT, Claude Code, Grok, Cursor, Codex, Gemini, Midjourney, Udio, Figma Make, etc.</span>
+                    <span><strong>AI Concepts</strong>: Agentic UX, Agentic Harnesses, RAG, Generative UI</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
+                    <span><strong>AI Tools</strong>: ChatGPT, Codex, Claude, Grok, Cursor, Gemini, etc.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
@@ -1004,7 +1008,7 @@ export default function PortfolioFresh() {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
-                    <span>Journey Mapping, Wire-framing, Workflow Diagrams, Design Specs</span>
+                    <span>Journey Mapping, Wireframing, Workflow Diagrams, Design Specs</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
@@ -1030,22 +1034,19 @@ export default function PortfolioFresh() {
                 <h3 className="text-base font-semibold mb-3">Patents</h3>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <div className="opacity-80">Kirk, Dustin; Lin, Ike 2019</div>
+                    <div className="opacity-80">Dustin Kirk &amp; Ike Lin 2019</div>
                     <div className="opacity-80">Configuration of content site user interaction monitoring in data networks</div>
                     <div className="opacity-60 text-xs mt-1">U.S. Patent 10,268,657, Filed June 5, 2018, and issued April 23, 2019</div>
                   </div>
                   <div>
-                    <h4 className="font-medium opacity-80 mb-1">Patents Pending</h4>
-                    <ul className="space-y-1 opacity-70">
-                      <li className="flex items-start">
-                        <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
-                        <span>Salesforce - Multi-layered LLM customization framework</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-black/40 dark:bg-white/40 shrink-0"></span>
-                        <span>Salesforce - AI sourcing attribution in RAG system</span>
-                      </li>
-                    </ul>
+                    <div className="opacity-80">Dustin Kirk 2026</div>
+                    <div className="opacity-80">Generated content source attribution</div>
+                    <div className="opacity-60 text-xs mt-1">U.S. Patent 12,585,643</div>
+                  </div>
+                  <div>
+                    <div className="opacity-80">Dustin Kirk 2026</div>
+                    <div className="opacity-80">Multi-layered customization framework</div>
+                    <div className="opacity-60 text-xs mt-1">U.S. Patent 12,657,381</div>
                   </div>
                 </div>
               </div>
