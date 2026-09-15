@@ -9,12 +9,15 @@ Personal portfolio website for Dustin Kirk, a Principal Product Designer. Built 
 ## Commands
 
 ```bash
-npm run dev      # Start dev server on port 5005
+npm run dev      # Start Vite dev server on port 5005 (proxies /api to port 3005)
+npm run dev:api  # Start `vercel dev` on port 3005 to run the api/ functions locally (run alongside dev)
 npm run build    # Build for production (outputs to dist/)
 npm run lint     # Run ESLint
 npm run preview  # Preview production build locally
 npm run deploy   # Build locally, deploy prebuilt output to Vercel production, then git push
 ```
+
+Local env vars for the functions live in `.env` (gitignored): `PROTECTED_PASSWORD`, `SESSION_SECRET`, `BLOB_READ_WRITE_TOKEN`. The same values are set on the Vercel project via `vercel env`.
 
 Pushing to `main` does NOT auto-deploy (git deployments are disabled in `vercel.json`). Use `npm run deploy` to ship.
 
@@ -42,6 +45,12 @@ Pushing to `main` does NOT auto-deploy (git deployments are disabled in `vercel.
 - Homepage: `/`
 - Project pages: `/projects/{projectId}` (e.g., `/projects/aistories`)
 - Routes use react-router-dom; Vercel rewrites handle SPA routing
+
+### Password-Protected Projects
+- Case studies in `protected/content/<id>.md` (front matter: title, subtitle, category, tags, image, order, draft) with media in `protected/media/<id>/`. See `protected/README.md`.
+- Served only by the Vercel Functions in `api/` after the visitor enters `PROTECTED_PASSWORD`; a signed HttpOnly cookie (`SESSION_SECRET`) keeps them unlocked for 7 days. Nothing in `protected/` reaches the client bundle.
+- Client: `src/lib/protectedAccess.js` (session context), `PasswordTile`/`PasswordGate` on the homepage, `ProtectedProjectPage` for `/projects/:id` when the id is not a public project. `PROTECTED_PROJECTS_CONFIG` in `src/constants.js` holds the tile copy.
+- Change the password with `vercel env add PROTECTED_PASSWORD production` (and preview/development), then update `.env`.
 
 ### Static Assets
 - Images and PDFs in `public/` directory

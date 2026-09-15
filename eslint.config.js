@@ -7,6 +7,11 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 export default [
   { ignores: ['dist', '**/*.ts', '**/*.tsx'] },
   {
+    // Vercel Functions run on Node.js
+    files: ['api/**/*.js', 'scripts/**/*.mjs'],
+    languageOptions: { globals: globals.node },
+  },
+  {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { WORK } from "../constants";
+import { useProtectedAccess } from "../lib/protectedAccess";
 import { Home, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import "./ProjectNav.css";
 
@@ -8,12 +9,18 @@ function ProjectNav({ currentProjectId }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const menuButtonRef = useRef(null);
+  const { unlocked, projects: protectedProjects } = useProtectedAccess();
+
+  // Protected projects come from the API and only exist once unlocked
+  const projects = unlocked ? [...protectedProjects, ...WORK] : WORK;
 
   // Find current project index and adjacent projects
-  const currentIndex = WORK.findIndex((p) => p.id === currentProjectId);
-  const prevProject = currentIndex > 0 ? WORK[currentIndex - 1] : null;
+  const currentIndex = projects.findIndex((p) => p.id === currentProjectId);
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject =
-    currentIndex < WORK.length - 1 ? WORK[currentIndex + 1] : null;
+    currentIndex >= 0 && currentIndex < projects.length - 1
+      ? projects[currentIndex + 1]
+      : null;
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -95,7 +102,7 @@ function ProjectNav({ currentProjectId }) {
 
           {isDropdownOpen && (
             <div ref={dropdownRef} className="project-nav-dropdown">
-              {WORK.map((project) => (
+              {projects.map((project) => (
                 <Link
                   key={project.id}
                   to={`/projects/${project.id}`}

@@ -1,5 +1,18 @@
 export const CONTACT_EMAIL = 'dustin.kirk@gmail.com';
 
+// Password-protected projects configuration
+// Protected case studies live in protected/content/*.md (see protected/README.md)
+// and are served by the functions in api/ only after the visitor enters the
+// password. The password itself is the PROTECTED_PASSWORD environment variable
+// on Vercel; nothing about the protected projects ships in this bundle.
+export const PROTECTED_PROJECTS_CONFIG = {
+  durationDays: 7, // Display only; the server enforces the real expiry
+  tile: {
+    title: 'Confidential Projects',
+    subtitle: 'Additional case studies are available on request. Enter the password to view them.',
+  },
+};
+
 // Featured projects configuration
 // Set 'featured' to true for projects you want to show in the featured section
 // You can also control the order by rearranging items in the WORK array

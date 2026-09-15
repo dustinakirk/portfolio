@@ -22,8 +22,21 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api/media/(.*)",
+      "destination": "/api/media?path=$1"
+    },
+    {
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "protected/**"
+    },
+    "api/protected/*.js": {
+      "includeFiles": "protected/**"
+    }
+  },
+  "devCommand": "node scripts/dev-placeholder.mjs"
 }

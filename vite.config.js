@@ -18,6 +18,11 @@ export default defineConfig({
   },
   server: {
     port: 5005,
-    host: true
+    host: true,
+    // Vercel Functions in api/ run under `vercel dev` (npm run dev:api) on port 3005.
+    proxy: {
+      '/api': { target: 'http://localhost:3005', changeOrigin: false },
+    },
+    watch: { ignored: ['**/.vercel/**'] },
   }
 })

@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CONTACT_EMAIL, WORK, FEATURED_PROJECTS_CONFIG } from '../constants';
 import ScrollToHashElement from './ScrollToHashElement';
+import PasswordTile from './PasswordTile';
+import { useProtectedAccess } from '../lib/protectedAccess';
 // NOTE: Fix for build error — use the correct Lucide icon name "Image" and alias it locally
 // instead of importing a non-existent "ImageIcon" file from the CDN build.
 import {
@@ -498,7 +500,8 @@ const EDUCATION = [
 ];
 
 export default function PortfolioFresh() {
-  
+  const { status: accessStatus, projects: protectedProjects } = useProtectedAccess();
+
   // Determine which projects to show as featured based on configuration
   const featuredProjects = useMemo(() => {
     let projects = WORK;
@@ -519,6 +522,7 @@ export default function PortfolioFresh() {
     // Apply max limit
     return projects.slice(0, FEATURED_PROJECTS_CONFIG.maxFeatured);
   }, []);
+
 
   // Set page title and meta tags for SEO
   useEffect(() => {
@@ -881,6 +885,11 @@ export default function PortfolioFresh() {
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">Featured Projects</h2>
 
         <div id="work-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {/* Password-protected projects: tile while locked, real tiles once unlocked */}
+          {accessStatus === "locked" && <PasswordTile />}
+          {accessStatus === "unlocked" && protectedProjects.map((item) => (
+            <WorkCard key={item.id} item={item} />
+          ))}
           {featuredProjects.map((item) => (
             <WorkCard key={item.id} item={item} />
           ))}

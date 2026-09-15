@@ -15,6 +15,8 @@ import GenerativeUICanvasProject from './components/projects/GenerativeUICanvasP
 import EventIntroProject from './components/projects/EventIntroProject'
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
+import ProtectedProjectPage from './components/ProtectedProjectPage'
+import { ProtectedAccessProvider } from './lib/protectedAccess'
 
 // Redirect component for external URLs
 function ExternalRedirect({ to }) {
@@ -75,6 +77,8 @@ function AppRoutes() {
         <Route path="/agentic_ai_patterns/overview" element={<ExternalRedirect to="https://agenticuxpatterns.com/overview" />} />
         <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternRedirect />} />
         <Route path="/design_system" element={<DesignSystemShowcase />} />
+        {/* Password-protected case studies (served from protected/content via api/) */}
+        <Route path="/projects/:id" element={<ProtectedProjectPage />} />
       </Routes>
   )
 }
@@ -82,7 +86,9 @@ function AppRoutes() {
 function App() {
   return (
     <Router>
-      <AppRoutes />
+      <ProtectedAccessProvider>
+        <AppRoutes />
+      </ProtectedAccessProvider>
     </Router>
   )
 }
