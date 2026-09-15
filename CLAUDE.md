@@ -13,7 +13,10 @@ npm run dev      # Start dev server on port 5005
 npm run build    # Build for production (outputs to dist/)
 npm run lint     # Run ESLint
 npm run preview  # Preview production build locally
+npm run deploy   # Build locally, deploy prebuilt output to Vercel production, then git push
 ```
+
+Pushing to `main` does NOT auto-deploy (git deployments are disabled in `vercel.json`). Use `npm run deploy` to ship.
 
 ## Architecture
 
