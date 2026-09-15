@@ -3,11 +3,19 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
+      "source": "/peakactive",
+      "destination": "https://turboducky.com/peakactive",
+      "permanent": true
     },
+    {
+      "source": "/peakactive/:path*",
+      "destination": "https://turboducky.com/peakactive/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
