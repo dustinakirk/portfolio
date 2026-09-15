@@ -9,14 +9,6 @@
       "destination": "/api/:path*"
     },
     {
-      "source": "/peakactive/:path*",
-      "destination": "/peakactive.html"
-    },
-    {
-      "source": "/peakactive",
-      "destination": "/peakactive.html"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

@@ -289,7 +289,7 @@ const PATTERN_COUNT = Object.keys(PATTERNS).length;
 
 // Match all routes that need meta tags
 export const config = {
-  matcher: ['/', '/peakactive', '/projects/:path*', '/design_system', '/agentic_ai_patterns', '/agentic_ai_patterns/:path*']
+  matcher: ['/', '/projects/:path*', '/design_system', '/agentic_ai_patterns', '/agentic_ai_patterns/:path*']
 };
 
 export default function middleware(request) {
@@ -323,16 +323,6 @@ function getMetaForRoute(pathname) {
       description: 'Principal Product Designer specializing in AI/ML products, agentic applications, and trust-building UX patterns. 15+ years of experience designing enterprise SaaS at Salesforce, New Relic, and Tealium.',
       image: avatarImage,
       url: baseUrl
-    };
-  }
-
-  // Peak Active page
-  if (pathname === '/peakactive') {
-    return {
-      title: 'Peak Active - Automatic Walk Tracker for iPhone',
-      description: 'Track your walks automatically without hitting start or stop. Peak Active uses Apple HealthKit to detect your walks, showing steps, distance, calories, and duration.',
-      image: `${baseUrl}/projects/peakactive/og_image.png`,
-      url: `${baseUrl}/peakactive`
     };
   }
 
