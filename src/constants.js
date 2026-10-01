@@ -29,7 +29,7 @@ export const WORK = [
     id: "aitrustpatterns",
     title: "Agentic AI UX Patterns",
     subtitle:
-      "44+ UX design patterns for building trust in AI and agentic applications - a comprehensive guide for designers and developers.",
+      "44+ UX patterns for building trust into AI and agentic products, written for designers and developers.",
     href: "https://agenticuxpatterns.com",
     category: "AI & Innovation",
     image: "/projects/aitrustpatterns/ai-trust-patterns.png",
@@ -39,9 +39,9 @@ export const WORK = [
   },
   {
     id: "eventintro",
-    title: "EventIntro: AI-Powered Smart Networking",
+    title: "EventIntro: AI Matchmaking for Networking Events",
     subtitle:
-      "Full-stack web application transforming professional networking through AI-powered matching, personalized introductions, and intelligent breakout group formation.",
+      "A full-stack web app I built that tells people at an event who to meet and why, writes the introduction, and sorts everyone into breakout groups.",
     href: "/projects/eventintro",
     category: "AI & Innovation",
     image: "/projects/eventintro/eventintro.png",
@@ -53,7 +53,7 @@ export const WORK = [
     id: "generativeuicanvas",
     title: "Generative UI Canvas",
     subtitle:
-      "Natural Language UI + Agentic Backend + Generative UI - Reimagining B2B software with AI-powered interfaces.",
+      "Natural Language UI + Agentic Backend + Generative UI, tried out on an over-engineered to-do list.",
     href: "/projects/generativeuicanvas",
     category: "AI & Innovation",
     image: "/projects/generativeuicanvas/robot_with_ui.png",
@@ -64,7 +64,7 @@ export const WORK = [
     id: "aistories",
     title: "AI Powered Expandable Stories",
     subtitle:
-      "AI-powered platform generating never-ending fictional stories with interconnected characters and evolving narratives.",
+      "A site where AI writes fiction that never ends, with recurring characters and storylines that branch into new series.",
     href: "/projects/aistories",
     category: "AI & Innovation",
     image: "/projects/aistories/nuvvel.png",
@@ -76,7 +76,7 @@ export const WORK = [
     id: "salesforceaihackathon",
     title: "Salesforce AI Hackathon",
     subtitle:
-      "Won 'Most Innovative' award among 90 teams with generative AI solutions for Sales Cloud.",
+      "My generative AI concept for Sales Cloud won 'Most Innovative' out of 90 teams.",
     href: "/projects/salesforceaihackathon",
     category: "AI & Innovation",
     image: "/projects/salesforceaihackathon/hero_salesforce.png",
@@ -87,7 +87,7 @@ export const WORK = [
     id: "email",
     title: "Micro Efficiencies",
     subtitle:
-      "Transforming repetitive micro-tasks into delightful moments by parsing name data from 70% of corporate email addresses.",
+      "Pulling first and last names out of email addresses, so 70% of invited users never have to type them.",
     href: "/projects/email",
     category: "UX Optimization",
     image: "/projects/email/hero_email.png",
@@ -98,7 +98,7 @@ export const WORK = [
     id: "scaling",
     title: "Design Team Scaling Framework",
     subtitle:
-      "Organizational design methodology for scaling design teams through different growth phases.",
+      "How many designers a company needs, and which roles to hire, as it grows from startup to 1,000+ employees.",
     href: "/projects/scaling",
     category: "Strategy & Systems",
     image: "/projects/scaling/org_phases.png",
@@ -109,7 +109,7 @@ export const WORK = [
     id: "patent",
     title: "User Interaction Monitoring System",
     subtitle:
-      "Patented CSS/JS-based monitoring system for tracking user interactions in data networks.",
+      "A patented way to track user interactions with CSS, even when JavaScript is blocked.",
     href: "/projects/patent",
     category: "AI & Innovation",
     image: "/projects/patent/css_js.svg",
@@ -120,7 +120,7 @@ export const WORK = [
     id: "architecture",
     title: "UX Architecture for Enterprise SaaS",
     subtitle:
-      "Modern UI patterns and workflow optimization for scalable enterprise design systems.",
+      "Replacing accordions and stacked modals with stacking slide-outs, cutting workflow steps by 30 to 50%.",
     href: "/projects/architecture",
     category: "Enterprise UX",
     image: "/projects/architecture/hero_architecture.png",
@@ -131,7 +131,7 @@ export const WORK = [
     id: "charts",
     title: "Data Visualization System",
     subtitle:
-      "Comprehensive charting components built with atomic design principles for complex data display.",
+      "A Figma chart and graph system built from atomic components, published on Gumroad.",
     href: "/projects/charts",
     category: "Strategy & Systems",
     image: "/projects/charts/hero_chart.png",
@@ -142,7 +142,7 @@ export const WORK = [
     id: "color",
     title: "Systematic Color Design Framework",
     subtitle:
-      "Brand colors, accessibility standards, and systematic application rules for design consistency.",
+      "My step-by-step process for building a full color palette around a set of brand colors.",
     href: "/projects/color",
     category: "Strategy & Systems",
     image: "/projects/color/hero_color.png",
@@ -153,7 +153,7 @@ export const WORK = [
     id: "loadorder",
     title: "Tag Load Order Management",
     subtitle:
-      "Complex drag-and-drop interface for managing tag sequences with bulk actions and filtering.",
+      "Redesigning how Tealium customers see and change the order their tags and extensions run in.",
     href: "/projects/loadorder",
     category: "Enterprise UX",
     image: "/projects/loadorder/drag_and_drop.gif",
@@ -164,7 +164,7 @@ export const WORK = [
     id: "pillars",
     title: "Design Principles Framework",
     subtitle:
-      "Foundational design principles and organizational framework for consistent design decisions.",
+      "Four principles I wrote to guide design decisions across Tealium's products.",
     href: "/projects/pillars",
     category: "Strategy & Systems",
     image: "",
@@ -175,7 +175,7 @@ export const WORK = [
     id: "apps",
     title: "iOS Mobile Applications Portfolio",
     subtitle:
-      "Seven iOS apps including disc golf scorecards, games, and utility applications.",
+      "Seven iOS apps I designed and built, from disc golf scorecards to word games.",
     href: "/projects/apps",
     category: "Mobile Apps",
     image: "/projects/apps/golfscorecards.png",

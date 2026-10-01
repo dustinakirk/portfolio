@@ -5,26 +5,24 @@ import ProjectImage from "../ProjectImage";
 function EventIntroProject() {
   return (
     <ProjectLayout
-      title="EventIntro: AI-Powered Smart Networking"
-      subtitle="Transforming how cohorts of people form meaningful professional connections through AI-powered matching, personalized introductions, and intelligent breakout group formation."
+      title="EventIntro: AI Matchmaking for Networking Events"
+      subtitle="A web app I built that tells people at an event who they should meet and why, writes the introduction, and sorts everyone into breakout groups."
       projectId="eventintro"
     >
       <div className="space-y-8">
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            EventIntro is a web application I built from the ground up that transforms how
-            cohorts of people—from corporate teams to industry associations—form meaningful
-            professional connections. By combining thoughtful product design with AI-powered
-            matching algorithms, EventIntro replaces the randomness and awkwardness of
-            traditional networking with personalized, purposeful introductions.
+            EventIntro is a web app I built from scratch to help groups of people, anything
+            from a company offsite to an industry association, actually meet the right
+            people. Most networking is random and a little awkward. EventIntro looks at
+            what each person wants and what they can offer, then tells them who to talk to
+            and gives them a reason to start the conversation.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            In building EventIntro, I developed the product strategy, user
-            experience design, technical architecture, full-stack development, and business
-            model definition. I leveraged AI development tools like Claude Code throughout
-            the build process, demonstrating how modern AI assistants can accelerate
-            sophisticated product development from concept to launch in a few weeks.
+            I did all of it: product strategy, UX, architecture, the full-stack build, and
+            the business model. I used Claude Code heavily throughout, which is a big part
+            of how it went from idea to launch in a few weeks.
           </p>
         </div>
 
@@ -37,147 +35,143 @@ function EventIntroProject() {
 
         {/* The Problem */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">The Networking Problem</h2>
+          <h2 className="text-2xl font-bold mb-4">What's Wrong with Networking Events</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              Professional networking at events suffers from fundamental flaws that leave
-              both facilitators and attendees frustrated:
+              If you've been to a networking event, you've probably seen most of these:
             </p>
 
             <ul className="list-disc pl-6 text-black/80 dark:text-white/80">
               <li>
-                <strong>Random Connections:</strong> Attendees wander hoping to stumble
-                upon relevant contacts, with no guidance on who to talk to or why.
+                <strong>It's random.</strong> People wander around hoping to bump into
+                someone useful, with no idea who to look for.
               </li>
               <li>
-                <strong>Shallow Interactions:</strong> Brief exchanges rarely lead to
-                meaningful relationships or follow-up conversations.
+                <strong>Conversations stay shallow.</strong> A few minutes of small talk
+                rarely turns into a follow-up.
               </li>
               <li>
-                <strong>Facilitator Burden:</strong> Organizers spend hours manually
-                grouping attendees for breakout sessions with no systematic approach.
+                <strong>Organizers do it by hand.</strong> Someone spends hours sorting
+                people into breakout groups, mostly by gut feel.
               </li>
               <li>
-                <strong>Post-Event Drop-off:</strong> Connections made at events rarely
-                persist beyond the goodbye handshake.
+                <strong>Nothing sticks.</strong> Most connections end at the goodbye
+                handshake.
               </li>
               <li>
-                <strong>Introvert Exclusion:</strong> Those uncomfortable with cold
-                approaches miss out on networking opportunities entirely.
+                <strong>Introverts lose out.</strong> If walking up to strangers isn't your
+                thing, you miss most of the value.
               </li>
             </ul>
 
             <p className="text-black/80 dark:text-white/80">
-              Existing event platforms focus on registration and scheduling but neglect
-              the human connection aspect. They answer "Who is attending?" but not "Who
-              should I talk to?" or "Why would they want to talk to me?"
+              Event platforms are good at registration and schedules. They'll tell you
+              who's attending. They won't tell you who you should talk to, or why that
+              person would want to talk to you.
             </p>
           </div>
         </div>
 
         {/* The Solution */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">The Solution</h2>
+          <h2 className="text-2xl font-bold mb-4">How EventIntro Works</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              EventIntro uses AI to analyze what members are seeking and offering, generates
-              personalized introductions with conversation starters, and forms optimized
-              breakout groups—all while maintaining a simple, intuitive user experience
-              that hides the complexity from end users.
+              EventIntro uses AI to figure out what each member is looking for and what
+              they can offer. It writes personalized introductions with a conversation
+              starter, and it builds breakout groups. None of that machinery is visible to
+              the people using it. They just see who to meet.
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              The platform serves two primary user types: <strong>Facilitators</strong> who
-              manage cohorts and events, and <strong>Attendees</strong> who join via OAuth,
-              complete a quick 5-question survey, and immediately receive personalized
-              networking recommendations.
+              There are two kinds of users. <strong>Facilitators</strong> set up cohorts
+              and events. <strong>Attendees</strong> sign in with OAuth, answer five quick
+              questions, and get their recommendations right away.
             </p>
           </div>
         </div>
 
         {/* AI-Powered Matching */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">AI-Powered Matching</h2>
+          <h2 className="text-2xl font-bold mb-4">Matching on What People Need</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              Traditional matching looks for similarities: "You both work in marketing!"
-              EventIntro's matching is <strong>complementary</strong>: "You're seeking
-              mentorship in scaling startups, and they've scaled three companies."
+              Most matching looks for things people have in common: "You both work in
+              marketing!" EventIntro matches on what's <strong>complementary</strong>: "You
+              want advice on scaling a startup, and they've scaled three."
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              This bidirectional approach asks three questions: What does this person
-              <em>seek</em>? What does that person <em>offer</em>? How strong is the
-              match in <em>both directions</em>?
+              It works in both directions. What is this person <em>looking for</em>? What
+              does the other person <em>offer</em>? And is it a good match for{" "}
+              <em>both of them</em>, not just one?
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              <strong>How it works:</strong> When users complete the survey, their responses
-              are analyzed by a large language model to extract what they're seeking,
-              offering, and interested in. These concepts are converted into 384-dimensional
-              vector embeddings using the all-MiniLM-L6-v2 model that capture semantic
-              meaning, not just keywords. "Looking for a technical co-founder" and "Seeking
-              a CTO for my startup" are recognized as similar needs.
+              <strong>Under the hood:</strong> an LLM reads each survey and pulls out what
+              the person is looking for, what they offer, and what they're interested in.
+              Those get turned into 384-dimensional embeddings with the all-MiniLM-L6-v2
+              model, which captures meaning rather than exact keywords. So "Looking for a
+              technical co-founder" and "Seeking a CTO for my startup" land close together.
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              The system then finds people whose offerings match your seekings AND whose
-              seekings match your offerings. For each match, an LLM generates a personalized
-              introduction explaining why they should connect, an opening question to break
-              the ice, and common topics they might discuss.
+              Then it looks for people whose offers match what you're looking for and whose
+              needs match what you offer. For each match, an LLM writes a short
+              introduction explaining why you two should talk, an opening question, and a
+              few topics you might have in common.
             </p>
           </div>
         </div>
 
         {/* Technical Architecture */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Technical Architecture</h2>
+          <h2 className="text-2xl font-bold mb-4">The Stack</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              EventIntro is built as a modern web application with several interconnected
-              services, designed for scalability and reliability:
+              EventIntro is a handful of services working together:
             </p>
 
             <ul className="list-disc pl-6 text-black/80 dark:text-white/80">
               <li>
-                <strong>Backend:</strong> Flask + Gunicorn with Eventlet workers for
-                concurrent WebSocket handling
+                <strong>Backend:</strong> Flask + Gunicorn with Eventlet workers to handle
+                concurrent WebSockets
               </li>
               <li>
-                <strong>Database:</strong> PostgreSQL with pgvector extension for vector
-                similarity search on embeddings
+                <strong>Database:</strong> PostgreSQL with pgvector for similarity search on
+                the embeddings
               </li>
               <li>
-                <strong>Caching & Queuing:</strong> Redis cluster for session storage,
-                caching, and message queuing
+                <strong>Caching & Queuing:</strong> Redis cluster for sessions, caching, and
+                message queuing
               </li>
               <li>
-                <strong>Background Processing:</strong> Celery for async AI operations
-                with Celery Beat for scheduled tasks (notifications, reminders)
+                <strong>Background Processing:</strong> Celery for async AI jobs, and Celery
+                Beat for scheduled ones like notifications and reminders
               </li>
               <li>
-                <strong>Real-Time:</strong> Flask-SocketIO for instant message delivery,
-                live notifications, and real-time group assignments
+                <strong>Real-Time:</strong> Flask-SocketIO for messages, live notifications,
+                and group assignments
               </li>
               <li>
                 <strong>AI/ML:</strong> Sentence Transformers for embeddings, FAISS for
-                fast similarity search, scikit-learn for clustering algorithms
+                fast similarity search, scikit-learn for clustering
               </li>
               <li>
-                <strong>LLM Integration:</strong> Multi-provider architecture with Google
-                Gemini (primary), OpenAI GPT, Anthropic Claude, and Groq as fallbacks
+                <strong>LLMs:</strong> Google Gemini as the primary model, with OpenAI,
+                Anthropic Claude, and Groq as fallbacks
               </li>
               <li>
-                <strong>Authentication:</strong> OAuth integration with LinkedIn, Google,
-                and Eventbrite
+                <strong>Authentication:</strong> OAuth sign-in with LinkedIn, Google, and
+                Eventbrite
               </li>
               <li>
-                <strong>Infrastructure:</strong> Docker containerization, deployed on
-                Azure App Service with Azure Blob Storage for assets
+                <strong>Infrastructure:</strong> Docker containers on Azure App Service,
+                with Azure Blob Storage for assets
               </li>
             </ul>
           </div>
@@ -185,81 +179,76 @@ function EventIntroProject() {
 
         {/* UX Design Philosophy */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">UX Design Philosophy</h2>
+          <h2 className="text-2xl font-bold mb-4">How I Approached the UX</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              Every technical decision began with a user question. The core design
-              principles that guided the product:
+              A few principles I kept coming back to:
             </p>
 
             <ul className="list-disc pl-6 text-black/80 dark:text-white/80">
               <li>
-                <strong>AI as Enabler, Not Centerpiece:</strong> The AI matching technology
-                is sophisticated, but users never see it. They experience personalized
-                introductions and balanced groups—the outcome matters, not the mechanism.
+                <strong>Keep the AI in the background.</strong> There's a lot going on in
+                the matching, but nobody needs to see it. People see a good introduction and
+                a balanced group, and that's what they care about.
               </li>
               <li>
-                <strong>Reduce Friction at Every Step:</strong> From quick 5-question
-                surveys to one-click event joining, every interaction minimizes effort
-                while maximizing value.
+                <strong>Ask for as little as possible.</strong> Five questions, one click to
+                join an event. Every extra step loses people.
               </li>
               <li>
-                <strong>Complement Human Connection:</strong> Technology facilitates the
-                introduction; humans build the relationship. EventIntro gets people
-                talking—what happens next is up to them.
+                <strong>Make the introduction, then get out of the way.</strong> The app
+                gets two people talking. What happens after that is up to them.
               </li>
               <li>
-                <strong>Respect Privacy While Enabling Discovery:</strong> Users control
-                what they share. The system reveals only enough to spark genuine
-                interest—never exposing sensitive details without consent.
+                <strong>Let people control what they share.</strong> The app shows enough
+                to get someone interested and never exposes personal details without
+                consent.
               </li>
             </ul>
 
             <p className="text-black/80 dark:text-white/80">
-              The application is organized around context—users always know where they are
-              and why. Navigation adapts based on user role, with attendees seeing simplified
-              views and facilitators accessing dashboard controls, cohort management, and
-              event creation tools.
+              Navigation changes with your role. Attendees get a simple view. Facilitators
+              get the dashboard, cohort management, and event setup tools.
             </p>
           </div>
         </div>
 
         {/* Key Features */}
         <div className="rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-gradient-to-br from-white/80 to-white/40 dark:from-white/10 dark:to-white/5 p-8">
-          <h3 className="text-xl font-bold mb-6">Key Features</h3>
+          <h3 className="text-xl font-bold mb-6">Main Features</h3>
           <div className="space-y-4">
             <div className="flex items-center gap-3 p-4 bg-black/5 dark:bg-white/5 rounded-lg">
               <div className="text-2xl">🎯</div>
               <div className="flex-1">
-                <div className="font-semibold">Top Picks with AI Introductions</div>
+                <div className="font-semibold">Top Picks with Introductions</div>
                 <div className="text-sm text-black/60 dark:text-white/60">
-                  Ranked recommendations with personalized explanations and conversation starters
+                  Ranked matches, each with a reason to meet and a conversation starter
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 bg-black/5 dark:bg-white/5 rounded-lg">
               <div className="text-2xl">💬</div>
               <div className="flex-1">
-                <div className="font-semibold">Real-Time Conversations</div>
+                <div className="font-semibold">Messaging</div>
                 <div className="text-sm text-black/60 dark:text-white/60">
-                  WebSocket-powered 1:1 and group messaging with persistent history
+                  1:1 and group chat over WebSockets, with history saved
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 bg-black/5 dark:bg-white/5 rounded-lg">
               <div className="text-2xl">👥</div>
               <div className="flex-1">
-                <div className="font-semibold">Intelligent Breakout Groups</div>
+                <div className="font-semibold">Breakout Groups</div>
                 <div className="text-sm text-black/60 dark:text-white/60">
-                  AI-optimized group formation with diversity constraints and auto-generated discussion topics
+                  Groups balanced for diversity, each with suggested discussion topics
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 bg-black/5 dark:bg-white/5 rounded-lg">
               <div className="text-2xl">📧</div>
               <div className="flex-1">
-                <div className="font-semibold">Automated Email Workflows</div>
+                <div className="font-semibold">Email</div>
                 <div className="text-sm text-black/60 dark:text-white/60">
                   Welcome emails, match notifications, event reminders, and post-event follow-ups
                 </div>
@@ -268,9 +257,9 @@ function EventIntroProject() {
             <div className="flex items-center gap-3 p-4 bg-black/5 dark:bg-white/5 rounded-lg">
               <div className="text-2xl">🔐</div>
               <div className="flex-1">
-                <div className="font-semibold">OAuth & Privacy Controls</div>
+                <div className="font-semibold">Sign-In and Privacy</div>
                 <div className="text-sm text-black/60 dark:text-white/60">
-                  One-click sign-in via LinkedIn/Google with granular privacy settings
+                  One-click sign-in with LinkedIn or Google, plus detailed privacy settings
                 </div>
               </div>
             </div>
@@ -279,96 +268,92 @@ function EventIntroProject() {
 
         {/* Development Approach */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">AI-Assisted Development</h2>
+          <h2 className="text-2xl font-bold mb-4">Building It with Claude Code</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              EventIntro was built leveraging modern AI development tools throughout the
-              entire process. I used Claude Code extensively for implementing complex
-              features, debugging issues, and refactoring code. This approach allowed me
-              to move faster while maintaining code quality across the full stack.
+              I built EventIntro with Claude Code from start to finish. I used it to write
+              features, track down bugs, and refactor, and it let me move much faster than I
+              could have alone while keeping the code in good shape.
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              The AI-assisted workflow was particularly valuable for:
+              It helped most with:
             </p>
 
             <ul className="list-disc pl-6 text-black/80 dark:text-white/80">
               <li>
-                Implementing the multi-provider LLM fallback architecture with retry logic
+                The LLM fallback chain and retry logic
               </li>
               <li>
-                Building the WebSocket infrastructure for real-time messaging
+                The WebSocket setup for real-time messaging
               </li>
               <li>
-                Designing database migrations for the multi-tenant data model
+                Database migrations for the multi-tenant data model
               </li>
               <li>
-                Writing Celery tasks for background AI processing
+                Celery tasks for background AI processing
               </li>
               <li>
-                Creating responsive frontend components with proper dark mode support
+                Responsive front-end components with dark mode
               </li>
             </ul>
 
             <p className="text-black/80 dark:text-white/80">
-              This project demonstrates how AI tools can amplify a single developer's
-              capabilities, enabling the creation of sophisticated products that would
-              traditionally require a larger team.
+              Not long ago, a product like this would have needed a small team. This time
+              it was just me.
             </p>
           </div>
         </div>
 
         {/* Challenges Overcome */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Challenges Overcome</h2>
+          <h2 className="text-2xl font-bold mb-4">The Hard Parts</h2>
 
           <div className="prose prose-lg max-w-none space-y-4">
             <p className="text-black/80 dark:text-white/80">
-              <strong>Balancing AI Complexity with Simple UX:</strong> AI matching requires
-              substantial data, but users resist lengthy forms. I limited surveys to 5
-              strategic questions that extract maximum signal, designed to feel conversational
-              rather than interrogative. The best AI is the AI users don't realize they're
-              training.
+              <strong>Getting enough data without a long form.</strong> Good matches need a
+              lot of information, and nobody wants to fill out a long survey. I cut it down
+              to five questions chosen to get the most out of each answer, and wrote them to
+              feel like a conversation instead of an interview.
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              <strong>Multi-Tenant Architecture:</strong> Users belong to multiple cohorts
-              and attend multiple events, each with its own context and data. I designed
-              flexible data models separating User (global) from CohortMember/EventAttendee
-              (contextual), with role-based permissions per cohort and event.
+              <strong>People belong to more than one group.</strong> One person can be in
+              several cohorts and attend several events, each with its own data. I split the
+              data model into a global User and contextual CohortMember and EventAttendee
+              records, with permissions set per cohort and per event.
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              <strong>Real-Time Without Complexity:</strong> Users expect instant messaging,
-              but WebSockets add operational complexity. I implemented Flask-SocketIO with
-              Eventlet workers, designed graceful degradation for unreliable connections,
-              and cached unread counts in Redis for instant retrieval.
+              <strong>Real-time messaging.</strong> People expect chat to be instant, but
+              WebSockets are a pain to run. I used Flask-SocketIO with Eventlet workers, made
+              sure things degrade gracefully on bad connections, and cached unread counts in
+              Redis so they load immediately.
             </p>
 
             <p className="text-black/80 dark:text-white/80">
-              <strong>LLM Reliability:</strong> LLM APIs occasionally fail or return
-              unexpected responses. I implemented automatic fallback chains across multiple
-              providers, retry logic with exponential backoff, and monitoring to track
-              success rates per provider. Building for redundancy adds complexity but
-              enables reliability.
+              <strong>LLMs fail sometimes.</strong> APIs time out or send back something
+              unexpected. I set up automatic fallbacks across providers, retries with
+              exponential backoff, and tracking of success rates for each provider. It's
+              more moving parts, but the app keeps working when one provider has a bad day.
             </p>
           </div>
         </div>
 
         {/* Skills Demonstrated */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Skills Demonstrated</h2>
+          <h2 className="text-2xl font-bold mb-4">What Went Into It</h2>
 
           <div className="prose prose-lg max-w-none">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold mb-2">Product & UX Design</h4>
                 <ul className="list-disc pl-6 text-black/80 dark:text-white/80 text-sm">
-                  <li>User research and persona development</li>
+                  <li>User research and personas</li>
                   <li>Information architecture and user flows</li>
                   <li>Mobile-responsive design</li>
-                  <li>Friction reduction and onboarding optimization</li>
+                  <li>Cutting friction from onboarding</li>
                 </ul>
               </div>
               <div>
@@ -376,26 +361,26 @@ function EventIntroProject() {
                 <ul className="list-disc pl-6 text-black/80 dark:text-white/80 text-sm">
                   <li>Embeddings and similarity search</li>
                   <li>LLM prompt engineering</li>
-                  <li>Multi-model fallback architecture</li>
-                  <li>Clustering algorithms for group formation</li>
+                  <li>Multi-model fallbacks</li>
+                  <li>Clustering for group formation</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Full-Stack Development</h4>
                 <ul className="list-disc pl-6 text-black/80 dark:text-white/80 text-sm">
-                  <li>Python/Flask backend architecture</li>
+                  <li>Python/Flask backend</li>
                   <li>PostgreSQL with pgvector</li>
-                  <li>Real-time WebSocket implementation</li>
-                  <li>Background job processing with Celery</li>
+                  <li>Real-time WebSockets</li>
+                  <li>Background jobs with Celery</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">System Architecture</h4>
                 <ul className="list-disc pl-6 text-black/80 dark:text-white/80 text-sm">
                   <li>Multi-tenant data modeling</li>
-                  <li>Caching and performance optimization</li>
-                  <li>Docker containerization</li>
-                  <li>Cloud deployment on Azure</li>
+                  <li>Caching and performance</li>
+                  <li>Docker containers</li>
+                  <li>Deploying on Azure</li>
                 </ul>
               </div>
             </div>
@@ -404,9 +389,9 @@ function EventIntroProject() {
 
         {/* Call to Action */}
         <div className="mt-12 rounded-2xl border border-black/10 dark:border-white/10 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-8 text-center">
-          <h3 className="text-xl font-bold mb-4">Experience EventIntro</h3>
+          <h3 className="text-xl font-bold mb-4">Try EventIntro</h3>
           <p className="text-black/70 dark:text-white/70 mb-6">
-            See how AI-powered networking transforms professional connections
+            See it for yourself at eventintro.com
           </p>
           <a
             href="https://eventintro.com"

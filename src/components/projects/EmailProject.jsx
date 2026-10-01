@@ -117,7 +117,7 @@ function EmailProject() {
   return (
     <ProjectLayout
       title="Micro Efficiencies"
-      subtitle="Making a micro-efficiency a moment of delight by utilizing name data already existing in 70% of corporate emails."
+      subtitle="Turning a small efficiency into a moment of delight, using the names already in 70% of corporate email addresses."
       projectId="email"
     >
       <div className="space-y-8">
@@ -173,9 +173,9 @@ function EmailProject() {
         {/* Parsing Details */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            Over 70% of customers utilize email addresses that contain the first and last names and can be easily 
-            parsed programmatically. This would allow the first and last names to be derived for the vast majority 
-            of users using this specific feature. Support for email addresses can be parsed for the following:
+            Over 70% of customers use email addresses that contain the first and last name and are easy to parse
+            in code. That meant we could fill in first and last names for the vast majority of people invited
+            through this feature. The parser supports these formats:
           </p>
           
           <ul className="mt-4 list-disc pl-6 text-black/80 dark:text-white/80">
@@ -241,10 +241,9 @@ function EmailProject() {
           </p>
           
           <p className="text-black/80 dark:text-white/80 mt-4">
-            The resulting solution was to derive names from email after the emails were submitted, and only derive 
-            the names from email addresses which followed a very common and structured format such as to not create 
-            more work for anyone. Doing so benefited both the administrator by not having empty records and over 
-            70% of invited users who would not have to enter information that already existed in the system.
+            In the end, names are derived after the emails are submitted, and only from addresses that follow a very
+            common, structured format, so it doesn't create more work for anyone. The administrator doesn't end up
+            with empty records, and over 70% of invited users don't have to type in information the system already has.
           </p>
         </div>
 

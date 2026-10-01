@@ -27,12 +27,11 @@ function ColorProject() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            In building out the foundational elements of a design system, one of the key aspects is the color pallet that will be utilized. 
-            This color pallet influences everything from the button and link colors, to the graphical elements, banners, and all visual aspects. 
-            The color system encapsulates a variety of constraints and restrictions that must be balanced and accounted for. 
-            There are accessibility concerns, branding concerns, industry best practices, and possibly light and dark themes. 
-            With all of the facets accounted for, it can certainly be a daunting task. 
-            Below I'll lay out a strait forward approach that will result in a cohesive and flexible color system able to address the most demanding requirements.
+            When you're building the foundation of a design system, one of the most important pieces is the color palette.
+            It affects everything from buttons and links to graphics, banners, and every other visual element.
+            A color system has to balance a lot of constraints: accessibility, branding, industry best practices, and maybe light and dark themes.
+            Taking all of that into account can feel daunting.
+            Below is the straightforward approach I use to get a cohesive, flexible color system that can handle demanding requirements.
           </p>
         </div>
 
@@ -40,20 +39,20 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Define All The Colors</h2>
           <p className="text-black/80 dark:text-white/80 mb-4">
-            First things first, you will quickly find that only defining a few pallets based on the brand colors is going to be inadequate and limiting. 
-            For a flushed out color system, you should include:
+            First things first: you'll quickly find that defining a few palettes around the brand colors isn't enough.
+            For a fleshed-out color system, you should include:
           </p>
           <ol className="list-decimal pl-6 space-y-2 text-black/80 dark:text-white/80">
-            <li>Gray Scale Pallet</li>
+            <li>Gray Scale Palette</li>
             <li>Status Colors (Red, Orange, Yellow, Green)</li>
-            <li>Category Colors that do not include the status colors.</li>
+            <li>Category Colors (not including the status colors)</li>
           </ol>
           <p className="text-black/80 dark:text-white/80 mt-4">
-            The gray scale pallet will typically cover your most neutral use cases including body text, input labels, descriptions, etc. 
-            Status colors are selected to indicate error, warning, and success messaging. 
-            The category colors typically include brand colors and include hot, warm, neutral, and cold colors. 
-            It is important that the category colors do not tread too closely to the status colors. 
-            Lastly, for each of the 12-14 colors, I recommend defining 9 to 11 shades ranging from very light to very dark.
+            The gray scale palette covers your most neutral uses, like body text, input labels, and descriptions.
+            Status colors are for error, warning, and success messages.
+            Category colors usually include the brand colors and span hot, warm, neutral, and cold.
+            It's important that the category colors don't get too close to the status colors.
+            Finally, for each of the 12-14 colors, I recommend 9 to 11 shades from very light to very dark.
           </p>
         </div>
 
@@ -61,12 +60,12 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Where To Start</h2>
           <p className="text-black/80 dark:text-white/80">
-            Often the easiest place to start is the brand colors as these are often already defined. 
-            The brand colors will typically reflect the image of the company through vibrant or muted tones. 
-            Using the template shown, place the brand colors in their approximate locations. 
-            From this point all selected colors will be selected relative to the brand colors allowing them all to work nicely with each other. 
-            If the brand colors include Red, Orange, Yellow, or Green... it often works better to include them in the 9 Category colors and choose 'off-tones' for the status colors. 
-            This will ensure the status colors remain distinctive and you retain freedom to utilize the brand colors outside of the context of status messages.
+            The easiest place to start is usually the brand colors, since they're often already defined.
+            They tend to reflect the company's image, whether vibrant or muted.
+            Using the template below, put the brand colors in their approximate spots.
+            Every other color gets picked relative to the brand colors, which is what makes them all work together.
+            If the brand colors include red, orange, yellow, or green... it often works better to put them in the 9 category colors and pick 'off-tones' for the status colors.
+            That keeps the status colors distinct and leaves you free to use the brand colors outside of status messages.
           </p>
         </div>
 
@@ -79,8 +78,8 @@ function ColorProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            Once the brand colors are selected and in the template, you'll want to select one color for each row that is adjacent to the brand color. 
-            In your design tool, it is a good idea to mark these items so you know not to tweak them later on.
+            Once the brand colors are in the template, you'll want to pick one color for each row adjacent to a brand color.
+            It's a good idea to mark these in your design tool so you know not to tweak them later.
           </p>
         </div>
 
@@ -93,18 +92,18 @@ function ColorProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80 mb-4">
-            If one of your brand colors is vibrant red, that would be your 'hot' color and you might select a 'warm' color to be adjacent... perhaps a vibrant pink. 
-            Like a game of connect the dots, fill in the gaps choosing the colors that will transition between each of the brand colors. 
-            As you select colors, include at least one row of off-green (eg: mint), one row of off-orange (eg: mango), and one row of off-red (eg: raspberry). 
-            That way if you need a red, you don't need to use the status color. 
-            At the end of this step, there should be at least one color defined for each of the category colors. 
-            It is up to you as to how many of those rows fall into the warm vs cool colors, but a slight lean toward the cooler colors (teals, blues and purples) will ensure there is enough diversity when it comes to graph and chart sequences.
+            If one of your brand colors is a vibrant red, that would be your 'hot' color, and you might pick a 'warm' color next to it... perhaps a vibrant pink.
+            Like a game of connect the dots, fill in the gaps with colors that transition between each of the brand colors.
+            As you go, include at least one row of off-green (e.g. mint), one row of off-orange (e.g. mango), and one row of off-red (e.g. raspberry).
+            That way if you need a red, you don't have to use the status color.
+            By the end of this step, there should be at least one color defined for each of the category colors.
+            It's up to you how many of those rows are warm vs. cool, but leaning slightly toward the cooler colors (teals, blues, and purples) gives you enough variety for graph and chart sequences.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            The next step is to complete the 4 status colors. 
-            To select these colors, choose the most saturated or vibrant brand color and begin tweaking the hue to choose a red, orange, yellow, and green. 
-            In this case, if the brand color is a red, adjust the hue enough to be distinctive, but maintain the saturation and brightness. 
-            The saturation and brightness are primarily tweaked in filling out the remainder of the pallet later on.
+            Next, fill in the 4 status colors.
+            Start from the most saturated or vibrant brand color and shift the hue to get a red, orange, yellow, and green.
+            If the brand color is a red, shift the hue enough to be distinct but keep the saturation and brightness.
+            You'll mostly adjust saturation and brightness later, when you fill out the rest of the palette.
           </p>
         </div>
 
@@ -113,7 +112,7 @@ function ColorProject() {
           <h2 className="text-2xl font-bold mb-4">Defining The Gray Scale</h2>
           <p className="text-black/80 dark:text-white/80">
             Now is a good point to define the full range of grays from almost white to almost black. 
-            Note that white and black are not included in the gray scale and are represented in the color system external of the grays.
+            Note that white and black aren't part of the gray scale. They live in the color system separately from the grays.
           </p>
         </div>
 
@@ -126,25 +125,25 @@ function ColorProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80 mb-4">
-            There are a few considerations when it comes to selecting the gray scale. 
-            The first of which is to determine the number of shades. 
-            I would recommend a minimum of 9 shades, but no more than 11. 
-            Having created several color systems, I would select 11 shades for any future projects. 
-            The second consideration is how to fade the shades at the ends. 
-            There are likely to be more use cases for lighter shades of gray than medium grays. 
-            Thus the lighter and darker ends of the spectrum will have less of a difference than the shades in the middle. 
-            This applies to all of the other colors as well, but defining this for the grays first will make the later steps easier. 
-            The next consideration is how light is the lightest gray. 
-            It is important to consider the context of your application here as various screens vary in their ability to recreate a color. 
-            A very subtle gray may be noticeable on a phone, but blend in with a white background on a TV. 
-            Projectors tend to have terrible contrast and lighter shades are completely lost.
+            There are a few things to think about when picking the gray scale.
+            The first is the number of shades.
+            I'd recommend at least 9 shades, but no more than 11.
+            After building several color systems, I'd go with 11 on any future project.
+            The second is how to space the shades at the ends.
+            You'll likely have more uses for light grays than medium grays.
+            So the shades at the light and dark ends should be closer together than the ones in the middle.
+            This applies to all the other colors too, but working it out on the grays first makes the later steps easier.
+            The third is how light the lightest gray should be.
+            Think about where your app will be seen here, because screens vary a lot in how well they reproduce color.
+            A very subtle gray may show up on a phone but blend into a white background on a TV.
+            Projectors tend to have terrible contrast, and lighter shades get completely lost.
           </p>
-          
+
           <h3 className="text-xl font-semibold mb-3">Add A Tint</h3>
           <p className="text-black/80 dark:text-white/80">
-            One often overlooked aspect in choosing a gray pallet is that you can choose to add some saturation. 
-            In nature it is rare to find pure gray and it tends to lead toward a harsh and unfinished look. 
-            Choosing a hue with slight saturation will create a more refined look and feel more polished. 
+            One thing people often overlook when choosing grays is that you can add some saturation.
+            Pure gray is rare in nature, and it tends to look harsh and unfinished.
+            A hue with slight saturation looks more refined and polished.
             As the gray gets darker, boost the saturation.
           </p>
         </div>
@@ -160,8 +159,8 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Define The Color Tokens</h2>
           <p className="text-black/80 dark:text-white/80">
-            You now know how many shades of each color will be supported and it is time to assign them tokens. 
-            This will help you reference specific colors among your team and with developers.
+            Now that you know how many shades each color will have, it's time to assign them tokens.
+            Tokens make it easy to refer to specific colors with your team and with developers.
           </p>
         </div>
 
@@ -178,9 +177,9 @@ function ColorProject() {
             As shades may be closer together at the ends, feel free to assign them tokens of 150, 100, 50, 25, and likewise for the dark end of the spectrum (800, 850, 900, 950).
           </p>
           <p className="text-black/80 dark:text-white/80">
-            Also for this step, you will want to name each of the category colors. 
-            A good reference is to utilize names that might appear in a box of crayons. 
-            Getting creative or obscure with color names can make it difficult for people from other countries.
+            This is also the time to name each of the category colors.
+            A good rule of thumb is to use names you'd find in a box of crayons.
+            Creative or obscure color names can be hard for people from other countries.
           </p>
         </div>
 
@@ -188,13 +187,13 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Define The Remaining Colors</h2>
           <p className="text-black/80 dark:text-white/80">
-            With the gray scale defined and tokens assigned, the next step will be to fully define the status colors. 
-            Starting from the previously defined color in each row, begin to select colors that fade from light to dark. 
-            To minimize the amount of tweaking define every other color in the row first, then go back and fill in the blanks. 
-            As an example start at red 500, then select the color for red 300, then red 100. 
-            When selecting these colors, reference the hue of the original color in the row, and the brightness of the gray scale color. 
-            So the color in position red 300, choose the color using the hue of red 500 and the brightness of gray 300. 
-            When defining colors at the light end of the scale, lessen the saturation and when at the dark end of the scale increase the saturation.
+            With the gray scale defined and tokens assigned, the next step is to fully define the status colors.
+            Starting from the color you already picked in each row, choose colors that fade from light to dark.
+            To cut down on tweaking, define every other color in the row first, then go back and fill in the blanks.
+            For example, start at red 500, then pick red 300, then red 100.
+            For each one, use the hue of the original color in the row and the brightness of the matching gray.
+            So for red 300, use the hue of red 500 and the brightness of gray 300.
+            Lower the saturation toward the light end of the scale and raise it toward the dark end.
           </p>
         </div>
 
@@ -207,22 +206,22 @@ function ColorProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80 mb-4">
-            There are many nuances to selecting these colors, but to start, go through each of the colors doing every other one. 
-            In the second pass, it is easier to select a color when it already has a color to the left and right.
+            There are a lot of nuances to picking these colors, but to start, go through each row doing every other one.
+            On the second pass, it's easier to pick a color when there's already one on either side.
           </p>
-          
-          <h3 className="text-xl font-semibold mb-3">Utilizing Saturation</h3>
+
+          <h3 className="text-xl font-semibold mb-3">Using Saturation</h3>
           <p className="text-black/80 dark:text-white/80 mb-4">
-            While each color row is primarily defined by its hue and brightness... the saturation is the magic that blends colors across rows. 
-            Particularly when matching colors surrounding a brand color, utilize the saturation to ensure an even transition to adjacent colors.
+            Each color row is mostly defined by its hue and brightness... but saturation is the magic that blends colors across rows.
+            Especially around a brand color, use saturation to get an even transition to the neighboring colors.
           </p>
-          
+
           <h3 className="text-xl font-semibold mb-3">Choosing Yellows...</h3>
           <p className="text-black/80 dark:text-white/80">
-            Yellows, especially dark yellows often end up looking really ugly. 
-            Rather than simply darkening a vibrant yellow, you can adjust the hue a bit to more appealing color. 
-            This often works well in shifting the yellows more toward mustard tones and even into the orange range for the darkest tones. 
-            There is a lot of freedom here, but just ensure you don't have a yellow that could be confused for an orange.
+            Yellows, especially dark yellows, often end up looking really ugly.
+            Rather than just darkening a vibrant yellow, you can shift the hue a bit toward a more appealing color.
+            It often works well to push the yellows toward mustard tones, and even into the orange range for the darkest ones.
+            There's a lot of freedom here, just make sure you don't end up with a yellow that could be mistaken for an orange.
           </p>
         </div>
 
@@ -237,10 +236,10 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Accessibility Review</h2>
           <p className="text-black/80 dark:text-white/80">
-            As we wrap up the color system this is a good time to do a checkin and see how the system matches up to accessibility guidelines. 
-            While I recommend defining a fairly deep color system with up to 11 shades for each color, it is important for you to understand your color system's limits. 
-            You'll want to know what areas of your color pallet have poor contrast and how well light and dark texts contrasts with each of the colors. 
-            There are many tools you can use and once analyzed, you'll have a good sense on how to apply your color system, or if further adjustment is required to meet your use cases.
+            As you wrap up, it's a good time to check how the system holds up against accessibility guidelines.
+            I recommend a fairly deep color system with up to 11 shades per color, but it's important to understand its limits.
+            You'll want to know which parts of your palette have poor contrast, and how well light and dark text contrasts with each color.
+            There are plenty of tools for this, and once you've run the numbers, you'll have a good sense of how to apply your color system, or whether it needs more adjusting for your use cases.
           </p>
         </div>
 
@@ -248,9 +247,9 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Define The Rules</h2>
           <p className="text-black/80 dark:text-white/80">
-            One of the starting premises was that the status colors should remain distinctive from the other category colors. 
-            A few usage guidelines can go along way in ensuring a cohesive look and feel when applied to a UI. 
-            There is a lot of flexibility in how you define these, but I've included several examples below.
+            One of the starting points was that the status colors should stay distinct from the category colors.
+            A few usage guidelines can go a long way toward a cohesive look and feel once the colors are applied to a UI.
+            There's a lot of flexibility in how you define these, but here are a few examples.
           </p>
         </div>
 
@@ -284,8 +283,8 @@ function ColorProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Wrap-up</h2>
           <p className="text-black/80 dark:text-white/80">
-            You should now have a color system that works well with your brand colors and because it has all of the colors, it can satisfy all of the needs of your UI and be utilized across both product and marketing. 
-            The next step will be to apply the colors to your UI components and possibly define your chart and graph sequence colors.
+            You should now have a color system that works well with your brand colors. Because it's complete, it can cover everything your UI needs and work across both product and marketing.
+            The next step is to apply the colors to your UI components and maybe define your chart and graph color sequences.
           </p>
         </div>
       </div>

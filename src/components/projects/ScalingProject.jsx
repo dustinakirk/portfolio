@@ -15,9 +15,9 @@ function ScalingProject() {
           <p className="text-black/80 dark:text-white/80">
             Over the last few years I've spoken to many design team managers, watched countless videos, 
             read up on design organizations, and gathered statistics around scaling design teams. 
-            And I've used this research to develop a roadmap for scaling Tealium's design team. 
-            While this approach is targeted toward Enterprise SaaS organization, the approach would be 
-            quite similar across different company types.
+            I used that research to build a roadmap for scaling Tealium's design team.
+            It's aimed at Enterprise SaaS companies, but the approach would be pretty similar for
+            other kinds of companies.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ function ScalingProject() {
             <p className="text-black/80 dark:text-white/80">
               At a basic level, it is important to understand just how many designers should be in a company. 
               As Tealium is an Enterprise SaaS company with approximately 500 employees, I set out to gather 
-              some statistics on similar sized companies. Fortunately this was a fairly straight-forward task 
+              some statistics on similar sized companies. Fortunately this was fairly straightforward
               using LinkedIn. I was able to go to a company's page and search for people with relevant titles. 
               I would then count up the people and add in any job postings they had for their design team. 
               Through this ad-hoc approach, I dug into 17 companies which varied in size from 80 employees 
@@ -39,8 +39,8 @@ function ScalingProject() {
             <p className="text-black/80 dark:text-white/80">
               A very apparent trend appeared which indicated that for Enterprise SaaS companies, design teams 
               generally followed a 2% rule, with a slightly higher percentage for small companies. 
-              While not easily quantifiable, it is clear that by looking at the company's products, 
-              those with better looking UIs often had a designer ratio of 3%. Companies with an employee 
+              It's hard to quantify, but looking at their products, the companies with better-looking
+              UIs often had closer to 3%. Companies with an employee
               count greater than 1000 became difficult to gather accurate data on, so I stopped there.
             </p>
             
@@ -73,7 +73,7 @@ function ScalingProject() {
             </p>
             
             <p className="text-black/80 dark:text-white/80">
-              One notable trend was whether a company used "Product Designer" or "UX Designer" 
+              One notable trend was whether a company used "Product Designer" or "UX Designer."
               The use of these titles was primarily determined by how large the company was and what coast 
               the company was on. Larger organizations used the "UX Designer" title, possibly because 
               it has been around longer. Smaller companies, especially those on the west coast used 
@@ -124,8 +124,8 @@ function ScalingProject() {
 
         <div className="prose prose-lg max-w-none space-y-4">
           <p className="text-black/80 dark:text-white/80">
-            Small startups vary a lot in their approach, but often are quick to hire two designers. 
-            One Sr./Lead Product Designer as well as a Jr. Designer. These designers wear multiple hats 
+            Small startups vary a lot in their approach, but they're often quick to hire two designers:
+            one Sr./Lead Product Designer and one Jr. Designer. These designers wear multiple hats
             completing everything from prototyping to conducting usability tests. As there is typically 
             just one product, this setup can work until a second product is added, or the company grows 
             to over 50 employees.
@@ -135,7 +135,7 @@ function ScalingProject() {
             When a company has around 200 employees, we can expect there to be about 5 designers. 
             At this stage we might find about 4 developer teams working on different areas of the product. 
             Companies vary in strategy, but often assign a designer to each developer team that is 
-            front-end facing. The 5th designer is utilized in a variety of ways, but today's trend is 
+            front-end facing. The 5th designer gets used in a variety of ways, but today's trend is
             to begin dedicating an individual to the design system. This has many benefits, but primarily 
             in increasing the efficiency of development through common components, and maintaining a 
             unified look and feel as the products grow in size, all while keeping designers coordinated 
@@ -159,11 +159,10 @@ function ScalingProject() {
           
           <p className="text-black/80 dark:text-white/80">
             And finally, scaling up the design team with 10 more designers gets us to an org chart with 
-            divisions for User Research, Design Strategy, and Product Design. Product Design is covering 
-            all feature related initiatives, Design strategy is looking across the platform as a whole 
-            as a resource for both designers and developers. And User Research serves cross-functional 
-            with the product team on discovery projects as well as supporting product designers through 
-            design validation.
+            divisions for User Research, Design Strategy, and Product Design. Product Design covers all
+            feature work. Design Strategy looks across the platform as a whole and supports both designers
+            and developers. And User Research works cross-functionally with the product team on discovery
+            projects and helps product designers validate their designs.
           </p>
         </div>
 

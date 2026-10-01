@@ -20,15 +20,15 @@ function AppsProject() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            Growing in the Black Hills of South Dakota, I designed and developed websites for local businesses in the tourism industry. 
-            With a strong interest in computers I continued that interest by getting a dual major in Computer Science and Psychology at 
-            Rensselaer in upstate New York as well as a master's degree in Human Computer Interaction. I have since worked professionally 
-            as UX / Product Designer but have maintained my interest in development through various hobbies over the years.
+            Growing up in the Black Hills of South Dakota, I designed and built websites for local tourism businesses.
+            I was really into computers, so I went on to a dual major in Computer Science and Psychology at
+            Rensselaer in upstate New York, followed by a master's in Human-Computer Interaction. I've worked as a
+            UX / Product Designer ever since, but I've kept up with development through side projects over the years.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            In 2009 I began designing and developing mobile apps, primarily for fun, but as a potential income source. 
-            While the income never amounted to much and I don't have time these days to continue work on them, 
-            the apps were great fun to work on and a few continue to be available for download today.
+            In 2009 I started designing and building mobile apps, mostly for fun, but also as a possible source of income.
+            The income never amounted to much, and I don't have time to keep working on them these days,
+            but the apps were a blast to make and a few are still available for download.
           </p>
         </div>
 
@@ -36,12 +36,12 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Stacks</h2>
           <p className="text-black/80 dark:text-white/80">
-            Stacks, a flashcard application was my first application. The design was very much of the time with a skeuomorphic shelf and lights. 
-            The application featured packs of flashcards that were available for purchase and covered topics ranging from jokes and trivia to SAT vocabulary. 
-            To create the content, I hired people using elance.com for the most part, but also experimented with sites like Amazon Mechanical Turk, 
-            but with very poor results. At the time of launching this app, In-App-Purchase was a completely new API and wasn't public yet. 
-            It was a formidable challenge to navigate the iOS documentation and piece together the code needed to make the appropriate calls to Apple's servers. 
-            In the end it worked and launched alongside iOS 3.
+            Stacks, a flashcard app, was my first. The design was very much of its time, with a skeuomorphic shelf and lights.
+            The app sold packs of flashcards on topics ranging from jokes and trivia to SAT vocabulary.
+            To create the content, I mostly hired people through elance.com, and also tried sites like Amazon Mechanical Turk,
+            with very poor results. When I built this app, In-App Purchase was a brand new API and wasn't public yet.
+            It was a real challenge to work through the iOS documentation and piece together the code to make the right calls to Apple's servers.
+            In the end it worked, and the app launched alongside iOS 3.
           </p>
         </div>
 
@@ -55,12 +55,12 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Mini Golf Scorecards</h2>
           <p className="text-black/80 dark:text-white/80">
-            Along the lines of simple app ideas that would be easy to make, I created Mini Golf Scorecards. 
-            While at the time there were few scorecard apps, there soon was a flood of competition. 
-            A few highlights of the app included some clever shortcuts such as double-tapping on an empty score entry to set it to par. 
-            The Plus and Minus buttons allowed a very straightforward score entry without opening a keypad. 
-            Additionally, if you played the same course twice, it would carry over all relevant data for your next game 
-            such as the title, hole count, and par for each hole.
+            Sticking with simple app ideas that would be easy to make, I created Mini Golf Scorecards.
+            There were only a few scorecard apps at the time, but a flood of competition soon followed.
+            A few highlights were some clever shortcuts, like double-tapping an empty score to set it to par.
+            The Plus and Minus buttons made entering scores easy without opening a keypad.
+            And if you played the same course twice, it carried over everything relevant to your next game,
+            like the course name, hole count, and par for each hole.
           </p>
         </div>
 
@@ -74,13 +74,13 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Ducky Disc Golf Scorecards</h2>
           <p className="text-black/80 dark:text-white/80">
-            One of the apps I put the most effort into was an app for keeping track of scores when playing disc golf. 
-            With many lessons learned from Mini Golf Scorecards, I built out a proper database back-end along with an 
-            architecture to capture a tremendous amount of detail about disc golf play. With many releases over the years, 
-            feedback was incorporated from players and the app was even utilized among the professional disc golf circuit. 
-            The app could track GPS locations of Tee and Pin locations, as well as each throw which allowed detailed distance 
-            stats to be captured. Users could specify the disc they used, the flight pattern and more. 
-            Lastly, the app would generate nice visual scorecards that could be shared after the game.
+            One of the apps I put the most effort into was for keeping score in disc golf.
+            Taking what I'd learned from Mini Golf Scorecards, I built a proper database back end and an
+            architecture that could capture a huge amount of detail about each round. Over many releases,
+            I worked in feedback from players, and the app was even used on the professional disc golf circuit.
+            It could record the GPS location of each tee and pin, as well as each throw, which made detailed distance
+            stats possible. Players could log the disc they used, the flight pattern, and more.
+            And after the game, it generated nice visual scorecards you could share.
           </p>
         </div>
 
@@ -94,11 +94,11 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Travel Bingo For Kids</h2>
           <p className="text-black/80 dark:text-white/80">
-            In a throwback to playing travel bingo on car trips growing up, I desired to create an app. 
-            This app was very simple in concept to build. I created over 150 tiles and grouped them into collections 
-            that could be purchased with in-app-purchase. The collections included city, neighborhood, highway, country, and more. 
-            While there wasn't anything particularly challenging about this app, it was the first app I created to work on both iPhone and iPad. 
-            Interestingly, Travel Bingo For Kids has provided the most income of all the apps I've made.
+            I played travel bingo on car trips growing up, and I wanted to make an app version.
+            It was a simple app to build. I created over 150 tiles and grouped them into collections
+            you could buy with in-app purchase, including city, neighborhood, highway, country, and more.
+            Nothing about it was especially hard, but it was the first app I made that worked on both iPhone and iPad.
+            Funny enough, Travel Bingo For Kids has made the most money of any app I've built.
           </p>
         </div>
 
@@ -112,9 +112,9 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Ducky Letters</h2>
           <p className="text-black/80 dark:text-white/80">
-            Coming back from a family holiday trip in which a lot of the game Bananagrams was played, I really wanted to continue to play on my phone. 
-            Unfortunately banana grams wasn't available as an app so I decided to make my own. 
-            Inspired by Bananagrams, I created a one-player version called Ducky Letters.
+            After a family holiday trip where we played a lot of Bananagrams, I really wanted to keep playing on my phone.
+            Unfortunately Bananagrams wasn't available as an app, so I decided to make my own:
+            a one-player version called Ducky Letters.
           </p>
         </div>
 
@@ -126,12 +126,12 @@ function AppsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            The development of this app was one of the most challenging to date as I utilized many of the modern iOS capabilities 
-            including Sprite Kit, and needed to be able to drag and drop tiles around the game board. While a challenge, it worked tremendously well. 
-            Beyond the new APIs, I recall the most challenging aspect was to validate that all connected tiles were words or not, 
-            and if not, mark the specific tiles that were invalid. To validate the words, I build a recursive algorithm that would 
-            check each string of letters, including sub-strings, against the tournament scrabble word list. 
-            Through some optimizations I ended up with an extremely efficient design that was fast and could be run every time a tile dropped on the board.
+            This was one of the hardest apps I've built, since I used a lot of newer iOS features, including SpriteKit,
+            and needed tiles to drag and drop around the board. It was a challenge, but it worked really well.
+            Beyond the new APIs, the hardest part I remember was checking whether all the connected tiles formed real words,
+            and if not, marking the specific tiles that were invalid. To do that, I built a recursive algorithm that
+            checked each string of letters, including substrings, against the tournament Scrabble word list.
+            After some optimizing, it was fast enough to run every time a tile dropped on the board.
           </p>
         </div>
 
@@ -139,13 +139,13 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Ducky Doubles</h2>
           <p className="text-black/80 dark:text-white/80">
-            Capitalizing on the joy received from playing the game 2048, I decided to create my own variation. 
-            This app was built and submitted to the app store within 4 weeks. My particular twist on the 2048 game was 
-            the inclusion of a wildcard tile with a duck on it. Whatever tile the duck was swiped into, it would double in value. 
-            As the overall score increased, fewer ducks appeared making it ever more challenging. 
-            With this app, I'm particularly proud of the micro-interactions and effects that I added. 
-            The tiles have a lively feel as you swipe around, the score animates, and with each increase in level, 
-            confetti appears making it a joy to play.
+            I loved playing 2048, so I decided to make my own version.
+            I built it and submitted it to the App Store within 4 weeks. My twist on 2048 was
+            a wildcard tile with a duck on it. Whatever tile you swiped the duck into doubled in value.
+            As your score went up, fewer ducks appeared, so it kept getting harder.
+            I'm especially proud of the micro-interactions and effects in this one.
+            The tiles feel lively as you swipe them around, the score animates, and confetti pops
+            every time you level up, which makes it a joy to play.
           </p>
         </div>
 
@@ -159,10 +159,10 @@ function AppsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Peak Active</h2>
           <p className="text-black/80 dark:text-white/80">
-            My most ambitious app to date is Peak Active and while I got really close to launching the app, 
-            my first child was born and I couldn't spend the time necessary to complete it. 
-            Frustrated by the requirement of hitting start at the beginning of an activity and stop at the end, 
-            I wanted to be able to simply derive activity from the data available.
+            My most ambitious app is Peak Active. I got really close to launching it, but then
+            my first child was born and I couldn't put in the time to finish.
+            I was frustrated by fitness apps that made you hit start at the beginning of an activity and stop at the end.
+            I wanted the app to figure out the activity from the data that was already there.
           </p>
         </div>
 
@@ -174,17 +174,17 @@ function AppsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            Peak Active does just that, in real-time it looks at the activity captured whether from the iPhone or Apple Watch 
-            and determines if you are active and what kind of activity it is. It reports on the activity and you can choose to 
-            annotate it or not, but you never have to remember to interact with the app. Additionally, it provides a myriad of 
-            motivational aspects which make the app freakishly addictive through tracking statistics and displaying relevant 
-            celebrations when appropriate.
+            Peak Active does just that. In real time, it looks at the activity coming from your iPhone or Apple Watch
+            and works out whether you're active and what you're doing. It logs the activity, and you can
+            add notes or not, but you never have to remember to open the app. It also has lots of
+            motivational touches, like tracking stats and throwing celebrations at the right moments, that make it
+            freakishly addictive.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            While there were many challenges with the app such as bringing together data from multiple sources, 
-            building out the calendar view, etc. The biggest challenge was in assigning activity to the appropriate data. 
-            This aspect becomes problematic whenever the time changes such as Daylight Savings Time, or the user flies to a new time-zone. 
-            Unfortunately I was unable to resolve this issue, but the challenge still remains.
+            There were plenty of challenges, like combining data from multiple sources and building the calendar view,
+            but the biggest was matching activity to the right data.
+            That gets messy whenever the clock changes, like with Daylight Saving Time or when you fly to a new time zone.
+            Unfortunately I never solved it, and the problem is still out there.
           </p>
         </div>
       </div>

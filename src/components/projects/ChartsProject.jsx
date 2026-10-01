@@ -37,10 +37,10 @@ function ChartsProject() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            The design system at Tealium has grown over the years, however one area (among many) that was not flushed out were the components needed for charts and graphs. As with all aspects of design systems, the hardest part is creating and documenting all of the low level components necessary to realize the vast array of desired outcomes. While many UI boiler-plate components are encapsulated in systems like Ant and Material design systems, I took it on as a personal project to build out a chart and graph system that could be utilized by others.
+            Tealium's design system has grown over the years, but one area (among many) that was never fleshed out was charts and graphs. As with any part of a design system, the hard part is building and documenting all the low-level components you need to cover everything people want to make. Systems like Ant and Material cover a lot of the standard UI components, so I took it on as a personal project to build a chart and graph system that other people could use too.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            I have now published the first version of Chart System Pro which is available on <a href="https://gumroad.com/l/sXIAq" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Gumroad</a> for anyone to download. The system encompasses all grid-based charts and graphs including line charts, bar graphs, area charts, candlesticks, and others. Included are color sequences for all chart types which may be customized, a sample library of charts and graphs which may be quickly duplicated and edited as well as chart components including annotations, trendlines, plot pins, and reference bands. It truly became an invaluable tool as it is incredibly easy to generate the desired chart while maintaining the consistency inherent in a good design system.
+            The first version of Chart System Pro is now up on <a href="https://gumroad.com/l/sXIAq" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Gumroad</a> for anyone to download. It covers grid-based charts and graphs, including line charts, bar graphs, area charts, candlesticks, and more. It comes with customizable color sequences for every chart type, a library of sample charts you can duplicate and edit, and chart components like annotations, trendlines, plot pins, and reference bands. It's become a tool I rely on. It's really easy to make the chart you want and still keep the consistency you'd expect from a good design system.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ function ChartsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">System Strategy And Planning</h2>
           <p className="text-black/80 dark:text-white/80">
-            Among the first activities in creating any design system is to plan out the design system structure and take inventory of the components that will be necessary to include. In this case, I applied the Atomic Design approach popularized by Brad Frost. Using this approach I mapped out atomic level components which are as basic as a line or rectangle. These atomic level components, while not necessarily useful on their own, are grouped into molecules which form the common component utilized in a chart or graph. For this project, the common use cases involved utilizing the molecules with slight variations. These variations were cataloged as templates which could be easily copied and pasted onto the charts.
+            One of the first steps in any design system is planning the structure and taking inventory of the components you'll need. Here I used the Atomic Design approach popularized by Brad Frost. I mapped out atoms, which are as basic as a line or a rectangle. They aren't very useful on their own, but they combine into molecules, which are the common pieces you see in a chart or graph. Most use cases needed those molecules with slight variations, so I cataloged the variations as templates that could be copied and pasted onto a chart.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ function ChartsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            To identify the components that would be necessary, I researched all types of charts and graphs and collected a vast library of charts and graphs published in news articles, research papers, financial reports, etc. I then parsed the catalogue and identified unique variations of elements such as legends, annotations, tic marks, etc. Then knowing the variations, I constructed the atomic and molecular components needed to recreate them. This allowed me to then create templates of each variation which could be easily copy and pasted into a chart, or easily swapped using the component switcher in Figma.
+            To figure out which components I'd need, I collected a big library of charts and graphs from news articles, research papers, financial reports, etc. I went through the collection and noted every unique variation of things like legends, annotations, and tick marks. Then I built the atoms and molecules needed to recreate them. From there I could make a template for each variation that could be copied into a chart or swapped with Figma's component switcher.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ function ChartsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Building The System</h2>
           <p className="text-black/80 dark:text-white/80">
-            The overall system was fairly straight-forward to construct once the research and planning was complete. I first constructed the grid components to get a base-line for the size of the charts. I chose a 600 x 300 pixel grid as the base and built all other components around that size. The size was chosen as it closely reflected a wide variety of charts and graphs found while taking inventory. All other chart elements were sized off of that grid.
+            Once the research and planning were done, building the system was fairly straightforward. I started with the grid components to set a baseline size for the charts. I picked a 600 x 300 pixel grid because it was close to a lot of the charts I'd collected, and sized every other element off of it.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ function ChartsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            With grid templates in place, I built out the various plots points. In thinking through the use cases that are common for charts and graphs, I provided templates that covered basic simple use cases, scientific cases which are often multiples of 5, and date based use cases which include 7 days in a week, 30/31 days in a month, and 12 months in a year.
+            With the grid templates in place, I built out the plot points. I made templates for the common cases: simple ones, scientific ones that tend to come in multiples of 5, and date-based ones like 7 days in a week, 30 or 31 days in a month, and 12 months in a year.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ function ChartsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            Lastly, I built out all basic chart components which will not only apply to grid-based charts, but also to a wide variety of chart types to be supported in the future such as pie charts, donut charts, spider charts, etc. I had particular fun detailing out the annotations as component structure is incredibly flexible and can be customized in some pretty wild ways.
+            Last, I built the basic chart components. They work for grid-based charts and will also work for chart types I want to support later, like pie, donut, and spider charts. The annotations were the most fun to work out, because the component structure is really flexible and can be customized in some pretty wild ways.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ function ChartsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Defining Color Sequences</h2>
           <p className="text-black/80 dark:text-white/80">
-            Deserving of its own write-up, one often overlooked aspect of color systems is their ability to support charts and graphs. There are 12 color sequences that should be defined for a chart system and they require a full pallet of colors including hot, warm, neutral, cool, cold, and status colors. In order to generate the necessary color sequences, I created a unique color system specific for Chart System Pro. While these colors may be customized, they provide users with the necessary components from the start and can act as a reference for future customizations.
+            This really deserves its own write-up, but one part of color systems people often overlook is how well they support charts and graphs. A chart system needs 12 color sequences, and those take a full palette of hot, warm, neutral, cool, cold, and status colors. To make the sequences, I created a color system just for Chart System Pro. You can customize the colors, but they give you everything you need out of the box and a reference point if you do change them.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ function ChartsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            In generating the color sequences, I researched and utilized best practices advocated by IBM and others. Perhaps the most evident best practice utilized is ensuring high contrast levels for adjacent plot sequences.
+            For the sequences, I followed best practices from IBM and others. The most obvious one is keeping contrast high between neighboring plot sequences.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ function ChartsProject() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            At a high level, the types of sequences are as follows. Categorical sequences are utilized for graphs where there is no direct relationship between plot points such as car brands. Sequential color sequences convey a relative order to each plot point such as dates, and divergent color sequences convey a relative order, but between two opposing directions such as temperature. Overall, the 12 sequences include 16, 8, and 4 color variations and they are all defined and organized within Figma's style selector making for over 336 defined color sequence styles.
+            There are three kinds of sequences. Categorical sequences are for data where the points have no direct relationship, like car brands. Sequential sequences show an order, like dates. Divergent sequences show an order that runs in two opposite directions, like temperature. The 12 sequences come in 16, 8, and 4 color versions, all defined and organized in Figma's style picker, for over 336 color sequence styles.
           </p>
         </div>
 
@@ -166,13 +166,13 @@ function ChartsProject() {
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold mb-4">Figma Limitations</h2>
           <p className="text-black/80 dark:text-white/80">
-            While Figma is incredibly powerful, a lot of wish-list items came out of this project. One major limitation of Figma (at the time) is the inability to swap components or resize elements inside a component. For instance, when displaying a plot group, it would be great to be able to add or remove however many plot values are necessary for the graph. To work-around this restriction, I created a large number of values which would be made hidden when they are not needed.
+            Figma is incredibly powerful, but I came out of this project with a long wish list. A big limitation (at the time) was that you couldn't swap components or resize elements inside a component. For example, with a plot group, I'd want to add or remove however many values the graph needs. To work around it, I created a lot of values and hid the ones that weren't needed.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            Another big limitation is the ability to manipulate stacked bar charts and stacked area charts. The manipulation of these are extremely tedious as there is no object awareness between each plot sequence. So, for now, I chose not to include these chart types.
+            Stacked bar and stacked area charts were another problem. Editing them is extremely tedious because the plot sequences don't know about each other. So for now, I left those chart types out.
           </p>
           <p className="text-black/80 dark:text-white/80">
-            Other wish-list items include better tools for managing defined styles, the ability to set a custom anchor point, the ability to tab through vector points, display toggle off borders on specific sides of a shape, and set frames to fill available space.
+            Other things on the wish list: better tools for managing styles, custom anchor points, tabbing through vector points, turning off borders on specific sides of a shape, and frames that fill the available space.
           </p>
         </div>
 

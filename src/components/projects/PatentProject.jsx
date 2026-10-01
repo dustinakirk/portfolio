@@ -13,11 +13,11 @@ function PatentProject() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
           <p className="text-black/80 dark:text-white/80">
-            With many years of experience creating websites and prototypes with HTML and CSS, and a personal fondness for pushing its limits, I became interested in some of the lesser utilized CSS capabilities. One of these capabilities is the ability to trigger server calls based solely on the user's website interactions. With pixel tracking being incredibly popular in the marketing industry, and with javascript being increasingly blocked by users, I connected the dots and decided to submit a patent idea through Tealium's patent program. In doing so, I worked with a fellow engineer to iron out a few technical details and we completed the process together.
+            I've spent many years building websites and prototypes with HTML and CSS, and I enjoy pushing their limits, so I got curious about some of the lesser-used CSS capabilities. One of them is the ability to trigger server calls based only on how a user interacts with a website. Pixel tracking was hugely popular in marketing, and more and more users were blocking JavaScript, so I connected the dots and submitted a patent idea through Tealium's patent program. I worked with a fellow engineer to iron out a few technical details, and we saw the process through together.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            The process involved fully documenting the idea, getting it reviewed by Tealium's executive team, and working with patent lawyers to see it through completion. With minimal revisions along the way, the entire process took approximately two years until fully issued and posted to the USPTO website.
+            The process involved fully documenting the idea, getting it reviewed by Tealium's executive team, and working with patent lawyers to see it through. There were only a few revisions along the way, and it took about two years for the patent to be issued and posted on the USPTO website.
           </p>
         </div>
 
@@ -26,42 +26,42 @@ function PatentProject() {
           <h2 className="text-2xl font-bold mb-4">Brief Overview</h2>
 
           <p className="text-black/80 dark:text-white/80">
-            The invention entails using CSS in a web-browser to identify elements on a website to be tracked and then making server calls using CSS to track actions. Trackable actions include clicks and other events on web page elements such as links, input fields, divs, spans, and list-items.
+            The invention uses CSS in a web browser to identify which elements on a website should be tracked, and then uses CSS to make server calls that track actions. Trackable actions include clicks and other events on page elements like links, input fields, divs, spans, and list items.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            The invention covers two scenarios for using CSS for website tracking. The first is for CSS to be used to supplement JavaScript tracking by identifying elements to be tracked. The second is tracking actions with only CSS with no additional scripting needed.
+            It covers two ways of using CSS for website tracking. In the first, CSS supplements JavaScript tracking by identifying the elements to track. In the second, actions are tracked with CSS alone, with no scripting needed.
           </p>
         </div>
 
         {/* Utilizing CSS Selectors For Tracking */}
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold mb-4">Utilizing CSS Selectors For Tracking</h2>
+          <h2 className="text-2xl font-bold mb-4">Using CSS Selectors For Tracking</h2>
 
           <p className="text-black/80 dark:text-white/80">
-            Current web trackers require that a person specify web page elements of a website to be tracked. This is typically implemented by having the user specify element IDs via a proprietary interface or directly using JavaScript.
+            Today's web trackers require someone to specify which elements on a page should be tracked. Usually that means entering element IDs in a proprietary interface or writing JavaScript.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            CSS already has built in selectors which website designers use to define the styles of the website elements. By utilizing the CSS for both defining style attributes and specifying elements to be tracked, the following benefits can be had:
+            CSS already has built-in selectors that designers use to style page elements. Using CSS both to define styles and to specify what to track has several benefits:
           </p>
 
           <ul className="list-disc pl-6 space-y-2 text-black/80 dark:text-white/80">
-            <li>Enable people already tasked with defining CSS styles to also define elements and actions to be tracked. These tasks have typically been done by different people. Websites implementing tracking will benefit from more people being able to take on the task of implementing and maintaining tracking.</li>
-            <li>Consolidate element selectors and improve code maintainability. When website elements change, current implementations may require changes in separate places to both the styles and trackers. By utilizing CSS selectors, updates could be made in the same place and at the same time.</li>
-            <li>Gives web designers flexibility in how and where trackers are defined due to the inherent capabilities of CSS. Trackers could be specified inline with webpage elements, within a block of definitions within a page, or externally. They could even be defined through a proprietary interface which generates a CSS file.</li>
-            <li>The ability to target multiple elements with an element type, class name, attribute value or attribute.</li>
-            <li>The ability to target elements based on screen size using media queries.</li>
+            <li>People who already write CSS can also define the elements and actions to track. Those jobs have usually been done by different people, so more people can help implement and maintain tracking.</li>
+            <li>Element selectors live in one place, which makes the code easier to maintain. Today, when page elements change, the styles and the trackers may need to be updated separately. With CSS selectors, both get updated in the same place at the same time.</li>
+            <li>CSS gives designers flexibility in how and where trackers are defined. Trackers could be written inline on page elements, in a block of definitions on the page, or in an external file. They could even be defined in a proprietary interface that generates a CSS file.</li>
+            <li>You can target multiple elements by element type, class name, attribute, or attribute value.</li>
+            <li>You can target elements based on screen size with media queries.</li>
           </ul>
 
           <h3 className="text-xl font-semibold mt-6 mb-3">How It Works</h3>
 
           <p className="text-black/80 dark:text-white/80">
-            Tracking with CSS selectors requires an attribute associated with tracking to be placed within the CSS. In the example provided, this is marked "tracking marker" The selector will identify the element(s) desired to be tracked. The tracking marker has a value, and this is the tracking ID. The tracking ID is used for tracking purposes to distinguish between multiple elements tracked on a page. For example, when a specific button is pushed, the tracking code would know to send additional data such as page name, form id, etc. back to the server.
+            Tracking with CSS selectors requires a tracking attribute to be added to the CSS. In the example, it's labeled "tracking marker." The selector identifies the element or elements to track. The tracking marker's value is the tracking ID, which tells apart the different elements being tracked on a page. For example, when a specific button is pushed, the tracking code knows to send extra data like the page name or form ID back to the server.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            Within the HTML markup, CSS styles are applied as usual. JavaScript or other code is then used to parse the CSS, identify the elements to be parsed, and attach javascript calls to the specified elements during run-time.
+            In the HTML, CSS styles are applied as usual. JavaScript or other code then parses the CSS, finds the elements to track, and attaches JavaScript calls to them at run time.
           </p>
         </div>
 
@@ -74,52 +74,52 @@ function PatentProject() {
 
         {/* Utilizing CSS Tracking With JavaScript Disabled */}
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold mb-4">Utilizing CSS Tracking With JavaScript Disabled</h2>
+          <h2 className="text-2xl font-bold mb-4">Using CSS Tracking With JavaScript Disabled</h2>
 
           <p className="text-black/80 dark:text-white/80">
-            While Javascript is often available and used for tracking, it may be disabled for a variety of reasons including speed, bandwidth, usability, accessibility, and security.
+            JavaScript is usually available and often used for tracking, but people disable it for all kinds of reasons, including speed, bandwidth, usability, accessibility, and security.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            Web applications, especially those utilizing a large amount of JavaScript loaded from 3rd parties load more slowly. Badly written JavaScript can also consume a lot of extra bandwidth which slows down web page load times and consumes people's bandwidth. These are especially a concern to people in countries with poor internet access or who rely upon a mobile-phone to connect to the internet.
+            Web apps load more slowly, especially when they pull in a lot of JavaScript from 3rd parties. Badly written JavaScript can also eat up bandwidth, which slows page loads and costs people data. That's a real concern for people in countries with poor internet access or who rely on a mobile phone to get online.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            JavaScript may also be disabled for usability and accessibility reasons. People using screen-readers and other accessibility tools, prefer simple non-interactive websites that are easy to read and navigate.
+            JavaScript may also be disabled for usability and accessibility reasons. People using screen readers and other accessibility tools often prefer simple, non-interactive websites that are easy to read and navigate.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            Lastly JavaScript may be disabled for security and reasons. Websites may load malicious JavaScript in the background or use JavaScript to collect browser data.
+            And JavaScript may be disabled for security reasons. Websites can load malicious JavaScript in the background or use it to collect browser data.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            By utilizing CSS, a component of all modern web browsers, simple websites who desire to reach users opposed to JavaScript can now see how their users are interacting with their webpages. This is beneficial for understanding how websites are being used and how best to optimize them.
+            Every modern browser supports CSS, so simple websites that want to reach people who avoid JavaScript can still see how visitors interact with their pages. That helps them understand how the site is used and how to improve it.
           </p>
 
           <h3 className="text-xl font-semibold mt-6 mb-3">How It Works</h3>
 
           <p className="text-black/80 dark:text-white/80">
-            Tracking actions with CSS alone, is completed using the html and css loaded on the client-side web browser, and a script running on a server that parses urls requested from it.
+            Tracking with CSS alone uses the HTML and CSS loaded in the browser, plus a script on a server that parses the URLs requested from it.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            The CSS contains style definitions utilizing Tracking URLs that are called upon the desired web page interactions. This type of style definition will be referred to as a Tracker. The URL in the Tracker is composed of a Domain Name, an Account ID, and a Tracking ID. By applying a CSS style to an HTML element, the URL will be called when the user performs the action specified by the Tracker's CSS Selector (eg: 'active' = a user clicks the element, or 'hover' when a user hovers their mouse over the element).
+            The CSS contains style definitions with Tracking URLs that get called when the user interacts with the page in a certain way. This kind of style definition is called a Tracker. The URL in a Tracker is made up of a Domain Name, an Account ID, and a Tracking ID. When the style is applied to an HTML element, the URL gets called whenever the user performs the action in the Tracker's CSS selector (e.g. 'active' when a user clicks the element, or 'hover' when they mouse over it).
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            Due to the inherent properties of CSS, multiple trackers may be applied to the same HTML element, Trackers may be triggered by nesting HTML elements that have Trackers applied to them.
+            Because of how CSS works, multiple Trackers can be applied to the same HTML element, and Trackers can be triggered by nested HTML elements that have Trackers applied to them.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            Trackers can be applied to any HTML element by following it's CSS guidelines including Divisions, Spans, List Items, Form Fields, Anchor Links, etc.
+            Trackers can be applied to any HTML element that follows standard CSS rules, including divs, spans, list items, form fields, anchor links, etc.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            The Server referenced by the URL should be configured to parse the URL into its component pieces. This involves identifying the Account ID and Tracking ID. Once parsed, a log will be kept identifying which Tracker ID was called, which account it was called for and when it was called. From this log, a record of how many times an Account's Tracker ID was called for a given timeframe can be generated. The Server referenced by the URL may also get further details from the HTTP Referral data including the specific server and page making the request, the user's IP address, browser information, and user agent.
+            The server in the URL should be set up to break the URL into its parts, identifying the Account ID and Tracking ID. It then logs which Tracker ID was called, for which account, and when. From that log, you can count how many times an account's Tracker ID was called over any time period. The server can also pull more detail from the HTTP referrer data, including the server and page making the request, the user's IP address, browser information, and user agent.
           </p>
 
           <p className="text-black/80 dark:text-white/80">
-            Tracker style definitions may be embedded in the HTML file, or be in their own CSS file and included in the web page. This CSS file may also be generated by and hosted through an event tracking service.
+            Tracker style definitions can be embedded in the HTML file or kept in a separate CSS file included in the page. That CSS file could also be generated and hosted by an event tracking service.
           </p>
         </div>
 
