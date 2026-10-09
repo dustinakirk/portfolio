@@ -58,7 +58,8 @@ export function ProtectedAccessProvider({ children }) {
       const { ok, data } = await api("/api/unlock", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
+        // `from` lets a tracked visit record the page it was unlocked on.
+        body: JSON.stringify({ password, from: window.location.pathname }),
       });
       if (!ok) return false;
       applySession(data);

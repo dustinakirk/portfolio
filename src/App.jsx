@@ -28,6 +28,7 @@ import DesignSystemShowcase from './components/DesignSystemShowcase'
 import ProtectedProjectPage from './components/ProtectedProjectPage'
 import NotFound from './components/NotFound'
 import { ProtectedAccessProvider } from './lib/protectedAccess'
+import ActivityTracker from './lib/activityTracker'
 
 // Redirect component for external URLs
 function ExternalRedirect({ to }) {
@@ -73,6 +74,7 @@ function RootLayout() {
   return (
     <ProtectedAccessProvider>
       <ScrollRestoration />
+      <ActivityTracker />
       <Outlet />
     </ProtectedAccessProvider>
   )

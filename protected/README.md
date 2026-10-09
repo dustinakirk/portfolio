@@ -56,3 +56,24 @@ the session cookie.
 
 `access.json` exists only on the machine that deploys. Back it up if you
 want to keep credentials across machines; otherwise just re-issue them.
+
+## Visitor analytics
+
+Passwords created with `--track` (or switched on with `track`) log what
+their visitors do: each unlock starts a visit, and every page they open
+records active time, scroll depth, video watch time, and outbound clicks
+(resume, email, LinkedIn). Location comes from Vercel's city-level geo
+headers; IP addresses are not stored. Other passwords and the master
+password are not logged.
+
+```bash
+npm run access -- add "Acme Corp" --days 14 --track
+npm run access -- track acme-corp      # or untrack; then npm run deploy
+npm run access -- stats acme-corp      # visits, pages, time, videos, clicks
+npm run access -- stats                # every tracked password
+```
+
+Records live in the private `portfolio-analytics` Blob store
+(`activity/<password id>/<visit id>/`), written by `api/activity.js` and
+`api/unlock.js` from reports sent by `src/lib/activityTracker.js`. `stats`
+reads them with `ANALYTICS_READ_WRITE_TOKEN` from `.env`.

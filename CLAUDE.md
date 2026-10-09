@@ -17,7 +17,7 @@ npm run preview  # Preview production build locally
 npm run deploy   # Build locally, deploy prebuilt output to Vercel production, then git push
 ```
 
-Local env vars for the functions live in `.env` (gitignored): `PROTECTED_PASSWORD`, `SESSION_SECRET`, `BLOB_READ_WRITE_TOKEN`. The same values are set on the Vercel project via `vercel env`.
+Local env vars for the functions live in `.env` (gitignored): `PROTECTED_PASSWORD`, `SESSION_SECRET`, `ANALYTICS_READ_WRITE_TOKEN` (private `portfolio-analytics` Blob store for visit logs). The same values are set on the Vercel project via `vercel env`. The project's `BLOB_READ_WRITE_TOKEN` belongs to an older, public, unused store.
 
 Pushing to `main` does NOT auto-deploy (git deployments are disabled in `vercel.json`). Use `npm run deploy` to ship.
 
@@ -51,6 +51,7 @@ Pushing to `main` does NOT auto-deploy (git deployments are disabled in `vercel.
 - Served only by the Vercel Functions in `api/` after the visitor enters `PROTECTED_PASSWORD`; a signed HttpOnly cookie (`SESSION_SECRET`) keeps them unlocked for 7 days. Nothing in `protected/` reaches the client bundle.
 - Client: `src/lib/protectedAccess.js` (session context), `PasswordTile`/`PasswordGate` on the homepage, `ProtectedProjectPage` for `/projects/:id` when the id is not a public project. `PROTECTED_PROJECTS_CONFIG` in `src/constants.js` holds the tile copy.
 - Passwords are named and expire individually: `npm run access -- add "Acme Corp" --days 14` prints a password once; `list`, `extend`, `revoke`, `remove` manage them. Stored hashed in gitignored `protected/access.json`, bundled at deploy, so run `npm run deploy` after changes. `PROTECTED_PASSWORD` is an optional never-expiring master password.
+- Passwords added with `--track` log their visitors' pages, active time, scroll depth, video watch time, and outbound clicks to the private analytics Blob store; `npm run access -- stats <id>` prints the report. See "Visitor analytics" in `protected/README.md`.
 
 ### Static Assets
 - Images and PDFs in `public/` directory

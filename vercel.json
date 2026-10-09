@@ -37,6 +37,9 @@
     "api/{session,unlock}.js": {
       "includeFiles": "protected/{access.json,content/**}"
     },
+    "api/activity.js": {
+      "includeFiles": "protected/access.json"
+    },
     "api/protected/*.js": {
       "includeFiles": "protected/{access.json,content/**}"
     }

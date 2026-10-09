@@ -28,7 +28,7 @@ export function createToken(credential) {
   return { token: `${payload}.${sign(payload)}`, expiry };
 }
 
-/** Returns { credentialId, expiry } when the token is valid, else null. */
+/** Returns { credentialId, credential, expiry } when the token is valid, else null. */
 export async function verifyToken(token) {
   if (!token || typeof token !== "string") return null;
   const parts = token.split(".");
@@ -41,7 +41,7 @@ export async function verifyToken(token) {
   if (expected.length !== given.length || !timingSafeEqual(expected, given)) return null;
   const credential = await getCredential(credentialId);
   if (!credential || credential.status !== "active") return null;
-  return { credentialId, expiry };
+  return { credentialId, credential, expiry };
 }
 
 export function parseCookies(req) {
@@ -54,7 +54,7 @@ export function parseCookies(req) {
   return out;
 }
 
-/** Resolves to the session ({ credentialId, expiry }) or null. */
+/** Resolves to the session ({ credentialId, credential, expiry }) or null. */
 export async function getSession(req) {
   return verifyToken(parseCookies(req)[COOKIE_NAME]);
 }
@@ -64,8 +64,12 @@ export async function isUnlocked(req) {
 }
 
 export function sessionCookie(token, maxAgeSeconds) {
+  return httpOnlyCookie(COOKIE_NAME, token, maxAgeSeconds);
+}
+
+export function httpOnlyCookie(name, value, maxAgeSeconds) {
   const attrs = [
-    `${COOKIE_NAME}=${encodeURIComponent(token)}`,
+    `${name}=${encodeURIComponent(value)}`,
     "Path=/",
     "HttpOnly",
     "SameSite=Lax",
