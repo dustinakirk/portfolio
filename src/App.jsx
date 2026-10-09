@@ -4,6 +4,7 @@ import {
   RouterProvider,
   Route,
   Outlet,
+  Navigate,
   ScrollRestoration,
   useLocation,
   useParams,
@@ -25,6 +26,7 @@ import EventIntroProject from './components/projects/EventIntroProject'
 import SalesforceAIHackathonProject from './components/projects/SalesforceAIHackathonProject'
 import DesignSystemShowcase from './components/DesignSystemShowcase'
 import ProtectedProjectPage from './components/ProtectedProjectPage'
+import NotFound from './components/NotFound'
 import { ProtectedAccessProvider } from './lib/protectedAccess'
 
 // Redirect component for external URLs
@@ -80,6 +82,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
       <Route path="/" element={<PortfolioFresh />} />
+      {/* No projects index page; send trimmed case study URLs to Featured Projects */}
+      <Route path="/projects" element={<Navigate to="/#work" replace />} />
       <Route path="/projects/aistories" element={<AiStoriesProject />} />
       <Route path="/projects/email" element={<EmailProject />} />
       <Route path="/projects/scaling" element={<ScalingProject />} />
@@ -100,6 +104,7 @@ const router = createBrowserRouter(
       <Route path="/design_system" element={<DesignSystemShowcase />} />
       {/* Password-protected case studies (served from protected/content via api/) */}
       <Route path="/projects/:id" element={<ProtectedProjectPage />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 )
