@@ -121,6 +121,8 @@
 @media (max-width: 1000px) {
   .nr-case-videos-three { grid-template-columns: 1fr; max-width: 34rem; }
 }
+/* A single player spans the text column. */
+.nr-case-videos-one { grid-template-columns: 1fr; }
 .nr-case-videos figure { margin: 0; }
 .protected-content .nr-case-videos video {
   margin: 0;
