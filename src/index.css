@@ -121,7 +121,7 @@
 @media (max-width: 1000px) {
   .nr-case-videos-three { grid-template-columns: 1fr; max-width: 34rem; }
 }
-/* A single player spans the text column. */
+/* A single player stacks over its caption on narrow screens (see below for wide). */
 .nr-case-videos-one { grid-template-columns: 1fr; }
 .nr-case-videos figure { margin: 0; }
 .protected-content .nr-case-videos video {
@@ -148,6 +148,18 @@
   font-weight: 700;
   letter-spacing: .1em;
   color: #43616d;
+}
+/* On wide screens a single player sits beside its caption, running wider than
+   the text column like the three-up so the video keeps a usable size. */
+@media (min-width: 900px) {
+  .nr-case-videos-one { max-width: 72rem; }
+  .nr-case-videos-one figure {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+  .nr-case-videos-one figcaption { margin-top: 0; }
 }
 .protected-content .nr-case-chips {
   display: flex;
