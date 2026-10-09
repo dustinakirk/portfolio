@@ -50,7 +50,7 @@ Pushing to `main` does NOT auto-deploy (git deployments are disabled in `vercel.
 - Case studies in `protected/content/<id>.md` (front matter: title, subtitle, category, tags, image, order, draft) with media in `protected/media/<id>/`. See `protected/README.md`.
 - Served only by the Vercel Functions in `api/` after the visitor enters `PROTECTED_PASSWORD`; a signed HttpOnly cookie (`SESSION_SECRET`) keeps them unlocked for 7 days. Nothing in `protected/` reaches the client bundle.
 - Client: `src/lib/protectedAccess.js` (session context), `PasswordTile`/`PasswordGate` on the homepage, `ProtectedProjectPage` for `/projects/:id` when the id is not a public project. `PROTECTED_PROJECTS_CONFIG` in `src/constants.js` holds the tile copy.
-- Change the password with `vercel env add PROTECTED_PASSWORD production` (and preview/development), then update `.env`.
+- Passwords are named and expire individually: `npm run access -- add "Acme Corp" --days 14` prints a password once; `list`, `extend`, `revoke`, `remove` manage them. Stored hashed in gitignored `protected/access.json`, bundled at deploy, so run `npm run deploy` after changes. `PROTECTED_PASSWORD` is an optional never-expiring master password.
 
 ### Static Assets
 - Images and PDFs in `public/` directory

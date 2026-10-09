@@ -69,7 +69,7 @@ export default function PasswordTile() {
                 <div>
                   <h3 className="text-lg font-semibold leading-tight">Enter password</h3>
                   <p className="mt-1 text-sm text-black/70 dark:text-white/70">
-                    Access is remembered on this device for {days} days.
+                    Access is remembered on this device for up to {days} days.
                   </p>
                 </div>
                 <button

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:api": "vercel dev --listen 3005",
+    "access": "node scripts/access.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

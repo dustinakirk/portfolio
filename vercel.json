@@ -31,11 +31,14 @@
     }
   ],
   "functions": {
-    "api/*.js": {
-      "includeFiles": "protected/**"
+    "api/media.js": {
+      "includeFiles": "protected/{access.json,media/**}"
+    },
+    "api/{session,unlock}.js": {
+      "includeFiles": "protected/{access.json,content/**}"
     },
     "api/protected/*.js": {
-      "includeFiles": "protected/**"
+      "includeFiles": "protected/{access.json,content/**}"
     }
   },
   "devCommand": "node scripts/dev-placeholder.mjs"

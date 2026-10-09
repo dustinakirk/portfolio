@@ -34,6 +34,20 @@ function mediaUrl(id, src) {
   return `/api/media/${id}/${src.replace(/^\.\//, "")}`;
 }
 
+const escapeAttr = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+/**
+ * `![Description](clip.mp4)` renders a video player instead of an image, with
+ * clip.jpg from the same folder as its poster. Download, picture-in-picture and
+ * casting controls are hidden; the file itself is only served to unlocked visitors.
+ */
+function videoHtml(id, token) {
+  const src = mediaUrl(id, token.href);
+  const poster = src.replace(/\.[^./]+$/, ".jpg");
+  return `<video src="${escapeAttr(src)}" poster="${escapeAttr(poster)}" aria-label="${escapeAttr(token.text || "")}" controls preload="metadata" playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback></video>`;
+}
+
 export function summarize(id, meta, order) {
   return {
     id,
@@ -82,7 +96,10 @@ export async function getProject(id) {
 
   const renderer = new marked.Renderer();
   const baseImage = renderer.image.bind(renderer);
-  renderer.image = (token) => baseImage({ ...token, href: mediaUrl(id, token.href) });
+  renderer.image = (token) =>
+    /\.(mp4|webm)$/i.test(token.href)
+      ? videoHtml(id, token)
+      : baseImage({ ...token, href: mediaUrl(id, token.href) });
   const html = await marked.parse(body, { renderer, gfm: true, breaks: false });
 
   return { ...summarize(id, meta), html };

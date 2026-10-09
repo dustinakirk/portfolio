@@ -36,3 +36,16 @@ venv/
 # Media files
 *.mp4
 .vercel
+
+# Hashed passwords for protected projects (bundled at deploy time, never committed)
+protected/access.json
+
+# Confidential case studies and their media. This repo is public, so they're
+# deployed from this machine only (like access.json); the sample stays tracked.
+protected/content/*
+!protected/content/sample.md
+protected/media/*
+!protected/media/sample/
+
+# Working notes
+plans/

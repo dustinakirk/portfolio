@@ -1,6 +1,192 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Editorial components for the confidential case studies. Content stays server-side. */
+.protected-content:has(.nr-case-meta) > p,
+.protected-content:has(.nr-case-meta) > ul,
+.protected-content:has(.nr-case-meta) > ol,
+.protected-content:has(.nr-case-meta) > h2,
+.protected-content:has(.nr-case-meta) > h3 {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.protected-content:has(.nr-case-meta) > h2 {
+  padding-top: 1rem;
+  scroll-margin-top: 8rem;
+}
+.protected-content:has(.nr-case-meta) > p:has(> img),
+.protected-content:has(.nr-case-meta) > p:has(> video) { max-width: none; }
+.nr-case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
+  color: #43616d;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.nr-case-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid #cad5dc;
+  border-bottom: 1px solid #cad5dc;
+}
+.nr-case-facts span,
+.nr-case-flow span,
+.nr-case-takeaway > span,
+.nr-case-next > span {
+  display: block;
+  margin-bottom: .65rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #43616d;
+}
+.nr-case-facts strong { display: block; font-size: .94rem; }
+.nr-case-lede {
+  max-width: 53ch;
+  margin: 3rem auto !important;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  color: #163c4d;
+}
+.nr-case-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 3rem;
+}
+.protected-content .nr-case-nav a {
+  padding: .65rem 1rem;
+  border: 1px solid #c6d3db;
+  border-radius: 999px;
+  font-size: .84rem;
+  text-decoration: none;
+}
+.protected-content .nr-case-nav a:hover { background: #e0eaee; }
+.nr-case-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 2rem !important;
+  background: #365262;
+  border: 1px solid #365262;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.nr-case-flow-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.nr-case-flow > div { padding: 1.6rem; background: #102f41; }
+.nr-case-flow span { color: #93c8d3; }
+.protected-content .nr-case-flow strong { display: block; color: #fff; font-size: 1.08rem; }
+.nr-case-flow small { display: block; color: #c2d2dc; line-height: 1.5; margin-top: .65rem; }
+.protected-content .nr-image-caption {
+  max-width: none !important;
+  font-size: .78rem;
+  color: #566d79;
+  margin-top: .75rem;
+}
+.nr-case-takeaway {
+  border-left: 3px solid #278b99;
+  background: #e2edf0;
+  padding: 2rem;
+  margin-top: 3rem !important;
+  border-radius: 0 1rem 1rem 0;
+}
+.protected-content .nr-case-takeaway p {
+  max-width: 65ch;
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #163c4d;
+}
+/* Two-up video players sized to the text column; the native controls handle full screen. */
+.nr-case-videos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  max-width: 52rem;
+  margin: 2rem auto 0 !important;
+}
+/* Three-up runs wider than the text column so each player stays a usable size. */
+.nr-case-videos-three { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 72rem; }
+@media (max-width: 1000px) {
+  .nr-case-videos-three { grid-template-columns: 1fr; max-width: 34rem; }
+}
+.nr-case-videos figure { margin: 0; }
+.protected-content .nr-case-videos video {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  background: #102f41;
+  border-radius: 1rem;
+}
+.nr-case-videos figcaption {
+  margin-top: .9rem;
+  font-size: .9rem;
+  line-height: 1.55;
+  color: #566d79;
+}
+.protected-content .nr-case-videos figcaption strong {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  margin-bottom: .3rem;
+  font-size: 1rem;
+}
+.nr-case-videos figcaption strong span {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #43616d;
+}
+.protected-content .nr-case-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: 0;
+  list-style: none;
+}
+.protected-content .nr-case-chips > li {
+  margin: 0 !important; /* beats the space-y on .protected-content ul */
+  padding: .45rem .9rem;
+  border: 1px solid #c6d3db;
+  border-radius: 999px;
+  font-size: .84rem;
+  line-height: 1.4;
+}
+.nr-case-next { padding: 2rem 0; border-bottom: 1px solid #cad5dc; }
+.protected-content .nr-case-next a { font-size: 1.1rem; }
+.dark .nr-case-meta,
+.dark .nr-case-facts span,
+.dark .nr-case-takeaway > span,
+.dark .nr-case-next > span,
+.dark .nr-case-videos figcaption,
+.dark .nr-case-videos figcaption strong span,
+.dark .protected-content .nr-image-caption { color: #a6c7d3; }
+.dark .protected-content .nr-case-chips > li { border-color: #365262; }
+.dark .nr-case-lede,
+.dark .protected-content .nr-case-takeaway p { color: #e0eff4; }
+.dark .nr-case-takeaway { background: #152e3c; }
+.dark .nr-case-facts,
+.dark .nr-case-next,
+.dark .protected-content .nr-case-nav a { border-color: #365262; }
+.dark .protected-content .nr-case-nav a:hover { background: #203f50; }
+@media (max-width: 700px) {
+  .nr-case-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nr-case-flow { grid-template-columns: 1fr; }
+  .nr-case-videos { grid-template-columns: 1fr; }
+  .nr-case-flow > div { padding: 1.25rem; }
+  .nr-case-nav { justify-content: flex-start; }
+  .nr-case-takeaway { padding: 1.5rem; }
+}
 /* Rendered Markdown for password-protected case studies */
 .protected-content {
   @apply max-w-none text-black/80 dark:text-white/80;

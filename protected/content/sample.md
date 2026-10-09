@@ -5,6 +5,7 @@ category: Confidential
 tags: [Confidential, Sample]
 image: cover.png
 order: 1
+draft: true
 ---
 
 You are viewing a protected project. This page, its text, and its images are served by a Vercel Function only after the portfolio password has been entered. Access is remembered on this device for seven days.

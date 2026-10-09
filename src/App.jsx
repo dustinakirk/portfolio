@@ -1,4 +1,13 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+  Outlet,
+  ScrollRestoration,
+  useLocation,
+  useParams,
+} from 'react-router-dom'
 import { useEffect } from 'react'
 import PortfolioFresh from './components/PortfolioFresh'
 import AiStoriesProject from './components/projects/AiStoriesProject'
@@ -45,7 +54,10 @@ function PatternRedirect() {
 
 const GA_MEASUREMENT_ID = 'G-W16VDWWV0S'
 
-function AppRoutes() {
+// Wraps every route. <ScrollRestoration> scrolls to the top on link clicks and
+// restores the previous position on back/forward, so returning from a project
+// lands on the tiles instead of the top of the homepage.
+function RootLayout() {
   const location = useLocation()
 
   useEffect(() => {
@@ -57,40 +69,43 @@ function AppRoutes() {
   }, [location])
 
   return (
-    <Routes>
-        <Route path="/" element={<PortfolioFresh />} />
-        <Route path="/projects/aistories" element={<AiStoriesProject />} />
-        <Route path="/projects/email" element={<EmailProject />} />
-        <Route path="/projects/scaling" element={<ScalingProject />} />
-        <Route path="/projects/patent" element={<PatentProject />} />
-        <Route path="/projects/architecture" element={<ArchitectureProject />} />
-        <Route path="/projects/charts" element={<ChartsProject />} />
-        <Route path="/projects/color" element={<ColorProject />} />
-        <Route path="/projects/loadorder" element={<LoadOrderProject />} />
-        <Route path="/projects/pillars" element={<PillarsProject />} />
-        <Route path="/projects/apps" element={<AppsProject />} />
-        <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
-        <Route path="/projects/eventintro" element={<EventIntroProject />} />
-        <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
-        {/* Redirect pattern library routes to new domain */}
-        <Route path="/agentic_ai_patterns" element={<ExternalRedirect to="https://agenticuxpatterns.com" />} />
-        <Route path="/agentic_ai_patterns/overview" element={<ExternalRedirect to="https://agenticuxpatterns.com/overview" />} />
-        <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternRedirect />} />
-        <Route path="/design_system" element={<DesignSystemShowcase />} />
-        {/* Password-protected case studies (served from protected/content via api/) */}
-        <Route path="/projects/:id" element={<ProtectedProjectPage />} />
-      </Routes>
+    <ProtectedAccessProvider>
+      <ScrollRestoration />
+      <Outlet />
+    </ProtectedAccessProvider>
   )
 }
 
-function App() {
-  return (
-    <Router>
-      <ProtectedAccessProvider>
-        <AppRoutes />
-      </ProtectedAccessProvider>
-    </Router>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<RootLayout />}>
+      <Route path="/" element={<PortfolioFresh />} />
+      <Route path="/projects/aistories" element={<AiStoriesProject />} />
+      <Route path="/projects/email" element={<EmailProject />} />
+      <Route path="/projects/scaling" element={<ScalingProject />} />
+      <Route path="/projects/patent" element={<PatentProject />} />
+      <Route path="/projects/architecture" element={<ArchitectureProject />} />
+      <Route path="/projects/charts" element={<ChartsProject />} />
+      <Route path="/projects/color" element={<ColorProject />} />
+      <Route path="/projects/loadorder" element={<LoadOrderProject />} />
+      <Route path="/projects/pillars" element={<PillarsProject />} />
+      <Route path="/projects/apps" element={<AppsProject />} />
+      <Route path="/projects/generativeuicanvas" element={<GenerativeUICanvasProject />} />
+      <Route path="/projects/eventintro" element={<EventIntroProject />} />
+      <Route path="/projects/salesforceaihackathon" element={<SalesforceAIHackathonProject />} />
+      {/* Redirect pattern library routes to new domain */}
+      <Route path="/agentic_ai_patterns" element={<ExternalRedirect to="https://agenticuxpatterns.com" />} />
+      <Route path="/agentic_ai_patterns/overview" element={<ExternalRedirect to="https://agenticuxpatterns.com/overview" />} />
+      <Route path="/agentic_ai_patterns/:patternSlug" element={<PatternRedirect />} />
+      <Route path="/design_system" element={<DesignSystemShowcase />} />
+      {/* Password-protected case studies (served from protected/content via api/) */}
+      <Route path="/projects/:id" element={<ProtectedProjectPage />} />
+    </Route>
   )
+)
+
+function App() {
+  return <RouterProvider router={router} />
 }
 
 export default App

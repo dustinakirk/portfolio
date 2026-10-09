@@ -59,6 +59,10 @@ export default function ProtectedProjectPage() {
       <ProjectLayout title={title} subtitle={subtitle} projectId={id}>
         <article
           className="protected-content"
+          // No "Save video as…" menu on protected videos.
+          onContextMenu={(e) => {
+            if (e.target.closest("video")) e.preventDefault();
+          }}
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </ProjectLayout>
@@ -84,7 +88,7 @@ export default function ProtectedProjectPage() {
             <div>
               <div className="font-semibold">Enter password</div>
               <div className="text-sm opacity-70">
-                Access is remembered on this device for {days} days.
+                Access is remembered on this device for up to {days} days.
               </div>
             </div>
           </div>

@@ -717,8 +717,10 @@ export default function PortfolioFresh() {
             <div id="about-image" className="lg:col-span-4">
               <div className="rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5">
                 <img 
-                  src="/images/dustin_kirk2.png" 
-                  alt="Dustin Kirk" 
+                  src="/images/dustin_kirk2.png"
+                  alt="Dustin Kirk"
+                  width={452}
+                  height={512}
                   className="w-full h-auto object-cover"
                 />
               </div>

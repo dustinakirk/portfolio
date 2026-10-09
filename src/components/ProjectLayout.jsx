@@ -70,10 +70,8 @@ const diagonalConfig = {
 };
 
 export default function ProjectLayout({ children, title, subtitle, projectId }) {
-  // Scroll to top on mount and set meta tags
+  // Set meta tags (scroll position is handled by <ScrollRestoration> in App.jsx)
   useEffect(() => {
-    window.scrollTo(0, 0);
-
     // Get project data for image
     const project = WORK.find(p => p.id === projectId);
     const baseUrl = 'https://dustinkirk.com';
